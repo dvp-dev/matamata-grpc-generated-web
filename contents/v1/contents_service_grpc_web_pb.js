@@ -21,6 +21,8 @@ var contents_v1_tag_pb = require('../../contents/v1/tag_pb.js')
 var contents_v1_category_pb = require('../../contents/v1/category_pb.js')
 
 var contents_v1_article_pb = require('../../contents/v1/article_pb.js')
+
+var contents_v1_infografik_pb = require('../../contents/v1/infografik_pb.js')
 const proto = {};
 proto.contents = {};
 proto.contents.v1 = require('./contents_service_pb.js');
@@ -2074,6 +2076,481 @@ proto.contents.v1.ContentServicePromiseClient.prototype.articleDelete =
       request,
       metadata || {},
       methodDescriptor_ContentService_ArticleDelete);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.contents.v1.InfografikGetOneRequest,
+ *   !proto.contents.v1.InfografikGetOneResponse>}
+ */
+const methodDescriptor_ContentService_InfografikGetOne = new grpc.web.MethodDescriptor(
+  '/contents.v1.ContentService/InfografikGetOne',
+  grpc.web.MethodType.UNARY,
+  contents_v1_infografik_pb.InfografikGetOneRequest,
+  contents_v1_infografik_pb.InfografikGetOneResponse,
+  /**
+   * @param {!proto.contents.v1.InfografikGetOneRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  contents_v1_infografik_pb.InfografikGetOneResponse.deserializeBinary
+);
+
+
+/**
+ * @const
+ * @type {!grpc.web.AbstractClientBase.MethodInfo<
+ *   !proto.contents.v1.InfografikGetOneRequest,
+ *   !proto.contents.v1.InfografikGetOneResponse>}
+ */
+const methodInfo_ContentService_InfografikGetOne = new grpc.web.AbstractClientBase.MethodInfo(
+  contents_v1_infografik_pb.InfografikGetOneResponse,
+  /**
+   * @param {!proto.contents.v1.InfografikGetOneRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  contents_v1_infografik_pb.InfografikGetOneResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.contents.v1.InfografikGetOneRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.Error, ?proto.contents.v1.InfografikGetOneResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.contents.v1.InfografikGetOneResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.contents.v1.ContentServiceClient.prototype.infografikGetOne =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/contents.v1.ContentService/InfografikGetOne',
+      request,
+      metadata || {},
+      methodDescriptor_ContentService_InfografikGetOne,
+      callback);
+};
+
+
+/**
+ * @param {!proto.contents.v1.InfografikGetOneRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.contents.v1.InfografikGetOneResponse>}
+ *     Promise that resolves to the response
+ */
+proto.contents.v1.ContentServicePromiseClient.prototype.infografikGetOne =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/contents.v1.ContentService/InfografikGetOne',
+      request,
+      metadata || {},
+      methodDescriptor_ContentService_InfografikGetOne);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.contents.v1.InfografikGetListRequest,
+ *   !proto.contents.v1.InfografikGetListResponse>}
+ */
+const methodDescriptor_ContentService_InfografikGetList = new grpc.web.MethodDescriptor(
+  '/contents.v1.ContentService/InfografikGetList',
+  grpc.web.MethodType.UNARY,
+  contents_v1_infografik_pb.InfografikGetListRequest,
+  contents_v1_infografik_pb.InfografikGetListResponse,
+  /**
+   * @param {!proto.contents.v1.InfografikGetListRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  contents_v1_infografik_pb.InfografikGetListResponse.deserializeBinary
+);
+
+
+/**
+ * @const
+ * @type {!grpc.web.AbstractClientBase.MethodInfo<
+ *   !proto.contents.v1.InfografikGetListRequest,
+ *   !proto.contents.v1.InfografikGetListResponse>}
+ */
+const methodInfo_ContentService_InfografikGetList = new grpc.web.AbstractClientBase.MethodInfo(
+  contents_v1_infografik_pb.InfografikGetListResponse,
+  /**
+   * @param {!proto.contents.v1.InfografikGetListRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  contents_v1_infografik_pb.InfografikGetListResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.contents.v1.InfografikGetListRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.Error, ?proto.contents.v1.InfografikGetListResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.contents.v1.InfografikGetListResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.contents.v1.ContentServiceClient.prototype.infografikGetList =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/contents.v1.ContentService/InfografikGetList',
+      request,
+      metadata || {},
+      methodDescriptor_ContentService_InfografikGetList,
+      callback);
+};
+
+
+/**
+ * @param {!proto.contents.v1.InfografikGetListRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.contents.v1.InfografikGetListResponse>}
+ *     Promise that resolves to the response
+ */
+proto.contents.v1.ContentServicePromiseClient.prototype.infografikGetList =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/contents.v1.ContentService/InfografikGetList',
+      request,
+      metadata || {},
+      methodDescriptor_ContentService_InfografikGetList);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.contents.v1.InfografikGetListRequest,
+ *   !proto.contents.v1.InfografikGetListStreamResponse>}
+ */
+const methodDescriptor_ContentService_InfografikGetListStream = new grpc.web.MethodDescriptor(
+  '/contents.v1.ContentService/InfografikGetListStream',
+  grpc.web.MethodType.SERVER_STREAMING,
+  contents_v1_infografik_pb.InfografikGetListRequest,
+  contents_v1_infografik_pb.InfografikGetListStreamResponse,
+  /**
+   * @param {!proto.contents.v1.InfografikGetListRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  contents_v1_infografik_pb.InfografikGetListStreamResponse.deserializeBinary
+);
+
+
+/**
+ * @const
+ * @type {!grpc.web.AbstractClientBase.MethodInfo<
+ *   !proto.contents.v1.InfografikGetListRequest,
+ *   !proto.contents.v1.InfografikGetListStreamResponse>}
+ */
+const methodInfo_ContentService_InfografikGetListStream = new grpc.web.AbstractClientBase.MethodInfo(
+  contents_v1_infografik_pb.InfografikGetListStreamResponse,
+  /**
+   * @param {!proto.contents.v1.InfografikGetListRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  contents_v1_infografik_pb.InfografikGetListStreamResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.contents.v1.InfografikGetListRequest} request The request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @return {!grpc.web.ClientReadableStream<!proto.contents.v1.InfografikGetListStreamResponse>}
+ *     The XHR Node Readable Stream
+ */
+proto.contents.v1.ContentServiceClient.prototype.infografikGetListStream =
+    function(request, metadata) {
+  return this.client_.serverStreaming(this.hostname_ +
+      '/contents.v1.ContentService/InfografikGetListStream',
+      request,
+      metadata || {},
+      methodDescriptor_ContentService_InfografikGetListStream);
+};
+
+
+/**
+ * @param {!proto.contents.v1.InfografikGetListRequest} request The request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @return {!grpc.web.ClientReadableStream<!proto.contents.v1.InfografikGetListStreamResponse>}
+ *     The XHR Node Readable Stream
+ */
+proto.contents.v1.ContentServicePromiseClient.prototype.infografikGetListStream =
+    function(request, metadata) {
+  return this.client_.serverStreaming(this.hostname_ +
+      '/contents.v1.ContentService/InfografikGetListStream',
+      request,
+      metadata || {},
+      methodDescriptor_ContentService_InfografikGetListStream);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.contents.v1.InfografikCreateRequest,
+ *   !proto.contents.v1.InfografikCreateResponse>}
+ */
+const methodDescriptor_ContentService_InfografikCreate = new grpc.web.MethodDescriptor(
+  '/contents.v1.ContentService/InfografikCreate',
+  grpc.web.MethodType.UNARY,
+  contents_v1_infografik_pb.InfografikCreateRequest,
+  contents_v1_infografik_pb.InfografikCreateResponse,
+  /**
+   * @param {!proto.contents.v1.InfografikCreateRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  contents_v1_infografik_pb.InfografikCreateResponse.deserializeBinary
+);
+
+
+/**
+ * @const
+ * @type {!grpc.web.AbstractClientBase.MethodInfo<
+ *   !proto.contents.v1.InfografikCreateRequest,
+ *   !proto.contents.v1.InfografikCreateResponse>}
+ */
+const methodInfo_ContentService_InfografikCreate = new grpc.web.AbstractClientBase.MethodInfo(
+  contents_v1_infografik_pb.InfografikCreateResponse,
+  /**
+   * @param {!proto.contents.v1.InfografikCreateRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  contents_v1_infografik_pb.InfografikCreateResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.contents.v1.InfografikCreateRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.Error, ?proto.contents.v1.InfografikCreateResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.contents.v1.InfografikCreateResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.contents.v1.ContentServiceClient.prototype.infografikCreate =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/contents.v1.ContentService/InfografikCreate',
+      request,
+      metadata || {},
+      methodDescriptor_ContentService_InfografikCreate,
+      callback);
+};
+
+
+/**
+ * @param {!proto.contents.v1.InfografikCreateRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.contents.v1.InfografikCreateResponse>}
+ *     Promise that resolves to the response
+ */
+proto.contents.v1.ContentServicePromiseClient.prototype.infografikCreate =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/contents.v1.ContentService/InfografikCreate',
+      request,
+      metadata || {},
+      methodDescriptor_ContentService_InfografikCreate);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.contents.v1.InfografikUpdateRequest,
+ *   !proto.contents.v1.InfografikUpdateResponse>}
+ */
+const methodDescriptor_ContentService_InfografikUpdate = new grpc.web.MethodDescriptor(
+  '/contents.v1.ContentService/InfografikUpdate',
+  grpc.web.MethodType.UNARY,
+  contents_v1_infografik_pb.InfografikUpdateRequest,
+  contents_v1_infografik_pb.InfografikUpdateResponse,
+  /**
+   * @param {!proto.contents.v1.InfografikUpdateRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  contents_v1_infografik_pb.InfografikUpdateResponse.deserializeBinary
+);
+
+
+/**
+ * @const
+ * @type {!grpc.web.AbstractClientBase.MethodInfo<
+ *   !proto.contents.v1.InfografikUpdateRequest,
+ *   !proto.contents.v1.InfografikUpdateResponse>}
+ */
+const methodInfo_ContentService_InfografikUpdate = new grpc.web.AbstractClientBase.MethodInfo(
+  contents_v1_infografik_pb.InfografikUpdateResponse,
+  /**
+   * @param {!proto.contents.v1.InfografikUpdateRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  contents_v1_infografik_pb.InfografikUpdateResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.contents.v1.InfografikUpdateRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.Error, ?proto.contents.v1.InfografikUpdateResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.contents.v1.InfografikUpdateResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.contents.v1.ContentServiceClient.prototype.infografikUpdate =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/contents.v1.ContentService/InfografikUpdate',
+      request,
+      metadata || {},
+      methodDescriptor_ContentService_InfografikUpdate,
+      callback);
+};
+
+
+/**
+ * @param {!proto.contents.v1.InfografikUpdateRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.contents.v1.InfografikUpdateResponse>}
+ *     Promise that resolves to the response
+ */
+proto.contents.v1.ContentServicePromiseClient.prototype.infografikUpdate =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/contents.v1.ContentService/InfografikUpdate',
+      request,
+      metadata || {},
+      methodDescriptor_ContentService_InfografikUpdate);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.contents.v1.InfografikDeleteRequest,
+ *   !proto.contents.v1.InfografikDeleteResponse>}
+ */
+const methodDescriptor_ContentService_InfografikDelete = new grpc.web.MethodDescriptor(
+  '/contents.v1.ContentService/InfografikDelete',
+  grpc.web.MethodType.UNARY,
+  contents_v1_infografik_pb.InfografikDeleteRequest,
+  contents_v1_infografik_pb.InfografikDeleteResponse,
+  /**
+   * @param {!proto.contents.v1.InfografikDeleteRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  contents_v1_infografik_pb.InfografikDeleteResponse.deserializeBinary
+);
+
+
+/**
+ * @const
+ * @type {!grpc.web.AbstractClientBase.MethodInfo<
+ *   !proto.contents.v1.InfografikDeleteRequest,
+ *   !proto.contents.v1.InfografikDeleteResponse>}
+ */
+const methodInfo_ContentService_InfografikDelete = new grpc.web.AbstractClientBase.MethodInfo(
+  contents_v1_infografik_pb.InfografikDeleteResponse,
+  /**
+   * @param {!proto.contents.v1.InfografikDeleteRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  contents_v1_infografik_pb.InfografikDeleteResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.contents.v1.InfografikDeleteRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.Error, ?proto.contents.v1.InfografikDeleteResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.contents.v1.InfografikDeleteResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.contents.v1.ContentServiceClient.prototype.infografikDelete =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/contents.v1.ContentService/InfografikDelete',
+      request,
+      metadata || {},
+      methodDescriptor_ContentService_InfografikDelete,
+      callback);
+};
+
+
+/**
+ * @param {!proto.contents.v1.InfografikDeleteRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.contents.v1.InfografikDeleteResponse>}
+ *     Promise that resolves to the response
+ */
+proto.contents.v1.ContentServicePromiseClient.prototype.infografikDelete =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/contents.v1.ContentService/InfografikDelete',
+      request,
+      metadata || {},
+      methodDescriptor_ContentService_InfografikDelete);
 };
 
 

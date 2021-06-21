@@ -156,6 +156,10 @@ export class ArticleCreateUpdate extends jspb.Message {
     getTagIdsList(): Array<number>;
     setTagIdsList(value: Array<number>): ArticleCreateUpdate;
     addTagIds(value: number, index?: number): number;
+    clearCreditsList(): void;
+    getCreditsList(): Array<ArticleCreateUpdate.ArticleCredit>;
+    setCreditsList(value: Array<ArticleCreateUpdate.ArticleCredit>): ArticleCreateUpdate;
+    addCredits(value?: ArticleCreateUpdate.ArticleCredit, index?: number): ArticleCreateUpdate.ArticleCredit;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): ArticleCreateUpdate.AsObject;
@@ -180,7 +184,33 @@ export namespace ArticleCreateUpdate {
         status: ArticleStatus,
         sectionHomepage: ArticleSectionHomepage,
         tagIdsList: Array<number>,
+        creditsList: Array<ArticleCreateUpdate.ArticleCredit.AsObject>,
     }
+
+
+    export class ArticleCredit extends jspb.Message { 
+        getRole(): ArticleCreditRole;
+        setRole(value: ArticleCreditRole): ArticleCredit;
+        getAdminId(): number;
+        setAdminId(value: number): ArticleCredit;
+
+        serializeBinary(): Uint8Array;
+        toObject(includeInstance?: boolean): ArticleCredit.AsObject;
+        static toObject(includeInstance: boolean, msg: ArticleCredit): ArticleCredit.AsObject;
+        static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+        static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+        static serializeBinaryToWriter(message: ArticleCredit, writer: jspb.BinaryWriter): void;
+        static deserializeBinary(bytes: Uint8Array): ArticleCredit;
+        static deserializeBinaryFromReader(message: ArticleCredit, reader: jspb.BinaryReader): ArticleCredit;
+    }
+
+    export namespace ArticleCredit {
+        export type AsObject = {
+            role: ArticleCreditRole,
+            adminId: number,
+        }
+    }
+
 }
 
 export class ArticleGetOneRequest extends jspb.Message { 

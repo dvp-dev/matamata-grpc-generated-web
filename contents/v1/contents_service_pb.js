@@ -21,3 +21,5 @@ var contents_v1_category_pb = require('../../contents/v1/category_pb.js');
 goog.object.extend(proto, contents_v1_category_pb);
 var contents_v1_article_pb = require('../../contents/v1/article_pb.js');
 goog.object.extend(proto, contents_v1_article_pb);
+var contents_v1_infografik_pb = require('../../contents/v1/infografik_pb.js');
+goog.object.extend(proto, contents_v1_infografik_pb);

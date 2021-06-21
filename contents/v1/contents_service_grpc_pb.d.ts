@@ -9,6 +9,7 @@ import * as contents_v1_contents_service_pb from "../../contents/v1/contents_ser
 import * as contents_v1_tag_pb from "../../contents/v1/tag_pb";
 import * as contents_v1_category_pb from "../../contents/v1/category_pb";
 import * as contents_v1_article_pb from "../../contents/v1/article_pb";
+import * as contents_v1_infografik_pb from "../../contents/v1/infografik_pb";
 
 interface IContentServiceService extends grpc.ServiceDefinition<grpc.UntypedServiceImplementation> {
     tagGetOne: IContentServiceService_ITagGetOne;
@@ -36,6 +37,12 @@ interface IContentServiceService extends grpc.ServiceDefinition<grpc.UntypedServ
     articleCreate: IContentServiceService_IArticleCreate;
     articleUpdate: IContentServiceService_IArticleUpdate;
     articleDelete: IContentServiceService_IArticleDelete;
+    infografikGetOne: IContentServiceService_IInfografikGetOne;
+    infografikGetList: IContentServiceService_IInfografikGetList;
+    infografikGetListStream: IContentServiceService_IInfografikGetListStream;
+    infografikCreate: IContentServiceService_IInfografikCreate;
+    infografikUpdate: IContentServiceService_IInfografikUpdate;
+    infografikDelete: IContentServiceService_IInfografikDelete;
 }
 
 interface IContentServiceService_ITagGetOne extends grpc.MethodDefinition<contents_v1_tag_pb.TagGetOneRequest, contents_v1_tag_pb.TagGetOneResponse> {
@@ -263,6 +270,60 @@ interface IContentServiceService_IArticleDelete extends grpc.MethodDefinition<co
     responseSerialize: grpc.serialize<contents_v1_article_pb.ArticleDeleteResponse>;
     responseDeserialize: grpc.deserialize<contents_v1_article_pb.ArticleDeleteResponse>;
 }
+interface IContentServiceService_IInfografikGetOne extends grpc.MethodDefinition<contents_v1_infografik_pb.InfografikGetOneRequest, contents_v1_infografik_pb.InfografikGetOneResponse> {
+    path: "/contents.v1.ContentService/InfografikGetOne";
+    requestStream: false;
+    responseStream: false;
+    requestSerialize: grpc.serialize<contents_v1_infografik_pb.InfografikGetOneRequest>;
+    requestDeserialize: grpc.deserialize<contents_v1_infografik_pb.InfografikGetOneRequest>;
+    responseSerialize: grpc.serialize<contents_v1_infografik_pb.InfografikGetOneResponse>;
+    responseDeserialize: grpc.deserialize<contents_v1_infografik_pb.InfografikGetOneResponse>;
+}
+interface IContentServiceService_IInfografikGetList extends grpc.MethodDefinition<contents_v1_infografik_pb.InfografikGetListRequest, contents_v1_infografik_pb.InfografikGetListResponse> {
+    path: "/contents.v1.ContentService/InfografikGetList";
+    requestStream: false;
+    responseStream: false;
+    requestSerialize: grpc.serialize<contents_v1_infografik_pb.InfografikGetListRequest>;
+    requestDeserialize: grpc.deserialize<contents_v1_infografik_pb.InfografikGetListRequest>;
+    responseSerialize: grpc.serialize<contents_v1_infografik_pb.InfografikGetListResponse>;
+    responseDeserialize: grpc.deserialize<contents_v1_infografik_pb.InfografikGetListResponse>;
+}
+interface IContentServiceService_IInfografikGetListStream extends grpc.MethodDefinition<contents_v1_infografik_pb.InfografikGetListRequest, contents_v1_infografik_pb.InfografikGetListStreamResponse> {
+    path: "/contents.v1.ContentService/InfografikGetListStream";
+    requestStream: false;
+    responseStream: true;
+    requestSerialize: grpc.serialize<contents_v1_infografik_pb.InfografikGetListRequest>;
+    requestDeserialize: grpc.deserialize<contents_v1_infografik_pb.InfografikGetListRequest>;
+    responseSerialize: grpc.serialize<contents_v1_infografik_pb.InfografikGetListStreamResponse>;
+    responseDeserialize: grpc.deserialize<contents_v1_infografik_pb.InfografikGetListStreamResponse>;
+}
+interface IContentServiceService_IInfografikCreate extends grpc.MethodDefinition<contents_v1_infografik_pb.InfografikCreateRequest, contents_v1_infografik_pb.InfografikCreateResponse> {
+    path: "/contents.v1.ContentService/InfografikCreate";
+    requestStream: false;
+    responseStream: false;
+    requestSerialize: grpc.serialize<contents_v1_infografik_pb.InfografikCreateRequest>;
+    requestDeserialize: grpc.deserialize<contents_v1_infografik_pb.InfografikCreateRequest>;
+    responseSerialize: grpc.serialize<contents_v1_infografik_pb.InfografikCreateResponse>;
+    responseDeserialize: grpc.deserialize<contents_v1_infografik_pb.InfografikCreateResponse>;
+}
+interface IContentServiceService_IInfografikUpdate extends grpc.MethodDefinition<contents_v1_infografik_pb.InfografikUpdateRequest, contents_v1_infografik_pb.InfografikUpdateResponse> {
+    path: "/contents.v1.ContentService/InfografikUpdate";
+    requestStream: false;
+    responseStream: false;
+    requestSerialize: grpc.serialize<contents_v1_infografik_pb.InfografikUpdateRequest>;
+    requestDeserialize: grpc.deserialize<contents_v1_infografik_pb.InfografikUpdateRequest>;
+    responseSerialize: grpc.serialize<contents_v1_infografik_pb.InfografikUpdateResponse>;
+    responseDeserialize: grpc.deserialize<contents_v1_infografik_pb.InfografikUpdateResponse>;
+}
+interface IContentServiceService_IInfografikDelete extends grpc.MethodDefinition<contents_v1_infografik_pb.InfografikDeleteRequest, contents_v1_infografik_pb.InfografikDeleteResponse> {
+    path: "/contents.v1.ContentService/InfografikDelete";
+    requestStream: false;
+    responseStream: false;
+    requestSerialize: grpc.serialize<contents_v1_infografik_pb.InfografikDeleteRequest>;
+    requestDeserialize: grpc.deserialize<contents_v1_infografik_pb.InfografikDeleteRequest>;
+    responseSerialize: grpc.serialize<contents_v1_infografik_pb.InfografikDeleteResponse>;
+    responseDeserialize: grpc.deserialize<contents_v1_infografik_pb.InfografikDeleteResponse>;
+}
 
 export const ContentServiceService: IContentServiceService;
 
@@ -292,6 +353,12 @@ export interface IContentServiceServer extends grpc.UntypedServiceImplementation
     articleCreate: grpc.handleUnaryCall<contents_v1_article_pb.ArticleCreateRequest, contents_v1_article_pb.ArticleCreateResponse>;
     articleUpdate: grpc.handleUnaryCall<contents_v1_article_pb.ArticleUpdateRequest, contents_v1_article_pb.ArticleUpdateResponse>;
     articleDelete: grpc.handleUnaryCall<contents_v1_article_pb.ArticleDeleteRequest, contents_v1_article_pb.ArticleDeleteResponse>;
+    infografikGetOne: grpc.handleUnaryCall<contents_v1_infografik_pb.InfografikGetOneRequest, contents_v1_infografik_pb.InfografikGetOneResponse>;
+    infografikGetList: grpc.handleUnaryCall<contents_v1_infografik_pb.InfografikGetListRequest, contents_v1_infografik_pb.InfografikGetListResponse>;
+    infografikGetListStream: grpc.handleServerStreamingCall<contents_v1_infografik_pb.InfografikGetListRequest, contents_v1_infografik_pb.InfografikGetListStreamResponse>;
+    infografikCreate: grpc.handleUnaryCall<contents_v1_infografik_pb.InfografikCreateRequest, contents_v1_infografik_pb.InfografikCreateResponse>;
+    infografikUpdate: grpc.handleUnaryCall<contents_v1_infografik_pb.InfografikUpdateRequest, contents_v1_infografik_pb.InfografikUpdateResponse>;
+    infografikDelete: grpc.handleUnaryCall<contents_v1_infografik_pb.InfografikDeleteRequest, contents_v1_infografik_pb.InfografikDeleteResponse>;
 }
 
 export interface IContentServiceClient {
@@ -370,6 +437,23 @@ export interface IContentServiceClient {
     articleDelete(request: contents_v1_article_pb.ArticleDeleteRequest, callback: (error: grpc.ServiceError | null, response: contents_v1_article_pb.ArticleDeleteResponse) => void): grpc.ClientUnaryCall;
     articleDelete(request: contents_v1_article_pb.ArticleDeleteRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: contents_v1_article_pb.ArticleDeleteResponse) => void): grpc.ClientUnaryCall;
     articleDelete(request: contents_v1_article_pb.ArticleDeleteRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: contents_v1_article_pb.ArticleDeleteResponse) => void): grpc.ClientUnaryCall;
+    infografikGetOne(request: contents_v1_infografik_pb.InfografikGetOneRequest, callback: (error: grpc.ServiceError | null, response: contents_v1_infografik_pb.InfografikGetOneResponse) => void): grpc.ClientUnaryCall;
+    infografikGetOne(request: contents_v1_infografik_pb.InfografikGetOneRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: contents_v1_infografik_pb.InfografikGetOneResponse) => void): grpc.ClientUnaryCall;
+    infografikGetOne(request: contents_v1_infografik_pb.InfografikGetOneRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: contents_v1_infografik_pb.InfografikGetOneResponse) => void): grpc.ClientUnaryCall;
+    infografikGetList(request: contents_v1_infografik_pb.InfografikGetListRequest, callback: (error: grpc.ServiceError | null, response: contents_v1_infografik_pb.InfografikGetListResponse) => void): grpc.ClientUnaryCall;
+    infografikGetList(request: contents_v1_infografik_pb.InfografikGetListRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: contents_v1_infografik_pb.InfografikGetListResponse) => void): grpc.ClientUnaryCall;
+    infografikGetList(request: contents_v1_infografik_pb.InfografikGetListRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: contents_v1_infografik_pb.InfografikGetListResponse) => void): grpc.ClientUnaryCall;
+    infografikGetListStream(request: contents_v1_infografik_pb.InfografikGetListRequest, options?: Partial<grpc.CallOptions>): grpc.ClientReadableStream<contents_v1_infografik_pb.InfografikGetListStreamResponse>;
+    infografikGetListStream(request: contents_v1_infografik_pb.InfografikGetListRequest, metadata?: grpc.Metadata, options?: Partial<grpc.CallOptions>): grpc.ClientReadableStream<contents_v1_infografik_pb.InfografikGetListStreamResponse>;
+    infografikCreate(request: contents_v1_infografik_pb.InfografikCreateRequest, callback: (error: grpc.ServiceError | null, response: contents_v1_infografik_pb.InfografikCreateResponse) => void): grpc.ClientUnaryCall;
+    infografikCreate(request: contents_v1_infografik_pb.InfografikCreateRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: contents_v1_infografik_pb.InfografikCreateResponse) => void): grpc.ClientUnaryCall;
+    infografikCreate(request: contents_v1_infografik_pb.InfografikCreateRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: contents_v1_infografik_pb.InfografikCreateResponse) => void): grpc.ClientUnaryCall;
+    infografikUpdate(request: contents_v1_infografik_pb.InfografikUpdateRequest, callback: (error: grpc.ServiceError | null, response: contents_v1_infografik_pb.InfografikUpdateResponse) => void): grpc.ClientUnaryCall;
+    infografikUpdate(request: contents_v1_infografik_pb.InfografikUpdateRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: contents_v1_infografik_pb.InfografikUpdateResponse) => void): grpc.ClientUnaryCall;
+    infografikUpdate(request: contents_v1_infografik_pb.InfografikUpdateRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: contents_v1_infografik_pb.InfografikUpdateResponse) => void): grpc.ClientUnaryCall;
+    infografikDelete(request: contents_v1_infografik_pb.InfografikDeleteRequest, callback: (error: grpc.ServiceError | null, response: contents_v1_infografik_pb.InfografikDeleteResponse) => void): grpc.ClientUnaryCall;
+    infografikDelete(request: contents_v1_infografik_pb.InfografikDeleteRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: contents_v1_infografik_pb.InfografikDeleteResponse) => void): grpc.ClientUnaryCall;
+    infografikDelete(request: contents_v1_infografik_pb.InfografikDeleteRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: contents_v1_infografik_pb.InfografikDeleteResponse) => void): grpc.ClientUnaryCall;
 }
 
 export class ContentServiceClient extends grpc.Client implements IContentServiceClient {
@@ -449,4 +533,21 @@ export class ContentServiceClient extends grpc.Client implements IContentService
     public articleDelete(request: contents_v1_article_pb.ArticleDeleteRequest, callback: (error: grpc.ServiceError | null, response: contents_v1_article_pb.ArticleDeleteResponse) => void): grpc.ClientUnaryCall;
     public articleDelete(request: contents_v1_article_pb.ArticleDeleteRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: contents_v1_article_pb.ArticleDeleteResponse) => void): grpc.ClientUnaryCall;
     public articleDelete(request: contents_v1_article_pb.ArticleDeleteRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: contents_v1_article_pb.ArticleDeleteResponse) => void): grpc.ClientUnaryCall;
+    public infografikGetOne(request: contents_v1_infografik_pb.InfografikGetOneRequest, callback: (error: grpc.ServiceError | null, response: contents_v1_infografik_pb.InfografikGetOneResponse) => void): grpc.ClientUnaryCall;
+    public infografikGetOne(request: contents_v1_infografik_pb.InfografikGetOneRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: contents_v1_infografik_pb.InfografikGetOneResponse) => void): grpc.ClientUnaryCall;
+    public infografikGetOne(request: contents_v1_infografik_pb.InfografikGetOneRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: contents_v1_infografik_pb.InfografikGetOneResponse) => void): grpc.ClientUnaryCall;
+    public infografikGetList(request: contents_v1_infografik_pb.InfografikGetListRequest, callback: (error: grpc.ServiceError | null, response: contents_v1_infografik_pb.InfografikGetListResponse) => void): grpc.ClientUnaryCall;
+    public infografikGetList(request: contents_v1_infografik_pb.InfografikGetListRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: contents_v1_infografik_pb.InfografikGetListResponse) => void): grpc.ClientUnaryCall;
+    public infografikGetList(request: contents_v1_infografik_pb.InfografikGetListRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: contents_v1_infografik_pb.InfografikGetListResponse) => void): grpc.ClientUnaryCall;
+    public infografikGetListStream(request: contents_v1_infografik_pb.InfografikGetListRequest, options?: Partial<grpc.CallOptions>): grpc.ClientReadableStream<contents_v1_infografik_pb.InfografikGetListStreamResponse>;
+    public infografikGetListStream(request: contents_v1_infografik_pb.InfografikGetListRequest, metadata?: grpc.Metadata, options?: Partial<grpc.CallOptions>): grpc.ClientReadableStream<contents_v1_infografik_pb.InfografikGetListStreamResponse>;
+    public infografikCreate(request: contents_v1_infografik_pb.InfografikCreateRequest, callback: (error: grpc.ServiceError | null, response: contents_v1_infografik_pb.InfografikCreateResponse) => void): grpc.ClientUnaryCall;
+    public infografikCreate(request: contents_v1_infografik_pb.InfografikCreateRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: contents_v1_infografik_pb.InfografikCreateResponse) => void): grpc.ClientUnaryCall;
+    public infografikCreate(request: contents_v1_infografik_pb.InfografikCreateRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: contents_v1_infografik_pb.InfografikCreateResponse) => void): grpc.ClientUnaryCall;
+    public infografikUpdate(request: contents_v1_infografik_pb.InfografikUpdateRequest, callback: (error: grpc.ServiceError | null, response: contents_v1_infografik_pb.InfografikUpdateResponse) => void): grpc.ClientUnaryCall;
+    public infografikUpdate(request: contents_v1_infografik_pb.InfografikUpdateRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: contents_v1_infografik_pb.InfografikUpdateResponse) => void): grpc.ClientUnaryCall;
+    public infografikUpdate(request: contents_v1_infografik_pb.InfografikUpdateRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: contents_v1_infografik_pb.InfografikUpdateResponse) => void): grpc.ClientUnaryCall;
+    public infografikDelete(request: contents_v1_infografik_pb.InfografikDeleteRequest, callback: (error: grpc.ServiceError | null, response: contents_v1_infografik_pb.InfografikDeleteResponse) => void): grpc.ClientUnaryCall;
+    public infografikDelete(request: contents_v1_infografik_pb.InfografikDeleteRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: contents_v1_infografik_pb.InfografikDeleteResponse) => void): grpc.ClientUnaryCall;
+    public infografikDelete(request: contents_v1_infografik_pb.InfografikDeleteRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: contents_v1_infografik_pb.InfografikDeleteResponse) => void): grpc.ClientUnaryCall;
 }

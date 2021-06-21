@@ -3,6 +3,7 @@ import * as grpcWeb from 'grpc-web';
 import * as contents_v1_tag_pb from '../../contents/v1/tag_pb';
 import * as contents_v1_category_pb from '../../contents/v1/category_pb';
 import * as contents_v1_article_pb from '../../contents/v1/article_pb';
+import * as contents_v1_infografik_pb from '../../contents/v1/infografik_pb';
 
 
 export class ContentServiceClient {
@@ -185,6 +186,46 @@ export class ContentServiceClient {
                response: contents_v1_article_pb.ArticleDeleteResponse) => void
   ): grpcWeb.ClientReadableStream<contents_v1_article_pb.ArticleDeleteResponse>;
 
+  infografikGetOne(
+    request: contents_v1_infografik_pb.InfografikGetOneRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.Error,
+               response: contents_v1_infografik_pb.InfografikGetOneResponse) => void
+  ): grpcWeb.ClientReadableStream<contents_v1_infografik_pb.InfografikGetOneResponse>;
+
+  infografikGetList(
+    request: contents_v1_infografik_pb.InfografikGetListRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.Error,
+               response: contents_v1_infografik_pb.InfografikGetListResponse) => void
+  ): grpcWeb.ClientReadableStream<contents_v1_infografik_pb.InfografikGetListResponse>;
+
+  infografikGetListStream(
+    request: contents_v1_infografik_pb.InfografikGetListRequest,
+    metadata?: grpcWeb.Metadata
+  ): grpcWeb.ClientReadableStream<contents_v1_infografik_pb.InfografikGetListStreamResponse>;
+
+  infografikCreate(
+    request: contents_v1_infografik_pb.InfografikCreateRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.Error,
+               response: contents_v1_infografik_pb.InfografikCreateResponse) => void
+  ): grpcWeb.ClientReadableStream<contents_v1_infografik_pb.InfografikCreateResponse>;
+
+  infografikUpdate(
+    request: contents_v1_infografik_pb.InfografikUpdateRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.Error,
+               response: contents_v1_infografik_pb.InfografikUpdateResponse) => void
+  ): grpcWeb.ClientReadableStream<contents_v1_infografik_pb.InfografikUpdateResponse>;
+
+  infografikDelete(
+    request: contents_v1_infografik_pb.InfografikDeleteRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.Error,
+               response: contents_v1_infografik_pb.InfografikDeleteResponse) => void
+  ): grpcWeb.ClientReadableStream<contents_v1_infografik_pb.InfografikDeleteResponse>;
+
 }
 
 export class ContentServicePromiseClient {
@@ -316,6 +357,36 @@ export class ContentServicePromiseClient {
     request: contents_v1_article_pb.ArticleDeleteRequest,
     metadata?: grpcWeb.Metadata
   ): Promise<contents_v1_article_pb.ArticleDeleteResponse>;
+
+  infografikGetOne(
+    request: contents_v1_infografik_pb.InfografikGetOneRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<contents_v1_infografik_pb.InfografikGetOneResponse>;
+
+  infografikGetList(
+    request: contents_v1_infografik_pb.InfografikGetListRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<contents_v1_infografik_pb.InfografikGetListResponse>;
+
+  infografikGetListStream(
+    request: contents_v1_infografik_pb.InfografikGetListRequest,
+    metadata?: grpcWeb.Metadata
+  ): grpcWeb.ClientReadableStream<contents_v1_infografik_pb.InfografikGetListStreamResponse>;
+
+  infografikCreate(
+    request: contents_v1_infografik_pb.InfografikCreateRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<contents_v1_infografik_pb.InfografikCreateResponse>;
+
+  infografikUpdate(
+    request: contents_v1_infografik_pb.InfografikUpdateRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<contents_v1_infografik_pb.InfografikUpdateResponse>;
+
+  infografikDelete(
+    request: contents_v1_infografik_pb.InfografikDeleteRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<contents_v1_infografik_pb.InfografikDeleteResponse>;
 
 }
 
