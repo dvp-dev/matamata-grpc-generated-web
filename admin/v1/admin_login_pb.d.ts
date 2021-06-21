@@ -9,10 +9,8 @@ import * as jspb from "google-protobuf";
 export class LoginRequest extends jspb.Message { 
     getEmail(): string;
     setEmail(value: string): LoginRequest;
-
     getPassword(): string;
     setPassword(value: string): LoginRequest;
-
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): LoginRequest.AsObject;
@@ -34,16 +32,12 @@ export namespace LoginRequest {
 export class LoginResponse extends jspb.Message { 
     getAccessToken(): string;
     setAccessToken(value: string): LoginResponse;
-
     getId(): number;
     setId(value: number): LoginResponse;
-
     getEmail(): string;
     setEmail(value: string): LoginResponse;
-
     getName(): string;
     setName(value: string): LoginResponse;
-
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): LoginResponse.AsObject;

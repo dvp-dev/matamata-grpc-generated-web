@@ -5,7 +5,6 @@
 /* eslint-disable */
 
 import * as grpc from "@grpc/grpc-js";
-import {handleClientStreamingCall} from "@grpc/grpc-js/build/src/server-call";
 import * as admin_v1_admin_pb from "../../admin/v1/admin_pb";
 import * as admin_v1_admin_login_pb from "../../admin/v1/admin_login_pb";
 
@@ -45,7 +44,7 @@ interface IAdminServiceService_IGetList extends grpc.MethodDefinition<admin_v1_a
 
 export const AdminServiceService: IAdminServiceService;
 
-export interface IAdminServiceServer {
+export interface IAdminServiceServer extends grpc.UntypedServiceImplementation {
     login: grpc.handleUnaryCall<admin_v1_admin_login_pb.LoginRequest, admin_v1_admin_login_pb.LoginResponse>;
     getInformation: grpc.handleUnaryCall<admin_v1_admin_pb.GetInformationRequest, admin_v1_admin_pb.GetInformationResponse>;
     getList: grpc.handleUnaryCall<admin_v1_admin_pb.GetListRequest, admin_v1_admin_pb.GetListResponse>;

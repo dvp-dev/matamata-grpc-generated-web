@@ -10,34 +10,26 @@ import * as google_protobuf_timestamp_pb from "google-protobuf/google/protobuf/t
 export class Comment extends jspb.Message { 
     getId(): number;
     setId(value: number): Comment;
-
     getParentId(): number;
     setParentId(value: number): Comment;
-
     getField(): string;
     setField(value: string): Comment;
-
     getUserId(): number;
     setUserId(value: number): Comment;
-
     getName(): string;
     setName(value: string): Comment;
-
     getContentId(): number;
     setContentId(value: number): Comment;
-
 
     hasCreatedAt(): boolean;
     clearCreatedAt(): void;
     getCreatedAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
     setCreatedAt(value?: google_protobuf_timestamp_pb.Timestamp): Comment;
 
-
     hasUpdatedAt(): boolean;
     clearUpdatedAt(): void;
     getUpdatedAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
     setUpdatedAt(value?: google_protobuf_timestamp_pb.Timestamp): Comment;
-
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): Comment.AsObject;
@@ -65,19 +57,14 @@ export namespace Comment {
 export class CommentCreateUpdate extends jspb.Message { 
     getParentId(): number;
     setParentId(value: number): CommentCreateUpdate;
-
     getField(): string;
     setField(value: string): CommentCreateUpdate;
-
     getUserId(): number;
     setUserId(value: number): CommentCreateUpdate;
-
     getName(): string;
     setName(value: string): CommentCreateUpdate;
-
     getContentId(): number;
     setContentId(value: number): CommentCreateUpdate;
-
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): CommentCreateUpdate.AsObject;

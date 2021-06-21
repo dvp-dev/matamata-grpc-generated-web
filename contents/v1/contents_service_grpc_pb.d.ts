@@ -5,7 +5,6 @@
 /* eslint-disable */
 
 import * as grpc from "@grpc/grpc-js";
-import {handleClientStreamingCall} from "@grpc/grpc-js/build/src/server-call";
 import * as contents_v1_contents_service_pb from "../../contents/v1/contents_service_pb";
 import * as contents_v1_tag_pb from "../../contents/v1/tag_pb";
 import * as contents_v1_category_pb from "../../contents/v1/category_pb";
@@ -267,7 +266,7 @@ interface IContentServiceService_IArticleDelete extends grpc.MethodDefinition<co
 
 export const ContentServiceService: IContentServiceService;
 
-export interface IContentServiceServer {
+export interface IContentServiceServer extends grpc.UntypedServiceImplementation {
     tagGetOne: grpc.handleUnaryCall<contents_v1_tag_pb.TagGetOneRequest, contents_v1_tag_pb.TagGetOneResponse>;
     tagGetMultiple: grpc.handleUnaryCall<contents_v1_tag_pb.TagGetMultipleRequest, contents_v1_tag_pb.TagGetMultipleResponse>;
     tagCreate: grpc.handleUnaryCall<contents_v1_tag_pb.TagCreateRequest, contents_v1_tag_pb.TagCreateResponse>;

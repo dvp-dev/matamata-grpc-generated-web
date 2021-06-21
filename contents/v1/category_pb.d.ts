@@ -9,10 +9,8 @@ import * as jspb from "google-protobuf";
 export class Category1 extends jspb.Message { 
     getId(): number;
     setId(value: number): Category1;
-
     getName(): string;
     setName(value: string): Category1;
-
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): Category1.AsObject;
@@ -35,7 +33,6 @@ export class Category1CreateUpdate extends jspb.Message {
     getName(): string;
     setName(value: string): Category1CreateUpdate;
 
-
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): Category1CreateUpdate.AsObject;
     static toObject(includeInstance: boolean, msg: Category1CreateUpdate): Category1CreateUpdate.AsObject;
@@ -55,13 +52,10 @@ export namespace Category1CreateUpdate {
 export class Category2 extends jspb.Message { 
     getId(): number;
     setId(value: number): Category2;
-
     getCategory1Id(): number;
     setCategory1Id(value: number): Category2;
-
     getName(): string;
     setName(value: string): Category2;
-
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): Category2.AsObject;
@@ -84,10 +78,8 @@ export namespace Category2 {
 export class Category2CreateUpdate extends jspb.Message { 
     getCategory1Id(): number;
     setCategory1Id(value: number): Category2CreateUpdate;
-
     getName(): string;
     setName(value: string): Category2CreateUpdate;
-
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): Category2CreateUpdate.AsObject;
@@ -109,13 +101,10 @@ export namespace Category2CreateUpdate {
 export class Category3 extends jspb.Message { 
     getId(): number;
     setId(value: number): Category3;
-
     getCategory2Id(): number;
     setCategory2Id(value: number): Category3;
-
     getName(): string;
     setName(value: string): Category3;
-
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): Category3.AsObject;
@@ -138,10 +127,8 @@ export namespace Category3 {
 export class Category3CreateUpdate extends jspb.Message { 
     getCategory2Id(): number;
     setCategory2Id(value: number): Category3CreateUpdate;
-
     getName(): string;
     setName(value: string): Category3CreateUpdate;
-
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): Category3CreateUpdate.AsObject;
@@ -163,7 +150,6 @@ export namespace Category3CreateUpdate {
 export class Category1GetOneRequest extends jspb.Message { 
     getId(): number;
     setId(value: number): Category1GetOneRequest;
-
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): Category1GetOneRequest.AsObject;
@@ -188,7 +174,6 @@ export class Category1GetOneResponse extends jspb.Message {
     getData(): Category1 | undefined;
     setData(value?: Category1): Category1GetOneResponse;
 
-
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): Category1GetOneResponse.AsObject;
     static toObject(includeInstance: boolean, msg: Category1GetOneResponse): Category1GetOneResponse.AsObject;
@@ -208,7 +193,6 @@ export namespace Category1GetOneResponse {
 export class Category2GetOneRequest extends jspb.Message { 
     getId(): number;
     setId(value: number): Category2GetOneRequest;
-
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): Category2GetOneRequest.AsObject;
@@ -233,7 +217,6 @@ export class Category2GetOneResponse extends jspb.Message {
     getData(): Category2 | undefined;
     setData(value?: Category2): Category2GetOneResponse;
 
-
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): Category2GetOneResponse.AsObject;
     static toObject(includeInstance: boolean, msg: Category2GetOneResponse): Category2GetOneResponse.AsObject;
@@ -253,7 +236,6 @@ export namespace Category2GetOneResponse {
 export class Category3GetOneRequest extends jspb.Message { 
     getId(): number;
     setId(value: number): Category3GetOneRequest;
-
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): Category3GetOneRequest.AsObject;
@@ -277,7 +259,6 @@ export class Category3GetOneResponse extends jspb.Message {
     clearData(): void;
     getData(): Category3 | undefined;
     setData(value?: Category3): Category3GetOneResponse;
-
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): Category3GetOneResponse.AsObject;
@@ -318,7 +299,6 @@ export class Category1GetMultipleResponse extends jspb.Message {
     setDataList(value: Array<Category1>): Category1GetMultipleResponse;
     addData(value?: Category1, index?: number): Category1;
 
-
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): Category1GetMultipleResponse.AsObject;
     static toObject(includeInstance: boolean, msg: Category1GetMultipleResponse): Category1GetMultipleResponse.AsObject;
@@ -338,7 +318,6 @@ export namespace Category1GetMultipleResponse {
 export class Category2GetMultipleRequest extends jspb.Message { 
     getCategory1Id(): number;
     setCategory1Id(value: number): Category2GetMultipleRequest;
-
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): Category2GetMultipleRequest.AsObject;
@@ -362,7 +341,6 @@ export class Category2GetMultipleResponse extends jspb.Message {
     setDataList(value: Array<Category2>): Category2GetMultipleResponse;
     addData(value?: Category2, index?: number): Category2;
 
-
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): Category2GetMultipleResponse.AsObject;
     static toObject(includeInstance: boolean, msg: Category2GetMultipleResponse): Category2GetMultipleResponse.AsObject;
@@ -382,7 +360,6 @@ export namespace Category2GetMultipleResponse {
 export class Category3GetMultipleRequest extends jspb.Message { 
     getCategory2Id(): number;
     setCategory2Id(value: number): Category3GetMultipleRequest;
-
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): Category3GetMultipleRequest.AsObject;
@@ -405,7 +382,6 @@ export class Category3GetMultipleResponse extends jspb.Message {
     getDataList(): Array<Category3>;
     setDataList(value: Array<Category3>): Category3GetMultipleResponse;
     addData(value?: Category3, index?: number): Category3;
-
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): Category3GetMultipleResponse.AsObject;
@@ -430,7 +406,6 @@ export class Category1CreateRequest extends jspb.Message {
     getData(): Category1CreateUpdate | undefined;
     setData(value?: Category1CreateUpdate): Category1CreateRequest;
 
-
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): Category1CreateRequest.AsObject;
     static toObject(includeInstance: boolean, msg: Category1CreateRequest): Category1CreateRequest.AsObject;
@@ -453,7 +428,6 @@ export class Category1CreateResponse extends jspb.Message {
     clearData(): void;
     getData(): Category1 | undefined;
     setData(value?: Category1): Category1CreateResponse;
-
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): Category1CreateResponse.AsObject;
@@ -478,7 +452,6 @@ export class Category2CreateRequest extends jspb.Message {
     getData(): Category2CreateUpdate | undefined;
     setData(value?: Category2CreateUpdate): Category2CreateRequest;
 
-
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): Category2CreateRequest.AsObject;
     static toObject(includeInstance: boolean, msg: Category2CreateRequest): Category2CreateRequest.AsObject;
@@ -501,7 +474,6 @@ export class Category2CreateResponse extends jspb.Message {
     clearData(): void;
     getData(): Category2 | undefined;
     setData(value?: Category2): Category2CreateResponse;
-
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): Category2CreateResponse.AsObject;
@@ -526,7 +498,6 @@ export class Category3CreateRequest extends jspb.Message {
     getData(): Category3CreateUpdate | undefined;
     setData(value?: Category3CreateUpdate): Category3CreateRequest;
 
-
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): Category3CreateRequest.AsObject;
     static toObject(includeInstance: boolean, msg: Category3CreateRequest): Category3CreateRequest.AsObject;
@@ -550,7 +521,6 @@ export class Category3CreateResponse extends jspb.Message {
     getData(): Category3 | undefined;
     setData(value?: Category3): Category3CreateResponse;
 
-
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): Category3CreateResponse.AsObject;
     static toObject(includeInstance: boolean, msg: Category3CreateResponse): Category3CreateResponse.AsObject;
@@ -571,12 +541,10 @@ export class Category1UpdateRequest extends jspb.Message {
     getId(): number;
     setId(value: number): Category1UpdateRequest;
 
-
     hasData(): boolean;
     clearData(): void;
     getData(): Category1CreateUpdate | undefined;
     setData(value?: Category1CreateUpdate): Category1UpdateRequest;
-
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): Category1UpdateRequest.AsObject;
@@ -602,7 +570,6 @@ export class Category1UpdateResponse extends jspb.Message {
     getData(): Category1 | undefined;
     setData(value?: Category1): Category1UpdateResponse;
 
-
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): Category1UpdateResponse.AsObject;
     static toObject(includeInstance: boolean, msg: Category1UpdateResponse): Category1UpdateResponse.AsObject;
@@ -623,12 +590,10 @@ export class Category2UpdateRequest extends jspb.Message {
     getId(): number;
     setId(value: number): Category2UpdateRequest;
 
-
     hasData(): boolean;
     clearData(): void;
     getData(): Category2CreateUpdate | undefined;
     setData(value?: Category2CreateUpdate): Category2UpdateRequest;
-
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): Category2UpdateRequest.AsObject;
@@ -654,7 +619,6 @@ export class Category2UpdateResponse extends jspb.Message {
     getData(): Category2 | undefined;
     setData(value?: Category2): Category2UpdateResponse;
 
-
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): Category2UpdateResponse.AsObject;
     static toObject(includeInstance: boolean, msg: Category2UpdateResponse): Category2UpdateResponse.AsObject;
@@ -675,12 +639,10 @@ export class Category3UpdateRequest extends jspb.Message {
     getId(): number;
     setId(value: number): Category3UpdateRequest;
 
-
     hasData(): boolean;
     clearData(): void;
     getData(): Category3CreateUpdate | undefined;
     setData(value?: Category3CreateUpdate): Category3UpdateRequest;
-
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): Category3UpdateRequest.AsObject;
@@ -706,7 +668,6 @@ export class Category3UpdateResponse extends jspb.Message {
     getData(): Category3 | undefined;
     setData(value?: Category3): Category3UpdateResponse;
 
-
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): Category3UpdateResponse.AsObject;
     static toObject(includeInstance: boolean, msg: Category3UpdateResponse): Category3UpdateResponse.AsObject;
@@ -726,7 +687,6 @@ export namespace Category3UpdateResponse {
 export class Category1DeleteRequest extends jspb.Message { 
     getId(): number;
     setId(value: number): Category1DeleteRequest;
-
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): Category1DeleteRequest.AsObject;
@@ -765,7 +725,6 @@ export class Category2DeleteRequest extends jspb.Message {
     getId(): number;
     setId(value: number): Category2DeleteRequest;
 
-
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): Category2DeleteRequest.AsObject;
     static toObject(includeInstance: boolean, msg: Category2DeleteRequest): Category2DeleteRequest.AsObject;
@@ -802,7 +761,6 @@ export namespace Category2DeleteResponse {
 export class Category3DeleteRequest extends jspb.Message { 
     getId(): number;
     setId(value: number): Category3DeleteRequest;
-
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): Category3DeleteRequest.AsObject;

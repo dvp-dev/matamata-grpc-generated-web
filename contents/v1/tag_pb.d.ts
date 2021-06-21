@@ -9,10 +9,8 @@ import * as jspb from "google-protobuf";
 export class Tag extends jspb.Message { 
     getId(): number;
     setId(value: number): Tag;
-
     getName(): string;
     setName(value: string): Tag;
-
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): Tag.AsObject;
@@ -35,7 +33,6 @@ export class TagCreateUpdate extends jspb.Message {
     getName(): string;
     setName(value: string): TagCreateUpdate;
 
-
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): TagCreateUpdate.AsObject;
     static toObject(includeInstance: boolean, msg: TagCreateUpdate): TagCreateUpdate.AsObject;
@@ -55,10 +52,8 @@ export namespace TagCreateUpdate {
 export class TagGetOneRequest extends jspb.Message { 
     getId(): number;
     setId(value: number): TagGetOneRequest;
-
     getSearchByName(): string;
     setSearchByName(value: string): TagGetOneRequest;
-
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): TagGetOneRequest.AsObject;
@@ -84,7 +79,6 @@ export class TagGetOneResponse extends jspb.Message {
     getData(): Tag | undefined;
     setData(value?: Tag): TagGetOneResponse;
 
-
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): TagGetOneResponse.AsObject;
     static toObject(includeInstance: boolean, msg: TagGetOneResponse): TagGetOneResponse.AsObject;
@@ -104,15 +98,12 @@ export namespace TagGetOneResponse {
 export class TagGetMultipleRequest extends jspb.Message { 
     getSearchByName(): string;
     setSearchByName(value: string): TagGetMultipleRequest;
-
     clearIdsList(): void;
     getIdsList(): Array<number>;
     setIdsList(value: Array<number>): TagGetMultipleRequest;
     addIds(value: number, index?: number): number;
-
     getSortBy(): TagGetMultipleRequest.SortDirection;
     setSortBy(value: TagGetMultipleRequest.SortDirection): TagGetMultipleRequest;
-
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): TagGetMultipleRequest.AsObject;
@@ -144,7 +135,6 @@ export class TagGetMultipleResponse extends jspb.Message {
     setDataList(value: Array<Tag>): TagGetMultipleResponse;
     addData(value?: Tag, index?: number): Tag;
 
-
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): TagGetMultipleResponse.AsObject;
     static toObject(includeInstance: boolean, msg: TagGetMultipleResponse): TagGetMultipleResponse.AsObject;
@@ -167,7 +157,6 @@ export class TagCreateRequest extends jspb.Message {
     clearData(): void;
     getData(): TagCreateUpdate | undefined;
     setData(value?: TagCreateUpdate): TagCreateRequest;
-
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): TagCreateRequest.AsObject;
@@ -192,7 +181,6 @@ export class TagCreateResponse extends jspb.Message {
     getData(): Tag | undefined;
     setData(value?: Tag): TagCreateResponse;
 
-
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): TagCreateResponse.AsObject;
     static toObject(includeInstance: boolean, msg: TagCreateResponse): TagCreateResponse.AsObject;
@@ -213,12 +201,10 @@ export class TagUpdateRequest extends jspb.Message {
     getId(): number;
     setId(value: number): TagUpdateRequest;
 
-
     hasData(): boolean;
     clearData(): void;
     getData(): TagCreateUpdate | undefined;
     setData(value?: TagCreateUpdate): TagUpdateRequest;
-
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): TagUpdateRequest.AsObject;
@@ -244,7 +230,6 @@ export class TagUpdateResponse extends jspb.Message {
     getData(): Tag | undefined;
     setData(value?: Tag): TagUpdateResponse;
 
-
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): TagUpdateResponse.AsObject;
     static toObject(includeInstance: boolean, msg: TagUpdateResponse): TagUpdateResponse.AsObject;
@@ -266,10 +251,8 @@ export class TagDeleteRequest extends jspb.Message {
     getIdsList(): Array<number>;
     setIdsList(value: Array<number>): TagDeleteRequest;
     addIds(value: number, index?: number): number;
-
     getName(): string;
     setName(value: string): TagDeleteRequest;
-
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): TagDeleteRequest.AsObject;

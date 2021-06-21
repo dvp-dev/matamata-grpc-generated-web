@@ -10,13 +10,10 @@ import * as admin_v1_admin_login_pb from "../../admin/v1/admin_login_pb";
 export class Admin extends jspb.Message { 
     getId(): number;
     setId(value: number): Admin;
-
     getEmail(): string;
     setEmail(value: string): Admin;
-
     getName(): string;
     setName(value: string): Admin;
-
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): Admin.AsObject;
@@ -39,10 +36,8 @@ export namespace Admin {
 export class GetInformationRequest extends jspb.Message { 
     getId(): number;
     setId(value: number): GetInformationRequest;
-
     getToken(): string;
     setToken(value: string): GetInformationRequest;
-
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): GetInformationRequest.AsObject;
@@ -64,13 +59,10 @@ export namespace GetInformationRequest {
 export class GetInformationResponse extends jspb.Message { 
     getId(): number;
     setId(value: number): GetInformationResponse;
-
     getEmail(): string;
     setEmail(value: string): GetInformationResponse;
-
     getName(): string;
     setName(value: string): GetInformationResponse;
-
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): GetInformationResponse.AsObject;
@@ -112,7 +104,6 @@ export class GetListResponse extends jspb.Message {
     getDataList(): Array<Admin>;
     setDataList(value: Array<Admin>): GetListResponse;
     addData(value?: Admin, index?: number): Admin;
-
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): GetListResponse.AsObject;
