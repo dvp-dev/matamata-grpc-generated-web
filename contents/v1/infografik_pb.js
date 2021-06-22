@@ -2583,7 +2583,7 @@ proto.contents.v1.InfografikGetListRequest.serializeBinaryToWriter = function(me
 proto.contents.v1.InfografikGetListRequest.Sort = {
   TITLE_ASCENDING_UNSPECIFIED: 0,
   TITLE_DESCENDING: 1,
-  LATEST: 2,
+  OLDEST: 2,
   NEWEST: 3
 };
 
