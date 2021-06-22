@@ -83,6 +83,10 @@ export namespace GetInformationResponse {
 }
 
 export class GetListRequest extends jspb.Message { 
+    clearIdsList(): void;
+    getIdsList(): Array<number>;
+    setIdsList(value: Array<number>): GetListRequest;
+    addIds(value: number, index?: number): number;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): GetListRequest.AsObject;
@@ -96,6 +100,7 @@ export class GetListRequest extends jspb.Message {
 
 export namespace GetListRequest {
     export type AsObject = {
+        idsList: Array<number>,
     }
 }
 

@@ -96,7 +96,7 @@ if (goog.DEBUG && !COMPILED) {
  * @constructor
  */
 proto.admin.v1.GetListRequest = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.admin.v1.GetListRequest.repeatedFields_, null);
 };
 goog.inherits(proto.admin.v1.GetListRequest, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
@@ -668,6 +668,13 @@ proto.admin.v1.GetInformationResponse.prototype.setName = function(value) {
 
 
 
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.admin.v1.GetListRequest.repeatedFields_ = [1];
+
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
@@ -699,7 +706,7 @@ proto.admin.v1.GetListRequest.prototype.toObject = function(opt_includeInstance)
  */
 proto.admin.v1.GetListRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-
+    idsList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -736,6 +743,12 @@ proto.admin.v1.GetListRequest.deserializeBinaryFromReader = function(msg, reader
     }
     var field = reader.getFieldNumber();
     switch (field) {
+    case 1:
+      var values = /** @type {!Array<number>} */ (reader.isDelimited() ? reader.readPackedInt32() : [reader.readInt32()]);
+      for (var i = 0; i < values.length; i++) {
+        msg.addIds(values[i]);
+      }
+      break;
     default:
       reader.skipField();
       break;
@@ -765,6 +778,50 @@ proto.admin.v1.GetListRequest.prototype.serializeBinary = function() {
  */
 proto.admin.v1.GetListRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
+  f = message.getIdsList();
+  if (f.length > 0) {
+    writer.writePackedInt32(
+      1,
+      f
+    );
+  }
+};
+
+
+/**
+ * repeated int32 ids = 1;
+ * @return {!Array<number>}
+ */
+proto.admin.v1.GetListRequest.prototype.getIdsList = function() {
+  return /** @type {!Array<number>} */ (jspb.Message.getRepeatedField(this, 1));
+};
+
+
+/**
+ * @param {!Array<number>} value
+ * @return {!proto.admin.v1.GetListRequest} returns this
+ */
+proto.admin.v1.GetListRequest.prototype.setIdsList = function(value) {
+  return jspb.Message.setField(this, 1, value || []);
+};
+
+
+/**
+ * @param {number} value
+ * @param {number=} opt_index
+ * @return {!proto.admin.v1.GetListRequest} returns this
+ */
+proto.admin.v1.GetListRequest.prototype.addIds = function(value, opt_index) {
+  return jspb.Message.addToRepeatedField(this, 1, value, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.admin.v1.GetListRequest} returns this
+ */
+proto.admin.v1.GetListRequest.prototype.clearIdsList = function() {
+  return this.setIdsList([]);
 };
 
 
