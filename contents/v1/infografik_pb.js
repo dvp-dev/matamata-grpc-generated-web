@@ -23,13 +23,14 @@ var contents_v1_tag_pb = require('../../contents/v1/tag_pb.js');
 goog.object.extend(proto, contents_v1_tag_pb);
 var contents_v1_category_pb = require('../../contents/v1/category_pb.js');
 goog.object.extend(proto, contents_v1_category_pb);
+var contents_v1_article_pb = require('../../contents/v1/article_pb.js');
+goog.object.extend(proto, contents_v1_article_pb);
 goog.exportSymbol('proto.contents.v1.Infografik', null, global);
 goog.exportSymbol('proto.contents.v1.Infografik.InfografikCredit', null, global);
 goog.exportSymbol('proto.contents.v1.InfografikCreateRequest', null, global);
 goog.exportSymbol('proto.contents.v1.InfografikCreateResponse', null, global);
 goog.exportSymbol('proto.contents.v1.InfografikCreateUpdate', null, global);
 goog.exportSymbol('proto.contents.v1.InfografikCreateUpdate.InfografikCredit', null, global);
-goog.exportSymbol('proto.contents.v1.InfografikCreditRole', null, global);
 goog.exportSymbol('proto.contents.v1.InfografikDeleteRequest', null, global);
 goog.exportSymbol('proto.contents.v1.InfografikDeleteResponse', null, global);
 goog.exportSymbol('proto.contents.v1.InfografikGetListRequest', null, global);
@@ -38,8 +39,6 @@ goog.exportSymbol('proto.contents.v1.InfografikGetListResponse', null, global);
 goog.exportSymbol('proto.contents.v1.InfografikGetListStreamResponse', null, global);
 goog.exportSymbol('proto.contents.v1.InfografikGetOneRequest', null, global);
 goog.exportSymbol('proto.contents.v1.InfografikGetOneResponse', null, global);
-goog.exportSymbol('proto.contents.v1.InfografikSectionHomepage', null, global);
-goog.exportSymbol('proto.contents.v1.InfografikStatus', null, global);
 goog.exportSymbol('proto.contents.v1.InfografikUpdateRequest', null, global);
 goog.exportSymbol('proto.contents.v1.InfografikUpdateResponse', null, global);
 /**
@@ -494,11 +493,11 @@ proto.contents.v1.Infografik.deserializeBinaryFromReader = function(msg, reader)
       msg.setSlug(value);
       break;
     case 10:
-      var value = /** @type {!proto.contents.v1.InfografikStatus} */ (reader.readEnum());
+      var value = /** @type {!proto.contents.v1.ArticleStatus} */ (reader.readEnum());
       msg.setStatus(value);
       break;
     case 13:
-      var value = /** @type {!proto.contents.v1.InfografikSectionHomepage} */ (reader.readEnum());
+      var value = /** @type {!proto.contents.v1.ArticleSectionHomepage} */ (reader.readEnum());
       msg.setSectionHomepage(value);
       break;
     case 11:
@@ -779,7 +778,7 @@ proto.contents.v1.Infografik.InfografikCredit.deserializeBinaryFromReader = func
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {!proto.contents.v1.InfografikCreditRole} */ (reader.readEnum());
+      var value = /** @type {!proto.contents.v1.ArticleCreditRole} */ (reader.readEnum());
       msg.setRole(value);
       break;
     case 2:
@@ -835,16 +834,16 @@ proto.contents.v1.Infografik.InfografikCredit.serializeBinaryToWriter = function
 
 
 /**
- * optional InfografikCreditRole role = 1;
- * @return {!proto.contents.v1.InfografikCreditRole}
+ * optional ArticleCreditRole role = 1;
+ * @return {!proto.contents.v1.ArticleCreditRole}
  */
 proto.contents.v1.Infografik.InfografikCredit.prototype.getRole = function() {
-  return /** @type {!proto.contents.v1.InfografikCreditRole} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+  return /** @type {!proto.contents.v1.ArticleCreditRole} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
 };
 
 
 /**
- * @param {!proto.contents.v1.InfografikCreditRole} value
+ * @param {!proto.contents.v1.ArticleCreditRole} value
  * @return {!proto.contents.v1.Infografik.InfografikCredit} returns this
  */
 proto.contents.v1.Infografik.InfografikCredit.prototype.setRole = function(value) {
@@ -1070,16 +1069,16 @@ proto.contents.v1.Infografik.prototype.setSlug = function(value) {
 
 
 /**
- * optional InfografikStatus status = 10;
- * @return {!proto.contents.v1.InfografikStatus}
+ * optional ArticleStatus status = 10;
+ * @return {!proto.contents.v1.ArticleStatus}
  */
 proto.contents.v1.Infografik.prototype.getStatus = function() {
-  return /** @type {!proto.contents.v1.InfografikStatus} */ (jspb.Message.getFieldWithDefault(this, 10, 0));
+  return /** @type {!proto.contents.v1.ArticleStatus} */ (jspb.Message.getFieldWithDefault(this, 10, 0));
 };
 
 
 /**
- * @param {!proto.contents.v1.InfografikStatus} value
+ * @param {!proto.contents.v1.ArticleStatus} value
  * @return {!proto.contents.v1.Infografik} returns this
  */
 proto.contents.v1.Infografik.prototype.setStatus = function(value) {
@@ -1088,16 +1087,16 @@ proto.contents.v1.Infografik.prototype.setStatus = function(value) {
 
 
 /**
- * optional InfografikSectionHomepage section_homepage = 13;
- * @return {!proto.contents.v1.InfografikSectionHomepage}
+ * optional ArticleSectionHomepage section_homepage = 13;
+ * @return {!proto.contents.v1.ArticleSectionHomepage}
  */
 proto.contents.v1.Infografik.prototype.getSectionHomepage = function() {
-  return /** @type {!proto.contents.v1.InfografikSectionHomepage} */ (jspb.Message.getFieldWithDefault(this, 13, 0));
+  return /** @type {!proto.contents.v1.ArticleSectionHomepage} */ (jspb.Message.getFieldWithDefault(this, 13, 0));
 };
 
 
 /**
- * @param {!proto.contents.v1.InfografikSectionHomepage} value
+ * @param {!proto.contents.v1.ArticleSectionHomepage} value
  * @return {!proto.contents.v1.Infografik} returns this
  */
 proto.contents.v1.Infografik.prototype.setSectionHomepage = function(value) {
@@ -1487,11 +1486,11 @@ proto.contents.v1.InfografikCreateUpdate.deserializeBinaryFromReader = function(
       msg.setImageCoverCaption(value);
       break;
     case 10:
-      var value = /** @type {!proto.contents.v1.InfografikStatus} */ (reader.readEnum());
+      var value = /** @type {!proto.contents.v1.ArticleStatus} */ (reader.readEnum());
       msg.setStatus(value);
       break;
     case 13:
-      var value = /** @type {!proto.contents.v1.InfografikSectionHomepage} */ (reader.readEnum());
+      var value = /** @type {!proto.contents.v1.ArticleSectionHomepage} */ (reader.readEnum());
       msg.setSectionHomepage(value);
       break;
     case 51:
@@ -1693,7 +1692,7 @@ proto.contents.v1.InfografikCreateUpdate.InfografikCredit.deserializeBinaryFromR
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {!proto.contents.v1.InfografikCreditRole} */ (reader.readEnum());
+      var value = /** @type {!proto.contents.v1.ArticleCreditRole} */ (reader.readEnum());
       msg.setRole(value);
       break;
     case 2:
@@ -1747,16 +1746,16 @@ proto.contents.v1.InfografikCreateUpdate.InfografikCredit.serializeBinaryToWrite
 
 
 /**
- * optional InfografikCreditRole role = 1;
- * @return {!proto.contents.v1.InfografikCreditRole}
+ * optional ArticleCreditRole role = 1;
+ * @return {!proto.contents.v1.ArticleCreditRole}
  */
 proto.contents.v1.InfografikCreateUpdate.InfografikCredit.prototype.getRole = function() {
-  return /** @type {!proto.contents.v1.InfografikCreditRole} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+  return /** @type {!proto.contents.v1.ArticleCreditRole} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
 };
 
 
 /**
- * @param {!proto.contents.v1.InfografikCreditRole} value
+ * @param {!proto.contents.v1.ArticleCreditRole} value
  * @return {!proto.contents.v1.InfografikCreateUpdate.InfografikCredit} returns this
  */
 proto.contents.v1.InfografikCreateUpdate.InfografikCredit.prototype.setRole = function(value) {
@@ -1927,16 +1926,16 @@ proto.contents.v1.InfografikCreateUpdate.prototype.setImageCoverCaption = functi
 
 
 /**
- * optional InfografikStatus status = 10;
- * @return {!proto.contents.v1.InfografikStatus}
+ * optional ArticleStatus status = 10;
+ * @return {!proto.contents.v1.ArticleStatus}
  */
 proto.contents.v1.InfografikCreateUpdate.prototype.getStatus = function() {
-  return /** @type {!proto.contents.v1.InfografikStatus} */ (jspb.Message.getFieldWithDefault(this, 10, 0));
+  return /** @type {!proto.contents.v1.ArticleStatus} */ (jspb.Message.getFieldWithDefault(this, 10, 0));
 };
 
 
 /**
- * @param {!proto.contents.v1.InfografikStatus} value
+ * @param {!proto.contents.v1.ArticleStatus} value
  * @return {!proto.contents.v1.InfografikCreateUpdate} returns this
  */
 proto.contents.v1.InfografikCreateUpdate.prototype.setStatus = function(value) {
@@ -1945,16 +1944,16 @@ proto.contents.v1.InfografikCreateUpdate.prototype.setStatus = function(value) {
 
 
 /**
- * optional InfografikSectionHomepage section_homepage = 13;
- * @return {!proto.contents.v1.InfografikSectionHomepage}
+ * optional ArticleSectionHomepage section_homepage = 13;
+ * @return {!proto.contents.v1.ArticleSectionHomepage}
  */
 proto.contents.v1.InfografikCreateUpdate.prototype.getSectionHomepage = function() {
-  return /** @type {!proto.contents.v1.InfografikSectionHomepage} */ (jspb.Message.getFieldWithDefault(this, 13, 0));
+  return /** @type {!proto.contents.v1.ArticleSectionHomepage} */ (jspb.Message.getFieldWithDefault(this, 13, 0));
 };
 
 
 /**
- * @param {!proto.contents.v1.InfografikSectionHomepage} value
+ * @param {!proto.contents.v1.ArticleSectionHomepage} value
  * @return {!proto.contents.v1.InfografikCreateUpdate} returns this
  */
 proto.contents.v1.InfografikCreateUpdate.prototype.setSectionHomepage = function(value) {
@@ -2434,17 +2433,17 @@ proto.contents.v1.InfografikGetListRequest.deserializeBinaryFromReader = functio
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {!proto.contents.v1.InfografikStatus} */ (reader.readEnum());
+      var value = /** @type {!proto.contents.v1.ArticleStatus} */ (reader.readEnum());
       msg.setStatus(value);
       break;
     case 9:
-      var values = /** @type {!Array<!proto.contents.v1.InfografikStatus>} */ (reader.isDelimited() ? reader.readPackedEnum() : [reader.readEnum()]);
+      var values = /** @type {!Array<!proto.contents.v1.ArticleStatus>} */ (reader.isDelimited() ? reader.readPackedEnum() : [reader.readEnum()]);
       for (var i = 0; i < values.length; i++) {
         msg.addStatusMultiple(values[i]);
       }
       break;
     case 10:
-      var value = /** @type {!proto.contents.v1.InfografikSectionHomepage} */ (reader.readEnum());
+      var value = /** @type {!proto.contents.v1.ArticleSectionHomepage} */ (reader.readEnum());
       msg.setSectionHomepage(value);
       break;
     case 2:
@@ -2588,16 +2587,16 @@ proto.contents.v1.InfografikGetListRequest.Sort = {
 };
 
 /**
- * optional InfografikStatus status = 1;
- * @return {!proto.contents.v1.InfografikStatus}
+ * optional ArticleStatus status = 1;
+ * @return {!proto.contents.v1.ArticleStatus}
  */
 proto.contents.v1.InfografikGetListRequest.prototype.getStatus = function() {
-  return /** @type {!proto.contents.v1.InfografikStatus} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+  return /** @type {!proto.contents.v1.ArticleStatus} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
 };
 
 
 /**
- * @param {!proto.contents.v1.InfografikStatus} value
+ * @param {!proto.contents.v1.ArticleStatus} value
  * @return {!proto.contents.v1.InfografikGetListRequest} returns this
  */
 proto.contents.v1.InfografikGetListRequest.prototype.setStatus = function(value) {
@@ -2606,16 +2605,16 @@ proto.contents.v1.InfografikGetListRequest.prototype.setStatus = function(value)
 
 
 /**
- * repeated InfografikStatus status_multiple = 9;
- * @return {!Array<!proto.contents.v1.InfografikStatus>}
+ * repeated ArticleStatus status_multiple = 9;
+ * @return {!Array<!proto.contents.v1.ArticleStatus>}
  */
 proto.contents.v1.InfografikGetListRequest.prototype.getStatusMultipleList = function() {
-  return /** @type {!Array<!proto.contents.v1.InfografikStatus>} */ (jspb.Message.getRepeatedField(this, 9));
+  return /** @type {!Array<!proto.contents.v1.ArticleStatus>} */ (jspb.Message.getRepeatedField(this, 9));
 };
 
 
 /**
- * @param {!Array<!proto.contents.v1.InfografikStatus>} value
+ * @param {!Array<!proto.contents.v1.ArticleStatus>} value
  * @return {!proto.contents.v1.InfografikGetListRequest} returns this
  */
 proto.contents.v1.InfografikGetListRequest.prototype.setStatusMultipleList = function(value) {
@@ -2624,7 +2623,7 @@ proto.contents.v1.InfografikGetListRequest.prototype.setStatusMultipleList = fun
 
 
 /**
- * @param {!proto.contents.v1.InfografikStatus} value
+ * @param {!proto.contents.v1.ArticleStatus} value
  * @param {number=} opt_index
  * @return {!proto.contents.v1.InfografikGetListRequest} returns this
  */
@@ -2643,16 +2642,16 @@ proto.contents.v1.InfografikGetListRequest.prototype.clearStatusMultipleList = f
 
 
 /**
- * optional InfografikSectionHomepage section_homepage = 10;
- * @return {!proto.contents.v1.InfografikSectionHomepage}
+ * optional ArticleSectionHomepage section_homepage = 10;
+ * @return {!proto.contents.v1.ArticleSectionHomepage}
  */
 proto.contents.v1.InfografikGetListRequest.prototype.getSectionHomepage = function() {
-  return /** @type {!proto.contents.v1.InfografikSectionHomepage} */ (jspb.Message.getFieldWithDefault(this, 10, 0));
+  return /** @type {!proto.contents.v1.ArticleSectionHomepage} */ (jspb.Message.getFieldWithDefault(this, 10, 0));
 };
 
 
 /**
- * @param {!proto.contents.v1.InfografikSectionHomepage} value
+ * @param {!proto.contents.v1.ArticleSectionHomepage} value
  * @return {!proto.contents.v1.InfografikGetListRequest} returns this
  */
 proto.contents.v1.InfografikGetListRequest.prototype.setSectionHomepage = function(value) {
@@ -4131,37 +4130,5 @@ proto.contents.v1.InfografikDeleteResponse.prototype.hasData = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 
-
-/**
- * @enum {number}
- */
-proto.contents.v1.InfografikStatus = {
-  INFOGRAFIK_STATUS_ALL_UNSPECIFIED: 0,
-  INFOGRAFIK_STATUS_DRAFT: 1,
-  INFOGRAFIK_STATUS_TRASH: 2,
-  INFOGRAFIK_STATUS_PUBLISH: 3
-};
-
-/**
- * @enum {number}
- */
-proto.contents.v1.InfografikSectionHomepage = {
-  INFOGRAFIK_SECTION_HOMEPAGE_ALL_UNSPECIFIED: 0,
-  INFOGRAFIK_SECTION_HOMEPAGE_NONE: 1,
-  INFOGRAFIK_SECTION_HOMEPAGE_SPECIAL_ISSUE: 2,
-  INFOGRAFIK_SECTION_HOMEPAGE_BERITA_INTERNASIONAL: 3,
-  INFOGRAFIK_SECTION_HOMEPAGE_INDONESIA_DIMATA_DUNIA: 4,
-  INFOGRAFIK_SECTION_HOMEPAGE_HEADLINE: 5,
-  INFOGRAFIK_SECTION_HOMEPAGE_BERITA_PILIHAN: 6
-};
-
-/**
- * @enum {number}
- */
-proto.contents.v1.InfografikCreditRole = {
-  INFOGRAFIK_CREDIT_ROLE_PENULIS_UNSPECIFIED: 0,
-  INFOGRAFIK_CREDIT_ROLE_PENERJEMAH: 1,
-  INFOGRAFIK_CREDIT_ROLE_PHOTOGRAFER: 2
-};
 
 goog.object.extend(exports, proto.contents.v1);

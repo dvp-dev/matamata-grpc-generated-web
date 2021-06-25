@@ -39,6 +39,7 @@ goog.exportSymbol('proto.contents.v1.ArticleGetOneRequest', null, global);
 goog.exportSymbol('proto.contents.v1.ArticleGetOneResponse', null, global);
 goog.exportSymbol('proto.contents.v1.ArticleSectionHomepage', null, global);
 goog.exportSymbol('proto.contents.v1.ArticleStatus', null, global);
+goog.exportSymbol('proto.contents.v1.ArticleType', null, global);
 goog.exportSymbol('proto.contents.v1.ArticleUpdateRequest', null, global);
 goog.exportSymbol('proto.contents.v1.ArticleUpdateResponse', null, global);
 /**
@@ -3907,6 +3908,16 @@ proto.contents.v1.ArticleStatus = {
   DRAFT: 1,
   TRASH: 2,
   PUBLISH: 3
+};
+
+/**
+ * @enum {number}
+ */
+proto.contents.v1.ArticleType = {
+  ARTICLE_TYPE_ARTICLE_UNSPECIFIED: 0,
+  ARTICLE_TYPE_BERITA_FOTO: 1,
+  ARTICLE_TYPE_BERITA_VIDEO: 2,
+  ARTICLE_TYPE_INFOGRAFIK: 3
 };
 
 /**

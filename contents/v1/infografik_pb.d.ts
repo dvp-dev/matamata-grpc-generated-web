@@ -9,6 +9,7 @@ import * as google_protobuf_timestamp_pb from "google-protobuf/google/protobuf/t
 import * as admin_v1_admin_pb from "../../admin/v1/admin_pb";
 import * as contents_v1_tag_pb from "../../contents/v1/tag_pb";
 import * as contents_v1_category_pb from "../../contents/v1/category_pb";
+import * as contents_v1_article_pb from "../../contents/v1/article_pb";
 
 export class Infografik extends jspb.Message { 
     getId(): number;
@@ -31,10 +32,10 @@ export class Infografik extends jspb.Message {
     setImageCoverCaption(value: string): Infografik;
     getSlug(): string;
     setSlug(value: string): Infografik;
-    getStatus(): InfografikStatus;
-    setStatus(value: InfografikStatus): Infografik;
-    getSectionHomepage(): InfografikSectionHomepage;
-    setSectionHomepage(value: InfografikSectionHomepage): Infografik;
+    getStatus(): contents_v1_article_pb.ArticleStatus;
+    setStatus(value: contents_v1_article_pb.ArticleStatus): Infografik;
+    getSectionHomepage(): contents_v1_article_pb.ArticleSectionHomepage;
+    setSectionHomepage(value: contents_v1_article_pb.ArticleSectionHomepage): Infografik;
 
     hasCreatedAt(): boolean;
     clearCreatedAt(): void;
@@ -91,8 +92,8 @@ export namespace Infografik {
         imageCoverUrl: string,
         imageCoverCaption: string,
         slug: string,
-        status: InfografikStatus,
-        sectionHomepage: InfografikSectionHomepage,
+        status: contents_v1_article_pb.ArticleStatus,
+        sectionHomepage: contents_v1_article_pb.ArticleSectionHomepage,
         createdAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
         updatedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
         tagsList: Array<contents_v1_tag_pb.Tag.AsObject>,
@@ -104,8 +105,8 @@ export namespace Infografik {
 
 
     export class InfografikCredit extends jspb.Message { 
-        getRole(): InfografikCreditRole;
-        setRole(value: InfografikCreditRole): InfografikCredit;
+        getRole(): contents_v1_article_pb.ArticleCreditRole;
+        setRole(value: contents_v1_article_pb.ArticleCreditRole): InfografikCredit;
 
         hasAdmin(): boolean;
         clearAdmin(): void;
@@ -124,7 +125,7 @@ export namespace Infografik {
 
     export namespace InfografikCredit {
         export type AsObject = {
-            role: InfografikCreditRole,
+            role: contents_v1_article_pb.ArticleCreditRole,
             admin?: admin_v1_admin_pb.Admin.AsObject,
         }
     }
@@ -148,10 +149,10 @@ export class InfografikCreateUpdate extends jspb.Message {
     setImageCoverUrl(value: string): InfografikCreateUpdate;
     getImageCoverCaption(): string;
     setImageCoverCaption(value: string): InfografikCreateUpdate;
-    getStatus(): InfografikStatus;
-    setStatus(value: InfografikStatus): InfografikCreateUpdate;
-    getSectionHomepage(): InfografikSectionHomepage;
-    setSectionHomepage(value: InfografikSectionHomepage): InfografikCreateUpdate;
+    getStatus(): contents_v1_article_pb.ArticleStatus;
+    setStatus(value: contents_v1_article_pb.ArticleStatus): InfografikCreateUpdate;
+    getSectionHomepage(): contents_v1_article_pb.ArticleSectionHomepage;
+    setSectionHomepage(value: contents_v1_article_pb.ArticleSectionHomepage): InfografikCreateUpdate;
     clearTagIdsList(): void;
     getTagIdsList(): Array<number>;
     setTagIdsList(value: Array<number>): InfografikCreateUpdate;
@@ -181,16 +182,16 @@ export namespace InfografikCreateUpdate {
         content: string,
         imageCoverUrl: string,
         imageCoverCaption: string,
-        status: InfografikStatus,
-        sectionHomepage: InfografikSectionHomepage,
+        status: contents_v1_article_pb.ArticleStatus,
+        sectionHomepage: contents_v1_article_pb.ArticleSectionHomepage,
         tagIdsList: Array<number>,
         creditsList: Array<InfografikCreateUpdate.InfografikCredit.AsObject>,
     }
 
 
     export class InfografikCredit extends jspb.Message { 
-        getRole(): InfografikCreditRole;
-        setRole(value: InfografikCreditRole): InfografikCredit;
+        getRole(): contents_v1_article_pb.ArticleCreditRole;
+        setRole(value: contents_v1_article_pb.ArticleCreditRole): InfografikCredit;
         getAdminId(): number;
         setAdminId(value: number): InfografikCredit;
 
@@ -206,7 +207,7 @@ export namespace InfografikCreateUpdate {
 
     export namespace InfografikCredit {
         export type AsObject = {
-            role: InfografikCreditRole,
+            role: contents_v1_article_pb.ArticleCreditRole,
             adminId: number,
         }
     }
@@ -260,14 +261,14 @@ export namespace InfografikGetOneResponse {
 }
 
 export class InfografikGetListRequest extends jspb.Message { 
-    getStatus(): InfografikStatus;
-    setStatus(value: InfografikStatus): InfografikGetListRequest;
+    getStatus(): contents_v1_article_pb.ArticleStatus;
+    setStatus(value: contents_v1_article_pb.ArticleStatus): InfografikGetListRequest;
     clearStatusMultipleList(): void;
-    getStatusMultipleList(): Array<InfografikStatus>;
-    setStatusMultipleList(value: Array<InfografikStatus>): InfografikGetListRequest;
-    addStatusMultiple(value: InfografikStatus, index?: number): InfografikStatus;
-    getSectionHomepage(): InfografikSectionHomepage;
-    setSectionHomepage(value: InfografikSectionHomepage): InfografikGetListRequest;
+    getStatusMultipleList(): Array<contents_v1_article_pb.ArticleStatus>;
+    setStatusMultipleList(value: Array<contents_v1_article_pb.ArticleStatus>): InfografikGetListRequest;
+    addStatusMultiple(value: contents_v1_article_pb.ArticleStatus, index?: number): contents_v1_article_pb.ArticleStatus;
+    getSectionHomepage(): contents_v1_article_pb.ArticleSectionHomepage;
+    setSectionHomepage(value: contents_v1_article_pb.ArticleSectionHomepage): InfografikGetListRequest;
     getCategoryId1(): number;
     setCategoryId1(value: number): InfografikGetListRequest;
     getCategoryId2(): number;
@@ -295,9 +296,9 @@ export class InfografikGetListRequest extends jspb.Message {
 
 export namespace InfografikGetListRequest {
     export type AsObject = {
-        status: InfografikStatus,
-        statusMultipleList: Array<InfografikStatus>,
-        sectionHomepage: InfografikSectionHomepage,
+        status: contents_v1_article_pb.ArticleStatus,
+        statusMultipleList: Array<contents_v1_article_pb.ArticleStatus>,
+        sectionHomepage: contents_v1_article_pb.ArticleSectionHomepage,
         categoryId1: number,
         categoryId2: number,
         categoryId3: number,
@@ -509,27 +510,4 @@ export namespace InfografikDeleteResponse {
     export type AsObject = {
         data?: Infografik.AsObject,
     }
-}
-
-export enum InfografikStatus {
-    INFOGRAFIK_STATUS_ALL_UNSPECIFIED = 0,
-    INFOGRAFIK_STATUS_DRAFT = 1,
-    INFOGRAFIK_STATUS_TRASH = 2,
-    INFOGRAFIK_STATUS_PUBLISH = 3,
-}
-
-export enum InfografikSectionHomepage {
-    INFOGRAFIK_SECTION_HOMEPAGE_ALL_UNSPECIFIED = 0,
-    INFOGRAFIK_SECTION_HOMEPAGE_NONE = 1,
-    INFOGRAFIK_SECTION_HOMEPAGE_SPECIAL_ISSUE = 2,
-    INFOGRAFIK_SECTION_HOMEPAGE_BERITA_INTERNASIONAL = 3,
-    INFOGRAFIK_SECTION_HOMEPAGE_INDONESIA_DIMATA_DUNIA = 4,
-    INFOGRAFIK_SECTION_HOMEPAGE_HEADLINE = 5,
-    INFOGRAFIK_SECTION_HOMEPAGE_BERITA_PILIHAN = 6,
-}
-
-export enum InfografikCreditRole {
-    INFOGRAFIK_CREDIT_ROLE_PENULIS_UNSPECIFIED = 0,
-    INFOGRAFIK_CREDIT_ROLE_PENERJEMAH = 1,
-    INFOGRAFIK_CREDIT_ROLE_PHOTOGRAFER = 2,
 }

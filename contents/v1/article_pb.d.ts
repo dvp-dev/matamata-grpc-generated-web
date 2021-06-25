@@ -489,6 +489,13 @@ export enum ArticleStatus {
     PUBLISH = 3,
 }
 
+export enum ArticleType {
+    ARTICLE_TYPE_ARTICLE_UNSPECIFIED = 0,
+    ARTICLE_TYPE_BERITA_FOTO = 1,
+    ARTICLE_TYPE_BERITA_VIDEO = 2,
+    ARTICLE_TYPE_INFOGRAFIK = 3,
+}
+
 export enum ArticleSectionHomepage {
     ARTICLE_SECTION_HOMEPAGE_ALL_UNSPECIFIED = 0,
     ARTICLE_SECTION_HOMEPAGE_NONE = 1,
