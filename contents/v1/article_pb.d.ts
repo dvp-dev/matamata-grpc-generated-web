@@ -442,6 +442,8 @@ export namespace ArticleUpdateResponse {
 export class ArticleDeleteRequest extends jspb.Message { 
     getId(): number;
     setId(value: number): ArticleDeleteRequest;
+    getSoftDelete(): boolean;
+    setSoftDelete(value: boolean): ArticleDeleteRequest;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): ArticleDeleteRequest.AsObject;
@@ -456,6 +458,7 @@ export class ArticleDeleteRequest extends jspb.Message {
 export namespace ArticleDeleteRequest {
     export type AsObject = {
         id: number,
+        softDelete: boolean,
     }
 }
 
@@ -465,8 +468,6 @@ export class ArticleDeleteResponse extends jspb.Message {
     clearData(): void;
     getData(): Article | undefined;
     setData(value?: Article): ArticleDeleteResponse;
-    getSoftDelete(): boolean;
-    setSoftDelete(value: boolean): ArticleDeleteResponse;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): ArticleDeleteResponse.AsObject;
@@ -481,7 +482,6 @@ export class ArticleDeleteResponse extends jspb.Message {
 export namespace ArticleDeleteResponse {
     export type AsObject = {
         data?: Article.AsObject,
-        softDelete: boolean,
     }
 }
 

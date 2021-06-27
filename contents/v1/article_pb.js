@@ -3651,7 +3651,8 @@ proto.contents.v1.ArticleDeleteRequest.prototype.toObject = function(opt_include
  */
 proto.contents.v1.ArticleDeleteRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    id: jspb.Message.getFieldWithDefault(msg, 1, 0)
+    id: jspb.Message.getFieldWithDefault(msg, 1, 0),
+    softDelete: jspb.Message.getBooleanFieldWithDefault(msg, 2, false)
   };
 
   if (includeInstance) {
@@ -3692,6 +3693,10 @@ proto.contents.v1.ArticleDeleteRequest.deserializeBinaryFromReader = function(ms
       var value = /** @type {number} */ (reader.readInt32());
       msg.setId(value);
       break;
+    case 2:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setSoftDelete(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -3728,6 +3733,13 @@ proto.contents.v1.ArticleDeleteRequest.serializeBinaryToWriter = function(messag
       f
     );
   }
+  f = message.getSoftDelete();
+  if (f) {
+    writer.writeBool(
+      2,
+      f
+    );
+  }
 };
 
 
@@ -3746,6 +3758,24 @@ proto.contents.v1.ArticleDeleteRequest.prototype.getId = function() {
  */
 proto.contents.v1.ArticleDeleteRequest.prototype.setId = function(value) {
   return jspb.Message.setProto3IntField(this, 1, value);
+};
+
+
+/**
+ * optional bool soft_delete = 2;
+ * @return {boolean}
+ */
+proto.contents.v1.ArticleDeleteRequest.prototype.getSoftDelete = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 2, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.contents.v1.ArticleDeleteRequest} returns this
+ */
+proto.contents.v1.ArticleDeleteRequest.prototype.setSoftDelete = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 2, value);
 };
 
 
@@ -3781,8 +3811,7 @@ proto.contents.v1.ArticleDeleteResponse.prototype.toObject = function(opt_includ
  */
 proto.contents.v1.ArticleDeleteResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    data: (f = msg.getData()) && proto.contents.v1.Article.toObject(includeInstance, f),
-    softDelete: jspb.Message.getBooleanFieldWithDefault(msg, 2, false)
+    data: (f = msg.getData()) && proto.contents.v1.Article.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -3824,10 +3853,6 @@ proto.contents.v1.ArticleDeleteResponse.deserializeBinaryFromReader = function(m
       reader.readMessage(value,proto.contents.v1.Article.deserializeBinaryFromReader);
       msg.setData(value);
       break;
-    case 2:
-      var value = /** @type {boolean} */ (reader.readBool());
-      msg.setSoftDelete(value);
-      break;
     default:
       reader.skipField();
       break;
@@ -3863,13 +3888,6 @@ proto.contents.v1.ArticleDeleteResponse.serializeBinaryToWriter = function(messa
       1,
       f,
       proto.contents.v1.Article.serializeBinaryToWriter
-    );
-  }
-  f = message.getSoftDelete();
-  if (f) {
-    writer.writeBool(
-      2,
-      f
     );
   }
 };
@@ -3909,24 +3927,6 @@ proto.contents.v1.ArticleDeleteResponse.prototype.clearData = function() {
  */
 proto.contents.v1.ArticleDeleteResponse.prototype.hasData = function() {
   return jspb.Message.getField(this, 1) != null;
-};
-
-
-/**
- * optional bool soft_delete = 2;
- * @return {boolean}
- */
-proto.contents.v1.ArticleDeleteResponse.prototype.getSoftDelete = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 2, false));
-};
-
-
-/**
- * @param {boolean} value
- * @return {!proto.contents.v1.ArticleDeleteResponse} returns this
- */
-proto.contents.v1.ArticleDeleteResponse.prototype.setSoftDelete = function(value) {
-  return jspb.Message.setProto3BooleanField(this, 2, value);
 };
 
 

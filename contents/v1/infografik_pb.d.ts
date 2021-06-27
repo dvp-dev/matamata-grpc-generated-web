@@ -472,6 +472,8 @@ export namespace InfografikUpdateResponse {
 export class InfografikDeleteRequest extends jspb.Message { 
     getId(): number;
     setId(value: number): InfografikDeleteRequest;
+    getSoftDelete(): boolean;
+    setSoftDelete(value: boolean): InfografikDeleteRequest;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): InfografikDeleteRequest.AsObject;
@@ -486,6 +488,7 @@ export class InfografikDeleteRequest extends jspb.Message {
 export namespace InfografikDeleteRequest {
     export type AsObject = {
         id: number,
+        softDelete: boolean,
     }
 }
 
@@ -495,8 +498,6 @@ export class InfografikDeleteResponse extends jspb.Message {
     clearData(): void;
     getData(): Infografik | undefined;
     setData(value?: Infografik): InfografikDeleteResponse;
-    getSoftDelete(): boolean;
-    setSoftDelete(value: boolean): InfografikDeleteResponse;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): InfografikDeleteResponse.AsObject;
@@ -511,6 +512,5 @@ export class InfografikDeleteResponse extends jspb.Message {
 export namespace InfografikDeleteResponse {
     export type AsObject = {
         data?: Infografik.AsObject,
-        softDelete: boolean,
     }
 }
