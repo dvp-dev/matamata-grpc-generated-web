@@ -495,6 +495,8 @@ export class InfografikDeleteResponse extends jspb.Message {
     clearData(): void;
     getData(): Infografik | undefined;
     setData(value?: Infografik): InfografikDeleteResponse;
+    getSoftDelete(): boolean;
+    setSoftDelete(value: boolean): InfografikDeleteResponse;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): InfografikDeleteResponse.AsObject;
@@ -509,5 +511,6 @@ export class InfografikDeleteResponse extends jspb.Message {
 export namespace InfografikDeleteResponse {
     export type AsObject = {
         data?: Infografik.AsObject,
+        softDelete: boolean,
     }
 }
