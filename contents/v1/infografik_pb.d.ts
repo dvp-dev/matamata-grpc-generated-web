@@ -66,9 +66,9 @@ export class Infografik extends jspb.Message {
     getCategory3(): contents_v1_category_pb.Category3 | undefined;
     setCategory3(value?: contents_v1_category_pb.Category3): Infografik;
     clearCreditsList(): void;
-    getCreditsList(): Array<Infografik.InfografikCredit>;
-    setCreditsList(value: Array<Infografik.InfografikCredit>): Infografik;
-    addCredits(value?: Infografik.InfografikCredit, index?: number): Infografik.InfografikCredit;
+    getCreditsList(): Array<contents_v1_article_pb.ArticleCredit>;
+    setCreditsList(value: Array<contents_v1_article_pb.ArticleCredit>): Infografik;
+    addCredits(value?: contents_v1_article_pb.ArticleCredit, index?: number): contents_v1_article_pb.ArticleCredit;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): Infografik.AsObject;
@@ -100,36 +100,8 @@ export namespace Infografik {
         category1?: contents_v1_category_pb.Category1.AsObject,
         category2?: contents_v1_category_pb.Category2.AsObject,
         category3?: contents_v1_category_pb.Category3.AsObject,
-        creditsList: Array<Infografik.InfografikCredit.AsObject>,
+        creditsList: Array<contents_v1_article_pb.ArticleCredit.AsObject>,
     }
-
-
-    export class InfografikCredit extends jspb.Message { 
-        getRole(): contents_v1_article_pb.ArticleCreditRole;
-        setRole(value: contents_v1_article_pb.ArticleCreditRole): InfografikCredit;
-
-        hasAdmin(): boolean;
-        clearAdmin(): void;
-        getAdmin(): admin_v1_admin_pb.Admin | undefined;
-        setAdmin(value?: admin_v1_admin_pb.Admin): InfografikCredit;
-
-        serializeBinary(): Uint8Array;
-        toObject(includeInstance?: boolean): InfografikCredit.AsObject;
-        static toObject(includeInstance: boolean, msg: InfografikCredit): InfografikCredit.AsObject;
-        static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-        static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-        static serializeBinaryToWriter(message: InfografikCredit, writer: jspb.BinaryWriter): void;
-        static deserializeBinary(bytes: Uint8Array): InfografikCredit;
-        static deserializeBinaryFromReader(message: InfografikCredit, reader: jspb.BinaryReader): InfografikCredit;
-    }
-
-    export namespace InfografikCredit {
-        export type AsObject = {
-            role: contents_v1_article_pb.ArticleCreditRole,
-            admin?: admin_v1_admin_pb.Admin.AsObject,
-        }
-    }
-
 }
 
 export class InfografikCreateUpdate extends jspb.Message { 
@@ -158,9 +130,9 @@ export class InfografikCreateUpdate extends jspb.Message {
     setTagIdsList(value: Array<number>): InfografikCreateUpdate;
     addTagIds(value: number, index?: number): number;
     clearCreditsList(): void;
-    getCreditsList(): Array<InfografikCreateUpdate.InfografikCredit>;
-    setCreditsList(value: Array<InfografikCreateUpdate.InfografikCredit>): InfografikCreateUpdate;
-    addCredits(value?: InfografikCreateUpdate.InfografikCredit, index?: number): InfografikCreateUpdate.InfografikCredit;
+    getCreditsList(): Array<contents_v1_article_pb.ArticleCreditCreateUpdate>;
+    setCreditsList(value: Array<contents_v1_article_pb.ArticleCreditCreateUpdate>): InfografikCreateUpdate;
+    addCredits(value?: contents_v1_article_pb.ArticleCreditCreateUpdate, index?: number): contents_v1_article_pb.ArticleCreditCreateUpdate;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): InfografikCreateUpdate.AsObject;
@@ -185,33 +157,8 @@ export namespace InfografikCreateUpdate {
         status: contents_v1_article_pb.ArticleStatus,
         sectionHomepage: contents_v1_article_pb.ArticleSectionHomepage,
         tagIdsList: Array<number>,
-        creditsList: Array<InfografikCreateUpdate.InfografikCredit.AsObject>,
+        creditsList: Array<contents_v1_article_pb.ArticleCreditCreateUpdate.AsObject>,
     }
-
-
-    export class InfografikCredit extends jspb.Message { 
-        getRole(): contents_v1_article_pb.ArticleCreditRole;
-        setRole(value: contents_v1_article_pb.ArticleCreditRole): InfografikCredit;
-        getAdminId(): number;
-        setAdminId(value: number): InfografikCredit;
-
-        serializeBinary(): Uint8Array;
-        toObject(includeInstance?: boolean): InfografikCredit.AsObject;
-        static toObject(includeInstance: boolean, msg: InfografikCredit): InfografikCredit.AsObject;
-        static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-        static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-        static serializeBinaryToWriter(message: InfografikCredit, writer: jspb.BinaryWriter): void;
-        static deserializeBinary(bytes: Uint8Array): InfografikCredit;
-        static deserializeBinaryFromReader(message: InfografikCredit, reader: jspb.BinaryReader): InfografikCredit;
-    }
-
-    export namespace InfografikCredit {
-        export type AsObject = {
-            role: contents_v1_article_pb.ArticleCreditRole,
-            adminId: number,
-        }
-    }
-
 }
 
 export class InfografikGetOneRequest extends jspb.Message { 
