@@ -94,6 +94,11 @@ export class Article extends jspb.Message {
     clearUpdatedAt(): void;
     getUpdatedAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
     setUpdatedAt(value?: google_protobuf_timestamp_pb.Timestamp): Article;
+
+    hasPublishedAt(): boolean;
+    clearPublishedAt(): void;
+    getPublishedAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
+    setPublishedAt(value?: google_protobuf_timestamp_pb.Timestamp): Article;
     clearTagsList(): void;
     getTagsList(): Array<contents_v1_tag_pb.Tag>;
     setTagsList(value: Array<contents_v1_tag_pb.Tag>): Article;
@@ -144,6 +149,7 @@ export namespace Article {
         sectionHomepage: ArticleSectionHomepage,
         createdAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
         updatedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+        publishedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
         tagsList: Array<contents_v1_tag_pb.Tag.AsObject>,
         category1?: contents_v1_category_pb.Category1.AsObject,
         category2?: contents_v1_category_pb.Category2.AsObject,

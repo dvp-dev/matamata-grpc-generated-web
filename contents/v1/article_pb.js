@@ -730,6 +730,7 @@ proto.contents.v1.Article.toObject = function(includeInstance, msg) {
     sectionHomepage: jspb.Message.getFieldWithDefault(msg, 13, 0),
     createdAt: (f = msg.getCreatedAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
     updatedAt: (f = msg.getUpdatedAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+    publishedAt: (f = msg.getPublishedAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
     tagsList: jspb.Message.toObjectList(msg.getTagsList(),
     contents_v1_tag_pb.Tag.toObject, includeInstance),
     category1: (f = msg.getCategory1()) && contents_v1_category_pb.Category1.toObject(includeInstance, f),
@@ -830,6 +831,11 @@ proto.contents.v1.Article.deserializeBinaryFromReader = function(msg, reader) {
       var value = new google_protobuf_timestamp_pb.Timestamp;
       reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
       msg.setUpdatedAt(value);
+      break;
+    case 15:
+      var value = new google_protobuf_timestamp_pb.Timestamp;
+      reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
+      msg.setPublishedAt(value);
       break;
     case 51:
       var value = new contents_v1_tag_pb.Tag;
@@ -981,6 +987,14 @@ proto.contents.v1.Article.serializeBinaryToWriter = function(message, writer) {
   if (f != null) {
     writer.writeMessage(
       12,
+      f,
+      google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
+    );
+  }
+  f = message.getPublishedAt();
+  if (f != null) {
+    writer.writeMessage(
+      15,
       f,
       google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
     );
@@ -1315,6 +1329,43 @@ proto.contents.v1.Article.prototype.clearUpdatedAt = function() {
  */
 proto.contents.v1.Article.prototype.hasUpdatedAt = function() {
   return jspb.Message.getField(this, 12) != null;
+};
+
+
+/**
+ * optional google.protobuf.Timestamp published_at = 15;
+ * @return {?proto.google.protobuf.Timestamp}
+ */
+proto.contents.v1.Article.prototype.getPublishedAt = function() {
+  return /** @type{?proto.google.protobuf.Timestamp} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 15));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.Timestamp|undefined} value
+ * @return {!proto.contents.v1.Article} returns this
+*/
+proto.contents.v1.Article.prototype.setPublishedAt = function(value) {
+  return jspb.Message.setWrapperField(this, 15, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.contents.v1.Article} returns this
+ */
+proto.contents.v1.Article.prototype.clearPublishedAt = function() {
+  return this.setPublishedAt(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.contents.v1.Article.prototype.hasPublishedAt = function() {
+  return jspb.Message.getField(this, 15) != null;
 };
 
 
