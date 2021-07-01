@@ -23,3 +23,7 @@ var contents_v1_article_pb = require('../../contents/v1/article_pb.js');
 goog.object.extend(proto, contents_v1_article_pb);
 var contents_v1_infografik_pb = require('../../contents/v1/infografik_pb.js');
 goog.object.extend(proto, contents_v1_infografik_pb);
+var contents_v1_news_photo_pb = require('../../contents/v1/news_photo_pb.js');
+goog.object.extend(proto, contents_v1_news_photo_pb);
+var contents_v1_news_video_pb = require('../../contents/v1/news_video_pb.js');
+goog.object.extend(proto, contents_v1_news_video_pb);

@@ -4,6 +4,8 @@ import * as contents_v1_tag_pb from '../../contents/v1/tag_pb';
 import * as contents_v1_category_pb from '../../contents/v1/category_pb';
 import * as contents_v1_article_pb from '../../contents/v1/article_pb';
 import * as contents_v1_infografik_pb from '../../contents/v1/infografik_pb';
+import * as contents_v1_news_photo_pb from '../../contents/v1/news_photo_pb';
+import * as contents_v1_news_video_pb from '../../contents/v1/news_video_pb';
 
 
 export class ContentServiceClient {
@@ -226,6 +228,86 @@ export class ContentServiceClient {
                response: contents_v1_infografik_pb.InfografikDeleteResponse) => void
   ): grpcWeb.ClientReadableStream<contents_v1_infografik_pb.InfografikDeleteResponse>;
 
+  newsPhotoGetOne(
+    request: contents_v1_news_photo_pb.NewsPhotoGetOneRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.Error,
+               response: contents_v1_news_photo_pb.NewsPhotoGetOneResponse) => void
+  ): grpcWeb.ClientReadableStream<contents_v1_news_photo_pb.NewsPhotoGetOneResponse>;
+
+  newsPhotoGetList(
+    request: contents_v1_news_photo_pb.NewsPhotoGetListRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.Error,
+               response: contents_v1_news_photo_pb.NewsPhotoGetListResponse) => void
+  ): grpcWeb.ClientReadableStream<contents_v1_news_photo_pb.NewsPhotoGetListResponse>;
+
+  newsPhotoGetListStream(
+    request: contents_v1_news_photo_pb.NewsPhotoGetListRequest,
+    metadata?: grpcWeb.Metadata
+  ): grpcWeb.ClientReadableStream<contents_v1_news_photo_pb.NewsPhotoGetListStreamResponse>;
+
+  newsPhotoCreate(
+    request: contents_v1_news_photo_pb.NewsPhotoCreateRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.Error,
+               response: contents_v1_news_photo_pb.NewsPhotoCreateResponse) => void
+  ): grpcWeb.ClientReadableStream<contents_v1_news_photo_pb.NewsPhotoCreateResponse>;
+
+  newsPhotoUpdate(
+    request: contents_v1_news_photo_pb.NewsPhotoUpdateRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.Error,
+               response: contents_v1_news_photo_pb.NewsPhotoUpdateResponse) => void
+  ): grpcWeb.ClientReadableStream<contents_v1_news_photo_pb.NewsPhotoUpdateResponse>;
+
+  newsPhotoDelete(
+    request: contents_v1_news_photo_pb.NewsPhotoDeleteRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.Error,
+               response: contents_v1_news_photo_pb.NewsPhotoDeleteResponse) => void
+  ): grpcWeb.ClientReadableStream<contents_v1_news_photo_pb.NewsPhotoDeleteResponse>;
+
+  newsVideoGetOne(
+    request: contents_v1_news_video_pb.NewsVideoGetOneRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.Error,
+               response: contents_v1_news_video_pb.NewsVideoGetOneResponse) => void
+  ): grpcWeb.ClientReadableStream<contents_v1_news_video_pb.NewsVideoGetOneResponse>;
+
+  newsVideoGetList(
+    request: contents_v1_news_video_pb.NewsVideoGetListRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.Error,
+               response: contents_v1_news_video_pb.NewsVideoGetListResponse) => void
+  ): grpcWeb.ClientReadableStream<contents_v1_news_video_pb.NewsVideoGetListResponse>;
+
+  newsVideoGetListStream(
+    request: contents_v1_news_video_pb.NewsVideoGetListRequest,
+    metadata?: grpcWeb.Metadata
+  ): grpcWeb.ClientReadableStream<contents_v1_news_video_pb.NewsVideoGetListStreamResponse>;
+
+  newsVideoCreate(
+    request: contents_v1_news_video_pb.NewsVideoCreateRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.Error,
+               response: contents_v1_news_video_pb.NewsVideoCreateResponse) => void
+  ): grpcWeb.ClientReadableStream<contents_v1_news_video_pb.NewsVideoCreateResponse>;
+
+  newsVideoUpdate(
+    request: contents_v1_news_video_pb.NewsVideoUpdateRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.Error,
+               response: contents_v1_news_video_pb.NewsVideoUpdateResponse) => void
+  ): grpcWeb.ClientReadableStream<contents_v1_news_video_pb.NewsVideoUpdateResponse>;
+
+  newsVideoDelete(
+    request: contents_v1_news_video_pb.NewsVideoDeleteRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.Error,
+               response: contents_v1_news_video_pb.NewsVideoDeleteResponse) => void
+  ): grpcWeb.ClientReadableStream<contents_v1_news_video_pb.NewsVideoDeleteResponse>;
+
 }
 
 export class ContentServicePromiseClient {
@@ -387,6 +469,66 @@ export class ContentServicePromiseClient {
     request: contents_v1_infografik_pb.InfografikDeleteRequest,
     metadata?: grpcWeb.Metadata
   ): Promise<contents_v1_infografik_pb.InfografikDeleteResponse>;
+
+  newsPhotoGetOne(
+    request: contents_v1_news_photo_pb.NewsPhotoGetOneRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<contents_v1_news_photo_pb.NewsPhotoGetOneResponse>;
+
+  newsPhotoGetList(
+    request: contents_v1_news_photo_pb.NewsPhotoGetListRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<contents_v1_news_photo_pb.NewsPhotoGetListResponse>;
+
+  newsPhotoGetListStream(
+    request: contents_v1_news_photo_pb.NewsPhotoGetListRequest,
+    metadata?: grpcWeb.Metadata
+  ): grpcWeb.ClientReadableStream<contents_v1_news_photo_pb.NewsPhotoGetListStreamResponse>;
+
+  newsPhotoCreate(
+    request: contents_v1_news_photo_pb.NewsPhotoCreateRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<contents_v1_news_photo_pb.NewsPhotoCreateResponse>;
+
+  newsPhotoUpdate(
+    request: contents_v1_news_photo_pb.NewsPhotoUpdateRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<contents_v1_news_photo_pb.NewsPhotoUpdateResponse>;
+
+  newsPhotoDelete(
+    request: contents_v1_news_photo_pb.NewsPhotoDeleteRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<contents_v1_news_photo_pb.NewsPhotoDeleteResponse>;
+
+  newsVideoGetOne(
+    request: contents_v1_news_video_pb.NewsVideoGetOneRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<contents_v1_news_video_pb.NewsVideoGetOneResponse>;
+
+  newsVideoGetList(
+    request: contents_v1_news_video_pb.NewsVideoGetListRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<contents_v1_news_video_pb.NewsVideoGetListResponse>;
+
+  newsVideoGetListStream(
+    request: contents_v1_news_video_pb.NewsVideoGetListRequest,
+    metadata?: grpcWeb.Metadata
+  ): grpcWeb.ClientReadableStream<contents_v1_news_video_pb.NewsVideoGetListStreamResponse>;
+
+  newsVideoCreate(
+    request: contents_v1_news_video_pb.NewsVideoCreateRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<contents_v1_news_video_pb.NewsVideoCreateResponse>;
+
+  newsVideoUpdate(
+    request: contents_v1_news_video_pb.NewsVideoUpdateRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<contents_v1_news_video_pb.NewsVideoUpdateResponse>;
+
+  newsVideoDelete(
+    request: contents_v1_news_video_pb.NewsVideoDeleteRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<contents_v1_news_video_pb.NewsVideoDeleteResponse>;
 
 }
 

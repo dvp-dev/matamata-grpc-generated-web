@@ -23,6 +23,10 @@ var contents_v1_category_pb = require('../../contents/v1/category_pb.js')
 var contents_v1_article_pb = require('../../contents/v1/article_pb.js')
 
 var contents_v1_infografik_pb = require('../../contents/v1/infografik_pb.js')
+
+var contents_v1_news_photo_pb = require('../../contents/v1/news_photo_pb.js')
+
+var contents_v1_news_video_pb = require('../../contents/v1/news_video_pb.js')
 const proto = {};
 proto.contents = {};
 proto.contents.v1 = require('./contents_service_pb.js');
@@ -2551,6 +2555,956 @@ proto.contents.v1.ContentServicePromiseClient.prototype.infografikDelete =
       request,
       metadata || {},
       methodDescriptor_ContentService_InfografikDelete);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.contents.v1.NewsPhotoGetOneRequest,
+ *   !proto.contents.v1.NewsPhotoGetOneResponse>}
+ */
+const methodDescriptor_ContentService_NewsPhotoGetOne = new grpc.web.MethodDescriptor(
+  '/contents.v1.ContentService/NewsPhotoGetOne',
+  grpc.web.MethodType.UNARY,
+  contents_v1_news_photo_pb.NewsPhotoGetOneRequest,
+  contents_v1_news_photo_pb.NewsPhotoGetOneResponse,
+  /**
+   * @param {!proto.contents.v1.NewsPhotoGetOneRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  contents_v1_news_photo_pb.NewsPhotoGetOneResponse.deserializeBinary
+);
+
+
+/**
+ * @const
+ * @type {!grpc.web.AbstractClientBase.MethodInfo<
+ *   !proto.contents.v1.NewsPhotoGetOneRequest,
+ *   !proto.contents.v1.NewsPhotoGetOneResponse>}
+ */
+const methodInfo_ContentService_NewsPhotoGetOne = new grpc.web.AbstractClientBase.MethodInfo(
+  contents_v1_news_photo_pb.NewsPhotoGetOneResponse,
+  /**
+   * @param {!proto.contents.v1.NewsPhotoGetOneRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  contents_v1_news_photo_pb.NewsPhotoGetOneResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.contents.v1.NewsPhotoGetOneRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.Error, ?proto.contents.v1.NewsPhotoGetOneResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.contents.v1.NewsPhotoGetOneResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.contents.v1.ContentServiceClient.prototype.newsPhotoGetOne =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/contents.v1.ContentService/NewsPhotoGetOne',
+      request,
+      metadata || {},
+      methodDescriptor_ContentService_NewsPhotoGetOne,
+      callback);
+};
+
+
+/**
+ * @param {!proto.contents.v1.NewsPhotoGetOneRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.contents.v1.NewsPhotoGetOneResponse>}
+ *     Promise that resolves to the response
+ */
+proto.contents.v1.ContentServicePromiseClient.prototype.newsPhotoGetOne =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/contents.v1.ContentService/NewsPhotoGetOne',
+      request,
+      metadata || {},
+      methodDescriptor_ContentService_NewsPhotoGetOne);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.contents.v1.NewsPhotoGetListRequest,
+ *   !proto.contents.v1.NewsPhotoGetListResponse>}
+ */
+const methodDescriptor_ContentService_NewsPhotoGetList = new grpc.web.MethodDescriptor(
+  '/contents.v1.ContentService/NewsPhotoGetList',
+  grpc.web.MethodType.UNARY,
+  contents_v1_news_photo_pb.NewsPhotoGetListRequest,
+  contents_v1_news_photo_pb.NewsPhotoGetListResponse,
+  /**
+   * @param {!proto.contents.v1.NewsPhotoGetListRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  contents_v1_news_photo_pb.NewsPhotoGetListResponse.deserializeBinary
+);
+
+
+/**
+ * @const
+ * @type {!grpc.web.AbstractClientBase.MethodInfo<
+ *   !proto.contents.v1.NewsPhotoGetListRequest,
+ *   !proto.contents.v1.NewsPhotoGetListResponse>}
+ */
+const methodInfo_ContentService_NewsPhotoGetList = new grpc.web.AbstractClientBase.MethodInfo(
+  contents_v1_news_photo_pb.NewsPhotoGetListResponse,
+  /**
+   * @param {!proto.contents.v1.NewsPhotoGetListRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  contents_v1_news_photo_pb.NewsPhotoGetListResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.contents.v1.NewsPhotoGetListRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.Error, ?proto.contents.v1.NewsPhotoGetListResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.contents.v1.NewsPhotoGetListResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.contents.v1.ContentServiceClient.prototype.newsPhotoGetList =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/contents.v1.ContentService/NewsPhotoGetList',
+      request,
+      metadata || {},
+      methodDescriptor_ContentService_NewsPhotoGetList,
+      callback);
+};
+
+
+/**
+ * @param {!proto.contents.v1.NewsPhotoGetListRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.contents.v1.NewsPhotoGetListResponse>}
+ *     Promise that resolves to the response
+ */
+proto.contents.v1.ContentServicePromiseClient.prototype.newsPhotoGetList =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/contents.v1.ContentService/NewsPhotoGetList',
+      request,
+      metadata || {},
+      methodDescriptor_ContentService_NewsPhotoGetList);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.contents.v1.NewsPhotoGetListRequest,
+ *   !proto.contents.v1.NewsPhotoGetListStreamResponse>}
+ */
+const methodDescriptor_ContentService_NewsPhotoGetListStream = new grpc.web.MethodDescriptor(
+  '/contents.v1.ContentService/NewsPhotoGetListStream',
+  grpc.web.MethodType.SERVER_STREAMING,
+  contents_v1_news_photo_pb.NewsPhotoGetListRequest,
+  contents_v1_news_photo_pb.NewsPhotoGetListStreamResponse,
+  /**
+   * @param {!proto.contents.v1.NewsPhotoGetListRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  contents_v1_news_photo_pb.NewsPhotoGetListStreamResponse.deserializeBinary
+);
+
+
+/**
+ * @const
+ * @type {!grpc.web.AbstractClientBase.MethodInfo<
+ *   !proto.contents.v1.NewsPhotoGetListRequest,
+ *   !proto.contents.v1.NewsPhotoGetListStreamResponse>}
+ */
+const methodInfo_ContentService_NewsPhotoGetListStream = new grpc.web.AbstractClientBase.MethodInfo(
+  contents_v1_news_photo_pb.NewsPhotoGetListStreamResponse,
+  /**
+   * @param {!proto.contents.v1.NewsPhotoGetListRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  contents_v1_news_photo_pb.NewsPhotoGetListStreamResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.contents.v1.NewsPhotoGetListRequest} request The request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @return {!grpc.web.ClientReadableStream<!proto.contents.v1.NewsPhotoGetListStreamResponse>}
+ *     The XHR Node Readable Stream
+ */
+proto.contents.v1.ContentServiceClient.prototype.newsPhotoGetListStream =
+    function(request, metadata) {
+  return this.client_.serverStreaming(this.hostname_ +
+      '/contents.v1.ContentService/NewsPhotoGetListStream',
+      request,
+      metadata || {},
+      methodDescriptor_ContentService_NewsPhotoGetListStream);
+};
+
+
+/**
+ * @param {!proto.contents.v1.NewsPhotoGetListRequest} request The request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @return {!grpc.web.ClientReadableStream<!proto.contents.v1.NewsPhotoGetListStreamResponse>}
+ *     The XHR Node Readable Stream
+ */
+proto.contents.v1.ContentServicePromiseClient.prototype.newsPhotoGetListStream =
+    function(request, metadata) {
+  return this.client_.serverStreaming(this.hostname_ +
+      '/contents.v1.ContentService/NewsPhotoGetListStream',
+      request,
+      metadata || {},
+      methodDescriptor_ContentService_NewsPhotoGetListStream);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.contents.v1.NewsPhotoCreateRequest,
+ *   !proto.contents.v1.NewsPhotoCreateResponse>}
+ */
+const methodDescriptor_ContentService_NewsPhotoCreate = new grpc.web.MethodDescriptor(
+  '/contents.v1.ContentService/NewsPhotoCreate',
+  grpc.web.MethodType.UNARY,
+  contents_v1_news_photo_pb.NewsPhotoCreateRequest,
+  contents_v1_news_photo_pb.NewsPhotoCreateResponse,
+  /**
+   * @param {!proto.contents.v1.NewsPhotoCreateRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  contents_v1_news_photo_pb.NewsPhotoCreateResponse.deserializeBinary
+);
+
+
+/**
+ * @const
+ * @type {!grpc.web.AbstractClientBase.MethodInfo<
+ *   !proto.contents.v1.NewsPhotoCreateRequest,
+ *   !proto.contents.v1.NewsPhotoCreateResponse>}
+ */
+const methodInfo_ContentService_NewsPhotoCreate = new grpc.web.AbstractClientBase.MethodInfo(
+  contents_v1_news_photo_pb.NewsPhotoCreateResponse,
+  /**
+   * @param {!proto.contents.v1.NewsPhotoCreateRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  contents_v1_news_photo_pb.NewsPhotoCreateResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.contents.v1.NewsPhotoCreateRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.Error, ?proto.contents.v1.NewsPhotoCreateResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.contents.v1.NewsPhotoCreateResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.contents.v1.ContentServiceClient.prototype.newsPhotoCreate =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/contents.v1.ContentService/NewsPhotoCreate',
+      request,
+      metadata || {},
+      methodDescriptor_ContentService_NewsPhotoCreate,
+      callback);
+};
+
+
+/**
+ * @param {!proto.contents.v1.NewsPhotoCreateRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.contents.v1.NewsPhotoCreateResponse>}
+ *     Promise that resolves to the response
+ */
+proto.contents.v1.ContentServicePromiseClient.prototype.newsPhotoCreate =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/contents.v1.ContentService/NewsPhotoCreate',
+      request,
+      metadata || {},
+      methodDescriptor_ContentService_NewsPhotoCreate);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.contents.v1.NewsPhotoUpdateRequest,
+ *   !proto.contents.v1.NewsPhotoUpdateResponse>}
+ */
+const methodDescriptor_ContentService_NewsPhotoUpdate = new grpc.web.MethodDescriptor(
+  '/contents.v1.ContentService/NewsPhotoUpdate',
+  grpc.web.MethodType.UNARY,
+  contents_v1_news_photo_pb.NewsPhotoUpdateRequest,
+  contents_v1_news_photo_pb.NewsPhotoUpdateResponse,
+  /**
+   * @param {!proto.contents.v1.NewsPhotoUpdateRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  contents_v1_news_photo_pb.NewsPhotoUpdateResponse.deserializeBinary
+);
+
+
+/**
+ * @const
+ * @type {!grpc.web.AbstractClientBase.MethodInfo<
+ *   !proto.contents.v1.NewsPhotoUpdateRequest,
+ *   !proto.contents.v1.NewsPhotoUpdateResponse>}
+ */
+const methodInfo_ContentService_NewsPhotoUpdate = new grpc.web.AbstractClientBase.MethodInfo(
+  contents_v1_news_photo_pb.NewsPhotoUpdateResponse,
+  /**
+   * @param {!proto.contents.v1.NewsPhotoUpdateRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  contents_v1_news_photo_pb.NewsPhotoUpdateResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.contents.v1.NewsPhotoUpdateRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.Error, ?proto.contents.v1.NewsPhotoUpdateResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.contents.v1.NewsPhotoUpdateResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.contents.v1.ContentServiceClient.prototype.newsPhotoUpdate =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/contents.v1.ContentService/NewsPhotoUpdate',
+      request,
+      metadata || {},
+      methodDescriptor_ContentService_NewsPhotoUpdate,
+      callback);
+};
+
+
+/**
+ * @param {!proto.contents.v1.NewsPhotoUpdateRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.contents.v1.NewsPhotoUpdateResponse>}
+ *     Promise that resolves to the response
+ */
+proto.contents.v1.ContentServicePromiseClient.prototype.newsPhotoUpdate =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/contents.v1.ContentService/NewsPhotoUpdate',
+      request,
+      metadata || {},
+      methodDescriptor_ContentService_NewsPhotoUpdate);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.contents.v1.NewsPhotoDeleteRequest,
+ *   !proto.contents.v1.NewsPhotoDeleteResponse>}
+ */
+const methodDescriptor_ContentService_NewsPhotoDelete = new grpc.web.MethodDescriptor(
+  '/contents.v1.ContentService/NewsPhotoDelete',
+  grpc.web.MethodType.UNARY,
+  contents_v1_news_photo_pb.NewsPhotoDeleteRequest,
+  contents_v1_news_photo_pb.NewsPhotoDeleteResponse,
+  /**
+   * @param {!proto.contents.v1.NewsPhotoDeleteRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  contents_v1_news_photo_pb.NewsPhotoDeleteResponse.deserializeBinary
+);
+
+
+/**
+ * @const
+ * @type {!grpc.web.AbstractClientBase.MethodInfo<
+ *   !proto.contents.v1.NewsPhotoDeleteRequest,
+ *   !proto.contents.v1.NewsPhotoDeleteResponse>}
+ */
+const methodInfo_ContentService_NewsPhotoDelete = new grpc.web.AbstractClientBase.MethodInfo(
+  contents_v1_news_photo_pb.NewsPhotoDeleteResponse,
+  /**
+   * @param {!proto.contents.v1.NewsPhotoDeleteRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  contents_v1_news_photo_pb.NewsPhotoDeleteResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.contents.v1.NewsPhotoDeleteRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.Error, ?proto.contents.v1.NewsPhotoDeleteResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.contents.v1.NewsPhotoDeleteResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.contents.v1.ContentServiceClient.prototype.newsPhotoDelete =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/contents.v1.ContentService/NewsPhotoDelete',
+      request,
+      metadata || {},
+      methodDescriptor_ContentService_NewsPhotoDelete,
+      callback);
+};
+
+
+/**
+ * @param {!proto.contents.v1.NewsPhotoDeleteRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.contents.v1.NewsPhotoDeleteResponse>}
+ *     Promise that resolves to the response
+ */
+proto.contents.v1.ContentServicePromiseClient.prototype.newsPhotoDelete =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/contents.v1.ContentService/NewsPhotoDelete',
+      request,
+      metadata || {},
+      methodDescriptor_ContentService_NewsPhotoDelete);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.contents.v1.NewsVideoGetOneRequest,
+ *   !proto.contents.v1.NewsVideoGetOneResponse>}
+ */
+const methodDescriptor_ContentService_NewsVideoGetOne = new grpc.web.MethodDescriptor(
+  '/contents.v1.ContentService/NewsVideoGetOne',
+  grpc.web.MethodType.UNARY,
+  contents_v1_news_video_pb.NewsVideoGetOneRequest,
+  contents_v1_news_video_pb.NewsVideoGetOneResponse,
+  /**
+   * @param {!proto.contents.v1.NewsVideoGetOneRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  contents_v1_news_video_pb.NewsVideoGetOneResponse.deserializeBinary
+);
+
+
+/**
+ * @const
+ * @type {!grpc.web.AbstractClientBase.MethodInfo<
+ *   !proto.contents.v1.NewsVideoGetOneRequest,
+ *   !proto.contents.v1.NewsVideoGetOneResponse>}
+ */
+const methodInfo_ContentService_NewsVideoGetOne = new grpc.web.AbstractClientBase.MethodInfo(
+  contents_v1_news_video_pb.NewsVideoGetOneResponse,
+  /**
+   * @param {!proto.contents.v1.NewsVideoGetOneRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  contents_v1_news_video_pb.NewsVideoGetOneResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.contents.v1.NewsVideoGetOneRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.Error, ?proto.contents.v1.NewsVideoGetOneResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.contents.v1.NewsVideoGetOneResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.contents.v1.ContentServiceClient.prototype.newsVideoGetOne =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/contents.v1.ContentService/NewsVideoGetOne',
+      request,
+      metadata || {},
+      methodDescriptor_ContentService_NewsVideoGetOne,
+      callback);
+};
+
+
+/**
+ * @param {!proto.contents.v1.NewsVideoGetOneRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.contents.v1.NewsVideoGetOneResponse>}
+ *     Promise that resolves to the response
+ */
+proto.contents.v1.ContentServicePromiseClient.prototype.newsVideoGetOne =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/contents.v1.ContentService/NewsVideoGetOne',
+      request,
+      metadata || {},
+      methodDescriptor_ContentService_NewsVideoGetOne);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.contents.v1.NewsVideoGetListRequest,
+ *   !proto.contents.v1.NewsVideoGetListResponse>}
+ */
+const methodDescriptor_ContentService_NewsVideoGetList = new grpc.web.MethodDescriptor(
+  '/contents.v1.ContentService/NewsVideoGetList',
+  grpc.web.MethodType.UNARY,
+  contents_v1_news_video_pb.NewsVideoGetListRequest,
+  contents_v1_news_video_pb.NewsVideoGetListResponse,
+  /**
+   * @param {!proto.contents.v1.NewsVideoGetListRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  contents_v1_news_video_pb.NewsVideoGetListResponse.deserializeBinary
+);
+
+
+/**
+ * @const
+ * @type {!grpc.web.AbstractClientBase.MethodInfo<
+ *   !proto.contents.v1.NewsVideoGetListRequest,
+ *   !proto.contents.v1.NewsVideoGetListResponse>}
+ */
+const methodInfo_ContentService_NewsVideoGetList = new grpc.web.AbstractClientBase.MethodInfo(
+  contents_v1_news_video_pb.NewsVideoGetListResponse,
+  /**
+   * @param {!proto.contents.v1.NewsVideoGetListRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  contents_v1_news_video_pb.NewsVideoGetListResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.contents.v1.NewsVideoGetListRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.Error, ?proto.contents.v1.NewsVideoGetListResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.contents.v1.NewsVideoGetListResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.contents.v1.ContentServiceClient.prototype.newsVideoGetList =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/contents.v1.ContentService/NewsVideoGetList',
+      request,
+      metadata || {},
+      methodDescriptor_ContentService_NewsVideoGetList,
+      callback);
+};
+
+
+/**
+ * @param {!proto.contents.v1.NewsVideoGetListRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.contents.v1.NewsVideoGetListResponse>}
+ *     Promise that resolves to the response
+ */
+proto.contents.v1.ContentServicePromiseClient.prototype.newsVideoGetList =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/contents.v1.ContentService/NewsVideoGetList',
+      request,
+      metadata || {},
+      methodDescriptor_ContentService_NewsVideoGetList);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.contents.v1.NewsVideoGetListRequest,
+ *   !proto.contents.v1.NewsVideoGetListStreamResponse>}
+ */
+const methodDescriptor_ContentService_NewsVideoGetListStream = new grpc.web.MethodDescriptor(
+  '/contents.v1.ContentService/NewsVideoGetListStream',
+  grpc.web.MethodType.SERVER_STREAMING,
+  contents_v1_news_video_pb.NewsVideoGetListRequest,
+  contents_v1_news_video_pb.NewsVideoGetListStreamResponse,
+  /**
+   * @param {!proto.contents.v1.NewsVideoGetListRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  contents_v1_news_video_pb.NewsVideoGetListStreamResponse.deserializeBinary
+);
+
+
+/**
+ * @const
+ * @type {!grpc.web.AbstractClientBase.MethodInfo<
+ *   !proto.contents.v1.NewsVideoGetListRequest,
+ *   !proto.contents.v1.NewsVideoGetListStreamResponse>}
+ */
+const methodInfo_ContentService_NewsVideoGetListStream = new grpc.web.AbstractClientBase.MethodInfo(
+  contents_v1_news_video_pb.NewsVideoGetListStreamResponse,
+  /**
+   * @param {!proto.contents.v1.NewsVideoGetListRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  contents_v1_news_video_pb.NewsVideoGetListStreamResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.contents.v1.NewsVideoGetListRequest} request The request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @return {!grpc.web.ClientReadableStream<!proto.contents.v1.NewsVideoGetListStreamResponse>}
+ *     The XHR Node Readable Stream
+ */
+proto.contents.v1.ContentServiceClient.prototype.newsVideoGetListStream =
+    function(request, metadata) {
+  return this.client_.serverStreaming(this.hostname_ +
+      '/contents.v1.ContentService/NewsVideoGetListStream',
+      request,
+      metadata || {},
+      methodDescriptor_ContentService_NewsVideoGetListStream);
+};
+
+
+/**
+ * @param {!proto.contents.v1.NewsVideoGetListRequest} request The request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @return {!grpc.web.ClientReadableStream<!proto.contents.v1.NewsVideoGetListStreamResponse>}
+ *     The XHR Node Readable Stream
+ */
+proto.contents.v1.ContentServicePromiseClient.prototype.newsVideoGetListStream =
+    function(request, metadata) {
+  return this.client_.serverStreaming(this.hostname_ +
+      '/contents.v1.ContentService/NewsVideoGetListStream',
+      request,
+      metadata || {},
+      methodDescriptor_ContentService_NewsVideoGetListStream);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.contents.v1.NewsVideoCreateRequest,
+ *   !proto.contents.v1.NewsVideoCreateResponse>}
+ */
+const methodDescriptor_ContentService_NewsVideoCreate = new grpc.web.MethodDescriptor(
+  '/contents.v1.ContentService/NewsVideoCreate',
+  grpc.web.MethodType.UNARY,
+  contents_v1_news_video_pb.NewsVideoCreateRequest,
+  contents_v1_news_video_pb.NewsVideoCreateResponse,
+  /**
+   * @param {!proto.contents.v1.NewsVideoCreateRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  contents_v1_news_video_pb.NewsVideoCreateResponse.deserializeBinary
+);
+
+
+/**
+ * @const
+ * @type {!grpc.web.AbstractClientBase.MethodInfo<
+ *   !proto.contents.v1.NewsVideoCreateRequest,
+ *   !proto.contents.v1.NewsVideoCreateResponse>}
+ */
+const methodInfo_ContentService_NewsVideoCreate = new grpc.web.AbstractClientBase.MethodInfo(
+  contents_v1_news_video_pb.NewsVideoCreateResponse,
+  /**
+   * @param {!proto.contents.v1.NewsVideoCreateRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  contents_v1_news_video_pb.NewsVideoCreateResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.contents.v1.NewsVideoCreateRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.Error, ?proto.contents.v1.NewsVideoCreateResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.contents.v1.NewsVideoCreateResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.contents.v1.ContentServiceClient.prototype.newsVideoCreate =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/contents.v1.ContentService/NewsVideoCreate',
+      request,
+      metadata || {},
+      methodDescriptor_ContentService_NewsVideoCreate,
+      callback);
+};
+
+
+/**
+ * @param {!proto.contents.v1.NewsVideoCreateRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.contents.v1.NewsVideoCreateResponse>}
+ *     Promise that resolves to the response
+ */
+proto.contents.v1.ContentServicePromiseClient.prototype.newsVideoCreate =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/contents.v1.ContentService/NewsVideoCreate',
+      request,
+      metadata || {},
+      methodDescriptor_ContentService_NewsVideoCreate);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.contents.v1.NewsVideoUpdateRequest,
+ *   !proto.contents.v1.NewsVideoUpdateResponse>}
+ */
+const methodDescriptor_ContentService_NewsVideoUpdate = new grpc.web.MethodDescriptor(
+  '/contents.v1.ContentService/NewsVideoUpdate',
+  grpc.web.MethodType.UNARY,
+  contents_v1_news_video_pb.NewsVideoUpdateRequest,
+  contents_v1_news_video_pb.NewsVideoUpdateResponse,
+  /**
+   * @param {!proto.contents.v1.NewsVideoUpdateRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  contents_v1_news_video_pb.NewsVideoUpdateResponse.deserializeBinary
+);
+
+
+/**
+ * @const
+ * @type {!grpc.web.AbstractClientBase.MethodInfo<
+ *   !proto.contents.v1.NewsVideoUpdateRequest,
+ *   !proto.contents.v1.NewsVideoUpdateResponse>}
+ */
+const methodInfo_ContentService_NewsVideoUpdate = new grpc.web.AbstractClientBase.MethodInfo(
+  contents_v1_news_video_pb.NewsVideoUpdateResponse,
+  /**
+   * @param {!proto.contents.v1.NewsVideoUpdateRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  contents_v1_news_video_pb.NewsVideoUpdateResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.contents.v1.NewsVideoUpdateRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.Error, ?proto.contents.v1.NewsVideoUpdateResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.contents.v1.NewsVideoUpdateResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.contents.v1.ContentServiceClient.prototype.newsVideoUpdate =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/contents.v1.ContentService/NewsVideoUpdate',
+      request,
+      metadata || {},
+      methodDescriptor_ContentService_NewsVideoUpdate,
+      callback);
+};
+
+
+/**
+ * @param {!proto.contents.v1.NewsVideoUpdateRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.contents.v1.NewsVideoUpdateResponse>}
+ *     Promise that resolves to the response
+ */
+proto.contents.v1.ContentServicePromiseClient.prototype.newsVideoUpdate =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/contents.v1.ContentService/NewsVideoUpdate',
+      request,
+      metadata || {},
+      methodDescriptor_ContentService_NewsVideoUpdate);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.contents.v1.NewsVideoDeleteRequest,
+ *   !proto.contents.v1.NewsVideoDeleteResponse>}
+ */
+const methodDescriptor_ContentService_NewsVideoDelete = new grpc.web.MethodDescriptor(
+  '/contents.v1.ContentService/NewsVideoDelete',
+  grpc.web.MethodType.UNARY,
+  contents_v1_news_video_pb.NewsVideoDeleteRequest,
+  contents_v1_news_video_pb.NewsVideoDeleteResponse,
+  /**
+   * @param {!proto.contents.v1.NewsVideoDeleteRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  contents_v1_news_video_pb.NewsVideoDeleteResponse.deserializeBinary
+);
+
+
+/**
+ * @const
+ * @type {!grpc.web.AbstractClientBase.MethodInfo<
+ *   !proto.contents.v1.NewsVideoDeleteRequest,
+ *   !proto.contents.v1.NewsVideoDeleteResponse>}
+ */
+const methodInfo_ContentService_NewsVideoDelete = new grpc.web.AbstractClientBase.MethodInfo(
+  contents_v1_news_video_pb.NewsVideoDeleteResponse,
+  /**
+   * @param {!proto.contents.v1.NewsVideoDeleteRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  contents_v1_news_video_pb.NewsVideoDeleteResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.contents.v1.NewsVideoDeleteRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.Error, ?proto.contents.v1.NewsVideoDeleteResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.contents.v1.NewsVideoDeleteResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.contents.v1.ContentServiceClient.prototype.newsVideoDelete =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/contents.v1.ContentService/NewsVideoDelete',
+      request,
+      metadata || {},
+      methodDescriptor_ContentService_NewsVideoDelete,
+      callback);
+};
+
+
+/**
+ * @param {!proto.contents.v1.NewsVideoDeleteRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.contents.v1.NewsVideoDeleteResponse>}
+ *     Promise that resolves to the response
+ */
+proto.contents.v1.ContentServicePromiseClient.prototype.newsVideoDelete =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/contents.v1.ContentService/NewsVideoDelete',
+      request,
+      metadata || {},
+      methodDescriptor_ContentService_NewsVideoDelete);
 };
 
 

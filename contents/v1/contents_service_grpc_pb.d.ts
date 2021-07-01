@@ -10,6 +10,8 @@ import * as contents_v1_tag_pb from "../../contents/v1/tag_pb";
 import * as contents_v1_category_pb from "../../contents/v1/category_pb";
 import * as contents_v1_article_pb from "../../contents/v1/article_pb";
 import * as contents_v1_infografik_pb from "../../contents/v1/infografik_pb";
+import * as contents_v1_news_photo_pb from "../../contents/v1/news_photo_pb";
+import * as contents_v1_news_video_pb from "../../contents/v1/news_video_pb";
 
 interface IContentServiceService extends grpc.ServiceDefinition<grpc.UntypedServiceImplementation> {
     tagGetOne: IContentServiceService_ITagGetOne;
@@ -43,6 +45,18 @@ interface IContentServiceService extends grpc.ServiceDefinition<grpc.UntypedServ
     infografikCreate: IContentServiceService_IInfografikCreate;
     infografikUpdate: IContentServiceService_IInfografikUpdate;
     infografikDelete: IContentServiceService_IInfografikDelete;
+    newsPhotoGetOne: IContentServiceService_INewsPhotoGetOne;
+    newsPhotoGetList: IContentServiceService_INewsPhotoGetList;
+    newsPhotoGetListStream: IContentServiceService_INewsPhotoGetListStream;
+    newsPhotoCreate: IContentServiceService_INewsPhotoCreate;
+    newsPhotoUpdate: IContentServiceService_INewsPhotoUpdate;
+    newsPhotoDelete: IContentServiceService_INewsPhotoDelete;
+    newsVideoGetOne: IContentServiceService_INewsVideoGetOne;
+    newsVideoGetList: IContentServiceService_INewsVideoGetList;
+    newsVideoGetListStream: IContentServiceService_INewsVideoGetListStream;
+    newsVideoCreate: IContentServiceService_INewsVideoCreate;
+    newsVideoUpdate: IContentServiceService_INewsVideoUpdate;
+    newsVideoDelete: IContentServiceService_INewsVideoDelete;
 }
 
 interface IContentServiceService_ITagGetOne extends grpc.MethodDefinition<contents_v1_tag_pb.TagGetOneRequest, contents_v1_tag_pb.TagGetOneResponse> {
@@ -324,6 +338,114 @@ interface IContentServiceService_IInfografikDelete extends grpc.MethodDefinition
     responseSerialize: grpc.serialize<contents_v1_infografik_pb.InfografikDeleteResponse>;
     responseDeserialize: grpc.deserialize<contents_v1_infografik_pb.InfografikDeleteResponse>;
 }
+interface IContentServiceService_INewsPhotoGetOne extends grpc.MethodDefinition<contents_v1_news_photo_pb.NewsPhotoGetOneRequest, contents_v1_news_photo_pb.NewsPhotoGetOneResponse> {
+    path: "/contents.v1.ContentService/NewsPhotoGetOne";
+    requestStream: false;
+    responseStream: false;
+    requestSerialize: grpc.serialize<contents_v1_news_photo_pb.NewsPhotoGetOneRequest>;
+    requestDeserialize: grpc.deserialize<contents_v1_news_photo_pb.NewsPhotoGetOneRequest>;
+    responseSerialize: grpc.serialize<contents_v1_news_photo_pb.NewsPhotoGetOneResponse>;
+    responseDeserialize: grpc.deserialize<contents_v1_news_photo_pb.NewsPhotoGetOneResponse>;
+}
+interface IContentServiceService_INewsPhotoGetList extends grpc.MethodDefinition<contents_v1_news_photo_pb.NewsPhotoGetListRequest, contents_v1_news_photo_pb.NewsPhotoGetListResponse> {
+    path: "/contents.v1.ContentService/NewsPhotoGetList";
+    requestStream: false;
+    responseStream: false;
+    requestSerialize: grpc.serialize<contents_v1_news_photo_pb.NewsPhotoGetListRequest>;
+    requestDeserialize: grpc.deserialize<contents_v1_news_photo_pb.NewsPhotoGetListRequest>;
+    responseSerialize: grpc.serialize<contents_v1_news_photo_pb.NewsPhotoGetListResponse>;
+    responseDeserialize: grpc.deserialize<contents_v1_news_photo_pb.NewsPhotoGetListResponse>;
+}
+interface IContentServiceService_INewsPhotoGetListStream extends grpc.MethodDefinition<contents_v1_news_photo_pb.NewsPhotoGetListRequest, contents_v1_news_photo_pb.NewsPhotoGetListStreamResponse> {
+    path: "/contents.v1.ContentService/NewsPhotoGetListStream";
+    requestStream: false;
+    responseStream: true;
+    requestSerialize: grpc.serialize<contents_v1_news_photo_pb.NewsPhotoGetListRequest>;
+    requestDeserialize: grpc.deserialize<contents_v1_news_photo_pb.NewsPhotoGetListRequest>;
+    responseSerialize: grpc.serialize<contents_v1_news_photo_pb.NewsPhotoGetListStreamResponse>;
+    responseDeserialize: grpc.deserialize<contents_v1_news_photo_pb.NewsPhotoGetListStreamResponse>;
+}
+interface IContentServiceService_INewsPhotoCreate extends grpc.MethodDefinition<contents_v1_news_photo_pb.NewsPhotoCreateRequest, contents_v1_news_photo_pb.NewsPhotoCreateResponse> {
+    path: "/contents.v1.ContentService/NewsPhotoCreate";
+    requestStream: false;
+    responseStream: false;
+    requestSerialize: grpc.serialize<contents_v1_news_photo_pb.NewsPhotoCreateRequest>;
+    requestDeserialize: grpc.deserialize<contents_v1_news_photo_pb.NewsPhotoCreateRequest>;
+    responseSerialize: grpc.serialize<contents_v1_news_photo_pb.NewsPhotoCreateResponse>;
+    responseDeserialize: grpc.deserialize<contents_v1_news_photo_pb.NewsPhotoCreateResponse>;
+}
+interface IContentServiceService_INewsPhotoUpdate extends grpc.MethodDefinition<contents_v1_news_photo_pb.NewsPhotoUpdateRequest, contents_v1_news_photo_pb.NewsPhotoUpdateResponse> {
+    path: "/contents.v1.ContentService/NewsPhotoUpdate";
+    requestStream: false;
+    responseStream: false;
+    requestSerialize: grpc.serialize<contents_v1_news_photo_pb.NewsPhotoUpdateRequest>;
+    requestDeserialize: grpc.deserialize<contents_v1_news_photo_pb.NewsPhotoUpdateRequest>;
+    responseSerialize: grpc.serialize<contents_v1_news_photo_pb.NewsPhotoUpdateResponse>;
+    responseDeserialize: grpc.deserialize<contents_v1_news_photo_pb.NewsPhotoUpdateResponse>;
+}
+interface IContentServiceService_INewsPhotoDelete extends grpc.MethodDefinition<contents_v1_news_photo_pb.NewsPhotoDeleteRequest, contents_v1_news_photo_pb.NewsPhotoDeleteResponse> {
+    path: "/contents.v1.ContentService/NewsPhotoDelete";
+    requestStream: false;
+    responseStream: false;
+    requestSerialize: grpc.serialize<contents_v1_news_photo_pb.NewsPhotoDeleteRequest>;
+    requestDeserialize: grpc.deserialize<contents_v1_news_photo_pb.NewsPhotoDeleteRequest>;
+    responseSerialize: grpc.serialize<contents_v1_news_photo_pb.NewsPhotoDeleteResponse>;
+    responseDeserialize: grpc.deserialize<contents_v1_news_photo_pb.NewsPhotoDeleteResponse>;
+}
+interface IContentServiceService_INewsVideoGetOne extends grpc.MethodDefinition<contents_v1_news_video_pb.NewsVideoGetOneRequest, contents_v1_news_video_pb.NewsVideoGetOneResponse> {
+    path: "/contents.v1.ContentService/NewsVideoGetOne";
+    requestStream: false;
+    responseStream: false;
+    requestSerialize: grpc.serialize<contents_v1_news_video_pb.NewsVideoGetOneRequest>;
+    requestDeserialize: grpc.deserialize<contents_v1_news_video_pb.NewsVideoGetOneRequest>;
+    responseSerialize: grpc.serialize<contents_v1_news_video_pb.NewsVideoGetOneResponse>;
+    responseDeserialize: grpc.deserialize<contents_v1_news_video_pb.NewsVideoGetOneResponse>;
+}
+interface IContentServiceService_INewsVideoGetList extends grpc.MethodDefinition<contents_v1_news_video_pb.NewsVideoGetListRequest, contents_v1_news_video_pb.NewsVideoGetListResponse> {
+    path: "/contents.v1.ContentService/NewsVideoGetList";
+    requestStream: false;
+    responseStream: false;
+    requestSerialize: grpc.serialize<contents_v1_news_video_pb.NewsVideoGetListRequest>;
+    requestDeserialize: grpc.deserialize<contents_v1_news_video_pb.NewsVideoGetListRequest>;
+    responseSerialize: grpc.serialize<contents_v1_news_video_pb.NewsVideoGetListResponse>;
+    responseDeserialize: grpc.deserialize<contents_v1_news_video_pb.NewsVideoGetListResponse>;
+}
+interface IContentServiceService_INewsVideoGetListStream extends grpc.MethodDefinition<contents_v1_news_video_pb.NewsVideoGetListRequest, contents_v1_news_video_pb.NewsVideoGetListStreamResponse> {
+    path: "/contents.v1.ContentService/NewsVideoGetListStream";
+    requestStream: false;
+    responseStream: true;
+    requestSerialize: grpc.serialize<contents_v1_news_video_pb.NewsVideoGetListRequest>;
+    requestDeserialize: grpc.deserialize<contents_v1_news_video_pb.NewsVideoGetListRequest>;
+    responseSerialize: grpc.serialize<contents_v1_news_video_pb.NewsVideoGetListStreamResponse>;
+    responseDeserialize: grpc.deserialize<contents_v1_news_video_pb.NewsVideoGetListStreamResponse>;
+}
+interface IContentServiceService_INewsVideoCreate extends grpc.MethodDefinition<contents_v1_news_video_pb.NewsVideoCreateRequest, contents_v1_news_video_pb.NewsVideoCreateResponse> {
+    path: "/contents.v1.ContentService/NewsVideoCreate";
+    requestStream: false;
+    responseStream: false;
+    requestSerialize: grpc.serialize<contents_v1_news_video_pb.NewsVideoCreateRequest>;
+    requestDeserialize: grpc.deserialize<contents_v1_news_video_pb.NewsVideoCreateRequest>;
+    responseSerialize: grpc.serialize<contents_v1_news_video_pb.NewsVideoCreateResponse>;
+    responseDeserialize: grpc.deserialize<contents_v1_news_video_pb.NewsVideoCreateResponse>;
+}
+interface IContentServiceService_INewsVideoUpdate extends grpc.MethodDefinition<contents_v1_news_video_pb.NewsVideoUpdateRequest, contents_v1_news_video_pb.NewsVideoUpdateResponse> {
+    path: "/contents.v1.ContentService/NewsVideoUpdate";
+    requestStream: false;
+    responseStream: false;
+    requestSerialize: grpc.serialize<contents_v1_news_video_pb.NewsVideoUpdateRequest>;
+    requestDeserialize: grpc.deserialize<contents_v1_news_video_pb.NewsVideoUpdateRequest>;
+    responseSerialize: grpc.serialize<contents_v1_news_video_pb.NewsVideoUpdateResponse>;
+    responseDeserialize: grpc.deserialize<contents_v1_news_video_pb.NewsVideoUpdateResponse>;
+}
+interface IContentServiceService_INewsVideoDelete extends grpc.MethodDefinition<contents_v1_news_video_pb.NewsVideoDeleteRequest, contents_v1_news_video_pb.NewsVideoDeleteResponse> {
+    path: "/contents.v1.ContentService/NewsVideoDelete";
+    requestStream: false;
+    responseStream: false;
+    requestSerialize: grpc.serialize<contents_v1_news_video_pb.NewsVideoDeleteRequest>;
+    requestDeserialize: grpc.deserialize<contents_v1_news_video_pb.NewsVideoDeleteRequest>;
+    responseSerialize: grpc.serialize<contents_v1_news_video_pb.NewsVideoDeleteResponse>;
+    responseDeserialize: grpc.deserialize<contents_v1_news_video_pb.NewsVideoDeleteResponse>;
+}
 
 export const ContentServiceService: IContentServiceService;
 
@@ -359,6 +481,18 @@ export interface IContentServiceServer extends grpc.UntypedServiceImplementation
     infografikCreate: grpc.handleUnaryCall<contents_v1_infografik_pb.InfografikCreateRequest, contents_v1_infografik_pb.InfografikCreateResponse>;
     infografikUpdate: grpc.handleUnaryCall<contents_v1_infografik_pb.InfografikUpdateRequest, contents_v1_infografik_pb.InfografikUpdateResponse>;
     infografikDelete: grpc.handleUnaryCall<contents_v1_infografik_pb.InfografikDeleteRequest, contents_v1_infografik_pb.InfografikDeleteResponse>;
+    newsPhotoGetOne: grpc.handleUnaryCall<contents_v1_news_photo_pb.NewsPhotoGetOneRequest, contents_v1_news_photo_pb.NewsPhotoGetOneResponse>;
+    newsPhotoGetList: grpc.handleUnaryCall<contents_v1_news_photo_pb.NewsPhotoGetListRequest, contents_v1_news_photo_pb.NewsPhotoGetListResponse>;
+    newsPhotoGetListStream: grpc.handleServerStreamingCall<contents_v1_news_photo_pb.NewsPhotoGetListRequest, contents_v1_news_photo_pb.NewsPhotoGetListStreamResponse>;
+    newsPhotoCreate: grpc.handleUnaryCall<contents_v1_news_photo_pb.NewsPhotoCreateRequest, contents_v1_news_photo_pb.NewsPhotoCreateResponse>;
+    newsPhotoUpdate: grpc.handleUnaryCall<contents_v1_news_photo_pb.NewsPhotoUpdateRequest, contents_v1_news_photo_pb.NewsPhotoUpdateResponse>;
+    newsPhotoDelete: grpc.handleUnaryCall<contents_v1_news_photo_pb.NewsPhotoDeleteRequest, contents_v1_news_photo_pb.NewsPhotoDeleteResponse>;
+    newsVideoGetOne: grpc.handleUnaryCall<contents_v1_news_video_pb.NewsVideoGetOneRequest, contents_v1_news_video_pb.NewsVideoGetOneResponse>;
+    newsVideoGetList: grpc.handleUnaryCall<contents_v1_news_video_pb.NewsVideoGetListRequest, contents_v1_news_video_pb.NewsVideoGetListResponse>;
+    newsVideoGetListStream: grpc.handleServerStreamingCall<contents_v1_news_video_pb.NewsVideoGetListRequest, contents_v1_news_video_pb.NewsVideoGetListStreamResponse>;
+    newsVideoCreate: grpc.handleUnaryCall<contents_v1_news_video_pb.NewsVideoCreateRequest, contents_v1_news_video_pb.NewsVideoCreateResponse>;
+    newsVideoUpdate: grpc.handleUnaryCall<contents_v1_news_video_pb.NewsVideoUpdateRequest, contents_v1_news_video_pb.NewsVideoUpdateResponse>;
+    newsVideoDelete: grpc.handleUnaryCall<contents_v1_news_video_pb.NewsVideoDeleteRequest, contents_v1_news_video_pb.NewsVideoDeleteResponse>;
 }
 
 export interface IContentServiceClient {
@@ -454,6 +588,40 @@ export interface IContentServiceClient {
     infografikDelete(request: contents_v1_infografik_pb.InfografikDeleteRequest, callback: (error: grpc.ServiceError | null, response: contents_v1_infografik_pb.InfografikDeleteResponse) => void): grpc.ClientUnaryCall;
     infografikDelete(request: contents_v1_infografik_pb.InfografikDeleteRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: contents_v1_infografik_pb.InfografikDeleteResponse) => void): grpc.ClientUnaryCall;
     infografikDelete(request: contents_v1_infografik_pb.InfografikDeleteRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: contents_v1_infografik_pb.InfografikDeleteResponse) => void): grpc.ClientUnaryCall;
+    newsPhotoGetOne(request: contents_v1_news_photo_pb.NewsPhotoGetOneRequest, callback: (error: grpc.ServiceError | null, response: contents_v1_news_photo_pb.NewsPhotoGetOneResponse) => void): grpc.ClientUnaryCall;
+    newsPhotoGetOne(request: contents_v1_news_photo_pb.NewsPhotoGetOneRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: contents_v1_news_photo_pb.NewsPhotoGetOneResponse) => void): grpc.ClientUnaryCall;
+    newsPhotoGetOne(request: contents_v1_news_photo_pb.NewsPhotoGetOneRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: contents_v1_news_photo_pb.NewsPhotoGetOneResponse) => void): grpc.ClientUnaryCall;
+    newsPhotoGetList(request: contents_v1_news_photo_pb.NewsPhotoGetListRequest, callback: (error: grpc.ServiceError | null, response: contents_v1_news_photo_pb.NewsPhotoGetListResponse) => void): grpc.ClientUnaryCall;
+    newsPhotoGetList(request: contents_v1_news_photo_pb.NewsPhotoGetListRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: contents_v1_news_photo_pb.NewsPhotoGetListResponse) => void): grpc.ClientUnaryCall;
+    newsPhotoGetList(request: contents_v1_news_photo_pb.NewsPhotoGetListRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: contents_v1_news_photo_pb.NewsPhotoGetListResponse) => void): grpc.ClientUnaryCall;
+    newsPhotoGetListStream(request: contents_v1_news_photo_pb.NewsPhotoGetListRequest, options?: Partial<grpc.CallOptions>): grpc.ClientReadableStream<contents_v1_news_photo_pb.NewsPhotoGetListStreamResponse>;
+    newsPhotoGetListStream(request: contents_v1_news_photo_pb.NewsPhotoGetListRequest, metadata?: grpc.Metadata, options?: Partial<grpc.CallOptions>): grpc.ClientReadableStream<contents_v1_news_photo_pb.NewsPhotoGetListStreamResponse>;
+    newsPhotoCreate(request: contents_v1_news_photo_pb.NewsPhotoCreateRequest, callback: (error: grpc.ServiceError | null, response: contents_v1_news_photo_pb.NewsPhotoCreateResponse) => void): grpc.ClientUnaryCall;
+    newsPhotoCreate(request: contents_v1_news_photo_pb.NewsPhotoCreateRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: contents_v1_news_photo_pb.NewsPhotoCreateResponse) => void): grpc.ClientUnaryCall;
+    newsPhotoCreate(request: contents_v1_news_photo_pb.NewsPhotoCreateRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: contents_v1_news_photo_pb.NewsPhotoCreateResponse) => void): grpc.ClientUnaryCall;
+    newsPhotoUpdate(request: contents_v1_news_photo_pb.NewsPhotoUpdateRequest, callback: (error: grpc.ServiceError | null, response: contents_v1_news_photo_pb.NewsPhotoUpdateResponse) => void): grpc.ClientUnaryCall;
+    newsPhotoUpdate(request: contents_v1_news_photo_pb.NewsPhotoUpdateRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: contents_v1_news_photo_pb.NewsPhotoUpdateResponse) => void): grpc.ClientUnaryCall;
+    newsPhotoUpdate(request: contents_v1_news_photo_pb.NewsPhotoUpdateRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: contents_v1_news_photo_pb.NewsPhotoUpdateResponse) => void): grpc.ClientUnaryCall;
+    newsPhotoDelete(request: contents_v1_news_photo_pb.NewsPhotoDeleteRequest, callback: (error: grpc.ServiceError | null, response: contents_v1_news_photo_pb.NewsPhotoDeleteResponse) => void): grpc.ClientUnaryCall;
+    newsPhotoDelete(request: contents_v1_news_photo_pb.NewsPhotoDeleteRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: contents_v1_news_photo_pb.NewsPhotoDeleteResponse) => void): grpc.ClientUnaryCall;
+    newsPhotoDelete(request: contents_v1_news_photo_pb.NewsPhotoDeleteRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: contents_v1_news_photo_pb.NewsPhotoDeleteResponse) => void): grpc.ClientUnaryCall;
+    newsVideoGetOne(request: contents_v1_news_video_pb.NewsVideoGetOneRequest, callback: (error: grpc.ServiceError | null, response: contents_v1_news_video_pb.NewsVideoGetOneResponse) => void): grpc.ClientUnaryCall;
+    newsVideoGetOne(request: contents_v1_news_video_pb.NewsVideoGetOneRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: contents_v1_news_video_pb.NewsVideoGetOneResponse) => void): grpc.ClientUnaryCall;
+    newsVideoGetOne(request: contents_v1_news_video_pb.NewsVideoGetOneRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: contents_v1_news_video_pb.NewsVideoGetOneResponse) => void): grpc.ClientUnaryCall;
+    newsVideoGetList(request: contents_v1_news_video_pb.NewsVideoGetListRequest, callback: (error: grpc.ServiceError | null, response: contents_v1_news_video_pb.NewsVideoGetListResponse) => void): grpc.ClientUnaryCall;
+    newsVideoGetList(request: contents_v1_news_video_pb.NewsVideoGetListRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: contents_v1_news_video_pb.NewsVideoGetListResponse) => void): grpc.ClientUnaryCall;
+    newsVideoGetList(request: contents_v1_news_video_pb.NewsVideoGetListRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: contents_v1_news_video_pb.NewsVideoGetListResponse) => void): grpc.ClientUnaryCall;
+    newsVideoGetListStream(request: contents_v1_news_video_pb.NewsVideoGetListRequest, options?: Partial<grpc.CallOptions>): grpc.ClientReadableStream<contents_v1_news_video_pb.NewsVideoGetListStreamResponse>;
+    newsVideoGetListStream(request: contents_v1_news_video_pb.NewsVideoGetListRequest, metadata?: grpc.Metadata, options?: Partial<grpc.CallOptions>): grpc.ClientReadableStream<contents_v1_news_video_pb.NewsVideoGetListStreamResponse>;
+    newsVideoCreate(request: contents_v1_news_video_pb.NewsVideoCreateRequest, callback: (error: grpc.ServiceError | null, response: contents_v1_news_video_pb.NewsVideoCreateResponse) => void): grpc.ClientUnaryCall;
+    newsVideoCreate(request: contents_v1_news_video_pb.NewsVideoCreateRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: contents_v1_news_video_pb.NewsVideoCreateResponse) => void): grpc.ClientUnaryCall;
+    newsVideoCreate(request: contents_v1_news_video_pb.NewsVideoCreateRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: contents_v1_news_video_pb.NewsVideoCreateResponse) => void): grpc.ClientUnaryCall;
+    newsVideoUpdate(request: contents_v1_news_video_pb.NewsVideoUpdateRequest, callback: (error: grpc.ServiceError | null, response: contents_v1_news_video_pb.NewsVideoUpdateResponse) => void): grpc.ClientUnaryCall;
+    newsVideoUpdate(request: contents_v1_news_video_pb.NewsVideoUpdateRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: contents_v1_news_video_pb.NewsVideoUpdateResponse) => void): grpc.ClientUnaryCall;
+    newsVideoUpdate(request: contents_v1_news_video_pb.NewsVideoUpdateRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: contents_v1_news_video_pb.NewsVideoUpdateResponse) => void): grpc.ClientUnaryCall;
+    newsVideoDelete(request: contents_v1_news_video_pb.NewsVideoDeleteRequest, callback: (error: grpc.ServiceError | null, response: contents_v1_news_video_pb.NewsVideoDeleteResponse) => void): grpc.ClientUnaryCall;
+    newsVideoDelete(request: contents_v1_news_video_pb.NewsVideoDeleteRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: contents_v1_news_video_pb.NewsVideoDeleteResponse) => void): grpc.ClientUnaryCall;
+    newsVideoDelete(request: contents_v1_news_video_pb.NewsVideoDeleteRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: contents_v1_news_video_pb.NewsVideoDeleteResponse) => void): grpc.ClientUnaryCall;
 }
 
 export class ContentServiceClient extends grpc.Client implements IContentServiceClient {
@@ -550,4 +718,38 @@ export class ContentServiceClient extends grpc.Client implements IContentService
     public infografikDelete(request: contents_v1_infografik_pb.InfografikDeleteRequest, callback: (error: grpc.ServiceError | null, response: contents_v1_infografik_pb.InfografikDeleteResponse) => void): grpc.ClientUnaryCall;
     public infografikDelete(request: contents_v1_infografik_pb.InfografikDeleteRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: contents_v1_infografik_pb.InfografikDeleteResponse) => void): grpc.ClientUnaryCall;
     public infografikDelete(request: contents_v1_infografik_pb.InfografikDeleteRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: contents_v1_infografik_pb.InfografikDeleteResponse) => void): grpc.ClientUnaryCall;
+    public newsPhotoGetOne(request: contents_v1_news_photo_pb.NewsPhotoGetOneRequest, callback: (error: grpc.ServiceError | null, response: contents_v1_news_photo_pb.NewsPhotoGetOneResponse) => void): grpc.ClientUnaryCall;
+    public newsPhotoGetOne(request: contents_v1_news_photo_pb.NewsPhotoGetOneRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: contents_v1_news_photo_pb.NewsPhotoGetOneResponse) => void): grpc.ClientUnaryCall;
+    public newsPhotoGetOne(request: contents_v1_news_photo_pb.NewsPhotoGetOneRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: contents_v1_news_photo_pb.NewsPhotoGetOneResponse) => void): grpc.ClientUnaryCall;
+    public newsPhotoGetList(request: contents_v1_news_photo_pb.NewsPhotoGetListRequest, callback: (error: grpc.ServiceError | null, response: contents_v1_news_photo_pb.NewsPhotoGetListResponse) => void): grpc.ClientUnaryCall;
+    public newsPhotoGetList(request: contents_v1_news_photo_pb.NewsPhotoGetListRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: contents_v1_news_photo_pb.NewsPhotoGetListResponse) => void): grpc.ClientUnaryCall;
+    public newsPhotoGetList(request: contents_v1_news_photo_pb.NewsPhotoGetListRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: contents_v1_news_photo_pb.NewsPhotoGetListResponse) => void): grpc.ClientUnaryCall;
+    public newsPhotoGetListStream(request: contents_v1_news_photo_pb.NewsPhotoGetListRequest, options?: Partial<grpc.CallOptions>): grpc.ClientReadableStream<contents_v1_news_photo_pb.NewsPhotoGetListStreamResponse>;
+    public newsPhotoGetListStream(request: contents_v1_news_photo_pb.NewsPhotoGetListRequest, metadata?: grpc.Metadata, options?: Partial<grpc.CallOptions>): grpc.ClientReadableStream<contents_v1_news_photo_pb.NewsPhotoGetListStreamResponse>;
+    public newsPhotoCreate(request: contents_v1_news_photo_pb.NewsPhotoCreateRequest, callback: (error: grpc.ServiceError | null, response: contents_v1_news_photo_pb.NewsPhotoCreateResponse) => void): grpc.ClientUnaryCall;
+    public newsPhotoCreate(request: contents_v1_news_photo_pb.NewsPhotoCreateRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: contents_v1_news_photo_pb.NewsPhotoCreateResponse) => void): grpc.ClientUnaryCall;
+    public newsPhotoCreate(request: contents_v1_news_photo_pb.NewsPhotoCreateRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: contents_v1_news_photo_pb.NewsPhotoCreateResponse) => void): grpc.ClientUnaryCall;
+    public newsPhotoUpdate(request: contents_v1_news_photo_pb.NewsPhotoUpdateRequest, callback: (error: grpc.ServiceError | null, response: contents_v1_news_photo_pb.NewsPhotoUpdateResponse) => void): grpc.ClientUnaryCall;
+    public newsPhotoUpdate(request: contents_v1_news_photo_pb.NewsPhotoUpdateRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: contents_v1_news_photo_pb.NewsPhotoUpdateResponse) => void): grpc.ClientUnaryCall;
+    public newsPhotoUpdate(request: contents_v1_news_photo_pb.NewsPhotoUpdateRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: contents_v1_news_photo_pb.NewsPhotoUpdateResponse) => void): grpc.ClientUnaryCall;
+    public newsPhotoDelete(request: contents_v1_news_photo_pb.NewsPhotoDeleteRequest, callback: (error: grpc.ServiceError | null, response: contents_v1_news_photo_pb.NewsPhotoDeleteResponse) => void): grpc.ClientUnaryCall;
+    public newsPhotoDelete(request: contents_v1_news_photo_pb.NewsPhotoDeleteRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: contents_v1_news_photo_pb.NewsPhotoDeleteResponse) => void): grpc.ClientUnaryCall;
+    public newsPhotoDelete(request: contents_v1_news_photo_pb.NewsPhotoDeleteRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: contents_v1_news_photo_pb.NewsPhotoDeleteResponse) => void): grpc.ClientUnaryCall;
+    public newsVideoGetOne(request: contents_v1_news_video_pb.NewsVideoGetOneRequest, callback: (error: grpc.ServiceError | null, response: contents_v1_news_video_pb.NewsVideoGetOneResponse) => void): grpc.ClientUnaryCall;
+    public newsVideoGetOne(request: contents_v1_news_video_pb.NewsVideoGetOneRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: contents_v1_news_video_pb.NewsVideoGetOneResponse) => void): grpc.ClientUnaryCall;
+    public newsVideoGetOne(request: contents_v1_news_video_pb.NewsVideoGetOneRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: contents_v1_news_video_pb.NewsVideoGetOneResponse) => void): grpc.ClientUnaryCall;
+    public newsVideoGetList(request: contents_v1_news_video_pb.NewsVideoGetListRequest, callback: (error: grpc.ServiceError | null, response: contents_v1_news_video_pb.NewsVideoGetListResponse) => void): grpc.ClientUnaryCall;
+    public newsVideoGetList(request: contents_v1_news_video_pb.NewsVideoGetListRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: contents_v1_news_video_pb.NewsVideoGetListResponse) => void): grpc.ClientUnaryCall;
+    public newsVideoGetList(request: contents_v1_news_video_pb.NewsVideoGetListRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: contents_v1_news_video_pb.NewsVideoGetListResponse) => void): grpc.ClientUnaryCall;
+    public newsVideoGetListStream(request: contents_v1_news_video_pb.NewsVideoGetListRequest, options?: Partial<grpc.CallOptions>): grpc.ClientReadableStream<contents_v1_news_video_pb.NewsVideoGetListStreamResponse>;
+    public newsVideoGetListStream(request: contents_v1_news_video_pb.NewsVideoGetListRequest, metadata?: grpc.Metadata, options?: Partial<grpc.CallOptions>): grpc.ClientReadableStream<contents_v1_news_video_pb.NewsVideoGetListStreamResponse>;
+    public newsVideoCreate(request: contents_v1_news_video_pb.NewsVideoCreateRequest, callback: (error: grpc.ServiceError | null, response: contents_v1_news_video_pb.NewsVideoCreateResponse) => void): grpc.ClientUnaryCall;
+    public newsVideoCreate(request: contents_v1_news_video_pb.NewsVideoCreateRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: contents_v1_news_video_pb.NewsVideoCreateResponse) => void): grpc.ClientUnaryCall;
+    public newsVideoCreate(request: contents_v1_news_video_pb.NewsVideoCreateRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: contents_v1_news_video_pb.NewsVideoCreateResponse) => void): grpc.ClientUnaryCall;
+    public newsVideoUpdate(request: contents_v1_news_video_pb.NewsVideoUpdateRequest, callback: (error: grpc.ServiceError | null, response: contents_v1_news_video_pb.NewsVideoUpdateResponse) => void): grpc.ClientUnaryCall;
+    public newsVideoUpdate(request: contents_v1_news_video_pb.NewsVideoUpdateRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: contents_v1_news_video_pb.NewsVideoUpdateResponse) => void): grpc.ClientUnaryCall;
+    public newsVideoUpdate(request: contents_v1_news_video_pb.NewsVideoUpdateRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: contents_v1_news_video_pb.NewsVideoUpdateResponse) => void): grpc.ClientUnaryCall;
+    public newsVideoDelete(request: contents_v1_news_video_pb.NewsVideoDeleteRequest, callback: (error: grpc.ServiceError | null, response: contents_v1_news_video_pb.NewsVideoDeleteResponse) => void): grpc.ClientUnaryCall;
+    public newsVideoDelete(request: contents_v1_news_video_pb.NewsVideoDeleteRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: contents_v1_news_video_pb.NewsVideoDeleteResponse) => void): grpc.ClientUnaryCall;
+    public newsVideoDelete(request: contents_v1_news_video_pb.NewsVideoDeleteRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: contents_v1_news_video_pb.NewsVideoDeleteResponse) => void): grpc.ClientUnaryCall;
 }
