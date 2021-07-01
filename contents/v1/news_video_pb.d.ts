@@ -74,10 +74,11 @@ export class NewsVideo extends jspb.Message {
     clearPublishedAt(): void;
     getPublishedAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
     setPublishedAt(value?: google_protobuf_timestamp_pb.Timestamp): NewsVideo;
-    clearVideosList(): void;
-    getVideosList(): Array<ArticleVideo>;
-    setVideosList(value: Array<ArticleVideo>): NewsVideo;
-    addVideos(value?: ArticleVideo, index?: number): ArticleVideo;
+
+    hasVideo(): boolean;
+    clearVideo(): void;
+    getVideo(): ArticleVideo | undefined;
+    setVideo(value?: ArticleVideo): NewsVideo;
     clearTagsList(): void;
     getTagsList(): Array<contents_v1_tag_pb.Tag>;
     setTagsList(value: Array<contents_v1_tag_pb.Tag>): NewsVideo;
@@ -129,7 +130,7 @@ export namespace NewsVideo {
         createdAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
         updatedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
         publishedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-        videosList: Array<ArticleVideo.AsObject>,
+        video?: ArticleVideo.AsObject,
         tagsList: Array<contents_v1_tag_pb.Tag.AsObject>,
         category1?: contents_v1_category_pb.Category1.AsObject,
         category2?: contents_v1_category_pb.Category2.AsObject,
@@ -159,10 +160,11 @@ export class NewsVideoCreateUpdate extends jspb.Message {
     setStatus(value: contents_v1_article_pb.ArticleStatus): NewsVideoCreateUpdate;
     getSectionHomepage(): contents_v1_article_pb.ArticleSectionHomepage;
     setSectionHomepage(value: contents_v1_article_pb.ArticleSectionHomepage): NewsVideoCreateUpdate;
-    clearVideosList(): void;
-    getVideosList(): Array<ArticleVideo>;
-    setVideosList(value: Array<ArticleVideo>): NewsVideoCreateUpdate;
-    addVideos(value?: ArticleVideo, index?: number): ArticleVideo;
+
+    hasVideo(): boolean;
+    clearVideo(): void;
+    getVideo(): ArticleVideo | undefined;
+    setVideo(value?: ArticleVideo): NewsVideoCreateUpdate;
     clearTagIdsList(): void;
     getTagIdsList(): Array<number>;
     setTagIdsList(value: Array<number>): NewsVideoCreateUpdate;
@@ -194,7 +196,7 @@ export namespace NewsVideoCreateUpdate {
         imageCoverCaption: string,
         status: contents_v1_article_pb.ArticleStatus,
         sectionHomepage: contents_v1_article_pb.ArticleSectionHomepage,
-        videosList: Array<ArticleVideo.AsObject>,
+        video?: ArticleVideo.AsObject,
         tagIdsList: Array<number>,
         creditsList: Array<contents_v1_article_pb.ArticleCreditCreateUpdate.AsObject>,
     }

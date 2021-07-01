@@ -500,7 +500,7 @@ proto.contents.v1.ArticleVideo.prototype.setImageLink = function(value) {
  * @private {!Array<number>}
  * @const
  */
-proto.contents.v1.NewsVideo.repeatedFields_ = [55,51,101];
+proto.contents.v1.NewsVideo.repeatedFields_ = [51,101];
 
 
 
@@ -548,8 +548,7 @@ proto.contents.v1.NewsVideo.toObject = function(includeInstance, msg) {
     createdAt: (f = msg.getCreatedAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
     updatedAt: (f = msg.getUpdatedAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
     publishedAt: (f = msg.getPublishedAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    videosList: jspb.Message.toObjectList(msg.getVideosList(),
-    proto.contents.v1.ArticleVideo.toObject, includeInstance),
+    video: (f = msg.getVideo()) && proto.contents.v1.ArticleVideo.toObject(includeInstance, f),
     tagsList: jspb.Message.toObjectList(msg.getTagsList(),
     contents_v1_tag_pb.Tag.toObject, includeInstance),
     category1: (f = msg.getCategory1()) && contents_v1_category_pb.Category1.toObject(includeInstance, f),
@@ -659,7 +658,7 @@ proto.contents.v1.NewsVideo.deserializeBinaryFromReader = function(msg, reader) 
     case 55:
       var value = new proto.contents.v1.ArticleVideo;
       reader.readMessage(value,proto.contents.v1.ArticleVideo.deserializeBinaryFromReader);
-      msg.addVideos(value);
+      msg.setVideo(value);
       break;
     case 51:
       var value = new contents_v1_tag_pb.Tag;
@@ -823,9 +822,9 @@ proto.contents.v1.NewsVideo.serializeBinaryToWriter = function(message, writer) 
       google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
     );
   }
-  f = message.getVideosList();
-  if (f.length > 0) {
-    writer.writeRepeatedMessage(
+  f = message.getVideo();
+  if (f != null) {
+    writer.writeMessage(
       55,
       f,
       proto.contents.v1.ArticleVideo.serializeBinaryToWriter
@@ -1202,40 +1201,39 @@ proto.contents.v1.NewsVideo.prototype.hasPublishedAt = function() {
 
 
 /**
- * repeated ArticleVideo videos = 55;
- * @return {!Array<!proto.contents.v1.ArticleVideo>}
+ * optional ArticleVideo video = 55;
+ * @return {?proto.contents.v1.ArticleVideo}
  */
-proto.contents.v1.NewsVideo.prototype.getVideosList = function() {
-  return /** @type{!Array<!proto.contents.v1.ArticleVideo>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.contents.v1.ArticleVideo, 55));
+proto.contents.v1.NewsVideo.prototype.getVideo = function() {
+  return /** @type{?proto.contents.v1.ArticleVideo} */ (
+    jspb.Message.getWrapperField(this, proto.contents.v1.ArticleVideo, 55));
 };
 
 
 /**
- * @param {!Array<!proto.contents.v1.ArticleVideo>} value
+ * @param {?proto.contents.v1.ArticleVideo|undefined} value
  * @return {!proto.contents.v1.NewsVideo} returns this
 */
-proto.contents.v1.NewsVideo.prototype.setVideosList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 55, value);
+proto.contents.v1.NewsVideo.prototype.setVideo = function(value) {
+  return jspb.Message.setWrapperField(this, 55, value);
 };
 
 
 /**
- * @param {!proto.contents.v1.ArticleVideo=} opt_value
- * @param {number=} opt_index
- * @return {!proto.contents.v1.ArticleVideo}
- */
-proto.contents.v1.NewsVideo.prototype.addVideos = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 55, opt_value, proto.contents.v1.ArticleVideo, opt_index);
-};
-
-
-/**
- * Clears the list making it empty but non-null.
+ * Clears the message field making it undefined.
  * @return {!proto.contents.v1.NewsVideo} returns this
  */
-proto.contents.v1.NewsVideo.prototype.clearVideosList = function() {
-  return this.setVideosList([]);
+proto.contents.v1.NewsVideo.prototype.clearVideo = function() {
+  return this.setVideo(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.contents.v1.NewsVideo.prototype.hasVideo = function() {
+  return jspb.Message.getField(this, 55) != null;
 };
 
 
@@ -1432,7 +1430,7 @@ proto.contents.v1.NewsVideo.prototype.clearCreditsList = function() {
  * @private {!Array<number>}
  * @const
  */
-proto.contents.v1.NewsVideoCreateUpdate.repeatedFields_ = [53,51,52];
+proto.contents.v1.NewsVideoCreateUpdate.repeatedFields_ = [51,52];
 
 
 
@@ -1475,8 +1473,7 @@ proto.contents.v1.NewsVideoCreateUpdate.toObject = function(includeInstance, msg
     imageCoverCaption: jspb.Message.getFieldWithDefault(msg, 9, ""),
     status: jspb.Message.getFieldWithDefault(msg, 10, 0),
     sectionHomepage: jspb.Message.getFieldWithDefault(msg, 13, 0),
-    videosList: jspb.Message.toObjectList(msg.getVideosList(),
-    proto.contents.v1.ArticleVideo.toObject, includeInstance),
+    video: (f = msg.getVideo()) && proto.contents.v1.ArticleVideo.toObject(includeInstance, f),
     tagIdsList: (f = jspb.Message.getRepeatedField(msg, 51)) == null ? undefined : f,
     creditsList: jspb.Message.toObjectList(msg.getCreditsList(),
     contents_v1_article_pb.ArticleCreditCreateUpdate.toObject, includeInstance)
@@ -1559,7 +1556,7 @@ proto.contents.v1.NewsVideoCreateUpdate.deserializeBinaryFromReader = function(m
     case 53:
       var value = new proto.contents.v1.ArticleVideo;
       reader.readMessage(value,proto.contents.v1.ArticleVideo.deserializeBinaryFromReader);
-      msg.addVideos(value);
+      msg.setVideo(value);
       break;
     case 51:
       var values = /** @type {!Array<number>} */ (reader.isDelimited() ? reader.readPackedInt32() : [reader.readInt32()]);
@@ -1671,9 +1668,9 @@ proto.contents.v1.NewsVideoCreateUpdate.serializeBinaryToWriter = function(messa
       f
     );
   }
-  f = message.getVideosList();
-  if (f.length > 0) {
-    writer.writeRepeatedMessage(
+  f = message.getVideo();
+  if (f != null) {
+    writer.writeMessage(
       53,
       f,
       proto.contents.v1.ArticleVideo.serializeBinaryToWriter
@@ -1878,40 +1875,39 @@ proto.contents.v1.NewsVideoCreateUpdate.prototype.setSectionHomepage = function(
 
 
 /**
- * repeated ArticleVideo videos = 53;
- * @return {!Array<!proto.contents.v1.ArticleVideo>}
+ * optional ArticleVideo video = 53;
+ * @return {?proto.contents.v1.ArticleVideo}
  */
-proto.contents.v1.NewsVideoCreateUpdate.prototype.getVideosList = function() {
-  return /** @type{!Array<!proto.contents.v1.ArticleVideo>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.contents.v1.ArticleVideo, 53));
+proto.contents.v1.NewsVideoCreateUpdate.prototype.getVideo = function() {
+  return /** @type{?proto.contents.v1.ArticleVideo} */ (
+    jspb.Message.getWrapperField(this, proto.contents.v1.ArticleVideo, 53));
 };
 
 
 /**
- * @param {!Array<!proto.contents.v1.ArticleVideo>} value
+ * @param {?proto.contents.v1.ArticleVideo|undefined} value
  * @return {!proto.contents.v1.NewsVideoCreateUpdate} returns this
 */
-proto.contents.v1.NewsVideoCreateUpdate.prototype.setVideosList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 53, value);
+proto.contents.v1.NewsVideoCreateUpdate.prototype.setVideo = function(value) {
+  return jspb.Message.setWrapperField(this, 53, value);
 };
 
 
 /**
- * @param {!proto.contents.v1.ArticleVideo=} opt_value
- * @param {number=} opt_index
- * @return {!proto.contents.v1.ArticleVideo}
- */
-proto.contents.v1.NewsVideoCreateUpdate.prototype.addVideos = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 53, opt_value, proto.contents.v1.ArticleVideo, opt_index);
-};
-
-
-/**
- * Clears the list making it empty but non-null.
+ * Clears the message field making it undefined.
  * @return {!proto.contents.v1.NewsVideoCreateUpdate} returns this
  */
-proto.contents.v1.NewsVideoCreateUpdate.prototype.clearVideosList = function() {
-  return this.setVideosList([]);
+proto.contents.v1.NewsVideoCreateUpdate.prototype.clearVideo = function() {
+  return this.setVideo(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.contents.v1.NewsVideoCreateUpdate.prototype.hasVideo = function() {
+  return jspb.Message.getField(this, 53) != null;
 };
 
 
