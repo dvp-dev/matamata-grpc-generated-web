@@ -4080,7 +4080,9 @@ proto.contents.v1.ArticleSectionHomepage = {
 proto.contents.v1.ArticleCreditRole = {
   ARTICLE_CREDIT_ROLE_PENULIS_UNSPECIFIED: 0,
   ARTICLE_CREDIT_ROLE_PENERJEMAH: 1,
-  ARTICLE_CREDIT_ROLE_PHOTOGRAFER: 2
+  ARTICLE_CREDIT_ROLE_PHOTOGRAFER: 2,
+  ARTICLE_CREDIT_ROLE_DESAINER_GRAFIS: 3,
+  ARTICLE_CREDIT_ROLE_EDITOR: 4
 };
 
 goog.object.extend(exports, proto.contents.v1);
