@@ -58,6 +58,8 @@ export class NewsPhoto extends jspb.Message {
     setImageCoverCaption(value: string): NewsPhoto;
     getSlug(): string;
     setSlug(value: string): NewsPhoto;
+    getEnergy(): number;
+    setEnergy(value: number): NewsPhoto;
     getStatus(): contents_v1_article_pb.ArticleStatus;
     setStatus(value: contents_v1_article_pb.ArticleStatus): NewsPhoto;
     getSectionHomepage(): contents_v1_article_pb.ArticleSectionHomepage;
@@ -127,6 +129,7 @@ export namespace NewsPhoto {
         imageCoverUrl: string,
         imageCoverCaption: string,
         slug: string,
+        energy: number,
         status: contents_v1_article_pb.ArticleStatus,
         sectionHomepage: contents_v1_article_pb.ArticleSectionHomepage,
         createdAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
@@ -158,6 +161,8 @@ export class NewsPhotoCreateUpdate extends jspb.Message {
     setImageCoverUrl(value: string): NewsPhotoCreateUpdate;
     getImageCoverCaption(): string;
     setImageCoverCaption(value: string): NewsPhotoCreateUpdate;
+    getEnergy(): number;
+    setEnergy(value: number): NewsPhotoCreateUpdate;
     getStatus(): contents_v1_article_pb.ArticleStatus;
     setStatus(value: contents_v1_article_pb.ArticleStatus): NewsPhotoCreateUpdate;
     getSectionHomepage(): contents_v1_article_pb.ArticleSectionHomepage;
@@ -195,6 +200,7 @@ export namespace NewsPhotoCreateUpdate {
         content: string,
         imageCoverUrl: string,
         imageCoverCaption: string,
+        energy: number,
         status: contents_v1_article_pb.ArticleStatus,
         sectionHomepage: contents_v1_article_pb.ArticleSectionHomepage,
         photosList: Array<ArticlePhoto.AsObject>,

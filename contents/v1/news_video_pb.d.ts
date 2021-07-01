@@ -55,6 +55,8 @@ export class NewsVideo extends jspb.Message {
     setImageCoverCaption(value: string): NewsVideo;
     getSlug(): string;
     setSlug(value: string): NewsVideo;
+    getEnergy(): number;
+    setEnergy(value: number): NewsVideo;
     getStatus(): contents_v1_article_pb.ArticleStatus;
     setStatus(value: contents_v1_article_pb.ArticleStatus): NewsVideo;
     getSectionHomepage(): contents_v1_article_pb.ArticleSectionHomepage;
@@ -125,6 +127,7 @@ export namespace NewsVideo {
         imageCoverUrl: string,
         imageCoverCaption: string,
         slug: string,
+        energy: number,
         status: contents_v1_article_pb.ArticleStatus,
         sectionHomepage: contents_v1_article_pb.ArticleSectionHomepage,
         createdAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
@@ -156,6 +159,8 @@ export class NewsVideoCreateUpdate extends jspb.Message {
     setImageCoverUrl(value: string): NewsVideoCreateUpdate;
     getImageCoverCaption(): string;
     setImageCoverCaption(value: string): NewsVideoCreateUpdate;
+    getEnergy(): number;
+    setEnergy(value: number): NewsVideoCreateUpdate;
     getStatus(): contents_v1_article_pb.ArticleStatus;
     setStatus(value: contents_v1_article_pb.ArticleStatus): NewsVideoCreateUpdate;
     getSectionHomepage(): contents_v1_article_pb.ArticleSectionHomepage;
@@ -194,6 +199,7 @@ export namespace NewsVideoCreateUpdate {
         content: string,
         imageCoverUrl: string,
         imageCoverCaption: string,
+        energy: number,
         status: contents_v1_article_pb.ArticleStatus,
         sectionHomepage: contents_v1_article_pb.ArticleSectionHomepage,
         video?: ArticleVideo.AsObject,

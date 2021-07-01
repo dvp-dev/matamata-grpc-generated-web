@@ -32,6 +32,8 @@ export class Infografik extends jspb.Message {
     setImageCoverCaption(value: string): Infografik;
     getSlug(): string;
     setSlug(value: string): Infografik;
+    getEnergy(): number;
+    setEnergy(value: number): Infografik;
     getStatus(): contents_v1_article_pb.ArticleStatus;
     setStatus(value: contents_v1_article_pb.ArticleStatus): Infografik;
     getSectionHomepage(): contents_v1_article_pb.ArticleSectionHomepage;
@@ -97,6 +99,7 @@ export namespace Infografik {
         imageCoverUrl: string,
         imageCoverCaption: string,
         slug: string,
+        energy: number,
         status: contents_v1_article_pb.ArticleStatus,
         sectionHomepage: contents_v1_article_pb.ArticleSectionHomepage,
         createdAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
@@ -127,6 +130,8 @@ export class InfografikCreateUpdate extends jspb.Message {
     setImageCoverUrl(value: string): InfografikCreateUpdate;
     getImageCoverCaption(): string;
     setImageCoverCaption(value: string): InfografikCreateUpdate;
+    getEnergy(): number;
+    setEnergy(value: number): InfografikCreateUpdate;
     getStatus(): contents_v1_article_pb.ArticleStatus;
     setStatus(value: contents_v1_article_pb.ArticleStatus): InfografikCreateUpdate;
     getSectionHomepage(): contents_v1_article_pb.ArticleSectionHomepage;
@@ -160,6 +165,7 @@ export namespace InfografikCreateUpdate {
         content: string,
         imageCoverUrl: string,
         imageCoverCaption: string,
+        energy: number,
         status: contents_v1_article_pb.ArticleStatus,
         sectionHomepage: contents_v1_article_pb.ArticleSectionHomepage,
         tagIdsList: Array<number>,

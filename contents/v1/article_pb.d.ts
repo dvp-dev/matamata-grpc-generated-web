@@ -80,6 +80,8 @@ export class Article extends jspb.Message {
     setImageCoverCaption(value: string): Article;
     getSlug(): string;
     setSlug(value: string): Article;
+    getEnergy(): number;
+    setEnergy(value: number): Article;
     getStatus(): ArticleStatus;
     setStatus(value: ArticleStatus): Article;
     getSectionHomepage(): ArticleSectionHomepage;
@@ -145,6 +147,7 @@ export namespace Article {
         imageCoverUrl: string,
         imageCoverCaption: string,
         slug: string,
+        energy: number,
         status: ArticleStatus,
         sectionHomepage: ArticleSectionHomepage,
         createdAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
@@ -175,6 +178,8 @@ export class ArticleCreateUpdate extends jspb.Message {
     setImageCoverUrl(value: string): ArticleCreateUpdate;
     getImageCoverCaption(): string;
     setImageCoverCaption(value: string): ArticleCreateUpdate;
+    getEnergy(): number;
+    setEnergy(value: number): ArticleCreateUpdate;
     getStatus(): ArticleStatus;
     setStatus(value: ArticleStatus): ArticleCreateUpdate;
     getSectionHomepage(): ArticleSectionHomepage;
@@ -208,6 +213,7 @@ export namespace ArticleCreateUpdate {
         content: string,
         imageCoverUrl: string,
         imageCoverCaption: string,
+        energy: number,
         status: ArticleStatus,
         sectionHomepage: ArticleSectionHomepage,
         tagIdsList: Array<number>,

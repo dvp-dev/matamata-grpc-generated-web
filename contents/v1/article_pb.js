@@ -726,6 +726,7 @@ proto.contents.v1.Article.toObject = function(includeInstance, msg) {
     imageCoverUrl: jspb.Message.getFieldWithDefault(msg, 8, ""),
     imageCoverCaption: jspb.Message.getFieldWithDefault(msg, 9, ""),
     slug: jspb.Message.getFieldWithDefault(msg, 14, ""),
+    energy: jspb.Message.getFieldWithDefault(msg, 16, 0),
     status: jspb.Message.getFieldWithDefault(msg, 10, 0),
     sectionHomepage: jspb.Message.getFieldWithDefault(msg, 13, 0),
     createdAt: (f = msg.getCreatedAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
@@ -813,6 +814,10 @@ proto.contents.v1.Article.deserializeBinaryFromReader = function(msg, reader) {
     case 14:
       var value = /** @type {string} */ (reader.readString());
       msg.setSlug(value);
+      break;
+    case 16:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setEnergy(value);
       break;
     case 10:
       var value = /** @type {!proto.contents.v1.ArticleStatus} */ (reader.readEnum());
@@ -958,6 +963,13 @@ proto.contents.v1.Article.serializeBinaryToWriter = function(message, writer) {
   if (f.length > 0) {
     writer.writeString(
       14,
+      f
+    );
+  }
+  f = message.getEnergy();
+  if (f !== 0) {
+    writer.writeInt32(
+      16,
       f
     );
   }
@@ -1219,6 +1231,24 @@ proto.contents.v1.Article.prototype.getSlug = function() {
  */
 proto.contents.v1.Article.prototype.setSlug = function(value) {
   return jspb.Message.setProto3StringField(this, 14, value);
+};
+
+
+/**
+ * optional int32 energy = 16;
+ * @return {number}
+ */
+proto.contents.v1.Article.prototype.getEnergy = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 16, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.contents.v1.Article} returns this
+ */
+proto.contents.v1.Article.prototype.setEnergy = function(value) {
+  return jspb.Message.setProto3IntField(this, 16, value);
 };
 
 
@@ -1603,6 +1633,7 @@ proto.contents.v1.ArticleCreateUpdate.toObject = function(includeInstance, msg) 
     content: jspb.Message.getFieldWithDefault(msg, 7, ""),
     imageCoverUrl: jspb.Message.getFieldWithDefault(msg, 8, ""),
     imageCoverCaption: jspb.Message.getFieldWithDefault(msg, 9, ""),
+    energy: jspb.Message.getFieldWithDefault(msg, 11, 0),
     status: jspb.Message.getFieldWithDefault(msg, 10, 0),
     sectionHomepage: jspb.Message.getFieldWithDefault(msg, 13, 0),
     tagIdsList: (f = jspb.Message.getRepeatedField(msg, 51)) == null ? undefined : f,
@@ -1675,6 +1706,10 @@ proto.contents.v1.ArticleCreateUpdate.deserializeBinaryFromReader = function(msg
     case 9:
       var value = /** @type {string} */ (reader.readString());
       msg.setImageCoverCaption(value);
+      break;
+    case 11:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setEnergy(value);
       break;
     case 10:
       var value = /** @type {!proto.contents.v1.ArticleStatus} */ (reader.readEnum());
@@ -1777,6 +1812,13 @@ proto.contents.v1.ArticleCreateUpdate.serializeBinaryToWriter = function(message
   if (f.length > 0) {
     writer.writeString(
       9,
+      f
+    );
+  }
+  f = message.getEnergy();
+  if (f !== 0) {
+    writer.writeInt32(
+      11,
       f
     );
   }
@@ -1953,6 +1995,24 @@ proto.contents.v1.ArticleCreateUpdate.prototype.getImageCoverCaption = function(
  */
 proto.contents.v1.ArticleCreateUpdate.prototype.setImageCoverCaption = function(value) {
   return jspb.Message.setProto3StringField(this, 9, value);
+};
+
+
+/**
+ * optional int32 energy = 11;
+ * @return {number}
+ */
+proto.contents.v1.ArticleCreateUpdate.prototype.getEnergy = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 11, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.contents.v1.ArticleCreateUpdate} returns this
+ */
+proto.contents.v1.ArticleCreateUpdate.prototype.setEnergy = function(value) {
+  return jspb.Message.setProto3IntField(this, 11, value);
 };
 
 
