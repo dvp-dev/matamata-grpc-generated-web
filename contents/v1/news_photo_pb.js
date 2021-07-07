@@ -574,6 +574,7 @@ proto.contents.v1.NewsPhoto.toObject = function(includeInstance, msg) {
     imageCoverCaption: jspb.Message.getFieldWithDefault(msg, 9, ""),
     slug: jspb.Message.getFieldWithDefault(msg, 14, ""),
     energy: jspb.Message.getFieldWithDefault(msg, 16, 0),
+    type: jspb.Message.getFieldWithDefault(msg, 17, 0),
     status: jspb.Message.getFieldWithDefault(msg, 10, 0),
     sectionHomepage: jspb.Message.getFieldWithDefault(msg, 13, 0),
     createdAt: (f = msg.getCreatedAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
@@ -667,6 +668,10 @@ proto.contents.v1.NewsPhoto.deserializeBinaryFromReader = function(msg, reader) 
     case 16:
       var value = /** @type {number} */ (reader.readInt32());
       msg.setEnergy(value);
+      break;
+    case 17:
+      var value = /** @type {!proto.contents.v1.ArticleType} */ (reader.readEnum());
+      msg.setType(value);
       break;
     case 10:
       var value = /** @type {!proto.contents.v1.ArticleStatus} */ (reader.readEnum());
@@ -824,6 +829,13 @@ proto.contents.v1.NewsPhoto.serializeBinaryToWriter = function(message, writer) 
   if (f !== 0) {
     writer.writeInt32(
       16,
+      f
+    );
+  }
+  f = message.getType();
+  if (f !== 0.0) {
+    writer.writeEnum(
+      17,
       f
     );
   }
@@ -1111,6 +1123,24 @@ proto.contents.v1.NewsPhoto.prototype.getEnergy = function() {
  */
 proto.contents.v1.NewsPhoto.prototype.setEnergy = function(value) {
   return jspb.Message.setProto3IntField(this, 16, value);
+};
+
+
+/**
+ * optional ArticleType type = 17;
+ * @return {!proto.contents.v1.ArticleType}
+ */
+proto.contents.v1.NewsPhoto.prototype.getType = function() {
+  return /** @type {!proto.contents.v1.ArticleType} */ (jspb.Message.getFieldWithDefault(this, 17, 0));
+};
+
+
+/**
+ * @param {!proto.contents.v1.ArticleType} value
+ * @return {!proto.contents.v1.NewsPhoto} returns this
+ */
+proto.contents.v1.NewsPhoto.prototype.setType = function(value) {
+  return jspb.Message.setProto3EnumField(this, 17, value);
 };
 
 
@@ -1534,6 +1564,7 @@ proto.contents.v1.NewsPhotoCreateUpdate.toObject = function(includeInstance, msg
     imageCoverUrl: jspb.Message.getFieldWithDefault(msg, 8, ""),
     imageCoverCaption: jspb.Message.getFieldWithDefault(msg, 9, ""),
     energy: jspb.Message.getFieldWithDefault(msg, 11, 0),
+    type: jspb.Message.getFieldWithDefault(msg, 12, 0),
     status: jspb.Message.getFieldWithDefault(msg, 10, 0),
     sectionHomepage: jspb.Message.getFieldWithDefault(msg, 13, 0),
     photosList: jspb.Message.toObjectList(msg.getPhotosList(),
@@ -1612,6 +1643,10 @@ proto.contents.v1.NewsPhotoCreateUpdate.deserializeBinaryFromReader = function(m
     case 11:
       var value = /** @type {number} */ (reader.readInt32());
       msg.setEnergy(value);
+      break;
+    case 12:
+      var value = /** @type {!proto.contents.v1.ArticleType} */ (reader.readEnum());
+      msg.setType(value);
       break;
     case 10:
       var value = /** @type {!proto.contents.v1.ArticleStatus} */ (reader.readEnum());
@@ -1726,6 +1761,13 @@ proto.contents.v1.NewsPhotoCreateUpdate.serializeBinaryToWriter = function(messa
   if (f !== 0) {
     writer.writeInt32(
       11,
+      f
+    );
+  }
+  f = message.getType();
+  if (f !== 0.0) {
+    writer.writeEnum(
+      12,
       f
     );
   }
@@ -1928,6 +1970,24 @@ proto.contents.v1.NewsPhotoCreateUpdate.prototype.getEnergy = function() {
  */
 proto.contents.v1.NewsPhotoCreateUpdate.prototype.setEnergy = function(value) {
   return jspb.Message.setProto3IntField(this, 11, value);
+};
+
+
+/**
+ * optional ArticleType type = 12;
+ * @return {!proto.contents.v1.ArticleType}
+ */
+proto.contents.v1.NewsPhotoCreateUpdate.prototype.getType = function() {
+  return /** @type {!proto.contents.v1.ArticleType} */ (jspb.Message.getFieldWithDefault(this, 12, 0));
+};
+
+
+/**
+ * @param {!proto.contents.v1.ArticleType} value
+ * @return {!proto.contents.v1.NewsPhotoCreateUpdate} returns this
+ */
+proto.contents.v1.NewsPhotoCreateUpdate.prototype.setType = function(value) {
+  return jspb.Message.setProto3EnumField(this, 12, value);
 };
 
 

@@ -14,8 +14,8 @@ import * as contents_v1_article_pb from "../../contents/v1/article_pb";
 export class ArticleVideo extends jspb.Message { 
     getId(): number;
     setId(value: number): ArticleVideo;
-    getImageLink(): string;
-    setImageLink(value: string): ArticleVideo;
+    getVideoLink(): string;
+    setVideoLink(value: string): ArticleVideo;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): ArticleVideo.AsObject;
@@ -30,7 +30,7 @@ export class ArticleVideo extends jspb.Message {
 export namespace ArticleVideo {
     export type AsObject = {
         id: number,
-        imageLink: string,
+        videoLink: string,
     }
 }
 
@@ -57,6 +57,8 @@ export class NewsVideo extends jspb.Message {
     setSlug(value: string): NewsVideo;
     getEnergy(): number;
     setEnergy(value: number): NewsVideo;
+    getType(): contents_v1_article_pb.ArticleType;
+    setType(value: contents_v1_article_pb.ArticleType): NewsVideo;
     getStatus(): contents_v1_article_pb.ArticleStatus;
     setStatus(value: contents_v1_article_pb.ArticleStatus): NewsVideo;
     getSectionHomepage(): contents_v1_article_pb.ArticleSectionHomepage;
@@ -128,6 +130,7 @@ export namespace NewsVideo {
         imageCoverCaption: string,
         slug: string,
         energy: number,
+        type: contents_v1_article_pb.ArticleType,
         status: contents_v1_article_pb.ArticleStatus,
         sectionHomepage: contents_v1_article_pb.ArticleSectionHomepage,
         createdAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
@@ -161,6 +164,8 @@ export class NewsVideoCreateUpdate extends jspb.Message {
     setImageCoverCaption(value: string): NewsVideoCreateUpdate;
     getEnergy(): number;
     setEnergy(value: number): NewsVideoCreateUpdate;
+    getType(): contents_v1_article_pb.ArticleType;
+    setType(value: contents_v1_article_pb.ArticleType): NewsVideoCreateUpdate;
     getStatus(): contents_v1_article_pb.ArticleStatus;
     setStatus(value: contents_v1_article_pb.ArticleStatus): NewsVideoCreateUpdate;
     getSectionHomepage(): contents_v1_article_pb.ArticleSectionHomepage;
@@ -200,6 +205,7 @@ export namespace NewsVideoCreateUpdate {
         imageCoverUrl: string,
         imageCoverCaption: string,
         energy: number,
+        type: contents_v1_article_pb.ArticleType,
         status: contents_v1_article_pb.ArticleStatus,
         sectionHomepage: contents_v1_article_pb.ArticleSectionHomepage,
         video?: ArticleVideo.AsObject,

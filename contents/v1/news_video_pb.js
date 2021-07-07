@@ -367,7 +367,7 @@ proto.contents.v1.ArticleVideo.prototype.toObject = function(opt_includeInstance
 proto.contents.v1.ArticleVideo.toObject = function(includeInstance, msg) {
   var f, obj = {
     id: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    imageLink: jspb.Message.getFieldWithDefault(msg, 2, "")
+    videoLink: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -410,7 +410,7 @@ proto.contents.v1.ArticleVideo.deserializeBinaryFromReader = function(msg, reade
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
-      msg.setImageLink(value);
+      msg.setVideoLink(value);
       break;
     default:
       reader.skipField();
@@ -448,7 +448,7 @@ proto.contents.v1.ArticleVideo.serializeBinaryToWriter = function(message, write
       f
     );
   }
-  f = message.getImageLink();
+  f = message.getVideoLink();
   if (f.length > 0) {
     writer.writeString(
       2,
@@ -477,10 +477,10 @@ proto.contents.v1.ArticleVideo.prototype.setId = function(value) {
 
 
 /**
- * optional string image_link = 2;
+ * optional string video_link = 2;
  * @return {string}
  */
-proto.contents.v1.ArticleVideo.prototype.getImageLink = function() {
+proto.contents.v1.ArticleVideo.prototype.getVideoLink = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
@@ -489,7 +489,7 @@ proto.contents.v1.ArticleVideo.prototype.getImageLink = function() {
  * @param {string} value
  * @return {!proto.contents.v1.ArticleVideo} returns this
  */
-proto.contents.v1.ArticleVideo.prototype.setImageLink = function(value) {
+proto.contents.v1.ArticleVideo.prototype.setVideoLink = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
 };
 
@@ -544,6 +544,7 @@ proto.contents.v1.NewsVideo.toObject = function(includeInstance, msg) {
     imageCoverCaption: jspb.Message.getFieldWithDefault(msg, 9, ""),
     slug: jspb.Message.getFieldWithDefault(msg, 14, ""),
     energy: jspb.Message.getFieldWithDefault(msg, 16, 0),
+    type: jspb.Message.getFieldWithDefault(msg, 17, 0),
     status: jspb.Message.getFieldWithDefault(msg, 10, 0),
     sectionHomepage: jspb.Message.getFieldWithDefault(msg, 13, 0),
     createdAt: (f = msg.getCreatedAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
@@ -636,6 +637,10 @@ proto.contents.v1.NewsVideo.deserializeBinaryFromReader = function(msg, reader) 
     case 16:
       var value = /** @type {number} */ (reader.readInt32());
       msg.setEnergy(value);
+      break;
+    case 17:
+      var value = /** @type {!proto.contents.v1.ArticleType} */ (reader.readEnum());
+      msg.setType(value);
       break;
     case 10:
       var value = /** @type {!proto.contents.v1.ArticleStatus} */ (reader.readEnum());
@@ -793,6 +798,13 @@ proto.contents.v1.NewsVideo.serializeBinaryToWriter = function(message, writer) 
   if (f !== 0) {
     writer.writeInt32(
       16,
+      f
+    );
+  }
+  f = message.getType();
+  if (f !== 0.0) {
+    writer.writeEnum(
+      17,
       f
     );
   }
@@ -1080,6 +1092,24 @@ proto.contents.v1.NewsVideo.prototype.getEnergy = function() {
  */
 proto.contents.v1.NewsVideo.prototype.setEnergy = function(value) {
   return jspb.Message.setProto3IntField(this, 16, value);
+};
+
+
+/**
+ * optional ArticleType type = 17;
+ * @return {!proto.contents.v1.ArticleType}
+ */
+proto.contents.v1.NewsVideo.prototype.getType = function() {
+  return /** @type {!proto.contents.v1.ArticleType} */ (jspb.Message.getFieldWithDefault(this, 17, 0));
+};
+
+
+/**
+ * @param {!proto.contents.v1.ArticleType} value
+ * @return {!proto.contents.v1.NewsVideo} returns this
+ */
+proto.contents.v1.NewsVideo.prototype.setType = function(value) {
+  return jspb.Message.setProto3EnumField(this, 17, value);
 };
 
 
@@ -1502,6 +1532,7 @@ proto.contents.v1.NewsVideoCreateUpdate.toObject = function(includeInstance, msg
     imageCoverUrl: jspb.Message.getFieldWithDefault(msg, 8, ""),
     imageCoverCaption: jspb.Message.getFieldWithDefault(msg, 9, ""),
     energy: jspb.Message.getFieldWithDefault(msg, 11, 0),
+    type: jspb.Message.getFieldWithDefault(msg, 12, 0),
     status: jspb.Message.getFieldWithDefault(msg, 10, 0),
     sectionHomepage: jspb.Message.getFieldWithDefault(msg, 13, 0),
     video: (f = msg.getVideo()) && proto.contents.v1.ArticleVideo.toObject(includeInstance, f),
@@ -1579,6 +1610,10 @@ proto.contents.v1.NewsVideoCreateUpdate.deserializeBinaryFromReader = function(m
     case 11:
       var value = /** @type {number} */ (reader.readInt32());
       msg.setEnergy(value);
+      break;
+    case 12:
+      var value = /** @type {!proto.contents.v1.ArticleType} */ (reader.readEnum());
+      msg.setType(value);
       break;
     case 10:
       var value = /** @type {!proto.contents.v1.ArticleStatus} */ (reader.readEnum());
@@ -1693,6 +1728,13 @@ proto.contents.v1.NewsVideoCreateUpdate.serializeBinaryToWriter = function(messa
   if (f !== 0) {
     writer.writeInt32(
       11,
+      f
+    );
+  }
+  f = message.getType();
+  if (f !== 0.0) {
+    writer.writeEnum(
+      12,
       f
     );
   }
@@ -1895,6 +1937,24 @@ proto.contents.v1.NewsVideoCreateUpdate.prototype.getEnergy = function() {
  */
 proto.contents.v1.NewsVideoCreateUpdate.prototype.setEnergy = function(value) {
   return jspb.Message.setProto3IntField(this, 11, value);
+};
+
+
+/**
+ * optional ArticleType type = 12;
+ * @return {!proto.contents.v1.ArticleType}
+ */
+proto.contents.v1.NewsVideoCreateUpdate.prototype.getType = function() {
+  return /** @type {!proto.contents.v1.ArticleType} */ (jspb.Message.getFieldWithDefault(this, 12, 0));
+};
+
+
+/**
+ * @param {!proto.contents.v1.ArticleType} value
+ * @return {!proto.contents.v1.NewsVideoCreateUpdate} returns this
+ */
+proto.contents.v1.NewsVideoCreateUpdate.prototype.setType = function(value) {
+  return jspb.Message.setProto3EnumField(this, 12, value);
 };
 
 

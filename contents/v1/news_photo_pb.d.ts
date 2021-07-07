@@ -60,6 +60,8 @@ export class NewsPhoto extends jspb.Message {
     setSlug(value: string): NewsPhoto;
     getEnergy(): number;
     setEnergy(value: number): NewsPhoto;
+    getType(): contents_v1_article_pb.ArticleType;
+    setType(value: contents_v1_article_pb.ArticleType): NewsPhoto;
     getStatus(): contents_v1_article_pb.ArticleStatus;
     setStatus(value: contents_v1_article_pb.ArticleStatus): NewsPhoto;
     getSectionHomepage(): contents_v1_article_pb.ArticleSectionHomepage;
@@ -130,6 +132,7 @@ export namespace NewsPhoto {
         imageCoverCaption: string,
         slug: string,
         energy: number,
+        type: contents_v1_article_pb.ArticleType,
         status: contents_v1_article_pb.ArticleStatus,
         sectionHomepage: contents_v1_article_pb.ArticleSectionHomepage,
         createdAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
@@ -163,6 +166,8 @@ export class NewsPhotoCreateUpdate extends jspb.Message {
     setImageCoverCaption(value: string): NewsPhotoCreateUpdate;
     getEnergy(): number;
     setEnergy(value: number): NewsPhotoCreateUpdate;
+    getType(): contents_v1_article_pb.ArticleType;
+    setType(value: contents_v1_article_pb.ArticleType): NewsPhotoCreateUpdate;
     getStatus(): contents_v1_article_pb.ArticleStatus;
     setStatus(value: contents_v1_article_pb.ArticleStatus): NewsPhotoCreateUpdate;
     getSectionHomepage(): contents_v1_article_pb.ArticleSectionHomepage;
@@ -201,6 +206,7 @@ export namespace NewsPhotoCreateUpdate {
         imageCoverUrl: string,
         imageCoverCaption: string,
         energy: number,
+        type: contents_v1_article_pb.ArticleType,
         status: contents_v1_article_pb.ArticleStatus,
         sectionHomepage: contents_v1_article_pb.ArticleSectionHomepage,
         photosList: Array<ArticlePhoto.AsObject>,

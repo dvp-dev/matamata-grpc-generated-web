@@ -82,6 +82,8 @@ export class Article extends jspb.Message {
     setSlug(value: string): Article;
     getEnergy(): number;
     setEnergy(value: number): Article;
+    getType(): ArticleType;
+    setType(value: ArticleType): Article;
     getStatus(): ArticleStatus;
     setStatus(value: ArticleStatus): Article;
     getSectionHomepage(): ArticleSectionHomepage;
@@ -148,6 +150,7 @@ export namespace Article {
         imageCoverCaption: string,
         slug: string,
         energy: number,
+        type: ArticleType,
         status: ArticleStatus,
         sectionHomepage: ArticleSectionHomepage,
         createdAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
@@ -180,6 +183,8 @@ export class ArticleCreateUpdate extends jspb.Message {
     setImageCoverCaption(value: string): ArticleCreateUpdate;
     getEnergy(): number;
     setEnergy(value: number): ArticleCreateUpdate;
+    getType(): ArticleType;
+    setType(value: ArticleType): ArticleCreateUpdate;
     getStatus(): ArticleStatus;
     setStatus(value: ArticleStatus): ArticleCreateUpdate;
     getSectionHomepage(): ArticleSectionHomepage;
@@ -214,6 +219,7 @@ export namespace ArticleCreateUpdate {
         imageCoverUrl: string,
         imageCoverCaption: string,
         energy: number,
+        type: ArticleType,
         status: ArticleStatus,
         sectionHomepage: ArticleSectionHomepage,
         tagIdsList: Array<number>,
@@ -502,9 +508,17 @@ export enum ArticleStatus {
 
 export enum ArticleType {
     ARTICLE_TYPE_ARTICLE_UNSPECIFIED = 0,
-    ARTICLE_TYPE_BERITA_FOTO = 1,
-    ARTICLE_TYPE_BERITA_VIDEO = 2,
+    ARTICLE_TYPE_POLITIK_INDONESIA = 6,
+    ARTICLE_TYPE_ANALISIS = 7,
+    ARTICLE_TYPE_OPINI = 8,
+    ARTICLE_TYPE_SEJARAH = 9,
+    ARTICLE_TYPE_BELAJAR_POLITIK = 10,
+    ARTICLE_TYPE_MILITER = 11,
     ARTICLE_TYPE_INFOGRAFIK = 3,
+    ARTICLE_TYPE_BERITA_VIDEO = 2,
+    ARTICLE_TYPE_INTERUPSI = 5,
+    ARTICLE_TYPE_BERITA_FOTO = 1,
+    ARTICLE_TYPE_CEK_FAKTA = 4,
 }
 
 export enum ArticleSectionHomepage {
