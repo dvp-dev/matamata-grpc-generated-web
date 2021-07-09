@@ -267,6 +267,10 @@ export class NewsVideoGetListRequest extends jspb.Message {
     getStatusMultipleList(): Array<contents_v1_article_pb.ArticleStatus>;
     setStatusMultipleList(value: Array<contents_v1_article_pb.ArticleStatus>): NewsVideoGetListRequest;
     addStatusMultiple(value: contents_v1_article_pb.ArticleStatus, index?: number): contents_v1_article_pb.ArticleStatus;
+    clearTypesList(): void;
+    getTypesList(): Array<contents_v1_article_pb.ArticleType>;
+    setTypesList(value: Array<contents_v1_article_pb.ArticleType>): NewsVideoGetListRequest;
+    addTypes(value: contents_v1_article_pb.ArticleType, index?: number): contents_v1_article_pb.ArticleType;
     getSectionHomepage(): contents_v1_article_pb.ArticleSectionHomepage;
     setSectionHomepage(value: contents_v1_article_pb.ArticleSectionHomepage): NewsVideoGetListRequest;
     getCategoryId1(): number;
@@ -298,6 +302,7 @@ export namespace NewsVideoGetListRequest {
     export type AsObject = {
         status: contents_v1_article_pb.ArticleStatus,
         statusMultipleList: Array<contents_v1_article_pb.ArticleStatus>,
+        typesList: Array<contents_v1_article_pb.ArticleType>,
         sectionHomepage: contents_v1_article_pb.ArticleSectionHomepage,
         categoryId1: number,
         categoryId2: number,

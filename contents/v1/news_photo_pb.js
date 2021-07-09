@@ -2457,7 +2457,7 @@ proto.contents.v1.NewsPhotoGetOneResponse.prototype.hasData = function() {
  * @private {!Array<number>}
  * @const
  */
-proto.contents.v1.NewsPhotoGetListRequest.repeatedFields_ = [9];
+proto.contents.v1.NewsPhotoGetListRequest.repeatedFields_ = [9,11];
 
 
 
@@ -2492,6 +2492,7 @@ proto.contents.v1.NewsPhotoGetListRequest.toObject = function(includeInstance, m
   var f, obj = {
     status: jspb.Message.getFieldWithDefault(msg, 1, 0),
     statusMultipleList: (f = jspb.Message.getRepeatedField(msg, 9)) == null ? undefined : f,
+    typesList: (f = jspb.Message.getRepeatedField(msg, 11)) == null ? undefined : f,
     sectionHomepage: jspb.Message.getFieldWithDefault(msg, 10, 0),
     categoryId1: jspb.Message.getFieldWithDefault(msg, 2, 0),
     categoryId2: jspb.Message.getFieldWithDefault(msg, 3, 0),
@@ -2544,6 +2545,12 @@ proto.contents.v1.NewsPhotoGetListRequest.deserializeBinaryFromReader = function
       var values = /** @type {!Array<!proto.contents.v1.ArticleStatus>} */ (reader.isDelimited() ? reader.readPackedEnum() : [reader.readEnum()]);
       for (var i = 0; i < values.length; i++) {
         msg.addStatusMultiple(values[i]);
+      }
+      break;
+    case 11:
+      var values = /** @type {!Array<!proto.contents.v1.ArticleType>} */ (reader.isDelimited() ? reader.readPackedEnum() : [reader.readEnum()]);
+      for (var i = 0; i < values.length; i++) {
+        msg.addTypes(values[i]);
       }
       break;
     case 10:
@@ -2618,6 +2625,13 @@ proto.contents.v1.NewsPhotoGetListRequest.serializeBinaryToWriter = function(mes
   if (f.length > 0) {
     writer.writePackedEnum(
       9,
+      f
+    );
+  }
+  f = message.getTypesList();
+  if (f.length > 0) {
+    writer.writePackedEnum(
+      11,
       f
     );
   }
@@ -2742,6 +2756,43 @@ proto.contents.v1.NewsPhotoGetListRequest.prototype.addStatusMultiple = function
  */
 proto.contents.v1.NewsPhotoGetListRequest.prototype.clearStatusMultipleList = function() {
   return this.setStatusMultipleList([]);
+};
+
+
+/**
+ * repeated ArticleType types = 11;
+ * @return {!Array<!proto.contents.v1.ArticleType>}
+ */
+proto.contents.v1.NewsPhotoGetListRequest.prototype.getTypesList = function() {
+  return /** @type {!Array<!proto.contents.v1.ArticleType>} */ (jspb.Message.getRepeatedField(this, 11));
+};
+
+
+/**
+ * @param {!Array<!proto.contents.v1.ArticleType>} value
+ * @return {!proto.contents.v1.NewsPhotoGetListRequest} returns this
+ */
+proto.contents.v1.NewsPhotoGetListRequest.prototype.setTypesList = function(value) {
+  return jspb.Message.setField(this, 11, value || []);
+};
+
+
+/**
+ * @param {!proto.contents.v1.ArticleType} value
+ * @param {number=} opt_index
+ * @return {!proto.contents.v1.NewsPhotoGetListRequest} returns this
+ */
+proto.contents.v1.NewsPhotoGetListRequest.prototype.addTypes = function(value, opt_index) {
+  return jspb.Message.addToRepeatedField(this, 11, value, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.contents.v1.NewsPhotoGetListRequest} returns this
+ */
+proto.contents.v1.NewsPhotoGetListRequest.prototype.clearTypesList = function() {
+  return this.setTypesList([]);
 };
 
 
