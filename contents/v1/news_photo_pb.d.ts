@@ -268,6 +268,8 @@ export class NewsPhotoGetListRequest extends jspb.Message {
     getStatusMultipleList(): Array<contents_v1_article_pb.ArticleStatus>;
     setStatusMultipleList(value: Array<contents_v1_article_pb.ArticleStatus>): NewsPhotoGetListRequest;
     addStatusMultiple(value: contents_v1_article_pb.ArticleStatus, index?: number): contents_v1_article_pb.ArticleStatus;
+    getType(): contents_v1_article_pb.ArticleType;
+    setType(value: contents_v1_article_pb.ArticleType): NewsPhotoGetListRequest;
     clearTypesList(): void;
     getTypesList(): Array<contents_v1_article_pb.ArticleType>;
     setTypesList(value: Array<contents_v1_article_pb.ArticleType>): NewsPhotoGetListRequest;
@@ -303,6 +305,7 @@ export namespace NewsPhotoGetListRequest {
     export type AsObject = {
         status: contents_v1_article_pb.ArticleStatus,
         statusMultipleList: Array<contents_v1_article_pb.ArticleStatus>,
+        type: contents_v1_article_pb.ArticleType,
         typesList: Array<contents_v1_article_pb.ArticleType>,
         sectionHomepage: contents_v1_article_pb.ArticleSectionHomepage,
         categoryId1: number,

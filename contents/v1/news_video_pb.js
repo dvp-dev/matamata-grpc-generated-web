@@ -2458,6 +2458,7 @@ proto.contents.v1.NewsVideoGetListRequest.toObject = function(includeInstance, m
   var f, obj = {
     status: jspb.Message.getFieldWithDefault(msg, 1, 0),
     statusMultipleList: (f = jspb.Message.getRepeatedField(msg, 9)) == null ? undefined : f,
+    type: jspb.Message.getFieldWithDefault(msg, 12, 0),
     typesList: (f = jspb.Message.getRepeatedField(msg, 11)) == null ? undefined : f,
     sectionHomepage: jspb.Message.getFieldWithDefault(msg, 10, 0),
     categoryId1: jspb.Message.getFieldWithDefault(msg, 2, 0),
@@ -2512,6 +2513,10 @@ proto.contents.v1.NewsVideoGetListRequest.deserializeBinaryFromReader = function
       for (var i = 0; i < values.length; i++) {
         msg.addStatusMultiple(values[i]);
       }
+      break;
+    case 12:
+      var value = /** @type {!proto.contents.v1.ArticleType} */ (reader.readEnum());
+      msg.setType(value);
       break;
     case 11:
       var values = /** @type {!Array<!proto.contents.v1.ArticleType>} */ (reader.isDelimited() ? reader.readPackedEnum() : [reader.readEnum()]);
@@ -2591,6 +2596,13 @@ proto.contents.v1.NewsVideoGetListRequest.serializeBinaryToWriter = function(mes
   if (f.length > 0) {
     writer.writePackedEnum(
       9,
+      f
+    );
+  }
+  f = message.getType();
+  if (f !== 0.0) {
+    writer.writeEnum(
+      12,
       f
     );
   }
@@ -2722,6 +2734,24 @@ proto.contents.v1.NewsVideoGetListRequest.prototype.addStatusMultiple = function
  */
 proto.contents.v1.NewsVideoGetListRequest.prototype.clearStatusMultipleList = function() {
   return this.setStatusMultipleList([]);
+};
+
+
+/**
+ * optional ArticleType type = 12;
+ * @return {!proto.contents.v1.ArticleType}
+ */
+proto.contents.v1.NewsVideoGetListRequest.prototype.getType = function() {
+  return /** @type {!proto.contents.v1.ArticleType} */ (jspb.Message.getFieldWithDefault(this, 12, 0));
+};
+
+
+/**
+ * @param {!proto.contents.v1.ArticleType} value
+ * @return {!proto.contents.v1.NewsVideoGetListRequest} returns this
+ */
+proto.contents.v1.NewsVideoGetListRequest.prototype.setType = function(value) {
+  return jspb.Message.setProto3EnumField(this, 12, value);
 };
 
 

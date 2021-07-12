@@ -280,6 +280,8 @@ export class ArticleGetListRequest extends jspb.Message {
     getStatusMultipleList(): Array<ArticleStatus>;
     setStatusMultipleList(value: Array<ArticleStatus>): ArticleGetListRequest;
     addStatusMultiple(value: ArticleStatus, index?: number): ArticleStatus;
+    getType(): ArticleType;
+    setType(value: ArticleType): ArticleGetListRequest;
     clearTypesList(): void;
     getTypesList(): Array<ArticleType>;
     setTypesList(value: Array<ArticleType>): ArticleGetListRequest;
@@ -315,6 +317,7 @@ export namespace ArticleGetListRequest {
     export type AsObject = {
         status: ArticleStatus,
         statusMultipleList: Array<ArticleStatus>,
+        type: ArticleType,
         typesList: Array<ArticleType>,
         sectionHomepage: ArticleSectionHomepage,
         categoryId1: number,
