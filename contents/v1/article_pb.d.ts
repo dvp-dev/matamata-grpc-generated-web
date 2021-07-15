@@ -189,6 +189,13 @@ export class ArticleCreateUpdate extends jspb.Message {
     setStatus(value: ArticleStatus): ArticleCreateUpdate;
     getSectionHomepage(): ArticleSectionHomepage;
     setSectionHomepage(value: ArticleSectionHomepage): ArticleCreateUpdate;
+    getIsCustomPublishedAt(): boolean;
+    setIsCustomPublishedAt(value: boolean): ArticleCreateUpdate;
+
+    hasPublishedAt(): boolean;
+    clearPublishedAt(): void;
+    getPublishedAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
+    setPublishedAt(value?: google_protobuf_timestamp_pb.Timestamp): ArticleCreateUpdate;
     clearTagIdsList(): void;
     getTagIdsList(): Array<number>;
     setTagIdsList(value: Array<number>): ArticleCreateUpdate;
@@ -222,6 +229,8 @@ export namespace ArticleCreateUpdate {
         type: ArticleType,
         status: ArticleStatus,
         sectionHomepage: ArticleSectionHomepage,
+        isCustomPublishedAt: boolean,
+        publishedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
         tagIdsList: Array<number>,
         creditsList: Array<ArticleCreditCreateUpdate.AsObject>,
     }

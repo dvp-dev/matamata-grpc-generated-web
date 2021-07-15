@@ -170,6 +170,13 @@ export class NewsVideoCreateUpdate extends jspb.Message {
     setStatus(value: contents_v1_article_pb.ArticleStatus): NewsVideoCreateUpdate;
     getSectionHomepage(): contents_v1_article_pb.ArticleSectionHomepage;
     setSectionHomepage(value: contents_v1_article_pb.ArticleSectionHomepage): NewsVideoCreateUpdate;
+    getIsCustomPublishedAt(): boolean;
+    setIsCustomPublishedAt(value: boolean): NewsVideoCreateUpdate;
+
+    hasPublishedAt(): boolean;
+    clearPublishedAt(): void;
+    getPublishedAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
+    setPublishedAt(value?: google_protobuf_timestamp_pb.Timestamp): NewsVideoCreateUpdate;
 
     hasVideo(): boolean;
     clearVideo(): void;
@@ -208,6 +215,8 @@ export namespace NewsVideoCreateUpdate {
         type: contents_v1_article_pb.ArticleType,
         status: contents_v1_article_pb.ArticleStatus,
         sectionHomepage: contents_v1_article_pb.ArticleSectionHomepage,
+        isCustomPublishedAt: boolean,
+        publishedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
         video?: ArticleVideo.AsObject,
         tagIdsList: Array<number>,
         creditsList: Array<contents_v1_article_pb.ArticleCreditCreateUpdate.AsObject>,

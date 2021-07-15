@@ -172,6 +172,13 @@ export class NewsPhotoCreateUpdate extends jspb.Message {
     setStatus(value: contents_v1_article_pb.ArticleStatus): NewsPhotoCreateUpdate;
     getSectionHomepage(): contents_v1_article_pb.ArticleSectionHomepage;
     setSectionHomepage(value: contents_v1_article_pb.ArticleSectionHomepage): NewsPhotoCreateUpdate;
+    getIsCustomPublishedAt(): boolean;
+    setIsCustomPublishedAt(value: boolean): NewsPhotoCreateUpdate;
+
+    hasPublishedAt(): boolean;
+    clearPublishedAt(): void;
+    getPublishedAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
+    setPublishedAt(value?: google_protobuf_timestamp_pb.Timestamp): NewsPhotoCreateUpdate;
     clearPhotosList(): void;
     getPhotosList(): Array<ArticlePhoto>;
     setPhotosList(value: Array<ArticlePhoto>): NewsPhotoCreateUpdate;
@@ -209,6 +216,8 @@ export namespace NewsPhotoCreateUpdate {
         type: contents_v1_article_pb.ArticleType,
         status: contents_v1_article_pb.ArticleStatus,
         sectionHomepage: contents_v1_article_pb.ArticleSectionHomepage,
+        isCustomPublishedAt: boolean,
+        publishedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
         photosList: Array<ArticlePhoto.AsObject>,
         tagIdsList: Array<number>,
         creditsList: Array<contents_v1_article_pb.ArticleCreditCreateUpdate.AsObject>,

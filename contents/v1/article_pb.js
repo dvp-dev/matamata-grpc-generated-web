@@ -1667,6 +1667,8 @@ proto.contents.v1.ArticleCreateUpdate.toObject = function(includeInstance, msg) 
     type: jspb.Message.getFieldWithDefault(msg, 12, 0),
     status: jspb.Message.getFieldWithDefault(msg, 10, 0),
     sectionHomepage: jspb.Message.getFieldWithDefault(msg, 13, 0),
+    isCustomPublishedAt: jspb.Message.getBooleanFieldWithDefault(msg, 14, false),
+    publishedAt: (f = msg.getPublishedAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
     tagIdsList: (f = jspb.Message.getRepeatedField(msg, 51)) == null ? undefined : f,
     creditsList: jspb.Message.toObjectList(msg.getCreditsList(),
     proto.contents.v1.ArticleCreditCreateUpdate.toObject, includeInstance)
@@ -1753,6 +1755,15 @@ proto.contents.v1.ArticleCreateUpdate.deserializeBinaryFromReader = function(msg
     case 13:
       var value = /** @type {!proto.contents.v1.ArticleSectionHomepage} */ (reader.readEnum());
       msg.setSectionHomepage(value);
+      break;
+    case 14:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setIsCustomPublishedAt(value);
+      break;
+    case 15:
+      var value = new google_protobuf_timestamp_pb.Timestamp;
+      reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
+      msg.setPublishedAt(value);
       break;
     case 51:
       var values = /** @type {!Array<number>} */ (reader.isDelimited() ? reader.readPackedInt32() : [reader.readInt32()]);
@@ -1876,6 +1887,21 @@ proto.contents.v1.ArticleCreateUpdate.serializeBinaryToWriter = function(message
     writer.writeEnum(
       13,
       f
+    );
+  }
+  f = message.getIsCustomPublishedAt();
+  if (f) {
+    writer.writeBool(
+      14,
+      f
+    );
+  }
+  f = message.getPublishedAt();
+  if (f != null) {
+    writer.writeMessage(
+      15,
+      f,
+      google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
     );
   }
   f = message.getTagIdsList();
@@ -2109,6 +2135,61 @@ proto.contents.v1.ArticleCreateUpdate.prototype.getSectionHomepage = function() 
  */
 proto.contents.v1.ArticleCreateUpdate.prototype.setSectionHomepage = function(value) {
   return jspb.Message.setProto3EnumField(this, 13, value);
+};
+
+
+/**
+ * optional bool is_custom_published_at = 14;
+ * @return {boolean}
+ */
+proto.contents.v1.ArticleCreateUpdate.prototype.getIsCustomPublishedAt = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 14, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.contents.v1.ArticleCreateUpdate} returns this
+ */
+proto.contents.v1.ArticleCreateUpdate.prototype.setIsCustomPublishedAt = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 14, value);
+};
+
+
+/**
+ * optional google.protobuf.Timestamp published_at = 15;
+ * @return {?proto.google.protobuf.Timestamp}
+ */
+proto.contents.v1.ArticleCreateUpdate.prototype.getPublishedAt = function() {
+  return /** @type{?proto.google.protobuf.Timestamp} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 15));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.Timestamp|undefined} value
+ * @return {!proto.contents.v1.ArticleCreateUpdate} returns this
+*/
+proto.contents.v1.ArticleCreateUpdate.prototype.setPublishedAt = function(value) {
+  return jspb.Message.setWrapperField(this, 15, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.contents.v1.ArticleCreateUpdate} returns this
+ */
+proto.contents.v1.ArticleCreateUpdate.prototype.clearPublishedAt = function() {
+  return this.setPublishedAt(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.contents.v1.ArticleCreateUpdate.prototype.hasPublishedAt = function() {
+  return jspb.Message.getField(this, 15) != null;
 };
 
 
