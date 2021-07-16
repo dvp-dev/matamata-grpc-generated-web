@@ -521,6 +521,7 @@ export enum ArticleStatus {
     DRAFT = 1,
     TRASH = 2,
     PUBLISH = 3,
+    COMING_SOON = 4,
 }
 
 export enum ArticleType {

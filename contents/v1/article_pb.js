@@ -4270,7 +4270,8 @@ proto.contents.v1.ArticleStatus = {
   ALL_UNSPECIFIED: 0,
   DRAFT: 1,
   TRASH: 2,
-  PUBLISH: 3
+  PUBLISH: 3,
+  COMING_SOON: 4
 };
 
 /**
