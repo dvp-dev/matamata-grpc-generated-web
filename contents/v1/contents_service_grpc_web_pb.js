@@ -27,6 +27,8 @@ var contents_v1_infografik_pb = require('../../contents/v1/infografik_pb.js')
 var contents_v1_news_photo_pb = require('../../contents/v1/news_photo_pb.js')
 
 var contents_v1_news_video_pb = require('../../contents/v1/news_video_pb.js')
+
+var contents_v1_polling_pb = require('../../contents/v1/polling_pb.js')
 const proto = {};
 proto.contents = {};
 proto.contents.v1 = require('./contents_service_pb.js');
@@ -3505,6 +3507,406 @@ proto.contents.v1.ContentServicePromiseClient.prototype.newsVideoDelete =
       request,
       metadata || {},
       methodDescriptor_ContentService_NewsVideoDelete);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.contents.v1.PollingGetOneRequest,
+ *   !proto.contents.v1.PollingGetOneResponse>}
+ */
+const methodDescriptor_ContentService_PollingGetOne = new grpc.web.MethodDescriptor(
+  '/contents.v1.ContentService/PollingGetOne',
+  grpc.web.MethodType.UNARY,
+  contents_v1_polling_pb.PollingGetOneRequest,
+  contents_v1_polling_pb.PollingGetOneResponse,
+  /**
+   * @param {!proto.contents.v1.PollingGetOneRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  contents_v1_polling_pb.PollingGetOneResponse.deserializeBinary
+);
+
+
+/**
+ * @const
+ * @type {!grpc.web.AbstractClientBase.MethodInfo<
+ *   !proto.contents.v1.PollingGetOneRequest,
+ *   !proto.contents.v1.PollingGetOneResponse>}
+ */
+const methodInfo_ContentService_PollingGetOne = new grpc.web.AbstractClientBase.MethodInfo(
+  contents_v1_polling_pb.PollingGetOneResponse,
+  /**
+   * @param {!proto.contents.v1.PollingGetOneRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  contents_v1_polling_pb.PollingGetOneResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.contents.v1.PollingGetOneRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.Error, ?proto.contents.v1.PollingGetOneResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.contents.v1.PollingGetOneResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.contents.v1.ContentServiceClient.prototype.pollingGetOne =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/contents.v1.ContentService/PollingGetOne',
+      request,
+      metadata || {},
+      methodDescriptor_ContentService_PollingGetOne,
+      callback);
+};
+
+
+/**
+ * @param {!proto.contents.v1.PollingGetOneRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.contents.v1.PollingGetOneResponse>}
+ *     Promise that resolves to the response
+ */
+proto.contents.v1.ContentServicePromiseClient.prototype.pollingGetOne =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/contents.v1.ContentService/PollingGetOne',
+      request,
+      metadata || {},
+      methodDescriptor_ContentService_PollingGetOne);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.contents.v1.PollingGetListRequest,
+ *   !proto.contents.v1.PollingGetListResponse>}
+ */
+const methodDescriptor_ContentService_PollingGetList = new grpc.web.MethodDescriptor(
+  '/contents.v1.ContentService/PollingGetList',
+  grpc.web.MethodType.UNARY,
+  contents_v1_polling_pb.PollingGetListRequest,
+  contents_v1_polling_pb.PollingGetListResponse,
+  /**
+   * @param {!proto.contents.v1.PollingGetListRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  contents_v1_polling_pb.PollingGetListResponse.deserializeBinary
+);
+
+
+/**
+ * @const
+ * @type {!grpc.web.AbstractClientBase.MethodInfo<
+ *   !proto.contents.v1.PollingGetListRequest,
+ *   !proto.contents.v1.PollingGetListResponse>}
+ */
+const methodInfo_ContentService_PollingGetList = new grpc.web.AbstractClientBase.MethodInfo(
+  contents_v1_polling_pb.PollingGetListResponse,
+  /**
+   * @param {!proto.contents.v1.PollingGetListRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  contents_v1_polling_pb.PollingGetListResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.contents.v1.PollingGetListRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.Error, ?proto.contents.v1.PollingGetListResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.contents.v1.PollingGetListResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.contents.v1.ContentServiceClient.prototype.pollingGetList =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/contents.v1.ContentService/PollingGetList',
+      request,
+      metadata || {},
+      methodDescriptor_ContentService_PollingGetList,
+      callback);
+};
+
+
+/**
+ * @param {!proto.contents.v1.PollingGetListRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.contents.v1.PollingGetListResponse>}
+ *     Promise that resolves to the response
+ */
+proto.contents.v1.ContentServicePromiseClient.prototype.pollingGetList =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/contents.v1.ContentService/PollingGetList',
+      request,
+      metadata || {},
+      methodDescriptor_ContentService_PollingGetList);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.contents.v1.PollingCreateRequest,
+ *   !proto.contents.v1.PollingCreateResponse>}
+ */
+const methodDescriptor_ContentService_PollingCreate = new grpc.web.MethodDescriptor(
+  '/contents.v1.ContentService/PollingCreate',
+  grpc.web.MethodType.UNARY,
+  contents_v1_polling_pb.PollingCreateRequest,
+  contents_v1_polling_pb.PollingCreateResponse,
+  /**
+   * @param {!proto.contents.v1.PollingCreateRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  contents_v1_polling_pb.PollingCreateResponse.deserializeBinary
+);
+
+
+/**
+ * @const
+ * @type {!grpc.web.AbstractClientBase.MethodInfo<
+ *   !proto.contents.v1.PollingCreateRequest,
+ *   !proto.contents.v1.PollingCreateResponse>}
+ */
+const methodInfo_ContentService_PollingCreate = new grpc.web.AbstractClientBase.MethodInfo(
+  contents_v1_polling_pb.PollingCreateResponse,
+  /**
+   * @param {!proto.contents.v1.PollingCreateRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  contents_v1_polling_pb.PollingCreateResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.contents.v1.PollingCreateRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.Error, ?proto.contents.v1.PollingCreateResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.contents.v1.PollingCreateResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.contents.v1.ContentServiceClient.prototype.pollingCreate =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/contents.v1.ContentService/PollingCreate',
+      request,
+      metadata || {},
+      methodDescriptor_ContentService_PollingCreate,
+      callback);
+};
+
+
+/**
+ * @param {!proto.contents.v1.PollingCreateRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.contents.v1.PollingCreateResponse>}
+ *     Promise that resolves to the response
+ */
+proto.contents.v1.ContentServicePromiseClient.prototype.pollingCreate =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/contents.v1.ContentService/PollingCreate',
+      request,
+      metadata || {},
+      methodDescriptor_ContentService_PollingCreate);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.contents.v1.PollingUpdateRequest,
+ *   !proto.contents.v1.PollingUpdateResponse>}
+ */
+const methodDescriptor_ContentService_PollingUpdate = new grpc.web.MethodDescriptor(
+  '/contents.v1.ContentService/PollingUpdate',
+  grpc.web.MethodType.UNARY,
+  contents_v1_polling_pb.PollingUpdateRequest,
+  contents_v1_polling_pb.PollingUpdateResponse,
+  /**
+   * @param {!proto.contents.v1.PollingUpdateRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  contents_v1_polling_pb.PollingUpdateResponse.deserializeBinary
+);
+
+
+/**
+ * @const
+ * @type {!grpc.web.AbstractClientBase.MethodInfo<
+ *   !proto.contents.v1.PollingUpdateRequest,
+ *   !proto.contents.v1.PollingUpdateResponse>}
+ */
+const methodInfo_ContentService_PollingUpdate = new grpc.web.AbstractClientBase.MethodInfo(
+  contents_v1_polling_pb.PollingUpdateResponse,
+  /**
+   * @param {!proto.contents.v1.PollingUpdateRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  contents_v1_polling_pb.PollingUpdateResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.contents.v1.PollingUpdateRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.Error, ?proto.contents.v1.PollingUpdateResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.contents.v1.PollingUpdateResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.contents.v1.ContentServiceClient.prototype.pollingUpdate =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/contents.v1.ContentService/PollingUpdate',
+      request,
+      metadata || {},
+      methodDescriptor_ContentService_PollingUpdate,
+      callback);
+};
+
+
+/**
+ * @param {!proto.contents.v1.PollingUpdateRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.contents.v1.PollingUpdateResponse>}
+ *     Promise that resolves to the response
+ */
+proto.contents.v1.ContentServicePromiseClient.prototype.pollingUpdate =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/contents.v1.ContentService/PollingUpdate',
+      request,
+      metadata || {},
+      methodDescriptor_ContentService_PollingUpdate);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.contents.v1.PollingDeleteRequest,
+ *   !proto.contents.v1.PollingDeleteResponse>}
+ */
+const methodDescriptor_ContentService_PollingDelete = new grpc.web.MethodDescriptor(
+  '/contents.v1.ContentService/PollingDelete',
+  grpc.web.MethodType.UNARY,
+  contents_v1_polling_pb.PollingDeleteRequest,
+  contents_v1_polling_pb.PollingDeleteResponse,
+  /**
+   * @param {!proto.contents.v1.PollingDeleteRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  contents_v1_polling_pb.PollingDeleteResponse.deserializeBinary
+);
+
+
+/**
+ * @const
+ * @type {!grpc.web.AbstractClientBase.MethodInfo<
+ *   !proto.contents.v1.PollingDeleteRequest,
+ *   !proto.contents.v1.PollingDeleteResponse>}
+ */
+const methodInfo_ContentService_PollingDelete = new grpc.web.AbstractClientBase.MethodInfo(
+  contents_v1_polling_pb.PollingDeleteResponse,
+  /**
+   * @param {!proto.contents.v1.PollingDeleteRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  contents_v1_polling_pb.PollingDeleteResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.contents.v1.PollingDeleteRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.Error, ?proto.contents.v1.PollingDeleteResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.contents.v1.PollingDeleteResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.contents.v1.ContentServiceClient.prototype.pollingDelete =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/contents.v1.ContentService/PollingDelete',
+      request,
+      metadata || {},
+      methodDescriptor_ContentService_PollingDelete,
+      callback);
+};
+
+
+/**
+ * @param {!proto.contents.v1.PollingDeleteRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.contents.v1.PollingDeleteResponse>}
+ *     Promise that resolves to the response
+ */
+proto.contents.v1.ContentServicePromiseClient.prototype.pollingDelete =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/contents.v1.ContentService/PollingDelete',
+      request,
+      metadata || {},
+      methodDescriptor_ContentService_PollingDelete);
 };
 
 

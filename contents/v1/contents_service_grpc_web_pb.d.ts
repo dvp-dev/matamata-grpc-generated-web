@@ -6,6 +6,7 @@ import * as contents_v1_article_pb from '../../contents/v1/article_pb';
 import * as contents_v1_infografik_pb from '../../contents/v1/infografik_pb';
 import * as contents_v1_news_photo_pb from '../../contents/v1/news_photo_pb';
 import * as contents_v1_news_video_pb from '../../contents/v1/news_video_pb';
+import * as contents_v1_polling_pb from '../../contents/v1/polling_pb';
 
 
 export class ContentServiceClient {
@@ -308,6 +309,41 @@ export class ContentServiceClient {
                response: contents_v1_news_video_pb.NewsVideoDeleteResponse) => void
   ): grpcWeb.ClientReadableStream<contents_v1_news_video_pb.NewsVideoDeleteResponse>;
 
+  pollingGetOne(
+    request: contents_v1_polling_pb.PollingGetOneRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.Error,
+               response: contents_v1_polling_pb.PollingGetOneResponse) => void
+  ): grpcWeb.ClientReadableStream<contents_v1_polling_pb.PollingGetOneResponse>;
+
+  pollingGetList(
+    request: contents_v1_polling_pb.PollingGetListRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.Error,
+               response: contents_v1_polling_pb.PollingGetListResponse) => void
+  ): grpcWeb.ClientReadableStream<contents_v1_polling_pb.PollingGetListResponse>;
+
+  pollingCreate(
+    request: contents_v1_polling_pb.PollingCreateRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.Error,
+               response: contents_v1_polling_pb.PollingCreateResponse) => void
+  ): grpcWeb.ClientReadableStream<contents_v1_polling_pb.PollingCreateResponse>;
+
+  pollingUpdate(
+    request: contents_v1_polling_pb.PollingUpdateRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.Error,
+               response: contents_v1_polling_pb.PollingUpdateResponse) => void
+  ): grpcWeb.ClientReadableStream<contents_v1_polling_pb.PollingUpdateResponse>;
+
+  pollingDelete(
+    request: contents_v1_polling_pb.PollingDeleteRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.Error,
+               response: contents_v1_polling_pb.PollingDeleteResponse) => void
+  ): grpcWeb.ClientReadableStream<contents_v1_polling_pb.PollingDeleteResponse>;
+
 }
 
 export class ContentServicePromiseClient {
@@ -529,6 +565,31 @@ export class ContentServicePromiseClient {
     request: contents_v1_news_video_pb.NewsVideoDeleteRequest,
     metadata?: grpcWeb.Metadata
   ): Promise<contents_v1_news_video_pb.NewsVideoDeleteResponse>;
+
+  pollingGetOne(
+    request: contents_v1_polling_pb.PollingGetOneRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<contents_v1_polling_pb.PollingGetOneResponse>;
+
+  pollingGetList(
+    request: contents_v1_polling_pb.PollingGetListRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<contents_v1_polling_pb.PollingGetListResponse>;
+
+  pollingCreate(
+    request: contents_v1_polling_pb.PollingCreateRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<contents_v1_polling_pb.PollingCreateResponse>;
+
+  pollingUpdate(
+    request: contents_v1_polling_pb.PollingUpdateRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<contents_v1_polling_pb.PollingUpdateResponse>;
+
+  pollingDelete(
+    request: contents_v1_polling_pb.PollingDeleteRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<contents_v1_polling_pb.PollingDeleteResponse>;
 
 }
 
