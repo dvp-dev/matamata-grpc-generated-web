@@ -556,6 +556,7 @@ proto.contents.v1.NewsVideo.toObject = function(includeInstance, msg) {
     category1: (f = msg.getCategory1()) && contents_v1_category_pb.Category1.toObject(includeInstance, f),
     category2: (f = msg.getCategory2()) && contents_v1_category_pb.Category2.toObject(includeInstance, f),
     category3: (f = msg.getCategory3()) && contents_v1_category_pb.Category3.toObject(includeInstance, f),
+    seo: (f = msg.getSeo()) && contents_v1_article_pb.ArticleSEO.toObject(includeInstance, f),
     creditsList: jspb.Message.toObjectList(msg.getCreditsList(),
     contents_v1_article_pb.ArticleCredit.toObject, includeInstance)
   };
@@ -689,6 +690,11 @@ proto.contents.v1.NewsVideo.deserializeBinaryFromReader = function(msg, reader) 
       var value = new contents_v1_category_pb.Category3;
       reader.readMessage(value,contents_v1_category_pb.Category3.deserializeBinaryFromReader);
       msg.setCategory3(value);
+      break;
+    case 56:
+      var value = new contents_v1_article_pb.ArticleSEO;
+      reader.readMessage(value,contents_v1_article_pb.ArticleSEO.deserializeBinaryFromReader);
+      msg.setSeo(value);
       break;
     case 101:
       var value = new contents_v1_article_pb.ArticleCredit;
@@ -884,6 +890,14 @@ proto.contents.v1.NewsVideo.serializeBinaryToWriter = function(message, writer) 
       54,
       f,
       contents_v1_category_pb.Category3.serializeBinaryToWriter
+    );
+  }
+  f = message.getSeo();
+  if (f != null) {
+    writer.writeMessage(
+      56,
+      f,
+      contents_v1_article_pb.ArticleSEO.serializeBinaryToWriter
     );
   }
   f = message.getCreditsList();
@@ -1447,6 +1461,43 @@ proto.contents.v1.NewsVideo.prototype.hasCategory3 = function() {
 
 
 /**
+ * optional ArticleSEO seo = 56;
+ * @return {?proto.contents.v1.ArticleSEO}
+ */
+proto.contents.v1.NewsVideo.prototype.getSeo = function() {
+  return /** @type{?proto.contents.v1.ArticleSEO} */ (
+    jspb.Message.getWrapperField(this, contents_v1_article_pb.ArticleSEO, 56));
+};
+
+
+/**
+ * @param {?proto.contents.v1.ArticleSEO|undefined} value
+ * @return {!proto.contents.v1.NewsVideo} returns this
+*/
+proto.contents.v1.NewsVideo.prototype.setSeo = function(value) {
+  return jspb.Message.setWrapperField(this, 56, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.contents.v1.NewsVideo} returns this
+ */
+proto.contents.v1.NewsVideo.prototype.clearSeo = function() {
+  return this.setSeo(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.contents.v1.NewsVideo.prototype.hasSeo = function() {
+  return jspb.Message.getField(this, 56) != null;
+};
+
+
+/**
  * repeated ArticleCredit credits = 101;
  * @return {!Array<!proto.contents.v1.ArticleCredit>}
  */
@@ -1538,6 +1589,7 @@ proto.contents.v1.NewsVideoCreateUpdate.toObject = function(includeInstance, msg
     isCustomPublishedAt: jspb.Message.getBooleanFieldWithDefault(msg, 14, false),
     publishedAt: (f = msg.getPublishedAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
     video: (f = msg.getVideo()) && proto.contents.v1.ArticleVideo.toObject(includeInstance, f),
+    seo: (f = msg.getSeo()) && contents_v1_article_pb.ArticleSEO.toObject(includeInstance, f),
     tagIdsList: (f = jspb.Message.getRepeatedField(msg, 51)) == null ? undefined : f,
     creditsList: jspb.Message.toObjectList(msg.getCreditsList(),
     contents_v1_article_pb.ArticleCreditCreateUpdate.toObject, includeInstance)
@@ -1638,6 +1690,11 @@ proto.contents.v1.NewsVideoCreateUpdate.deserializeBinaryFromReader = function(m
       var value = new proto.contents.v1.ArticleVideo;
       reader.readMessage(value,proto.contents.v1.ArticleVideo.deserializeBinaryFromReader);
       msg.setVideo(value);
+      break;
+    case 56:
+      var value = new contents_v1_article_pb.ArticleSEO;
+      reader.readMessage(value,contents_v1_article_pb.ArticleSEO.deserializeBinaryFromReader);
+      msg.setSeo(value);
       break;
     case 51:
       var values = /** @type {!Array<number>} */ (reader.isDelimited() ? reader.readPackedInt32() : [reader.readInt32()]);
@@ -1784,6 +1841,14 @@ proto.contents.v1.NewsVideoCreateUpdate.serializeBinaryToWriter = function(messa
       53,
       f,
       proto.contents.v1.ArticleVideo.serializeBinaryToWriter
+    );
+  }
+  f = message.getSeo();
+  if (f != null) {
+    writer.writeMessage(
+      56,
+      f,
+      contents_v1_article_pb.ArticleSEO.serializeBinaryToWriter
     );
   }
   f = message.getTagIdsList();
@@ -2109,6 +2174,43 @@ proto.contents.v1.NewsVideoCreateUpdate.prototype.clearVideo = function() {
  */
 proto.contents.v1.NewsVideoCreateUpdate.prototype.hasVideo = function() {
   return jspb.Message.getField(this, 53) != null;
+};
+
+
+/**
+ * optional ArticleSEO seo = 56;
+ * @return {?proto.contents.v1.ArticleSEO}
+ */
+proto.contents.v1.NewsVideoCreateUpdate.prototype.getSeo = function() {
+  return /** @type{?proto.contents.v1.ArticleSEO} */ (
+    jspb.Message.getWrapperField(this, contents_v1_article_pb.ArticleSEO, 56));
+};
+
+
+/**
+ * @param {?proto.contents.v1.ArticleSEO|undefined} value
+ * @return {!proto.contents.v1.NewsVideoCreateUpdate} returns this
+*/
+proto.contents.v1.NewsVideoCreateUpdate.prototype.setSeo = function(value) {
+  return jspb.Message.setWrapperField(this, 56, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.contents.v1.NewsVideoCreateUpdate} returns this
+ */
+proto.contents.v1.NewsVideoCreateUpdate.prototype.clearSeo = function() {
+  return this.setSeo(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.contents.v1.NewsVideoCreateUpdate.prototype.hasSeo = function() {
+  return jspb.Message.getField(this, 56) != null;
 };
 
 

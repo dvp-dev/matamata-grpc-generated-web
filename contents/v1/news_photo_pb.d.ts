@@ -104,6 +104,11 @@ export class NewsPhoto extends jspb.Message {
     clearCategory3(): void;
     getCategory3(): contents_v1_category_pb.Category3 | undefined;
     setCategory3(value?: contents_v1_category_pb.Category3): NewsPhoto;
+
+    hasSeo(): boolean;
+    clearSeo(): void;
+    getSeo(): contents_v1_article_pb.ArticleSEO | undefined;
+    setSeo(value?: contents_v1_article_pb.ArticleSEO): NewsPhoto;
     clearCreditsList(): void;
     getCreditsList(): Array<contents_v1_article_pb.ArticleCredit>;
     setCreditsList(value: Array<contents_v1_article_pb.ArticleCredit>): NewsPhoto;
@@ -143,6 +148,7 @@ export namespace NewsPhoto {
         category1?: contents_v1_category_pb.Category1.AsObject,
         category2?: contents_v1_category_pb.Category2.AsObject,
         category3?: contents_v1_category_pb.Category3.AsObject,
+        seo?: contents_v1_article_pb.ArticleSEO.AsObject,
         creditsList: Array<contents_v1_article_pb.ArticleCredit.AsObject>,
     }
 }
@@ -183,6 +189,11 @@ export class NewsPhotoCreateUpdate extends jspb.Message {
     getPhotosList(): Array<ArticlePhoto>;
     setPhotosList(value: Array<ArticlePhoto>): NewsPhotoCreateUpdate;
     addPhotos(value?: ArticlePhoto, index?: number): ArticlePhoto;
+
+    hasSeo(): boolean;
+    clearSeo(): void;
+    getSeo(): contents_v1_article_pb.ArticleSEO | undefined;
+    setSeo(value?: contents_v1_article_pb.ArticleSEO): NewsPhotoCreateUpdate;
     clearTagIdsList(): void;
     getTagIdsList(): Array<number>;
     setTagIdsList(value: Array<number>): NewsPhotoCreateUpdate;
@@ -219,6 +230,7 @@ export namespace NewsPhotoCreateUpdate {
         isCustomPublishedAt: boolean,
         publishedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
         photosList: Array<ArticlePhoto.AsObject>,
+        seo?: contents_v1_article_pb.ArticleSEO.AsObject,
         tagIdsList: Array<number>,
         creditsList: Array<contents_v1_article_pb.ArticleCreditCreateUpdate.AsObject>,
     }

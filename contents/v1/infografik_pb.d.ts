@@ -53,6 +53,11 @@ export class Infografik extends jspb.Message {
     clearPublishedAt(): void;
     getPublishedAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
     setPublishedAt(value?: google_protobuf_timestamp_pb.Timestamp): Infografik;
+
+    hasSeo(): boolean;
+    clearSeo(): void;
+    getSeo(): contents_v1_article_pb.ArticleSEO | undefined;
+    setSeo(value?: contents_v1_article_pb.ArticleSEO): Infografik;
     clearTagsList(): void;
     getTagsList(): Array<contents_v1_tag_pb.Tag>;
     setTagsList(value: Array<contents_v1_tag_pb.Tag>): Infografik;
@@ -105,6 +110,7 @@ export namespace Infografik {
         createdAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
         updatedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
         publishedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+        seo?: contents_v1_article_pb.ArticleSEO.AsObject,
         tagsList: Array<contents_v1_tag_pb.Tag.AsObject>,
         category1?: contents_v1_category_pb.Category1.AsObject,
         category2?: contents_v1_category_pb.Category2.AsObject,
@@ -143,6 +149,11 @@ export class InfografikCreateUpdate extends jspb.Message {
     clearPublishedAt(): void;
     getPublishedAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
     setPublishedAt(value?: google_protobuf_timestamp_pb.Timestamp): InfografikCreateUpdate;
+
+    hasSeo(): boolean;
+    clearSeo(): void;
+    getSeo(): contents_v1_article_pb.ArticleSEO | undefined;
+    setSeo(value?: contents_v1_article_pb.ArticleSEO): InfografikCreateUpdate;
     clearTagIdsList(): void;
     getTagIdsList(): Array<number>;
     setTagIdsList(value: Array<number>): InfografikCreateUpdate;
@@ -177,6 +188,7 @@ export namespace InfografikCreateUpdate {
         sectionHomepage: contents_v1_article_pb.ArticleSectionHomepage,
         isCustomPublishedAt: boolean,
         publishedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+        seo?: contents_v1_article_pb.ArticleSEO.AsObject,
         tagIdsList: Array<number>,
         creditsList: Array<contents_v1_article_pb.ArticleCreditCreateUpdate.AsObject>,
     }

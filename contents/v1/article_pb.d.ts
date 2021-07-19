@@ -59,6 +59,38 @@ export namespace ArticleCreditCreateUpdate {
     }
 }
 
+export class ArticleSEO extends jspb.Message { 
+    getTitle(): string;
+    setTitle(value: string): ArticleSEO;
+    getSlug(): string;
+    setSlug(value: string): ArticleSEO;
+    getMetaDescription(): string;
+    setMetaDescription(value: string): ArticleSEO;
+    getSearchEngineShowThisPost(): boolean;
+    setSearchEngineShowThisPost(value: boolean): ArticleSEO;
+    getSearchEngineFollowLinksOnThisPost(): boolean;
+    setSearchEngineFollowLinksOnThisPost(value: boolean): ArticleSEO;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): ArticleSEO.AsObject;
+    static toObject(includeInstance: boolean, msg: ArticleSEO): ArticleSEO.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: ArticleSEO, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): ArticleSEO;
+    static deserializeBinaryFromReader(message: ArticleSEO, reader: jspb.BinaryReader): ArticleSEO;
+}
+
+export namespace ArticleSEO {
+    export type AsObject = {
+        title: string,
+        slug: string,
+        metaDescription: string,
+        searchEngineShowThisPost: boolean,
+        searchEngineFollowLinksOnThisPost: boolean,
+    }
+}
+
 export class Article extends jspb.Message { 
     getId(): number;
     setId(value: number): Article;
@@ -122,6 +154,11 @@ export class Article extends jspb.Message {
     clearCategory3(): void;
     getCategory3(): contents_v1_category_pb.Category3 | undefined;
     setCategory3(value?: contents_v1_category_pb.Category3): Article;
+
+    hasSeo(): boolean;
+    clearSeo(): void;
+    getSeo(): ArticleSEO | undefined;
+    setSeo(value?: ArticleSEO): Article;
     clearCreditsList(): void;
     getCreditsList(): Array<ArticleCredit>;
     setCreditsList(value: Array<ArticleCredit>): Article;
@@ -160,6 +197,7 @@ export namespace Article {
         category1?: contents_v1_category_pb.Category1.AsObject,
         category2?: contents_v1_category_pb.Category2.AsObject,
         category3?: contents_v1_category_pb.Category3.AsObject,
+        seo?: ArticleSEO.AsObject,
         creditsList: Array<ArticleCredit.AsObject>,
     }
 }
@@ -196,6 +234,11 @@ export class ArticleCreateUpdate extends jspb.Message {
     clearPublishedAt(): void;
     getPublishedAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
     setPublishedAt(value?: google_protobuf_timestamp_pb.Timestamp): ArticleCreateUpdate;
+
+    hasSeo(): boolean;
+    clearSeo(): void;
+    getSeo(): ArticleSEO | undefined;
+    setSeo(value?: ArticleSEO): ArticleCreateUpdate;
     clearTagIdsList(): void;
     getTagIdsList(): Array<number>;
     setTagIdsList(value: Array<number>): ArticleCreateUpdate;
@@ -231,6 +274,7 @@ export namespace ArticleCreateUpdate {
         sectionHomepage: ArticleSectionHomepage,
         isCustomPublishedAt: boolean,
         publishedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+        seo?: ArticleSEO.AsObject,
         tagIdsList: Array<number>,
         creditsList: Array<ArticleCreditCreateUpdate.AsObject>,
     }

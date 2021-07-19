@@ -367,6 +367,7 @@ proto.contents.v1.Infografik.toObject = function(includeInstance, msg) {
     createdAt: (f = msg.getCreatedAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
     updatedAt: (f = msg.getUpdatedAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
     publishedAt: (f = msg.getPublishedAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+    seo: (f = msg.getSeo()) && contents_v1_article_pb.ArticleSEO.toObject(includeInstance, f),
     tagsList: jspb.Message.toObjectList(msg.getTagsList(),
     contents_v1_tag_pb.Tag.toObject, includeInstance),
     category1: (f = msg.getCategory1()) && contents_v1_category_pb.Category1.toObject(includeInstance, f),
@@ -476,6 +477,11 @@ proto.contents.v1.Infografik.deserializeBinaryFromReader = function(msg, reader)
       var value = new google_protobuf_timestamp_pb.Timestamp;
       reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
       msg.setPublishedAt(value);
+      break;
+    case 55:
+      var value = new contents_v1_article_pb.ArticleSEO;
+      reader.readMessage(value,contents_v1_article_pb.ArticleSEO.deserializeBinaryFromReader);
+      msg.setSeo(value);
       break;
     case 51:
       var value = new contents_v1_tag_pb.Tag;
@@ -644,6 +650,14 @@ proto.contents.v1.Infografik.serializeBinaryToWriter = function(message, writer)
       15,
       f,
       google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
+    );
+  }
+  f = message.getSeo();
+  if (f != null) {
+    writer.writeMessage(
+      55,
+      f,
+      contents_v1_article_pb.ArticleSEO.serializeBinaryToWriter
     );
   }
   f = message.getTagsList();
@@ -1035,6 +1049,43 @@ proto.contents.v1.Infografik.prototype.hasPublishedAt = function() {
 
 
 /**
+ * optional ArticleSEO seo = 55;
+ * @return {?proto.contents.v1.ArticleSEO}
+ */
+proto.contents.v1.Infografik.prototype.getSeo = function() {
+  return /** @type{?proto.contents.v1.ArticleSEO} */ (
+    jspb.Message.getWrapperField(this, contents_v1_article_pb.ArticleSEO, 55));
+};
+
+
+/**
+ * @param {?proto.contents.v1.ArticleSEO|undefined} value
+ * @return {!proto.contents.v1.Infografik} returns this
+*/
+proto.contents.v1.Infografik.prototype.setSeo = function(value) {
+  return jspb.Message.setWrapperField(this, 55, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.contents.v1.Infografik} returns this
+ */
+proto.contents.v1.Infografik.prototype.clearSeo = function() {
+  return this.setSeo(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.contents.v1.Infografik.prototype.hasSeo = function() {
+  return jspb.Message.getField(this, 55) != null;
+};
+
+
+/**
  * repeated Tag tags = 51;
  * @return {!Array<!proto.contents.v1.Tag>}
  */
@@ -1273,6 +1324,7 @@ proto.contents.v1.InfografikCreateUpdate.toObject = function(includeInstance, ms
     sectionHomepage: jspb.Message.getFieldWithDefault(msg, 13, 0),
     isCustomPublishedAt: jspb.Message.getBooleanFieldWithDefault(msg, 14, false),
     publishedAt: (f = msg.getPublishedAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+    seo: (f = msg.getSeo()) && contents_v1_article_pb.ArticleSEO.toObject(includeInstance, f),
     tagIdsList: (f = jspb.Message.getRepeatedField(msg, 51)) == null ? undefined : f,
     creditsList: jspb.Message.toObjectList(msg.getCreditsList(),
     contents_v1_article_pb.ArticleCreditCreateUpdate.toObject, includeInstance)
@@ -1364,6 +1416,11 @@ proto.contents.v1.InfografikCreateUpdate.deserializeBinaryFromReader = function(
       var value = new google_protobuf_timestamp_pb.Timestamp;
       reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
       msg.setPublishedAt(value);
+      break;
+    case 55:
+      var value = new contents_v1_article_pb.ArticleSEO;
+      reader.readMessage(value,contents_v1_article_pb.ArticleSEO.deserializeBinaryFromReader);
+      msg.setSeo(value);
       break;
     case 51:
       var values = /** @type {!Array<number>} */ (reader.isDelimited() ? reader.readPackedInt32() : [reader.readInt32()]);
@@ -1495,6 +1552,14 @@ proto.contents.v1.InfografikCreateUpdate.serializeBinaryToWriter = function(mess
       15,
       f,
       google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
+    );
+  }
+  f = message.getSeo();
+  if (f != null) {
+    writer.writeMessage(
+      55,
+      f,
+      contents_v1_article_pb.ArticleSEO.serializeBinaryToWriter
     );
   }
   f = message.getTagIdsList();
@@ -1765,6 +1830,43 @@ proto.contents.v1.InfografikCreateUpdate.prototype.clearPublishedAt = function()
  */
 proto.contents.v1.InfografikCreateUpdate.prototype.hasPublishedAt = function() {
   return jspb.Message.getField(this, 15) != null;
+};
+
+
+/**
+ * optional ArticleSEO seo = 55;
+ * @return {?proto.contents.v1.ArticleSEO}
+ */
+proto.contents.v1.InfografikCreateUpdate.prototype.getSeo = function() {
+  return /** @type{?proto.contents.v1.ArticleSEO} */ (
+    jspb.Message.getWrapperField(this, contents_v1_article_pb.ArticleSEO, 55));
+};
+
+
+/**
+ * @param {?proto.contents.v1.ArticleSEO|undefined} value
+ * @return {!proto.contents.v1.InfografikCreateUpdate} returns this
+*/
+proto.contents.v1.InfografikCreateUpdate.prototype.setSeo = function(value) {
+  return jspb.Message.setWrapperField(this, 55, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.contents.v1.InfografikCreateUpdate} returns this
+ */
+proto.contents.v1.InfografikCreateUpdate.prototype.clearSeo = function() {
+  return this.setSeo(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.contents.v1.InfografikCreateUpdate.prototype.hasSeo = function() {
+  return jspb.Message.getField(this, 55) != null;
 };
 
 

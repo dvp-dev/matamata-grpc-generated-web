@@ -102,6 +102,11 @@ export class NewsVideo extends jspb.Message {
     clearCategory3(): void;
     getCategory3(): contents_v1_category_pb.Category3 | undefined;
     setCategory3(value?: contents_v1_category_pb.Category3): NewsVideo;
+
+    hasSeo(): boolean;
+    clearSeo(): void;
+    getSeo(): contents_v1_article_pb.ArticleSEO | undefined;
+    setSeo(value?: contents_v1_article_pb.ArticleSEO): NewsVideo;
     clearCreditsList(): void;
     getCreditsList(): Array<contents_v1_article_pb.ArticleCredit>;
     setCreditsList(value: Array<contents_v1_article_pb.ArticleCredit>): NewsVideo;
@@ -141,6 +146,7 @@ export namespace NewsVideo {
         category1?: contents_v1_category_pb.Category1.AsObject,
         category2?: contents_v1_category_pb.Category2.AsObject,
         category3?: contents_v1_category_pb.Category3.AsObject,
+        seo?: contents_v1_article_pb.ArticleSEO.AsObject,
         creditsList: Array<contents_v1_article_pb.ArticleCredit.AsObject>,
     }
 }
@@ -182,6 +188,11 @@ export class NewsVideoCreateUpdate extends jspb.Message {
     clearVideo(): void;
     getVideo(): ArticleVideo | undefined;
     setVideo(value?: ArticleVideo): NewsVideoCreateUpdate;
+
+    hasSeo(): boolean;
+    clearSeo(): void;
+    getSeo(): contents_v1_article_pb.ArticleSEO | undefined;
+    setSeo(value?: contents_v1_article_pb.ArticleSEO): NewsVideoCreateUpdate;
     clearTagIdsList(): void;
     getTagIdsList(): Array<number>;
     setTagIdsList(value: Array<number>): NewsVideoCreateUpdate;
@@ -218,6 +229,7 @@ export namespace NewsVideoCreateUpdate {
         isCustomPublishedAt: boolean,
         publishedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
         video?: ArticleVideo.AsObject,
+        seo?: contents_v1_article_pb.ArticleSEO.AsObject,
         tagIdsList: Array<number>,
         creditsList: Array<contents_v1_article_pb.ArticleCreditCreateUpdate.AsObject>,
     }
