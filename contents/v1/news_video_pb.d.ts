@@ -171,6 +171,8 @@ export class NewsVideoCreateUpdate extends jspb.Message {
     setImageCoverUrl(value: string): NewsVideoCreateUpdate;
     getImageCoverCaption(): string;
     setImageCoverCaption(value: string): NewsVideoCreateUpdate;
+    getImageCoverAlt(): string;
+    setImageCoverAlt(value: string): NewsVideoCreateUpdate;
     getEnergy(): number;
     setEnergy(value: number): NewsVideoCreateUpdate;
     getType(): contents_v1_article_pb.ArticleType;
@@ -225,6 +227,7 @@ export namespace NewsVideoCreateUpdate {
         content: string,
         imageCoverUrl: string,
         imageCoverCaption: string,
+        imageCoverAlt: string,
         energy: number,
         type: contents_v1_article_pb.ArticleType,
         status: contents_v1_article_pb.ArticleStatus,

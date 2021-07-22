@@ -222,6 +222,8 @@ export class ArticleCreateUpdate extends jspb.Message {
     setImageCoverUrl(value: string): ArticleCreateUpdate;
     getImageCoverCaption(): string;
     setImageCoverCaption(value: string): ArticleCreateUpdate;
+    getImageCoverAlt(): string;
+    setImageCoverAlt(value: string): ArticleCreateUpdate;
     getEnergy(): number;
     setEnergy(value: number): ArticleCreateUpdate;
     getType(): ArticleType;
@@ -271,6 +273,7 @@ export namespace ArticleCreateUpdate {
         content: string,
         imageCoverUrl: string,
         imageCoverCaption: string,
+        imageCoverAlt: string,
         energy: number,
         type: ArticleType,
         status: ArticleStatus,

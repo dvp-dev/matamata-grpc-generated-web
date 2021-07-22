@@ -1674,6 +1674,7 @@ proto.contents.v1.NewsPhotoCreateUpdate.toObject = function(includeInstance, msg
     content: jspb.Message.getFieldWithDefault(msg, 7, ""),
     imageCoverUrl: jspb.Message.getFieldWithDefault(msg, 8, ""),
     imageCoverCaption: jspb.Message.getFieldWithDefault(msg, 9, ""),
+    imageCoverAlt: jspb.Message.getFieldWithDefault(msg, 18, ""),
     energy: jspb.Message.getFieldWithDefault(msg, 11, 0),
     type: jspb.Message.getFieldWithDefault(msg, 12, 0),
     status: jspb.Message.getFieldWithDefault(msg, 10, 0),
@@ -1753,6 +1754,10 @@ proto.contents.v1.NewsPhotoCreateUpdate.deserializeBinaryFromReader = function(m
     case 9:
       var value = /** @type {string} */ (reader.readString());
       msg.setImageCoverCaption(value);
+      break;
+    case 18:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setImageCoverAlt(value);
       break;
     case 11:
       var value = /** @type {number} */ (reader.readInt32());
@@ -1882,6 +1887,13 @@ proto.contents.v1.NewsPhotoCreateUpdate.serializeBinaryToWriter = function(messa
   if (f.length > 0) {
     writer.writeString(
       9,
+      f
+    );
+  }
+  f = message.getImageCoverAlt();
+  if (f.length > 0) {
+    writer.writeString(
+      18,
       f
     );
   }
@@ -2103,6 +2115,24 @@ proto.contents.v1.NewsPhotoCreateUpdate.prototype.getImageCoverCaption = functio
  */
 proto.contents.v1.NewsPhotoCreateUpdate.prototype.setImageCoverCaption = function(value) {
   return jspb.Message.setProto3StringField(this, 9, value);
+};
+
+
+/**
+ * optional string image_cover_alt = 18;
+ * @return {string}
+ */
+proto.contents.v1.NewsPhotoCreateUpdate.prototype.getImageCoverAlt = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 18, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.contents.v1.NewsPhotoCreateUpdate} returns this
+ */
+proto.contents.v1.NewsPhotoCreateUpdate.prototype.setImageCoverAlt = function(value) {
+  return jspb.Message.setProto3StringField(this, 18, value);
 };
 
 

@@ -139,6 +139,8 @@ export class InfografikCreateUpdate extends jspb.Message {
     setImageCoverUrl(value: string): InfografikCreateUpdate;
     getImageCoverCaption(): string;
     setImageCoverCaption(value: string): InfografikCreateUpdate;
+    getImageCoverAlt(): string;
+    setImageCoverAlt(value: string): InfografikCreateUpdate;
     getEnergy(): number;
     setEnergy(value: number): InfografikCreateUpdate;
     getStatus(): contents_v1_article_pb.ArticleStatus;
@@ -186,6 +188,7 @@ export namespace InfografikCreateUpdate {
         content: string,
         imageCoverUrl: string,
         imageCoverCaption: string,
+        imageCoverAlt: string,
         energy: number,
         status: contents_v1_article_pb.ArticleStatus,
         sectionHomepage: contents_v1_article_pb.ArticleSectionHomepage,
