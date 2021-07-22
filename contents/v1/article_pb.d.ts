@@ -110,6 +110,8 @@ export class Article extends jspb.Message {
     setImageCoverUrl(value: string): Article;
     getImageCoverCaption(): string;
     setImageCoverCaption(value: string): Article;
+    getImageCoverAlt(): string;
+    setImageCoverAlt(value: string): Article;
     getSlug(): string;
     setSlug(value: string): Article;
     getEnergy(): number;
@@ -185,6 +187,7 @@ export namespace Article {
         content: string,
         imageCoverUrl: string,
         imageCoverCaption: string,
+        imageCoverAlt: string,
         slug: string,
         energy: number,
         type: ArticleType,

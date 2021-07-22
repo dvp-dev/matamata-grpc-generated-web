@@ -30,6 +30,8 @@ export class Infografik extends jspb.Message {
     setImageCoverUrl(value: string): Infografik;
     getImageCoverCaption(): string;
     setImageCoverCaption(value: string): Infografik;
+    getImageCoverAlt(): string;
+    setImageCoverAlt(value: string): Infografik;
     getSlug(): string;
     setSlug(value: string): Infografik;
     getEnergy(): number;
@@ -103,6 +105,7 @@ export namespace Infografik {
         content: string,
         imageCoverUrl: string,
         imageCoverCaption: string,
+        imageCoverAlt: string,
         slug: string,
         energy: number,
         status: contents_v1_article_pb.ArticleStatus,

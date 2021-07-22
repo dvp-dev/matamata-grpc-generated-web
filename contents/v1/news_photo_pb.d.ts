@@ -18,6 +18,8 @@ export class ArticlePhoto extends jspb.Message {
     setImageLink(value: string): ArticlePhoto;
     getImageCaption(): string;
     setImageCaption(value: string): ArticlePhoto;
+    getImageAlt(): string;
+    setImageAlt(value: string): ArticlePhoto;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): ArticlePhoto.AsObject;
@@ -34,6 +36,7 @@ export namespace ArticlePhoto {
         id: number,
         imageLink: string,
         imageCaption: string,
+        imageAlt: string,
     }
 }
 
@@ -56,6 +59,8 @@ export class NewsPhoto extends jspb.Message {
     setImageCoverUrl(value: string): NewsPhoto;
     getImageCoverCaption(): string;
     setImageCoverCaption(value: string): NewsPhoto;
+    getImageCoverAlt(): string;
+    setImageCoverAlt(value: string): NewsPhoto;
     getSlug(): string;
     setSlug(value: string): NewsPhoto;
     getEnergy(): number;
@@ -135,6 +140,7 @@ export namespace NewsPhoto {
         content: string,
         imageCoverUrl: string,
         imageCoverCaption: string,
+        imageCoverAlt: string,
         slug: string,
         energy: number,
         type: contents_v1_article_pb.ArticleType,

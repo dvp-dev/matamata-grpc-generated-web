@@ -360,6 +360,7 @@ proto.contents.v1.Infografik.toObject = function(includeInstance, msg) {
     content: jspb.Message.getFieldWithDefault(msg, 7, ""),
     imageCoverUrl: jspb.Message.getFieldWithDefault(msg, 8, ""),
     imageCoverCaption: jspb.Message.getFieldWithDefault(msg, 9, ""),
+    imageCoverAlt: jspb.Message.getFieldWithDefault(msg, 17, ""),
     slug: jspb.Message.getFieldWithDefault(msg, 14, ""),
     energy: jspb.Message.getFieldWithDefault(msg, 16, 0),
     status: jspb.Message.getFieldWithDefault(msg, 10, 0),
@@ -446,6 +447,10 @@ proto.contents.v1.Infografik.deserializeBinaryFromReader = function(msg, reader)
     case 9:
       var value = /** @type {string} */ (reader.readString());
       msg.setImageCoverCaption(value);
+      break;
+    case 17:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setImageCoverAlt(value);
       break;
     case 14:
       var value = /** @type {string} */ (reader.readString());
@@ -597,6 +602,13 @@ proto.contents.v1.Infografik.serializeBinaryToWriter = function(message, writer)
   if (f.length > 0) {
     writer.writeString(
       9,
+      f
+    );
+  }
+  f = message.getImageCoverAlt();
+  if (f.length > 0) {
+    writer.writeString(
+      17,
       f
     );
   }
@@ -862,6 +874,24 @@ proto.contents.v1.Infografik.prototype.getImageCoverCaption = function() {
  */
 proto.contents.v1.Infografik.prototype.setImageCoverCaption = function(value) {
   return jspb.Message.setProto3StringField(this, 9, value);
+};
+
+
+/**
+ * optional string image_cover_alt = 17;
+ * @return {string}
+ */
+proto.contents.v1.Infografik.prototype.getImageCoverAlt = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 17, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.contents.v1.Infografik} returns this
+ */
+proto.contents.v1.Infografik.prototype.setImageCoverAlt = function(value) {
+  return jspb.Message.setProto3StringField(this, 17, value);
 };
 
 

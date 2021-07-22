@@ -53,6 +53,8 @@ export class NewsVideo extends jspb.Message {
     setImageCoverUrl(value: string): NewsVideo;
     getImageCoverCaption(): string;
     setImageCoverCaption(value: string): NewsVideo;
+    getImageCoverAlt(): string;
+    setImageCoverAlt(value: string): NewsVideo;
     getSlug(): string;
     setSlug(value: string): NewsVideo;
     getEnergy(): number;
@@ -133,6 +135,7 @@ export namespace NewsVideo {
         content: string,
         imageCoverUrl: string,
         imageCoverCaption: string,
+        imageCoverAlt: string,
         slug: string,
         energy: number,
         type: contents_v1_article_pb.ArticleType,

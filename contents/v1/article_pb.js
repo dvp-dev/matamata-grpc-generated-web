@@ -997,6 +997,7 @@ proto.contents.v1.Article.toObject = function(includeInstance, msg) {
     content: jspb.Message.getFieldWithDefault(msg, 7, ""),
     imageCoverUrl: jspb.Message.getFieldWithDefault(msg, 8, ""),
     imageCoverCaption: jspb.Message.getFieldWithDefault(msg, 9, ""),
+    imageCoverAlt: jspb.Message.getFieldWithDefault(msg, 18, ""),
     slug: jspb.Message.getFieldWithDefault(msg, 14, ""),
     energy: jspb.Message.getFieldWithDefault(msg, 16, 0),
     type: jspb.Message.getFieldWithDefault(msg, 17, 0),
@@ -1084,6 +1085,10 @@ proto.contents.v1.Article.deserializeBinaryFromReader = function(msg, reader) {
     case 9:
       var value = /** @type {string} */ (reader.readString());
       msg.setImageCoverCaption(value);
+      break;
+    case 18:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setImageCoverAlt(value);
       break;
     case 14:
       var value = /** @type {string} */ (reader.readString());
@@ -1239,6 +1244,13 @@ proto.contents.v1.Article.serializeBinaryToWriter = function(message, writer) {
   if (f.length > 0) {
     writer.writeString(
       9,
+      f
+    );
+  }
+  f = message.getImageCoverAlt();
+  if (f.length > 0) {
+    writer.writeString(
+      18,
       f
     );
   }
@@ -1511,6 +1523,24 @@ proto.contents.v1.Article.prototype.getImageCoverCaption = function() {
  */
 proto.contents.v1.Article.prototype.setImageCoverCaption = function(value) {
   return jspb.Message.setProto3StringField(this, 9, value);
+};
+
+
+/**
+ * optional string image_cover_alt = 18;
+ * @return {string}
+ */
+proto.contents.v1.Article.prototype.getImageCoverAlt = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 18, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.contents.v1.Article} returns this
+ */
+proto.contents.v1.Article.prototype.setImageCoverAlt = function(value) {
+  return jspb.Message.setProto3StringField(this, 18, value);
 };
 
 

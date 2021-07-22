@@ -368,7 +368,8 @@ proto.contents.v1.ArticlePhoto.toObject = function(includeInstance, msg) {
   var f, obj = {
     id: jspb.Message.getFieldWithDefault(msg, 1, 0),
     imageLink: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    imageCaption: jspb.Message.getFieldWithDefault(msg, 3, "")
+    imageCaption: jspb.Message.getFieldWithDefault(msg, 3, ""),
+    imageAlt: jspb.Message.getFieldWithDefault(msg, 4, "")
   };
 
   if (includeInstance) {
@@ -417,6 +418,10 @@ proto.contents.v1.ArticlePhoto.deserializeBinaryFromReader = function(msg, reade
       var value = /** @type {string} */ (reader.readString());
       msg.setImageCaption(value);
       break;
+    case 4:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setImageAlt(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -464,6 +469,13 @@ proto.contents.v1.ArticlePhoto.serializeBinaryToWriter = function(message, write
   if (f.length > 0) {
     writer.writeString(
       3,
+      f
+    );
+  }
+  f = message.getImageAlt();
+  if (f.length > 0) {
+    writer.writeString(
+      4,
       f
     );
   }
@@ -524,6 +536,24 @@ proto.contents.v1.ArticlePhoto.prototype.setImageCaption = function(value) {
 };
 
 
+/**
+ * optional string image_alt = 4;
+ * @return {string}
+ */
+proto.contents.v1.ArticlePhoto.prototype.getImageAlt = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.contents.v1.ArticlePhoto} returns this
+ */
+proto.contents.v1.ArticlePhoto.prototype.setImageAlt = function(value) {
+  return jspb.Message.setProto3StringField(this, 4, value);
+};
+
+
 
 /**
  * List of repeated fields within this message type.
@@ -572,6 +602,7 @@ proto.contents.v1.NewsPhoto.toObject = function(includeInstance, msg) {
     content: jspb.Message.getFieldWithDefault(msg, 7, ""),
     imageCoverUrl: jspb.Message.getFieldWithDefault(msg, 8, ""),
     imageCoverCaption: jspb.Message.getFieldWithDefault(msg, 9, ""),
+    imageCoverAlt: jspb.Message.getFieldWithDefault(msg, 18, ""),
     slug: jspb.Message.getFieldWithDefault(msg, 14, ""),
     energy: jspb.Message.getFieldWithDefault(msg, 16, 0),
     type: jspb.Message.getFieldWithDefault(msg, 17, 0),
@@ -661,6 +692,10 @@ proto.contents.v1.NewsPhoto.deserializeBinaryFromReader = function(msg, reader) 
     case 9:
       var value = /** @type {string} */ (reader.readString());
       msg.setImageCoverCaption(value);
+      break;
+    case 18:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setImageCoverAlt(value);
       break;
     case 14:
       var value = /** @type {string} */ (reader.readString());
@@ -821,6 +856,13 @@ proto.contents.v1.NewsPhoto.serializeBinaryToWriter = function(message, writer) 
   if (f.length > 0) {
     writer.writeString(
       9,
+      f
+    );
+  }
+  f = message.getImageCoverAlt();
+  if (f.length > 0) {
+    writer.writeString(
+      18,
       f
     );
   }
@@ -1101,6 +1143,24 @@ proto.contents.v1.NewsPhoto.prototype.getImageCoverCaption = function() {
  */
 proto.contents.v1.NewsPhoto.prototype.setImageCoverCaption = function(value) {
   return jspb.Message.setProto3StringField(this, 9, value);
+};
+
+
+/**
+ * optional string image_cover_alt = 18;
+ * @return {string}
+ */
+proto.contents.v1.NewsPhoto.prototype.getImageCoverAlt = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 18, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.contents.v1.NewsPhoto} returns this
+ */
+proto.contents.v1.NewsPhoto.prototype.setImageCoverAlt = function(value) {
+  return jspb.Message.setProto3StringField(this, 18, value);
 };
 
 
