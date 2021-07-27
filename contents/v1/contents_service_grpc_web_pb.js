@@ -1848,6 +1848,81 @@ proto.contents.v1.ContentServicePromiseClient.prototype.articleGetList =
 /**
  * @const
  * @type {!grpc.web.MethodDescriptor<
+ *   !proto.contents.v1.ArticleGetListRequest,
+ *   !proto.contents.v1.ArticleGetListStreamResponse>}
+ */
+const methodDescriptor_ContentService_ArticleGetListStream = new grpc.web.MethodDescriptor(
+  '/contents.v1.ContentService/ArticleGetListStream',
+  grpc.web.MethodType.SERVER_STREAMING,
+  contents_v1_article_pb.ArticleGetListRequest,
+  contents_v1_article_pb.ArticleGetListStreamResponse,
+  /**
+   * @param {!proto.contents.v1.ArticleGetListRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  contents_v1_article_pb.ArticleGetListStreamResponse.deserializeBinary
+);
+
+
+/**
+ * @const
+ * @type {!grpc.web.AbstractClientBase.MethodInfo<
+ *   !proto.contents.v1.ArticleGetListRequest,
+ *   !proto.contents.v1.ArticleGetListStreamResponse>}
+ */
+const methodInfo_ContentService_ArticleGetListStream = new grpc.web.AbstractClientBase.MethodInfo(
+  contents_v1_article_pb.ArticleGetListStreamResponse,
+  /**
+   * @param {!proto.contents.v1.ArticleGetListRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  contents_v1_article_pb.ArticleGetListStreamResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.contents.v1.ArticleGetListRequest} request The request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @return {!grpc.web.ClientReadableStream<!proto.contents.v1.ArticleGetListStreamResponse>}
+ *     The XHR Node Readable Stream
+ */
+proto.contents.v1.ContentServiceClient.prototype.articleGetListStream =
+    function(request, metadata) {
+  return this.client_.serverStreaming(this.hostname_ +
+      '/contents.v1.ContentService/ArticleGetListStream',
+      request,
+      metadata || {},
+      methodDescriptor_ContentService_ArticleGetListStream);
+};
+
+
+/**
+ * @param {!proto.contents.v1.ArticleGetListRequest} request The request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @return {!grpc.web.ClientReadableStream<!proto.contents.v1.ArticleGetListStreamResponse>}
+ *     The XHR Node Readable Stream
+ */
+proto.contents.v1.ContentServicePromiseClient.prototype.articleGetListStream =
+    function(request, metadata) {
+  return this.client_.serverStreaming(this.hostname_ +
+      '/contents.v1.ContentService/ArticleGetListStream',
+      request,
+      metadata || {},
+      methodDescriptor_ContentService_ArticleGetListStream);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
  *   !proto.contents.v1.ArticleCreateRequest,
  *   !proto.contents.v1.ArticleCreateResponse>}
  */

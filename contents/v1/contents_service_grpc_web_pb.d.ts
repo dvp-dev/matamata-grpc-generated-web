@@ -168,6 +168,11 @@ export class ContentServiceClient {
                response: contents_v1_article_pb.ArticleGetListResponse) => void
   ): grpcWeb.ClientReadableStream<contents_v1_article_pb.ArticleGetListResponse>;
 
+  articleGetListStream(
+    request: contents_v1_article_pb.ArticleGetListRequest,
+    metadata?: grpcWeb.Metadata
+  ): grpcWeb.ClientReadableStream<contents_v1_article_pb.ArticleGetListStreamResponse>;
+
   articleCreate(
     request: contents_v1_article_pb.ArticleCreateRequest,
     metadata: grpcWeb.Metadata | undefined,
@@ -460,6 +465,11 @@ export class ContentServicePromiseClient {
     request: contents_v1_article_pb.ArticleGetListRequest,
     metadata?: grpcWeb.Metadata
   ): Promise<contents_v1_article_pb.ArticleGetListResponse>;
+
+  articleGetListStream(
+    request: contents_v1_article_pb.ArticleGetListRequest,
+    metadata?: grpcWeb.Metadata
+  ): grpcWeb.ClientReadableStream<contents_v1_article_pb.ArticleGetListStreamResponse>;
 
   articleCreate(
     request: contents_v1_article_pb.ArticleCreateRequest,

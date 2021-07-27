@@ -425,6 +425,35 @@ export namespace ArticleGetListResponse {
     }
 }
 
+export class ArticleGetListStreamResponse extends jspb.Message { 
+
+    hasData(): boolean;
+    clearData(): void;
+    getData(): Article | undefined;
+    setData(value?: Article): ArticleGetListStreamResponse;
+    getMaxPage(): number;
+    setMaxPage(value: number): ArticleGetListStreamResponse;
+    getCount(): number;
+    setCount(value: number): ArticleGetListStreamResponse;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): ArticleGetListStreamResponse.AsObject;
+    static toObject(includeInstance: boolean, msg: ArticleGetListStreamResponse): ArticleGetListStreamResponse.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: ArticleGetListStreamResponse, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): ArticleGetListStreamResponse;
+    static deserializeBinaryFromReader(message: ArticleGetListStreamResponse, reader: jspb.BinaryReader): ArticleGetListStreamResponse;
+}
+
+export namespace ArticleGetListStreamResponse {
+    export type AsObject = {
+        data?: Article.AsObject,
+        maxPage: number,
+        count: number,
+    }
+}
+
 export class ArticleCreateRequest extends jspb.Message { 
 
     hasData(): boolean;

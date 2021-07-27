@@ -37,6 +37,7 @@ interface IContentServiceService extends grpc.ServiceDefinition<grpc.UntypedServ
     category3Delete: IContentServiceService_ICategory3Delete;
     articleGetOne: IContentServiceService_IArticleGetOne;
     articleGetList: IContentServiceService_IArticleGetList;
+    articleGetListStream: IContentServiceService_IArticleGetListStream;
     articleCreate: IContentServiceService_IArticleCreate;
     articleUpdate: IContentServiceService_IArticleUpdate;
     articleDelete: IContentServiceService_IArticleDelete;
@@ -262,6 +263,15 @@ interface IContentServiceService_IArticleGetList extends grpc.MethodDefinition<c
     requestDeserialize: grpc.deserialize<contents_v1_article_pb.ArticleGetListRequest>;
     responseSerialize: grpc.serialize<contents_v1_article_pb.ArticleGetListResponse>;
     responseDeserialize: grpc.deserialize<contents_v1_article_pb.ArticleGetListResponse>;
+}
+interface IContentServiceService_IArticleGetListStream extends grpc.MethodDefinition<contents_v1_article_pb.ArticleGetListRequest, contents_v1_article_pb.ArticleGetListStreamResponse> {
+    path: "/contents.v1.ContentService/ArticleGetListStream";
+    requestStream: false;
+    responseStream: true;
+    requestSerialize: grpc.serialize<contents_v1_article_pb.ArticleGetListRequest>;
+    requestDeserialize: grpc.deserialize<contents_v1_article_pb.ArticleGetListRequest>;
+    responseSerialize: grpc.serialize<contents_v1_article_pb.ArticleGetListStreamResponse>;
+    responseDeserialize: grpc.deserialize<contents_v1_article_pb.ArticleGetListStreamResponse>;
 }
 interface IContentServiceService_IArticleCreate extends grpc.MethodDefinition<contents_v1_article_pb.ArticleCreateRequest, contents_v1_article_pb.ArticleCreateResponse> {
     path: "/contents.v1.ContentService/ArticleCreate";
@@ -523,6 +533,7 @@ export interface IContentServiceServer extends grpc.UntypedServiceImplementation
     category3Delete: grpc.handleUnaryCall<contents_v1_category_pb.Category3DeleteRequest, contents_v1_category_pb.Category3DeleteResponse>;
     articleGetOne: grpc.handleUnaryCall<contents_v1_article_pb.ArticleGetOneRequest, contents_v1_article_pb.ArticleGetOneResponse>;
     articleGetList: grpc.handleUnaryCall<contents_v1_article_pb.ArticleGetListRequest, contents_v1_article_pb.ArticleGetListResponse>;
+    articleGetListStream: grpc.handleServerStreamingCall<contents_v1_article_pb.ArticleGetListRequest, contents_v1_article_pb.ArticleGetListStreamResponse>;
     articleCreate: grpc.handleUnaryCall<contents_v1_article_pb.ArticleCreateRequest, contents_v1_article_pb.ArticleCreateResponse>;
     articleUpdate: grpc.handleUnaryCall<contents_v1_article_pb.ArticleUpdateRequest, contents_v1_article_pb.ArticleUpdateResponse>;
     articleDelete: grpc.handleUnaryCall<contents_v1_article_pb.ArticleDeleteRequest, contents_v1_article_pb.ArticleDeleteResponse>;
@@ -618,6 +629,8 @@ export interface IContentServiceClient {
     articleGetList(request: contents_v1_article_pb.ArticleGetListRequest, callback: (error: grpc.ServiceError | null, response: contents_v1_article_pb.ArticleGetListResponse) => void): grpc.ClientUnaryCall;
     articleGetList(request: contents_v1_article_pb.ArticleGetListRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: contents_v1_article_pb.ArticleGetListResponse) => void): grpc.ClientUnaryCall;
     articleGetList(request: contents_v1_article_pb.ArticleGetListRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: contents_v1_article_pb.ArticleGetListResponse) => void): grpc.ClientUnaryCall;
+    articleGetListStream(request: contents_v1_article_pb.ArticleGetListRequest, options?: Partial<grpc.CallOptions>): grpc.ClientReadableStream<contents_v1_article_pb.ArticleGetListStreamResponse>;
+    articleGetListStream(request: contents_v1_article_pb.ArticleGetListRequest, metadata?: grpc.Metadata, options?: Partial<grpc.CallOptions>): grpc.ClientReadableStream<contents_v1_article_pb.ArticleGetListStreamResponse>;
     articleCreate(request: contents_v1_article_pb.ArticleCreateRequest, callback: (error: grpc.ServiceError | null, response: contents_v1_article_pb.ArticleCreateResponse) => void): grpc.ClientUnaryCall;
     articleCreate(request: contents_v1_article_pb.ArticleCreateRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: contents_v1_article_pb.ArticleCreateResponse) => void): grpc.ClientUnaryCall;
     articleCreate(request: contents_v1_article_pb.ArticleCreateRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: contents_v1_article_pb.ArticleCreateResponse) => void): grpc.ClientUnaryCall;
@@ -763,6 +776,8 @@ export class ContentServiceClient extends grpc.Client implements IContentService
     public articleGetList(request: contents_v1_article_pb.ArticleGetListRequest, callback: (error: grpc.ServiceError | null, response: contents_v1_article_pb.ArticleGetListResponse) => void): grpc.ClientUnaryCall;
     public articleGetList(request: contents_v1_article_pb.ArticleGetListRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: contents_v1_article_pb.ArticleGetListResponse) => void): grpc.ClientUnaryCall;
     public articleGetList(request: contents_v1_article_pb.ArticleGetListRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: contents_v1_article_pb.ArticleGetListResponse) => void): grpc.ClientUnaryCall;
+    public articleGetListStream(request: contents_v1_article_pb.ArticleGetListRequest, options?: Partial<grpc.CallOptions>): grpc.ClientReadableStream<contents_v1_article_pb.ArticleGetListStreamResponse>;
+    public articleGetListStream(request: contents_v1_article_pb.ArticleGetListRequest, metadata?: grpc.Metadata, options?: Partial<grpc.CallOptions>): grpc.ClientReadableStream<contents_v1_article_pb.ArticleGetListStreamResponse>;
     public articleCreate(request: contents_v1_article_pb.ArticleCreateRequest, callback: (error: grpc.ServiceError | null, response: contents_v1_article_pb.ArticleCreateResponse) => void): grpc.ClientUnaryCall;
     public articleCreate(request: contents_v1_article_pb.ArticleCreateRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: contents_v1_article_pb.ArticleCreateResponse) => void): grpc.ClientUnaryCall;
     public articleCreate(request: contents_v1_article_pb.ArticleCreateRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: contents_v1_article_pb.ArticleCreateResponse) => void): grpc.ClientUnaryCall;
