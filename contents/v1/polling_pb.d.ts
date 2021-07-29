@@ -15,14 +15,22 @@ export class Polling extends jspb.Message {
     setTitle(value: string): Polling;
     getStatus(): PollingStatus;
     setStatus(value: PollingStatus): Polling;
+    getImageCoverUrl(): string;
+    setImageCoverUrl(value: string): Polling;
+    getImageCoverAlt(): string;
+    setImageCoverAlt(value: string): Polling;
     getChoice1Label(): string;
     setChoice1Label(value: string): Polling;
     getChoice1ArticleId(): number;
     setChoice1ArticleId(value: number): Polling;
+    getChoice1Count(): number;
+    setChoice1Count(value: number): Polling;
     getChoice2Label(): string;
     setChoice2Label(value: string): Polling;
     getChoice2ArticleId(): number;
     setChoice2ArticleId(value: number): Polling;
+    getChoice2Count(): number;
+    setChoice2Count(value: number): Polling;
 
     hasCreatedAt(): boolean;
     clearCreatedAt(): void;
@@ -64,10 +72,14 @@ export namespace Polling {
         id: number,
         title: string,
         status: PollingStatus,
+        imageCoverUrl: string,
+        imageCoverAlt: string,
         choice1Label: string,
         choice1ArticleId: number,
+        choice1Count: number,
         choice2Label: string,
         choice2ArticleId: number,
+        choice2Count: number,
         createdAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
         updatedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
         publishedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
@@ -81,6 +93,10 @@ export class PollingCreateUpdate extends jspb.Message {
     setTitle(value: string): PollingCreateUpdate;
     getStatus(): PollingStatus;
     setStatus(value: PollingStatus): PollingCreateUpdate;
+    getImageCoverUrl(): string;
+    setImageCoverUrl(value: string): PollingCreateUpdate;
+    getImageCoverAlt(): string;
+    setImageCoverAlt(value: string): PollingCreateUpdate;
     getChoice1Label(): string;
     setChoice1Label(value: string): PollingCreateUpdate;
     getChoice1ArticleId(): number;
@@ -111,6 +127,8 @@ export namespace PollingCreateUpdate {
     export type AsObject = {
         title: string,
         status: PollingStatus,
+        imageCoverUrl: string,
+        imageCoverAlt: string,
         choice1Label: string,
         choice1ArticleId: number,
         choice2Label: string,

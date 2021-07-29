@@ -320,10 +320,14 @@ proto.contents.v1.Polling.toObject = function(includeInstance, msg) {
     id: jspb.Message.getFieldWithDefault(msg, 1, 0),
     title: jspb.Message.getFieldWithDefault(msg, 2, ""),
     status: jspb.Message.getFieldWithDefault(msg, 3, 0),
+    imageCoverUrl: jspb.Message.getFieldWithDefault(msg, 15, ""),
+    imageCoverAlt: jspb.Message.getFieldWithDefault(msg, 16, ""),
     choice1Label: jspb.Message.getFieldWithDefault(msg, 4, ""),
     choice1ArticleId: jspb.Message.getFieldWithDefault(msg, 5, 0),
+    choice1Count: jspb.Message.getFieldWithDefault(msg, 13, 0),
     choice2Label: jspb.Message.getFieldWithDefault(msg, 6, ""),
     choice2ArticleId: jspb.Message.getFieldWithDefault(msg, 7, 0),
+    choice2Count: jspb.Message.getFieldWithDefault(msg, 14, 0),
     createdAt: (f = msg.getCreatedAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
     updatedAt: (f = msg.getUpdatedAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
     publishedAt: (f = msg.getPublishedAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
@@ -377,6 +381,14 @@ proto.contents.v1.Polling.deserializeBinaryFromReader = function(msg, reader) {
       var value = /** @type {!proto.contents.v1.PollingStatus} */ (reader.readEnum());
       msg.setStatus(value);
       break;
+    case 15:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setImageCoverUrl(value);
+      break;
+    case 16:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setImageCoverAlt(value);
+      break;
     case 4:
       var value = /** @type {string} */ (reader.readString());
       msg.setChoice1Label(value);
@@ -385,6 +397,10 @@ proto.contents.v1.Polling.deserializeBinaryFromReader = function(msg, reader) {
       var value = /** @type {number} */ (reader.readInt32());
       msg.setChoice1ArticleId(value);
       break;
+    case 13:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setChoice1Count(value);
+      break;
     case 6:
       var value = /** @type {string} */ (reader.readString());
       msg.setChoice2Label(value);
@@ -392,6 +408,10 @@ proto.contents.v1.Polling.deserializeBinaryFromReader = function(msg, reader) {
     case 7:
       var value = /** @type {number} */ (reader.readInt32());
       msg.setChoice2ArticleId(value);
+      break;
+    case 14:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setChoice2Count(value);
       break;
     case 8:
       var value = new google_protobuf_timestamp_pb.Timestamp;
@@ -468,6 +488,20 @@ proto.contents.v1.Polling.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
+  f = message.getImageCoverUrl();
+  if (f.length > 0) {
+    writer.writeString(
+      15,
+      f
+    );
+  }
+  f = message.getImageCoverAlt();
+  if (f.length > 0) {
+    writer.writeString(
+      16,
+      f
+    );
+  }
   f = message.getChoice1Label();
   if (f.length > 0) {
     writer.writeString(
@@ -482,6 +516,13 @@ proto.contents.v1.Polling.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
+  f = message.getChoice1Count();
+  if (f !== 0) {
+    writer.writeInt32(
+      13,
+      f
+    );
+  }
   f = message.getChoice2Label();
   if (f.length > 0) {
     writer.writeString(
@@ -493,6 +534,13 @@ proto.contents.v1.Polling.serializeBinaryToWriter = function(message, writer) {
   if (f !== 0) {
     writer.writeInt32(
       7,
+      f
+    );
+  }
+  f = message.getChoice2Count();
+  if (f !== 0) {
+    writer.writeInt32(
+      14,
       f
     );
   }
@@ -594,6 +642,42 @@ proto.contents.v1.Polling.prototype.setStatus = function(value) {
 
 
 /**
+ * optional string image_cover_url = 15;
+ * @return {string}
+ */
+proto.contents.v1.Polling.prototype.getImageCoverUrl = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 15, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.contents.v1.Polling} returns this
+ */
+proto.contents.v1.Polling.prototype.setImageCoverUrl = function(value) {
+  return jspb.Message.setProto3StringField(this, 15, value);
+};
+
+
+/**
+ * optional string image_cover_alt = 16;
+ * @return {string}
+ */
+proto.contents.v1.Polling.prototype.getImageCoverAlt = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 16, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.contents.v1.Polling} returns this
+ */
+proto.contents.v1.Polling.prototype.setImageCoverAlt = function(value) {
+  return jspb.Message.setProto3StringField(this, 16, value);
+};
+
+
+/**
  * optional string choice_1_label = 4;
  * @return {string}
  */
@@ -630,6 +714,24 @@ proto.contents.v1.Polling.prototype.setChoice1ArticleId = function(value) {
 
 
 /**
+ * optional int32 choice_1_count = 13;
+ * @return {number}
+ */
+proto.contents.v1.Polling.prototype.getChoice1Count = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 13, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.contents.v1.Polling} returns this
+ */
+proto.contents.v1.Polling.prototype.setChoice1Count = function(value) {
+  return jspb.Message.setProto3IntField(this, 13, value);
+};
+
+
+/**
  * optional string choice_2_label = 6;
  * @return {string}
  */
@@ -662,6 +764,24 @@ proto.contents.v1.Polling.prototype.getChoice2ArticleId = function() {
  */
 proto.contents.v1.Polling.prototype.setChoice2ArticleId = function(value) {
   return jspb.Message.setProto3IntField(this, 7, value);
+};
+
+
+/**
+ * optional int32 choice_2_count = 14;
+ * @return {number}
+ */
+proto.contents.v1.Polling.prototype.getChoice2Count = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 14, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.contents.v1.Polling} returns this
+ */
+proto.contents.v1.Polling.prototype.setChoice2Count = function(value) {
+  return jspb.Message.setProto3IntField(this, 14, value);
 };
 
 
@@ -884,6 +1004,8 @@ proto.contents.v1.PollingCreateUpdate.toObject = function(includeInstance, msg) 
   var f, obj = {
     title: jspb.Message.getFieldWithDefault(msg, 2, ""),
     status: jspb.Message.getFieldWithDefault(msg, 3, 0),
+    imageCoverUrl: jspb.Message.getFieldWithDefault(msg, 15, ""),
+    imageCoverAlt: jspb.Message.getFieldWithDefault(msg, 16, ""),
     choice1Label: jspb.Message.getFieldWithDefault(msg, 4, ""),
     choice1ArticleId: jspb.Message.getFieldWithDefault(msg, 5, 0),
     choice2Label: jspb.Message.getFieldWithDefault(msg, 6, ""),
@@ -933,6 +1055,14 @@ proto.contents.v1.PollingCreateUpdate.deserializeBinaryFromReader = function(msg
     case 3:
       var value = /** @type {!proto.contents.v1.PollingStatus} */ (reader.readEnum());
       msg.setStatus(value);
+      break;
+    case 15:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setImageCoverUrl(value);
+      break;
+    case 16:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setImageCoverAlt(value);
       break;
     case 4:
       var value = /** @type {string} */ (reader.readString());
@@ -999,6 +1129,20 @@ proto.contents.v1.PollingCreateUpdate.serializeBinaryToWriter = function(message
   if (f !== 0.0) {
     writer.writeEnum(
       3,
+      f
+    );
+  }
+  f = message.getImageCoverUrl();
+  if (f.length > 0) {
+    writer.writeString(
+      15,
+      f
+    );
+  }
+  f = message.getImageCoverAlt();
+  if (f.length > 0) {
+    writer.writeString(
+      16,
       f
     );
   }
@@ -1081,6 +1225,42 @@ proto.contents.v1.PollingCreateUpdate.prototype.getStatus = function() {
  */
 proto.contents.v1.PollingCreateUpdate.prototype.setStatus = function(value) {
   return jspb.Message.setProto3EnumField(this, 3, value);
+};
+
+
+/**
+ * optional string image_cover_url = 15;
+ * @return {string}
+ */
+proto.contents.v1.PollingCreateUpdate.prototype.getImageCoverUrl = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 15, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.contents.v1.PollingCreateUpdate} returns this
+ */
+proto.contents.v1.PollingCreateUpdate.prototype.setImageCoverUrl = function(value) {
+  return jspb.Message.setProto3StringField(this, 15, value);
+};
+
+
+/**
+ * optional string image_cover_alt = 16;
+ * @return {string}
+ */
+proto.contents.v1.PollingCreateUpdate.prototype.getImageCoverAlt = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 16, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.contents.v1.PollingCreateUpdate} returns this
+ */
+proto.contents.v1.PollingCreateUpdate.prototype.setImageCoverAlt = function(value) {
+  return jspb.Message.setProto3StringField(this, 16, value);
 };
 
 
