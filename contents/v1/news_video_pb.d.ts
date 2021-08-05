@@ -109,6 +109,11 @@ export class NewsVideo extends jspb.Message {
     clearSeo(): void;
     getSeo(): contents_v1_article_pb.ArticleSEO | undefined;
     setSeo(value?: contents_v1_article_pb.ArticleSEO): NewsVideo;
+
+    hasAdminCreated(): boolean;
+    clearAdminCreated(): void;
+    getAdminCreated(): admin_v1_admin_pb.Admin | undefined;
+    setAdminCreated(value?: admin_v1_admin_pb.Admin): NewsVideo;
     clearCreditsList(): void;
     getCreditsList(): Array<contents_v1_article_pb.ArticleCredit>;
     setCreditsList(value: Array<contents_v1_article_pb.ArticleCredit>): NewsVideo;
@@ -150,6 +155,7 @@ export namespace NewsVideo {
         category2?: contents_v1_category_pb.Category2.AsObject,
         category3?: contents_v1_category_pb.Category3.AsObject,
         seo?: contents_v1_article_pb.ArticleSEO.AsObject,
+        adminCreated?: admin_v1_admin_pb.Admin.AsObject,
         creditsList: Array<contents_v1_article_pb.ArticleCredit.AsObject>,
     }
 }
@@ -246,6 +252,8 @@ export class NewsVideoGetOneRequest extends jspb.Message {
     setId(value: number): NewsVideoGetOneRequest;
     getSearchBySlug(): string;
     setSearchBySlug(value: string): NewsVideoGetOneRequest;
+    getWithAdminCreated(): boolean;
+    setWithAdminCreated(value: boolean): NewsVideoGetOneRequest;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): NewsVideoGetOneRequest.AsObject;
@@ -261,6 +269,7 @@ export namespace NewsVideoGetOneRequest {
     export type AsObject = {
         id: number,
         searchBySlug: string,
+        withAdminCreated: boolean,
     }
 }
 
@@ -314,6 +323,8 @@ export class NewsVideoGetListRequest extends jspb.Message {
     setPage(value: number): NewsVideoGetListRequest;
     getContentPerPage(): number;
     setContentPerPage(value: number): NewsVideoGetListRequest;
+    getWithAdminCreated(): boolean;
+    setWithAdminCreated(value: boolean): NewsVideoGetListRequest;
     getSortBy(): NewsVideoGetListRequest.Sort;
     setSortBy(value: NewsVideoGetListRequest.Sort): NewsVideoGetListRequest;
 
@@ -340,6 +351,7 @@ export namespace NewsVideoGetListRequest {
         search: string,
         page: number,
         contentPerPage: number,
+        withAdminCreated: boolean,
         sortBy: NewsVideoGetListRequest.Sort,
     }
 
@@ -348,6 +360,12 @@ export namespace NewsVideoGetListRequest {
     TITLE_DESCENDING = 1,
     OLDEST = 2,
     NEWEST = 3,
+    ENERGY_HIGHEST = 4,
+    ENERGY_LOWEST = 5,
+    CREATED_AT_ASCENDING = 6,
+    CREATED_AT_DESCENDING = 7,
+    PUBLISHED_AT_ASCENDING = 8,
+    PUBLISHED_AT_DESCENDING = 9,
     }
 
 }

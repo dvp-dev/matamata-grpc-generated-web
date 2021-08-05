@@ -161,6 +161,11 @@ export class Article extends jspb.Message {
     clearSeo(): void;
     getSeo(): ArticleSEO | undefined;
     setSeo(value?: ArticleSEO): Article;
+
+    hasAdminCreated(): boolean;
+    clearAdminCreated(): void;
+    getAdminCreated(): admin_v1_admin_pb.Admin | undefined;
+    setAdminCreated(value?: admin_v1_admin_pb.Admin): Article;
     clearCreditsList(): void;
     getCreditsList(): Array<ArticleCredit>;
     setCreditsList(value: Array<ArticleCredit>): Article;
@@ -201,6 +206,7 @@ export namespace Article {
         category2?: contents_v1_category_pb.Category2.AsObject,
         category3?: contents_v1_category_pb.Category3.AsObject,
         seo?: ArticleSEO.AsObject,
+        adminCreated?: admin_v1_admin_pb.Admin.AsObject,
         creditsList: Array<ArticleCredit.AsObject>,
     }
 }
@@ -291,6 +297,8 @@ export class ArticleGetOneRequest extends jspb.Message {
     setId(value: number): ArticleGetOneRequest;
     getSearchBySlug(): string;
     setSearchBySlug(value: string): ArticleGetOneRequest;
+    getWithAdminCreated(): boolean;
+    setWithAdminCreated(value: boolean): ArticleGetOneRequest;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): ArticleGetOneRequest.AsObject;
@@ -306,6 +314,7 @@ export namespace ArticleGetOneRequest {
     export type AsObject = {
         id: number,
         searchBySlug: string,
+        withAdminCreated: boolean,
     }
 }
 
@@ -359,6 +368,8 @@ export class ArticleGetListRequest extends jspb.Message {
     setPage(value: number): ArticleGetListRequest;
     getContentPerPage(): number;
     setContentPerPage(value: number): ArticleGetListRequest;
+    getWithAdminCreated(): boolean;
+    setWithAdminCreated(value: boolean): ArticleGetListRequest;
     getSortBy(): ArticleGetListRequest.Sort;
     setSortBy(value: ArticleGetListRequest.Sort): ArticleGetListRequest;
 
@@ -385,6 +396,7 @@ export namespace ArticleGetListRequest {
         search: string,
         page: number,
         contentPerPage: number,
+        withAdminCreated: boolean,
         sortBy: ArticleGetListRequest.Sort,
     }
 
@@ -393,6 +405,12 @@ export namespace ArticleGetListRequest {
     TITLE_DESCENDING = 1,
     OLDEST = 2,
     NEWEST = 3,
+    ENERGY_HIGHEST = 4,
+    ENERGY_LOWEST = 5,
+    CREATED_AT_ASCENDING = 6,
+    CREATED_AT_DESCENDING = 7,
+    PUBLISHED_AT_ASCENDING = 8,
+    PUBLISHED_AT_DESCENDING = 9,
     }
 
 }

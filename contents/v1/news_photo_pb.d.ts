@@ -114,6 +114,11 @@ export class NewsPhoto extends jspb.Message {
     clearSeo(): void;
     getSeo(): contents_v1_article_pb.ArticleSEO | undefined;
     setSeo(value?: contents_v1_article_pb.ArticleSEO): NewsPhoto;
+
+    hasAdminCreated(): boolean;
+    clearAdminCreated(): void;
+    getAdminCreated(): admin_v1_admin_pb.Admin | undefined;
+    setAdminCreated(value?: admin_v1_admin_pb.Admin): NewsPhoto;
     clearCreditsList(): void;
     getCreditsList(): Array<contents_v1_article_pb.ArticleCredit>;
     setCreditsList(value: Array<contents_v1_article_pb.ArticleCredit>): NewsPhoto;
@@ -155,6 +160,7 @@ export namespace NewsPhoto {
         category2?: contents_v1_category_pb.Category2.AsObject,
         category3?: contents_v1_category_pb.Category3.AsObject,
         seo?: contents_v1_article_pb.ArticleSEO.AsObject,
+        adminCreated?: admin_v1_admin_pb.Admin.AsObject,
         creditsList: Array<contents_v1_article_pb.ArticleCredit.AsObject>,
     }
 }
@@ -250,6 +256,8 @@ export class NewsPhotoGetOneRequest extends jspb.Message {
     setId(value: number): NewsPhotoGetOneRequest;
     getSearchBySlug(): string;
     setSearchBySlug(value: string): NewsPhotoGetOneRequest;
+    getWithAdminCreated(): boolean;
+    setWithAdminCreated(value: boolean): NewsPhotoGetOneRequest;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): NewsPhotoGetOneRequest.AsObject;
@@ -265,6 +273,7 @@ export namespace NewsPhotoGetOneRequest {
     export type AsObject = {
         id: number,
         searchBySlug: string,
+        withAdminCreated: boolean,
     }
 }
 
@@ -318,6 +327,8 @@ export class NewsPhotoGetListRequest extends jspb.Message {
     setPage(value: number): NewsPhotoGetListRequest;
     getContentPerPage(): number;
     setContentPerPage(value: number): NewsPhotoGetListRequest;
+    getWithAdminCreated(): boolean;
+    setWithAdminCreated(value: boolean): NewsPhotoGetListRequest;
     getSortBy(): NewsPhotoGetListRequest.Sort;
     setSortBy(value: NewsPhotoGetListRequest.Sort): NewsPhotoGetListRequest;
 
@@ -344,6 +355,7 @@ export namespace NewsPhotoGetListRequest {
         search: string,
         page: number,
         contentPerPage: number,
+        withAdminCreated: boolean,
         sortBy: NewsPhotoGetListRequest.Sort,
     }
 
@@ -352,6 +364,12 @@ export namespace NewsPhotoGetListRequest {
     TITLE_DESCENDING = 1,
     OLDEST = 2,
     NEWEST = 3,
+    ENERGY_HIGHEST = 4,
+    ENERGY_LOWEST = 5,
+    CREATED_AT_ASCENDING = 6,
+    CREATED_AT_DESCENDING = 7,
+    PUBLISHED_AT_ASCENDING = 8,
+    PUBLISHED_AT_DESCENDING = 9,
     }
 
 }

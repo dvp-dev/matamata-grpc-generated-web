@@ -374,6 +374,7 @@ proto.contents.v1.Infografik.toObject = function(includeInstance, msg) {
     category1: (f = msg.getCategory1()) && contents_v1_category_pb.Category1.toObject(includeInstance, f),
     category2: (f = msg.getCategory2()) && contents_v1_category_pb.Category2.toObject(includeInstance, f),
     category3: (f = msg.getCategory3()) && contents_v1_category_pb.Category3.toObject(includeInstance, f),
+    adminCreated: (f = msg.getAdminCreated()) && admin_v1_admin_pb.Admin.toObject(includeInstance, f),
     creditsList: jspb.Message.toObjectList(msg.getCreditsList(),
     contents_v1_article_pb.ArticleCredit.toObject, includeInstance)
   };
@@ -507,6 +508,11 @@ proto.contents.v1.Infografik.deserializeBinaryFromReader = function(msg, reader)
       var value = new contents_v1_category_pb.Category3;
       reader.readMessage(value,contents_v1_category_pb.Category3.deserializeBinaryFromReader);
       msg.setCategory3(value);
+      break;
+    case 56:
+      var value = new admin_v1_admin_pb.Admin;
+      reader.readMessage(value,admin_v1_admin_pb.Admin.deserializeBinaryFromReader);
+      msg.setAdminCreated(value);
       break;
     case 101:
       var value = new contents_v1_article_pb.ArticleCredit;
@@ -702,6 +708,14 @@ proto.contents.v1.Infografik.serializeBinaryToWriter = function(message, writer)
       54,
       f,
       contents_v1_category_pb.Category3.serializeBinaryToWriter
+    );
+  }
+  f = message.getAdminCreated();
+  if (f != null) {
+    writer.writeMessage(
+      56,
+      f,
+      admin_v1_admin_pb.Admin.serializeBinaryToWriter
     );
   }
   f = message.getCreditsList();
@@ -1261,6 +1275,43 @@ proto.contents.v1.Infografik.prototype.clearCategory3 = function() {
  */
 proto.contents.v1.Infografik.prototype.hasCategory3 = function() {
   return jspb.Message.getField(this, 54) != null;
+};
+
+
+/**
+ * optional admin.v1.Admin admin_created = 56;
+ * @return {?proto.admin.v1.Admin}
+ */
+proto.contents.v1.Infografik.prototype.getAdminCreated = function() {
+  return /** @type{?proto.admin.v1.Admin} */ (
+    jspb.Message.getWrapperField(this, admin_v1_admin_pb.Admin, 56));
+};
+
+
+/**
+ * @param {?proto.admin.v1.Admin|undefined} value
+ * @return {!proto.contents.v1.Infografik} returns this
+*/
+proto.contents.v1.Infografik.prototype.setAdminCreated = function(value) {
+  return jspb.Message.setWrapperField(this, 56, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.contents.v1.Infografik} returns this
+ */
+proto.contents.v1.Infografik.prototype.clearAdminCreated = function() {
+  return this.setAdminCreated(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.contents.v1.Infografik.prototype.hasAdminCreated = function() {
+  return jspb.Message.getField(this, 56) != null;
 };
 
 
@@ -2038,7 +2089,8 @@ proto.contents.v1.InfografikGetOneRequest.prototype.toObject = function(opt_incl
 proto.contents.v1.InfografikGetOneRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     id: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    searchBySlug: jspb.Message.getFieldWithDefault(msg, 2, "")
+    searchBySlug: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    withAdminCreated: jspb.Message.getBooleanFieldWithDefault(msg, 3, false)
   };
 
   if (includeInstance) {
@@ -2083,6 +2135,10 @@ proto.contents.v1.InfografikGetOneRequest.deserializeBinaryFromReader = function
       var value = /** @type {string} */ (reader.readString());
       msg.setSearchBySlug(value);
       break;
+    case 3:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setWithAdminCreated(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -2126,6 +2182,13 @@ proto.contents.v1.InfografikGetOneRequest.serializeBinaryToWriter = function(mes
       f
     );
   }
+  f = message.getWithAdminCreated();
+  if (f) {
+    writer.writeBool(
+      3,
+      f
+    );
+  }
 };
 
 
@@ -2162,6 +2225,24 @@ proto.contents.v1.InfografikGetOneRequest.prototype.getSearchBySlug = function()
  */
 proto.contents.v1.InfografikGetOneRequest.prototype.setSearchBySlug = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
+};
+
+
+/**
+ * optional bool with_admin_created = 3;
+ * @return {boolean}
+ */
+proto.contents.v1.InfografikGetOneRequest.prototype.getWithAdminCreated = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 3, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.contents.v1.InfografikGetOneRequest} returns this
+ */
+proto.contents.v1.InfografikGetOneRequest.prototype.setWithAdminCreated = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 3, value);
 };
 
 
@@ -2364,6 +2445,7 @@ proto.contents.v1.InfografikGetListRequest.toObject = function(includeInstance, 
     search: jspb.Message.getFieldWithDefault(msg, 6, ""),
     page: jspb.Message.getFieldWithDefault(msg, 7, 0),
     contentPerPage: jspb.Message.getFieldWithDefault(msg, 8, 0),
+    withAdminCreated: jspb.Message.getBooleanFieldWithDefault(msg, 11, false),
     sortBy: jspb.Message.getFieldWithDefault(msg, 5, 0)
   };
 
@@ -2438,6 +2520,10 @@ proto.contents.v1.InfografikGetListRequest.deserializeBinaryFromReader = functio
     case 8:
       var value = /** @type {number} */ (reader.readInt32());
       msg.setContentPerPage(value);
+      break;
+    case 11:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setWithAdminCreated(value);
       break;
     case 5:
       var value = /** @type {!proto.contents.v1.InfografikGetListRequest.Sort} */ (reader.readEnum());
@@ -2535,6 +2621,13 @@ proto.contents.v1.InfografikGetListRequest.serializeBinaryToWriter = function(me
       f
     );
   }
+  f = message.getWithAdminCreated();
+  if (f) {
+    writer.writeBool(
+      11,
+      f
+    );
+  }
   f = message.getSortBy();
   if (f !== 0.0) {
     writer.writeEnum(
@@ -2552,7 +2645,13 @@ proto.contents.v1.InfografikGetListRequest.Sort = {
   TITLE_ASCENDING_UNSPECIFIED: 0,
   TITLE_DESCENDING: 1,
   OLDEST: 2,
-  NEWEST: 3
+  NEWEST: 3,
+  ENERGY_HIGHEST: 4,
+  ENERGY_LOWEST: 5,
+  CREATED_AT_ASCENDING: 6,
+  CREATED_AT_DESCENDING: 7,
+  PUBLISHED_AT_ASCENDING: 8,
+  PUBLISHED_AT_DESCENDING: 9
 };
 
 /**
@@ -2733,6 +2832,24 @@ proto.contents.v1.InfografikGetListRequest.prototype.getContentPerPage = functio
  */
 proto.contents.v1.InfografikGetListRequest.prototype.setContentPerPage = function(value) {
   return jspb.Message.setProto3IntField(this, 8, value);
+};
+
+
+/**
+ * optional bool with_admin_created = 11;
+ * @return {boolean}
+ */
+proto.contents.v1.InfografikGetListRequest.prototype.getWithAdminCreated = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 11, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.contents.v1.InfografikGetListRequest} returns this
+ */
+proto.contents.v1.InfografikGetListRequest.prototype.setWithAdminCreated = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 11, value);
 };
 
 

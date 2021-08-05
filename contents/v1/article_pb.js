@@ -1034,6 +1034,7 @@ proto.contents.v1.Article.toObject = function(includeInstance, msg) {
     category2: (f = msg.getCategory2()) && contents_v1_category_pb.Category2.toObject(includeInstance, f),
     category3: (f = msg.getCategory3()) && contents_v1_category_pb.Category3.toObject(includeInstance, f),
     seo: (f = msg.getSeo()) && proto.contents.v1.ArticleSEO.toObject(includeInstance, f),
+    adminCreated: (f = msg.getAdminCreated()) && admin_v1_admin_pb.Admin.toObject(includeInstance, f),
     creditsList: jspb.Message.toObjectList(msg.getCreditsList(),
     proto.contents.v1.ArticleCredit.toObject, includeInstance)
   };
@@ -1171,6 +1172,11 @@ proto.contents.v1.Article.deserializeBinaryFromReader = function(msg, reader) {
       var value = new proto.contents.v1.ArticleSEO;
       reader.readMessage(value,proto.contents.v1.ArticleSEO.deserializeBinaryFromReader);
       msg.setSeo(value);
+      break;
+    case 56:
+      var value = new admin_v1_admin_pb.Admin;
+      reader.readMessage(value,admin_v1_admin_pb.Admin.deserializeBinaryFromReader);
+      msg.setAdminCreated(value);
       break;
     case 101:
       var value = new proto.contents.v1.ArticleCredit;
@@ -1373,6 +1379,14 @@ proto.contents.v1.Article.serializeBinaryToWriter = function(message, writer) {
       55,
       f,
       proto.contents.v1.ArticleSEO.serializeBinaryToWriter
+    );
+  }
+  f = message.getAdminCreated();
+  if (f != null) {
+    writer.writeMessage(
+      56,
+      f,
+      admin_v1_admin_pb.Admin.serializeBinaryToWriter
     );
   }
   f = message.getCreditsList();
@@ -1950,6 +1964,43 @@ proto.contents.v1.Article.prototype.clearSeo = function() {
  */
 proto.contents.v1.Article.prototype.hasSeo = function() {
   return jspb.Message.getField(this, 55) != null;
+};
+
+
+/**
+ * optional admin.v1.Admin admin_created = 56;
+ * @return {?proto.admin.v1.Admin}
+ */
+proto.contents.v1.Article.prototype.getAdminCreated = function() {
+  return /** @type{?proto.admin.v1.Admin} */ (
+    jspb.Message.getWrapperField(this, admin_v1_admin_pb.Admin, 56));
+};
+
+
+/**
+ * @param {?proto.admin.v1.Admin|undefined} value
+ * @return {!proto.contents.v1.Article} returns this
+*/
+proto.contents.v1.Article.prototype.setAdminCreated = function(value) {
+  return jspb.Message.setWrapperField(this, 56, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.contents.v1.Article} returns this
+ */
+proto.contents.v1.Article.prototype.clearAdminCreated = function() {
+  return this.setAdminCreated(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.contents.v1.Article.prototype.hasAdminCreated = function() {
+  return jspb.Message.getField(this, 56) != null;
 };
 
 
@@ -2757,7 +2808,8 @@ proto.contents.v1.ArticleGetOneRequest.prototype.toObject = function(opt_include
 proto.contents.v1.ArticleGetOneRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     id: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    searchBySlug: jspb.Message.getFieldWithDefault(msg, 2, "")
+    searchBySlug: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    withAdminCreated: jspb.Message.getBooleanFieldWithDefault(msg, 3, false)
   };
 
   if (includeInstance) {
@@ -2802,6 +2854,10 @@ proto.contents.v1.ArticleGetOneRequest.deserializeBinaryFromReader = function(ms
       var value = /** @type {string} */ (reader.readString());
       msg.setSearchBySlug(value);
       break;
+    case 3:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setWithAdminCreated(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -2845,6 +2901,13 @@ proto.contents.v1.ArticleGetOneRequest.serializeBinaryToWriter = function(messag
       f
     );
   }
+  f = message.getWithAdminCreated();
+  if (f) {
+    writer.writeBool(
+      3,
+      f
+    );
+  }
 };
 
 
@@ -2881,6 +2944,24 @@ proto.contents.v1.ArticleGetOneRequest.prototype.getSearchBySlug = function() {
  */
 proto.contents.v1.ArticleGetOneRequest.prototype.setSearchBySlug = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
+};
+
+
+/**
+ * optional bool with_admin_created = 3;
+ * @return {boolean}
+ */
+proto.contents.v1.ArticleGetOneRequest.prototype.getWithAdminCreated = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 3, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.contents.v1.ArticleGetOneRequest} returns this
+ */
+proto.contents.v1.ArticleGetOneRequest.prototype.setWithAdminCreated = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 3, value);
 };
 
 
@@ -3085,6 +3166,7 @@ proto.contents.v1.ArticleGetListRequest.toObject = function(includeInstance, msg
     search: jspb.Message.getFieldWithDefault(msg, 6, ""),
     page: jspb.Message.getFieldWithDefault(msg, 7, 0),
     contentPerPage: jspb.Message.getFieldWithDefault(msg, 8, 0),
+    withAdminCreated: jspb.Message.getBooleanFieldWithDefault(msg, 13, false),
     sortBy: jspb.Message.getFieldWithDefault(msg, 5, 0)
   };
 
@@ -3169,6 +3251,10 @@ proto.contents.v1.ArticleGetListRequest.deserializeBinaryFromReader = function(m
     case 8:
       var value = /** @type {number} */ (reader.readInt32());
       msg.setContentPerPage(value);
+      break;
+    case 13:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setWithAdminCreated(value);
       break;
     case 5:
       var value = /** @type {!proto.contents.v1.ArticleGetListRequest.Sort} */ (reader.readEnum());
@@ -3280,6 +3366,13 @@ proto.contents.v1.ArticleGetListRequest.serializeBinaryToWriter = function(messa
       f
     );
   }
+  f = message.getWithAdminCreated();
+  if (f) {
+    writer.writeBool(
+      13,
+      f
+    );
+  }
   f = message.getSortBy();
   if (f !== 0.0) {
     writer.writeEnum(
@@ -3297,7 +3390,13 @@ proto.contents.v1.ArticleGetListRequest.Sort = {
   TITLE_ASCENDING_UNSPECIFIED: 0,
   TITLE_DESCENDING: 1,
   OLDEST: 2,
-  NEWEST: 3
+  NEWEST: 3,
+  ENERGY_HIGHEST: 4,
+  ENERGY_LOWEST: 5,
+  CREATED_AT_ASCENDING: 6,
+  CREATED_AT_DESCENDING: 7,
+  PUBLISHED_AT_ASCENDING: 8,
+  PUBLISHED_AT_DESCENDING: 9
 };
 
 /**
@@ -3533,6 +3632,24 @@ proto.contents.v1.ArticleGetListRequest.prototype.getContentPerPage = function()
  */
 proto.contents.v1.ArticleGetListRequest.prototype.setContentPerPage = function(value) {
   return jspb.Message.setProto3IntField(this, 8, value);
+};
+
+
+/**
+ * optional bool with_admin_created = 13;
+ * @return {boolean}
+ */
+proto.contents.v1.ArticleGetListRequest.prototype.getWithAdminCreated = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 13, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.contents.v1.ArticleGetListRequest} returns this
+ */
+proto.contents.v1.ArticleGetListRequest.prototype.setWithAdminCreated = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 13, value);
 };
 
 

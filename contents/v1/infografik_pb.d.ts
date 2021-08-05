@@ -79,6 +79,11 @@ export class Infografik extends jspb.Message {
     clearCategory3(): void;
     getCategory3(): contents_v1_category_pb.Category3 | undefined;
     setCategory3(value?: contents_v1_category_pb.Category3): Infografik;
+
+    hasAdminCreated(): boolean;
+    clearAdminCreated(): void;
+    getAdminCreated(): admin_v1_admin_pb.Admin | undefined;
+    setAdminCreated(value?: admin_v1_admin_pb.Admin): Infografik;
     clearCreditsList(): void;
     getCreditsList(): Array<contents_v1_article_pb.ArticleCredit>;
     setCreditsList(value: Array<contents_v1_article_pb.ArticleCredit>): Infografik;
@@ -118,6 +123,7 @@ export namespace Infografik {
         category1?: contents_v1_category_pb.Category1.AsObject,
         category2?: contents_v1_category_pb.Category2.AsObject,
         category3?: contents_v1_category_pb.Category3.AsObject,
+        adminCreated?: admin_v1_admin_pb.Admin.AsObject,
         creditsList: Array<contents_v1_article_pb.ArticleCredit.AsObject>,
     }
 }
@@ -205,6 +211,8 @@ export class InfografikGetOneRequest extends jspb.Message {
     setId(value: number): InfografikGetOneRequest;
     getSearchBySlug(): string;
     setSearchBySlug(value: string): InfografikGetOneRequest;
+    getWithAdminCreated(): boolean;
+    setWithAdminCreated(value: boolean): InfografikGetOneRequest;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): InfografikGetOneRequest.AsObject;
@@ -220,6 +228,7 @@ export namespace InfografikGetOneRequest {
     export type AsObject = {
         id: number,
         searchBySlug: string,
+        withAdminCreated: boolean,
     }
 }
 
@@ -267,6 +276,8 @@ export class InfografikGetListRequest extends jspb.Message {
     setPage(value: number): InfografikGetListRequest;
     getContentPerPage(): number;
     setContentPerPage(value: number): InfografikGetListRequest;
+    getWithAdminCreated(): boolean;
+    setWithAdminCreated(value: boolean): InfografikGetListRequest;
     getSortBy(): InfografikGetListRequest.Sort;
     setSortBy(value: InfografikGetListRequest.Sort): InfografikGetListRequest;
 
@@ -291,6 +302,7 @@ export namespace InfografikGetListRequest {
         search: string,
         page: number,
         contentPerPage: number,
+        withAdminCreated: boolean,
         sortBy: InfografikGetListRequest.Sort,
     }
 
@@ -299,6 +311,12 @@ export namespace InfografikGetListRequest {
     TITLE_DESCENDING = 1,
     OLDEST = 2,
     NEWEST = 3,
+    ENERGY_HIGHEST = 4,
+    ENERGY_LOWEST = 5,
+    CREATED_AT_ASCENDING = 6,
+    CREATED_AT_DESCENDING = 7,
+    PUBLISHED_AT_ASCENDING = 8,
+    PUBLISHED_AT_DESCENDING = 9,
     }
 
 }

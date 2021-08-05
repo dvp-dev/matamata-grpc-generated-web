@@ -558,6 +558,7 @@ proto.contents.v1.NewsVideo.toObject = function(includeInstance, msg) {
     category2: (f = msg.getCategory2()) && contents_v1_category_pb.Category2.toObject(includeInstance, f),
     category3: (f = msg.getCategory3()) && contents_v1_category_pb.Category3.toObject(includeInstance, f),
     seo: (f = msg.getSeo()) && contents_v1_article_pb.ArticleSEO.toObject(includeInstance, f),
+    adminCreated: (f = msg.getAdminCreated()) && admin_v1_admin_pb.Admin.toObject(includeInstance, f),
     creditsList: jspb.Message.toObjectList(msg.getCreditsList(),
     contents_v1_article_pb.ArticleCredit.toObject, includeInstance)
   };
@@ -700,6 +701,11 @@ proto.contents.v1.NewsVideo.deserializeBinaryFromReader = function(msg, reader) 
       var value = new contents_v1_article_pb.ArticleSEO;
       reader.readMessage(value,contents_v1_article_pb.ArticleSEO.deserializeBinaryFromReader);
       msg.setSeo(value);
+      break;
+    case 57:
+      var value = new admin_v1_admin_pb.Admin;
+      reader.readMessage(value,admin_v1_admin_pb.Admin.deserializeBinaryFromReader);
+      msg.setAdminCreated(value);
       break;
     case 101:
       var value = new contents_v1_article_pb.ArticleCredit;
@@ -910,6 +916,14 @@ proto.contents.v1.NewsVideo.serializeBinaryToWriter = function(message, writer) 
       56,
       f,
       contents_v1_article_pb.ArticleSEO.serializeBinaryToWriter
+    );
+  }
+  f = message.getAdminCreated();
+  if (f != null) {
+    writer.writeMessage(
+      57,
+      f,
+      admin_v1_admin_pb.Admin.serializeBinaryToWriter
     );
   }
   f = message.getCreditsList();
@@ -1524,6 +1538,43 @@ proto.contents.v1.NewsVideo.prototype.clearSeo = function() {
  */
 proto.contents.v1.NewsVideo.prototype.hasSeo = function() {
   return jspb.Message.getField(this, 56) != null;
+};
+
+
+/**
+ * optional admin.v1.Admin admin_created = 57;
+ * @return {?proto.admin.v1.Admin}
+ */
+proto.contents.v1.NewsVideo.prototype.getAdminCreated = function() {
+  return /** @type{?proto.admin.v1.Admin} */ (
+    jspb.Message.getWrapperField(this, admin_v1_admin_pb.Admin, 57));
+};
+
+
+/**
+ * @param {?proto.admin.v1.Admin|undefined} value
+ * @return {!proto.contents.v1.NewsVideo} returns this
+*/
+proto.contents.v1.NewsVideo.prototype.setAdminCreated = function(value) {
+  return jspb.Message.setWrapperField(this, 57, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.contents.v1.NewsVideo} returns this
+ */
+proto.contents.v1.NewsVideo.prototype.clearAdminCreated = function() {
+  return this.setAdminCreated(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.contents.v1.NewsVideo.prototype.hasAdminCreated = function() {
+  return jspb.Message.getField(this, 57) != null;
 };
 
 
@@ -2382,7 +2433,8 @@ proto.contents.v1.NewsVideoGetOneRequest.prototype.toObject = function(opt_inclu
 proto.contents.v1.NewsVideoGetOneRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     id: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    searchBySlug: jspb.Message.getFieldWithDefault(msg, 2, "")
+    searchBySlug: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    withAdminCreated: jspb.Message.getBooleanFieldWithDefault(msg, 3, false)
   };
 
   if (includeInstance) {
@@ -2427,6 +2479,10 @@ proto.contents.v1.NewsVideoGetOneRequest.deserializeBinaryFromReader = function(
       var value = /** @type {string} */ (reader.readString());
       msg.setSearchBySlug(value);
       break;
+    case 3:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setWithAdminCreated(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -2470,6 +2526,13 @@ proto.contents.v1.NewsVideoGetOneRequest.serializeBinaryToWriter = function(mess
       f
     );
   }
+  f = message.getWithAdminCreated();
+  if (f) {
+    writer.writeBool(
+      3,
+      f
+    );
+  }
 };
 
 
@@ -2506,6 +2569,24 @@ proto.contents.v1.NewsVideoGetOneRequest.prototype.getSearchBySlug = function() 
  */
 proto.contents.v1.NewsVideoGetOneRequest.prototype.setSearchBySlug = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
+};
+
+
+/**
+ * optional bool with_admin_created = 3;
+ * @return {boolean}
+ */
+proto.contents.v1.NewsVideoGetOneRequest.prototype.getWithAdminCreated = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 3, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.contents.v1.NewsVideoGetOneRequest} returns this
+ */
+proto.contents.v1.NewsVideoGetOneRequest.prototype.setWithAdminCreated = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 3, value);
 };
 
 
@@ -2710,6 +2791,7 @@ proto.contents.v1.NewsVideoGetListRequest.toObject = function(includeInstance, m
     search: jspb.Message.getFieldWithDefault(msg, 6, ""),
     page: jspb.Message.getFieldWithDefault(msg, 7, 0),
     contentPerPage: jspb.Message.getFieldWithDefault(msg, 8, 0),
+    withAdminCreated: jspb.Message.getBooleanFieldWithDefault(msg, 13, false),
     sortBy: jspb.Message.getFieldWithDefault(msg, 5, 0)
   };
 
@@ -2794,6 +2876,10 @@ proto.contents.v1.NewsVideoGetListRequest.deserializeBinaryFromReader = function
     case 8:
       var value = /** @type {number} */ (reader.readInt32());
       msg.setContentPerPage(value);
+      break;
+    case 13:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setWithAdminCreated(value);
       break;
     case 5:
       var value = /** @type {!proto.contents.v1.NewsVideoGetListRequest.Sort} */ (reader.readEnum());
@@ -2905,6 +2991,13 @@ proto.contents.v1.NewsVideoGetListRequest.serializeBinaryToWriter = function(mes
       f
     );
   }
+  f = message.getWithAdminCreated();
+  if (f) {
+    writer.writeBool(
+      13,
+      f
+    );
+  }
   f = message.getSortBy();
   if (f !== 0.0) {
     writer.writeEnum(
@@ -2922,7 +3015,13 @@ proto.contents.v1.NewsVideoGetListRequest.Sort = {
   TITLE_ASCENDING_UNSPECIFIED: 0,
   TITLE_DESCENDING: 1,
   OLDEST: 2,
-  NEWEST: 3
+  NEWEST: 3,
+  ENERGY_HIGHEST: 4,
+  ENERGY_LOWEST: 5,
+  CREATED_AT_ASCENDING: 6,
+  CREATED_AT_DESCENDING: 7,
+  PUBLISHED_AT_ASCENDING: 8,
+  PUBLISHED_AT_DESCENDING: 9
 };
 
 /**
@@ -3158,6 +3257,24 @@ proto.contents.v1.NewsVideoGetListRequest.prototype.getContentPerPage = function
  */
 proto.contents.v1.NewsVideoGetListRequest.prototype.setContentPerPage = function(value) {
   return jspb.Message.setProto3IntField(this, 8, value);
+};
+
+
+/**
+ * optional bool with_admin_created = 13;
+ * @return {boolean}
+ */
+proto.contents.v1.NewsVideoGetListRequest.prototype.getWithAdminCreated = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 13, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.contents.v1.NewsVideoGetListRequest} returns this
+ */
+proto.contents.v1.NewsVideoGetListRequest.prototype.setWithAdminCreated = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 13, value);
 };
 
 
