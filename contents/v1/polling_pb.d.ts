@@ -219,6 +219,12 @@ export namespace PollingGetListRequest {
     OLDEST = 1,
     TITLE_ASCENDING = 2,
     TITLE_DESCENDING = 3,
+    ENERGY_HIGHEST = 4,
+    ENERGY_LOWEST = 5,
+    CREATED_AT_ASCENDING = 6,
+    CREATED_AT_DESCENDING = 7,
+    PUBLISHED_AT_ASCENDING = 8,
+    PUBLISHED_AT_DESCENDING = 9,
     }
 
 }
