@@ -17,6 +17,8 @@ var global = Function('return this')();
 
 var google_protobuf_timestamp_pb = require('google-protobuf/google/protobuf/timestamp_pb.js');
 goog.object.extend(proto, google_protobuf_timestamp_pb);
+var admin_v1_admin_pb = require('../../admin/v1/admin_pb.js');
+goog.object.extend(proto, admin_v1_admin_pb);
 var contents_v1_article_pb = require('../../contents/v1/article_pb.js');
 goog.object.extend(proto, contents_v1_article_pb);
 goog.exportSymbol('proto.contents.v1.Polling', null, global);
@@ -332,7 +334,8 @@ proto.contents.v1.Polling.toObject = function(includeInstance, msg) {
     updatedAt: (f = msg.getUpdatedAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
     publishedAt: (f = msg.getPublishedAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
     choice1Article: (f = msg.getChoice1Article()) && contents_v1_article_pb.Article.toObject(includeInstance, f),
-    choice2Article: (f = msg.getChoice2Article()) && contents_v1_article_pb.Article.toObject(includeInstance, f)
+    choice2Article: (f = msg.getChoice2Article()) && contents_v1_article_pb.Article.toObject(includeInstance, f),
+    adminCreated: (f = msg.getAdminCreated()) && admin_v1_admin_pb.Admin.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -437,6 +440,11 @@ proto.contents.v1.Polling.deserializeBinaryFromReader = function(msg, reader) {
       var value = new contents_v1_article_pb.Article;
       reader.readMessage(value,contents_v1_article_pb.Article.deserializeBinaryFromReader);
       msg.setChoice2Article(value);
+      break;
+    case 17:
+      var value = new admin_v1_admin_pb.Admin;
+      reader.readMessage(value,admin_v1_admin_pb.Admin.deserializeBinaryFromReader);
+      msg.setAdminCreated(value);
       break;
     default:
       reader.skipField();
@@ -582,6 +590,14 @@ proto.contents.v1.Polling.serializeBinaryToWriter = function(message, writer) {
       12,
       f,
       contents_v1_article_pb.Article.serializeBinaryToWriter
+    );
+  }
+  f = message.getAdminCreated();
+  if (f != null) {
+    writer.writeMessage(
+      17,
+      f,
+      admin_v1_admin_pb.Admin.serializeBinaryToWriter
     );
   }
 };
@@ -967,6 +983,43 @@ proto.contents.v1.Polling.prototype.clearChoice2Article = function() {
  */
 proto.contents.v1.Polling.prototype.hasChoice2Article = function() {
   return jspb.Message.getField(this, 12) != null;
+};
+
+
+/**
+ * optional admin.v1.Admin admin_created = 17;
+ * @return {?proto.admin.v1.Admin}
+ */
+proto.contents.v1.Polling.prototype.getAdminCreated = function() {
+  return /** @type{?proto.admin.v1.Admin} */ (
+    jspb.Message.getWrapperField(this, admin_v1_admin_pb.Admin, 17));
+};
+
+
+/**
+ * @param {?proto.admin.v1.Admin|undefined} value
+ * @return {!proto.contents.v1.Polling} returns this
+*/
+proto.contents.v1.Polling.prototype.setAdminCreated = function(value) {
+  return jspb.Message.setWrapperField(this, 17, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.contents.v1.Polling} returns this
+ */
+proto.contents.v1.Polling.prototype.clearAdminCreated = function() {
+  return this.setAdminCreated(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.contents.v1.Polling.prototype.hasAdminCreated = function() {
+  return jspb.Message.getField(this, 17) != null;
 };
 
 
@@ -1423,7 +1476,8 @@ proto.contents.v1.PollingGetOneRequest.prototype.toObject = function(opt_include
  */
 proto.contents.v1.PollingGetOneRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    id: jspb.Message.getFieldWithDefault(msg, 1, 0)
+    id: jspb.Message.getFieldWithDefault(msg, 1, 0),
+    withAdminCreated: jspb.Message.getBooleanFieldWithDefault(msg, 2, false)
   };
 
   if (includeInstance) {
@@ -1464,6 +1518,10 @@ proto.contents.v1.PollingGetOneRequest.deserializeBinaryFromReader = function(ms
       var value = /** @type {number} */ (reader.readInt32());
       msg.setId(value);
       break;
+    case 2:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setWithAdminCreated(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -1500,6 +1558,13 @@ proto.contents.v1.PollingGetOneRequest.serializeBinaryToWriter = function(messag
       f
     );
   }
+  f = message.getWithAdminCreated();
+  if (f) {
+    writer.writeBool(
+      2,
+      f
+    );
+  }
 };
 
 
@@ -1518,6 +1583,24 @@ proto.contents.v1.PollingGetOneRequest.prototype.getId = function() {
  */
 proto.contents.v1.PollingGetOneRequest.prototype.setId = function(value) {
   return jspb.Message.setProto3IntField(this, 1, value);
+};
+
+
+/**
+ * optional bool with_admin_created = 2;
+ * @return {boolean}
+ */
+proto.contents.v1.PollingGetOneRequest.prototype.getWithAdminCreated = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 2, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.contents.v1.PollingGetOneRequest} returns this
+ */
+proto.contents.v1.PollingGetOneRequest.prototype.setWithAdminCreated = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 2, value);
 };
 
 
@@ -1715,6 +1798,7 @@ proto.contents.v1.PollingGetListRequest.toObject = function(includeInstance, msg
     search: jspb.Message.getFieldWithDefault(msg, 2, ""),
     page: jspb.Message.getFieldWithDefault(msg, 3, 0),
     contentPerPage: jspb.Message.getFieldWithDefault(msg, 4, 0),
+    withAdminCreated: jspb.Message.getBooleanFieldWithDefault(msg, 6, false),
     sortBy: jspb.Message.getFieldWithDefault(msg, 5, 0)
   };
 
@@ -1769,6 +1853,10 @@ proto.contents.v1.PollingGetListRequest.deserializeBinaryFromReader = function(m
     case 4:
       var value = /** @type {number} */ (reader.readInt32());
       msg.setContentPerPage(value);
+      break;
+    case 6:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setWithAdminCreated(value);
       break;
     case 5:
       var value = /** @type {!proto.contents.v1.PollingGetListRequest.Sort} */ (reader.readEnum());
@@ -1828,6 +1916,13 @@ proto.contents.v1.PollingGetListRequest.serializeBinaryToWriter = function(messa
   if (f !== 0) {
     writer.writeInt32(
       4,
+      f
+    );
+  }
+  f = message.getWithAdminCreated();
+  if (f) {
+    writer.writeBool(
+      6,
       f
     );
   }
@@ -1943,6 +2038,24 @@ proto.contents.v1.PollingGetListRequest.prototype.getContentPerPage = function()
  */
 proto.contents.v1.PollingGetListRequest.prototype.setContentPerPage = function(value) {
   return jspb.Message.setProto3IntField(this, 4, value);
+};
+
+
+/**
+ * optional bool with_admin_created = 6;
+ * @return {boolean}
+ */
+proto.contents.v1.PollingGetListRequest.prototype.getWithAdminCreated = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 6, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.contents.v1.PollingGetListRequest} returns this
+ */
+proto.contents.v1.PollingGetListRequest.prototype.setWithAdminCreated = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 6, value);
 };
 
 

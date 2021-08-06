@@ -6,6 +6,7 @@
 
 import * as jspb from "google-protobuf";
 import * as google_protobuf_timestamp_pb from "google-protobuf/google/protobuf/timestamp_pb";
+import * as admin_v1_admin_pb from "../../admin/v1/admin_pb";
 import * as contents_v1_article_pb from "../../contents/v1/article_pb";
 
 export class Polling extends jspb.Message { 
@@ -57,6 +58,11 @@ export class Polling extends jspb.Message {
     getChoice2Article(): contents_v1_article_pb.Article | undefined;
     setChoice2Article(value?: contents_v1_article_pb.Article): Polling;
 
+    hasAdminCreated(): boolean;
+    clearAdminCreated(): void;
+    getAdminCreated(): admin_v1_admin_pb.Admin | undefined;
+    setAdminCreated(value?: admin_v1_admin_pb.Admin): Polling;
+
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): Polling.AsObject;
     static toObject(includeInstance: boolean, msg: Polling): Polling.AsObject;
@@ -85,6 +91,7 @@ export namespace Polling {
         publishedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
         choice1Article?: contents_v1_article_pb.Article.AsObject,
         choice2Article?: contents_v1_article_pb.Article.AsObject,
+        adminCreated?: admin_v1_admin_pb.Admin.AsObject,
     }
 }
 
@@ -141,6 +148,8 @@ export namespace PollingCreateUpdate {
 export class PollingGetOneRequest extends jspb.Message { 
     getId(): number;
     setId(value: number): PollingGetOneRequest;
+    getWithAdminCreated(): boolean;
+    setWithAdminCreated(value: boolean): PollingGetOneRequest;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): PollingGetOneRequest.AsObject;
@@ -155,6 +164,7 @@ export class PollingGetOneRequest extends jspb.Message {
 export namespace PollingGetOneRequest {
     export type AsObject = {
         id: number,
+        withAdminCreated: boolean,
     }
 }
 
@@ -192,6 +202,8 @@ export class PollingGetListRequest extends jspb.Message {
     setPage(value: number): PollingGetListRequest;
     getContentPerPage(): number;
     setContentPerPage(value: number): PollingGetListRequest;
+    getWithAdminCreated(): boolean;
+    setWithAdminCreated(value: boolean): PollingGetListRequest;
     getSortBy(): PollingGetListRequest.Sort;
     setSortBy(value: PollingGetListRequest.Sort): PollingGetListRequest;
 
@@ -211,6 +223,7 @@ export namespace PollingGetListRequest {
         search: string,
         page: number,
         contentPerPage: number,
+        withAdminCreated: boolean,
         sortBy: PollingGetListRequest.Sort,
     }
 
