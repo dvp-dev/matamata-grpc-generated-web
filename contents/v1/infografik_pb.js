@@ -2443,6 +2443,8 @@ proto.contents.v1.InfografikGetListRequest.toObject = function(includeInstance, 
     categoryId2: jspb.Message.getFieldWithDefault(msg, 3, 0),
     categoryId3: jspb.Message.getFieldWithDefault(msg, 4, 0),
     search: jspb.Message.getFieldWithDefault(msg, 6, ""),
+    adminId: jspb.Message.getFieldWithDefault(msg, 12, 0),
+    adminCreatedId: jspb.Message.getFieldWithDefault(msg, 13, 0),
     page: jspb.Message.getFieldWithDefault(msg, 7, 0),
     contentPerPage: jspb.Message.getFieldWithDefault(msg, 8, 0),
     withAdminCreated: jspb.Message.getBooleanFieldWithDefault(msg, 11, false),
@@ -2512,6 +2514,14 @@ proto.contents.v1.InfografikGetListRequest.deserializeBinaryFromReader = functio
     case 6:
       var value = /** @type {string} */ (reader.readString());
       msg.setSearch(value);
+      break;
+    case 12:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setAdminId(value);
+      break;
+    case 13:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setAdminCreatedId(value);
       break;
     case 7:
       var value = /** @type {number} */ (reader.readInt32());
@@ -2604,6 +2614,20 @@ proto.contents.v1.InfografikGetListRequest.serializeBinaryToWriter = function(me
   if (f.length > 0) {
     writer.writeString(
       6,
+      f
+    );
+  }
+  f = message.getAdminId();
+  if (f !== 0) {
+    writer.writeInt32(
+      12,
+      f
+    );
+  }
+  f = message.getAdminCreatedId();
+  if (f !== 0) {
+    writer.writeInt32(
+      13,
       f
     );
   }
@@ -2796,6 +2820,42 @@ proto.contents.v1.InfografikGetListRequest.prototype.getSearch = function() {
  */
 proto.contents.v1.InfografikGetListRequest.prototype.setSearch = function(value) {
   return jspb.Message.setProto3StringField(this, 6, value);
+};
+
+
+/**
+ * optional int32 admin_id = 12;
+ * @return {number}
+ */
+proto.contents.v1.InfografikGetListRequest.prototype.getAdminId = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 12, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.contents.v1.InfografikGetListRequest} returns this
+ */
+proto.contents.v1.InfografikGetListRequest.prototype.setAdminId = function(value) {
+  return jspb.Message.setProto3IntField(this, 12, value);
+};
+
+
+/**
+ * optional int32 admin_created_id = 13;
+ * @return {number}
+ */
+proto.contents.v1.InfografikGetListRequest.prototype.getAdminCreatedId = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 13, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.contents.v1.InfografikGetListRequest} returns this
+ */
+proto.contents.v1.InfografikGetListRequest.prototype.setAdminCreatedId = function(value) {
+  return jspb.Message.setProto3IntField(this, 13, value);
 };
 
 

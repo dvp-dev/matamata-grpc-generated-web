@@ -323,6 +323,10 @@ export class NewsPhotoGetListRequest extends jspb.Message {
     setCategoryId3(value: number): NewsPhotoGetListRequest;
     getSearch(): string;
     setSearch(value: string): NewsPhotoGetListRequest;
+    getAdminId(): number;
+    setAdminId(value: number): NewsPhotoGetListRequest;
+    getAdminCreatedId(): number;
+    setAdminCreatedId(value: number): NewsPhotoGetListRequest;
     getPage(): number;
     setPage(value: number): NewsPhotoGetListRequest;
     getContentPerPage(): number;
@@ -353,6 +357,8 @@ export namespace NewsPhotoGetListRequest {
         categoryId2: number,
         categoryId3: number,
         search: string,
+        adminId: number,
+        adminCreatedId: number,
         page: number,
         contentPerPage: number,
         withAdminCreated: boolean,

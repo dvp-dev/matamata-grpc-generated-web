@@ -319,6 +319,10 @@ export class NewsVideoGetListRequest extends jspb.Message {
     setCategoryId3(value: number): NewsVideoGetListRequest;
     getSearch(): string;
     setSearch(value: string): NewsVideoGetListRequest;
+    getAdminId(): number;
+    setAdminId(value: number): NewsVideoGetListRequest;
+    getAdminCreatedId(): number;
+    setAdminCreatedId(value: number): NewsVideoGetListRequest;
     getPage(): number;
     setPage(value: number): NewsVideoGetListRequest;
     getContentPerPage(): number;
@@ -349,6 +353,8 @@ export namespace NewsVideoGetListRequest {
         categoryId2: number,
         categoryId3: number,
         search: string,
+        adminId: number,
+        adminCreatedId: number,
         page: number,
         contentPerPage: number,
         withAdminCreated: boolean,

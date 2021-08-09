@@ -2789,6 +2789,8 @@ proto.contents.v1.NewsVideoGetListRequest.toObject = function(includeInstance, m
     categoryId2: jspb.Message.getFieldWithDefault(msg, 3, 0),
     categoryId3: jspb.Message.getFieldWithDefault(msg, 4, 0),
     search: jspb.Message.getFieldWithDefault(msg, 6, ""),
+    adminId: jspb.Message.getFieldWithDefault(msg, 14, 0),
+    adminCreatedId: jspb.Message.getFieldWithDefault(msg, 15, 0),
     page: jspb.Message.getFieldWithDefault(msg, 7, 0),
     contentPerPage: jspb.Message.getFieldWithDefault(msg, 8, 0),
     withAdminCreated: jspb.Message.getBooleanFieldWithDefault(msg, 13, false),
@@ -2868,6 +2870,14 @@ proto.contents.v1.NewsVideoGetListRequest.deserializeBinaryFromReader = function
     case 6:
       var value = /** @type {string} */ (reader.readString());
       msg.setSearch(value);
+      break;
+    case 14:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setAdminId(value);
+      break;
+    case 15:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setAdminCreatedId(value);
       break;
     case 7:
       var value = /** @type {number} */ (reader.readInt32());
@@ -2974,6 +2984,20 @@ proto.contents.v1.NewsVideoGetListRequest.serializeBinaryToWriter = function(mes
   if (f.length > 0) {
     writer.writeString(
       6,
+      f
+    );
+  }
+  f = message.getAdminId();
+  if (f !== 0) {
+    writer.writeInt32(
+      14,
+      f
+    );
+  }
+  f = message.getAdminCreatedId();
+  if (f !== 0) {
+    writer.writeInt32(
+      15,
       f
     );
   }
@@ -3221,6 +3245,42 @@ proto.contents.v1.NewsVideoGetListRequest.prototype.getSearch = function() {
  */
 proto.contents.v1.NewsVideoGetListRequest.prototype.setSearch = function(value) {
   return jspb.Message.setProto3StringField(this, 6, value);
+};
+
+
+/**
+ * optional int32 admin_id = 14;
+ * @return {number}
+ */
+proto.contents.v1.NewsVideoGetListRequest.prototype.getAdminId = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 14, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.contents.v1.NewsVideoGetListRequest} returns this
+ */
+proto.contents.v1.NewsVideoGetListRequest.prototype.setAdminId = function(value) {
+  return jspb.Message.setProto3IntField(this, 14, value);
+};
+
+
+/**
+ * optional int32 admin_created_id = 15;
+ * @return {number}
+ */
+proto.contents.v1.NewsVideoGetListRequest.prototype.getAdminCreatedId = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 15, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.contents.v1.NewsVideoGetListRequest} returns this
+ */
+proto.contents.v1.NewsVideoGetListRequest.prototype.setAdminCreatedId = function(value) {
+  return jspb.Message.setProto3IntField(this, 15, value);
 };
 
 

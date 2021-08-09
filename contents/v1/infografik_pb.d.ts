@@ -272,6 +272,10 @@ export class InfografikGetListRequest extends jspb.Message {
     setCategoryId3(value: number): InfografikGetListRequest;
     getSearch(): string;
     setSearch(value: string): InfografikGetListRequest;
+    getAdminId(): number;
+    setAdminId(value: number): InfografikGetListRequest;
+    getAdminCreatedId(): number;
+    setAdminCreatedId(value: number): InfografikGetListRequest;
     getPage(): number;
     setPage(value: number): InfografikGetListRequest;
     getContentPerPage(): number;
@@ -300,6 +304,8 @@ export namespace InfografikGetListRequest {
         categoryId2: number,
         categoryId3: number,
         search: string,
+        adminId: number,
+        adminCreatedId: number,
         page: number,
         contentPerPage: number,
         withAdminCreated: boolean,
