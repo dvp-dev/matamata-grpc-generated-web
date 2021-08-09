@@ -13,6 +13,7 @@ import * as contents_v1_infografik_pb from "../../contents/v1/infografik_pb";
 import * as contents_v1_news_photo_pb from "../../contents/v1/news_photo_pb";
 import * as contents_v1_news_video_pb from "../../contents/v1/news_video_pb";
 import * as contents_v1_polling_pb from "../../contents/v1/polling_pb";
+import * as contents_v1_log_pb from "../../contents/v1/log_pb";
 
 interface IContentServiceService extends grpc.ServiceDefinition<grpc.UntypedServiceImplementation> {
     tagGetOne: IContentServiceService_ITagGetOne;
@@ -64,6 +65,7 @@ interface IContentServiceService extends grpc.ServiceDefinition<grpc.UntypedServ
     pollingCreate: IContentServiceService_IPollingCreate;
     pollingUpdate: IContentServiceService_IPollingUpdate;
     pollingDelete: IContentServiceService_IPollingDelete;
+    logGetList: IContentServiceService_ILogGetList;
 }
 
 interface IContentServiceService_ITagGetOne extends grpc.MethodDefinition<contents_v1_tag_pb.TagGetOneRequest, contents_v1_tag_pb.TagGetOneResponse> {
@@ -507,6 +509,15 @@ interface IContentServiceService_IPollingDelete extends grpc.MethodDefinition<co
     responseSerialize: grpc.serialize<contents_v1_polling_pb.PollingDeleteResponse>;
     responseDeserialize: grpc.deserialize<contents_v1_polling_pb.PollingDeleteResponse>;
 }
+interface IContentServiceService_ILogGetList extends grpc.MethodDefinition<contents_v1_log_pb.LogGetListInput, contents_v1_log_pb.LogGetListOutput> {
+    path: "/contents.v1.ContentService/LogGetList";
+    requestStream: false;
+    responseStream: false;
+    requestSerialize: grpc.serialize<contents_v1_log_pb.LogGetListInput>;
+    requestDeserialize: grpc.deserialize<contents_v1_log_pb.LogGetListInput>;
+    responseSerialize: grpc.serialize<contents_v1_log_pb.LogGetListOutput>;
+    responseDeserialize: grpc.deserialize<contents_v1_log_pb.LogGetListOutput>;
+}
 
 export const ContentServiceService: IContentServiceService;
 
@@ -560,6 +571,7 @@ export interface IContentServiceServer extends grpc.UntypedServiceImplementation
     pollingCreate: grpc.handleUnaryCall<contents_v1_polling_pb.PollingCreateRequest, contents_v1_polling_pb.PollingCreateResponse>;
     pollingUpdate: grpc.handleUnaryCall<contents_v1_polling_pb.PollingUpdateRequest, contents_v1_polling_pb.PollingUpdateResponse>;
     pollingDelete: grpc.handleUnaryCall<contents_v1_polling_pb.PollingDeleteRequest, contents_v1_polling_pb.PollingDeleteResponse>;
+    logGetList: grpc.handleUnaryCall<contents_v1_log_pb.LogGetListInput, contents_v1_log_pb.LogGetListOutput>;
 }
 
 export interface IContentServiceClient {
@@ -706,6 +718,9 @@ export interface IContentServiceClient {
     pollingDelete(request: contents_v1_polling_pb.PollingDeleteRequest, callback: (error: grpc.ServiceError | null, response: contents_v1_polling_pb.PollingDeleteResponse) => void): grpc.ClientUnaryCall;
     pollingDelete(request: contents_v1_polling_pb.PollingDeleteRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: contents_v1_polling_pb.PollingDeleteResponse) => void): grpc.ClientUnaryCall;
     pollingDelete(request: contents_v1_polling_pb.PollingDeleteRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: contents_v1_polling_pb.PollingDeleteResponse) => void): grpc.ClientUnaryCall;
+    logGetList(request: contents_v1_log_pb.LogGetListInput, callback: (error: grpc.ServiceError | null, response: contents_v1_log_pb.LogGetListOutput) => void): grpc.ClientUnaryCall;
+    logGetList(request: contents_v1_log_pb.LogGetListInput, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: contents_v1_log_pb.LogGetListOutput) => void): grpc.ClientUnaryCall;
+    logGetList(request: contents_v1_log_pb.LogGetListInput, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: contents_v1_log_pb.LogGetListOutput) => void): grpc.ClientUnaryCall;
 }
 
 export class ContentServiceClient extends grpc.Client implements IContentServiceClient {
@@ -853,4 +868,7 @@ export class ContentServiceClient extends grpc.Client implements IContentService
     public pollingDelete(request: contents_v1_polling_pb.PollingDeleteRequest, callback: (error: grpc.ServiceError | null, response: contents_v1_polling_pb.PollingDeleteResponse) => void): grpc.ClientUnaryCall;
     public pollingDelete(request: contents_v1_polling_pb.PollingDeleteRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: contents_v1_polling_pb.PollingDeleteResponse) => void): grpc.ClientUnaryCall;
     public pollingDelete(request: contents_v1_polling_pb.PollingDeleteRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: contents_v1_polling_pb.PollingDeleteResponse) => void): grpc.ClientUnaryCall;
+    public logGetList(request: contents_v1_log_pb.LogGetListInput, callback: (error: grpc.ServiceError | null, response: contents_v1_log_pb.LogGetListOutput) => void): grpc.ClientUnaryCall;
+    public logGetList(request: contents_v1_log_pb.LogGetListInput, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: contents_v1_log_pb.LogGetListOutput) => void): grpc.ClientUnaryCall;
+    public logGetList(request: contents_v1_log_pb.LogGetListInput, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: contents_v1_log_pb.LogGetListOutput) => void): grpc.ClientUnaryCall;
 }

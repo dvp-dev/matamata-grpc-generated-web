@@ -29,6 +29,8 @@ var contents_v1_news_photo_pb = require('../../contents/v1/news_photo_pb.js')
 var contents_v1_news_video_pb = require('../../contents/v1/news_video_pb.js')
 
 var contents_v1_polling_pb = require('../../contents/v1/polling_pb.js')
+
+var contents_v1_log_pb = require('../../contents/v1/log_pb.js')
 const proto = {};
 proto.contents = {};
 proto.contents.v1 = require('./contents_service_pb.js');
@@ -3982,6 +3984,86 @@ proto.contents.v1.ContentServicePromiseClient.prototype.pollingDelete =
       request,
       metadata || {},
       methodDescriptor_ContentService_PollingDelete);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.contents.v1.LogGetListInput,
+ *   !proto.contents.v1.LogGetListOutput>}
+ */
+const methodDescriptor_ContentService_LogGetList = new grpc.web.MethodDescriptor(
+  '/contents.v1.ContentService/LogGetList',
+  grpc.web.MethodType.UNARY,
+  contents_v1_log_pb.LogGetListInput,
+  contents_v1_log_pb.LogGetListOutput,
+  /**
+   * @param {!proto.contents.v1.LogGetListInput} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  contents_v1_log_pb.LogGetListOutput.deserializeBinary
+);
+
+
+/**
+ * @const
+ * @type {!grpc.web.AbstractClientBase.MethodInfo<
+ *   !proto.contents.v1.LogGetListInput,
+ *   !proto.contents.v1.LogGetListOutput>}
+ */
+const methodInfo_ContentService_LogGetList = new grpc.web.AbstractClientBase.MethodInfo(
+  contents_v1_log_pb.LogGetListOutput,
+  /**
+   * @param {!proto.contents.v1.LogGetListInput} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  contents_v1_log_pb.LogGetListOutput.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.contents.v1.LogGetListInput} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.Error, ?proto.contents.v1.LogGetListOutput)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.contents.v1.LogGetListOutput>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.contents.v1.ContentServiceClient.prototype.logGetList =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/contents.v1.ContentService/LogGetList',
+      request,
+      metadata || {},
+      methodDescriptor_ContentService_LogGetList,
+      callback);
+};
+
+
+/**
+ * @param {!proto.contents.v1.LogGetListInput} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.contents.v1.LogGetListOutput>}
+ *     Promise that resolves to the response
+ */
+proto.contents.v1.ContentServicePromiseClient.prototype.logGetList =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/contents.v1.ContentService/LogGetList',
+      request,
+      metadata || {},
+      methodDescriptor_ContentService_LogGetList);
 };
 
 

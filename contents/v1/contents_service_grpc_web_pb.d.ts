@@ -7,6 +7,7 @@ import * as contents_v1_infografik_pb from '../../contents/v1/infografik_pb';
 import * as contents_v1_news_photo_pb from '../../contents/v1/news_photo_pb';
 import * as contents_v1_news_video_pb from '../../contents/v1/news_video_pb';
 import * as contents_v1_polling_pb from '../../contents/v1/polling_pb';
+import * as contents_v1_log_pb from '../../contents/v1/log_pb';
 
 
 export class ContentServiceClient {
@@ -349,6 +350,13 @@ export class ContentServiceClient {
                response: contents_v1_polling_pb.PollingDeleteResponse) => void
   ): grpcWeb.ClientReadableStream<contents_v1_polling_pb.PollingDeleteResponse>;
 
+  logGetList(
+    request: contents_v1_log_pb.LogGetListInput,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.Error,
+               response: contents_v1_log_pb.LogGetListOutput) => void
+  ): grpcWeb.ClientReadableStream<contents_v1_log_pb.LogGetListOutput>;
+
 }
 
 export class ContentServicePromiseClient {
@@ -600,6 +608,11 @@ export class ContentServicePromiseClient {
     request: contents_v1_polling_pb.PollingDeleteRequest,
     metadata?: grpcWeb.Metadata
   ): Promise<contents_v1_polling_pb.PollingDeleteResponse>;
+
+  logGetList(
+    request: contents_v1_log_pb.LogGetListInput,
+    metadata?: grpcWeb.Metadata
+  ): Promise<contents_v1_log_pb.LogGetListOutput>;
 
 }
 
