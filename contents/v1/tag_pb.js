@@ -313,7 +313,8 @@ proto.contents.v1.Tag.prototype.toObject = function(opt_includeInstance) {
 proto.contents.v1.Tag.toObject = function(includeInstance, msg) {
   var f, obj = {
     id: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    name: jspb.Message.getFieldWithDefault(msg, 2, "")
+    name: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    energy: jspb.Message.getFieldWithDefault(msg, 3, 0)
   };
 
   if (includeInstance) {
@@ -358,6 +359,10 @@ proto.contents.v1.Tag.deserializeBinaryFromReader = function(msg, reader) {
       var value = /** @type {string} */ (reader.readString());
       msg.setName(value);
       break;
+    case 3:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setEnergy(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -401,6 +406,13 @@ proto.contents.v1.Tag.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
+  f = message.getEnergy();
+  if (f !== 0) {
+    writer.writeInt32(
+      3,
+      f
+    );
+  }
 };
 
 
@@ -440,6 +452,24 @@ proto.contents.v1.Tag.prototype.setName = function(value) {
 };
 
 
+/**
+ * optional int32 energy = 3;
+ * @return {number}
+ */
+proto.contents.v1.Tag.prototype.getEnergy = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.contents.v1.Tag} returns this
+ */
+proto.contents.v1.Tag.prototype.setEnergy = function(value) {
+  return jspb.Message.setProto3IntField(this, 3, value);
+};
+
+
 
 
 
@@ -472,7 +502,8 @@ proto.contents.v1.TagCreateUpdate.prototype.toObject = function(opt_includeInsta
  */
 proto.contents.v1.TagCreateUpdate.toObject = function(includeInstance, msg) {
   var f, obj = {
-    name: jspb.Message.getFieldWithDefault(msg, 1, "")
+    name: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    energy: jspb.Message.getFieldWithDefault(msg, 3, 0)
   };
 
   if (includeInstance) {
@@ -513,6 +544,10 @@ proto.contents.v1.TagCreateUpdate.deserializeBinaryFromReader = function(msg, re
       var value = /** @type {string} */ (reader.readString());
       msg.setName(value);
       break;
+    case 3:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setEnergy(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -549,6 +584,13 @@ proto.contents.v1.TagCreateUpdate.serializeBinaryToWriter = function(message, wr
       f
     );
   }
+  f = message.getEnergy();
+  if (f !== 0) {
+    writer.writeInt32(
+      3,
+      f
+    );
+  }
 };
 
 
@@ -567,6 +609,24 @@ proto.contents.v1.TagCreateUpdate.prototype.getName = function() {
  */
 proto.contents.v1.TagCreateUpdate.prototype.setName = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
+};
+
+
+/**
+ * optional int32 energy = 3;
+ * @return {number}
+ */
+proto.contents.v1.TagCreateUpdate.prototype.getEnergy = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.contents.v1.TagCreateUpdate} returns this
+ */
+proto.contents.v1.TagCreateUpdate.prototype.setEnergy = function(value) {
+  return jspb.Message.setProto3IntField(this, 3, value);
 };
 
 
@@ -922,6 +982,7 @@ proto.contents.v1.TagGetMultipleRequest.toObject = function(includeInstance, msg
   var f, obj = {
     searchByName: jspb.Message.getFieldWithDefault(msg, 1, ""),
     idsList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f,
+    onlyActive: jspb.Message.getBooleanFieldWithDefault(msg, 3, false),
     sortBy: jspb.Message.getFieldWithDefault(msg, 11, 0)
   };
 
@@ -968,6 +1029,10 @@ proto.contents.v1.TagGetMultipleRequest.deserializeBinaryFromReader = function(m
       for (var i = 0; i < values.length; i++) {
         msg.addIds(values[i]);
       }
+      break;
+    case 3:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setOnlyActive(value);
       break;
     case 11:
       var value = /** @type {!proto.contents.v1.TagGetMultipleRequest.SortDirection} */ (reader.readEnum());
@@ -1016,6 +1081,13 @@ proto.contents.v1.TagGetMultipleRequest.serializeBinaryToWriter = function(messa
       f
     );
   }
+  f = message.getOnlyActive();
+  if (f) {
+    writer.writeBool(
+      3,
+      f
+    );
+  }
   f = message.getSortBy();
   if (f !== 0.0) {
     writer.writeEnum(
@@ -1031,7 +1103,9 @@ proto.contents.v1.TagGetMultipleRequest.serializeBinaryToWriter = function(messa
  */
 proto.contents.v1.TagGetMultipleRequest.SortDirection = {
   A_TO_Z_UNSPECIFIED: 0,
-  Z_TO_A: 1
+  Z_TO_A: 1,
+  ENERGY_ASC: 2,
+  ENERGY_DESC: 3
 };
 
 /**
@@ -1086,6 +1160,24 @@ proto.contents.v1.TagGetMultipleRequest.prototype.addIds = function(value, opt_i
  */
 proto.contents.v1.TagGetMultipleRequest.prototype.clearIdsList = function() {
   return this.setIdsList([]);
+};
+
+
+/**
+ * optional bool only_active = 3;
+ * @return {boolean}
+ */
+proto.contents.v1.TagGetMultipleRequest.prototype.getOnlyActive = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 3, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.contents.v1.TagGetMultipleRequest} returns this
+ */
+proto.contents.v1.TagGetMultipleRequest.prototype.setOnlyActive = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 3, value);
 };
 
 

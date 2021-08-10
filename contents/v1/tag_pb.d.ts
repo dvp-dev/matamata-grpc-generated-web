@@ -11,6 +11,8 @@ export class Tag extends jspb.Message {
     setId(value: number): Tag;
     getName(): string;
     setName(value: string): Tag;
+    getEnergy(): number;
+    setEnergy(value: number): Tag;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): Tag.AsObject;
@@ -26,12 +28,15 @@ export namespace Tag {
     export type AsObject = {
         id: number,
         name: string,
+        energy: number,
     }
 }
 
 export class TagCreateUpdate extends jspb.Message { 
     getName(): string;
     setName(value: string): TagCreateUpdate;
+    getEnergy(): number;
+    setEnergy(value: number): TagCreateUpdate;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): TagCreateUpdate.AsObject;
@@ -46,6 +51,7 @@ export class TagCreateUpdate extends jspb.Message {
 export namespace TagCreateUpdate {
     export type AsObject = {
         name: string,
+        energy: number,
     }
 }
 
@@ -102,6 +108,8 @@ export class TagGetMultipleRequest extends jspb.Message {
     getIdsList(): Array<number>;
     setIdsList(value: Array<number>): TagGetMultipleRequest;
     addIds(value: number, index?: number): number;
+    getOnlyActive(): boolean;
+    setOnlyActive(value: boolean): TagGetMultipleRequest;
     getSortBy(): TagGetMultipleRequest.SortDirection;
     setSortBy(value: TagGetMultipleRequest.SortDirection): TagGetMultipleRequest;
 
@@ -119,12 +127,15 @@ export namespace TagGetMultipleRequest {
     export type AsObject = {
         searchByName: string,
         idsList: Array<number>,
+        onlyActive: boolean,
         sortBy: TagGetMultipleRequest.SortDirection,
     }
 
     export enum SortDirection {
     A_TO_Z_UNSPECIFIED = 0,
     Z_TO_A = 1,
+    ENERGY_ASC = 2,
+    ENERGY_DESC = 3,
     }
 
 }
