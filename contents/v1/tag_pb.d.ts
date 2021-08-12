@@ -378,9 +378,9 @@ export namespace TagAnalyticsRequest {
 
 export class TagAnalyticsResponse extends jspb.Message { 
     clearDataList(): void;
-    getDataList(): Array<Tag>;
-    setDataList(value: Array<Tag>): TagAnalyticsResponse;
-    addData(value?: Tag, index?: number): Tag;
+    getDataList(): Array<TagAnalytic>;
+    setDataList(value: Array<TagAnalytic>): TagAnalyticsResponse;
+    addData(value?: TagAnalytic, index?: number): TagAnalytic;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): TagAnalyticsResponse.AsObject;
@@ -394,6 +394,6 @@ export class TagAnalyticsResponse extends jspb.Message {
 
 export namespace TagAnalyticsResponse {
     export type AsObject = {
-        dataList: Array<Tag.AsObject>,
+        dataList: Array<TagAnalytic.AsObject>,
     }
 }

@@ -2903,7 +2903,7 @@ proto.contents.v1.TagAnalyticsResponse.prototype.toObject = function(opt_include
 proto.contents.v1.TagAnalyticsResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
     dataList: jspb.Message.toObjectList(msg.getDataList(),
-    proto.contents.v1.Tag.toObject, includeInstance)
+    proto.contents.v1.TagAnalytic.toObject, includeInstance)
   };
 
   if (includeInstance) {
@@ -2941,8 +2941,8 @@ proto.contents.v1.TagAnalyticsResponse.deserializeBinaryFromReader = function(ms
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new proto.contents.v1.Tag;
-      reader.readMessage(value,proto.contents.v1.Tag.deserializeBinaryFromReader);
+      var value = new proto.contents.v1.TagAnalytic;
+      reader.readMessage(value,proto.contents.v1.TagAnalytic.deserializeBinaryFromReader);
       msg.addData(value);
       break;
     default:
@@ -2979,24 +2979,24 @@ proto.contents.v1.TagAnalyticsResponse.serializeBinaryToWriter = function(messag
     writer.writeRepeatedMessage(
       1,
       f,
-      proto.contents.v1.Tag.serializeBinaryToWriter
+      proto.contents.v1.TagAnalytic.serializeBinaryToWriter
     );
   }
 };
 
 
 /**
- * repeated Tag data = 1;
- * @return {!Array<!proto.contents.v1.Tag>}
+ * repeated TagAnalytic data = 1;
+ * @return {!Array<!proto.contents.v1.TagAnalytic>}
  */
 proto.contents.v1.TagAnalyticsResponse.prototype.getDataList = function() {
-  return /** @type{!Array<!proto.contents.v1.Tag>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.contents.v1.Tag, 1));
+  return /** @type{!Array<!proto.contents.v1.TagAnalytic>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.contents.v1.TagAnalytic, 1));
 };
 
 
 /**
- * @param {!Array<!proto.contents.v1.Tag>} value
+ * @param {!Array<!proto.contents.v1.TagAnalytic>} value
  * @return {!proto.contents.v1.TagAnalyticsResponse} returns this
 */
 proto.contents.v1.TagAnalyticsResponse.prototype.setDataList = function(value) {
@@ -3005,12 +3005,12 @@ proto.contents.v1.TagAnalyticsResponse.prototype.setDataList = function(value) {
 
 
 /**
- * @param {!proto.contents.v1.Tag=} opt_value
+ * @param {!proto.contents.v1.TagAnalytic=} opt_value
  * @param {number=} opt_index
- * @return {!proto.contents.v1.Tag}
+ * @return {!proto.contents.v1.TagAnalytic}
  */
 proto.contents.v1.TagAnalyticsResponse.prototype.addData = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.contents.v1.Tag, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.contents.v1.TagAnalytic, opt_index);
 };
 
 
