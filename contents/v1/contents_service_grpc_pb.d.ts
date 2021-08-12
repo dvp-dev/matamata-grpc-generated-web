@@ -21,6 +21,7 @@ interface IContentServiceService extends grpc.ServiceDefinition<grpc.UntypedServ
     tagCreate: IContentServiceService_ITagCreate;
     tagUpdate: IContentServiceService_ITagUpdate;
     tagDelete: IContentServiceService_ITagDelete;
+    tagAnalytics: IContentServiceService_ITagAnalytics;
     category1GetOne: IContentServiceService_ICategory1GetOne;
     category2GetOne: IContentServiceService_ICategory2GetOne;
     category3GetOne: IContentServiceService_ICategory3GetOne;
@@ -112,6 +113,15 @@ interface IContentServiceService_ITagDelete extends grpc.MethodDefinition<conten
     requestDeserialize: grpc.deserialize<contents_v1_tag_pb.TagDeleteRequest>;
     responseSerialize: grpc.serialize<contents_v1_tag_pb.TagDeleteResponse>;
     responseDeserialize: grpc.deserialize<contents_v1_tag_pb.TagDeleteResponse>;
+}
+interface IContentServiceService_ITagAnalytics extends grpc.MethodDefinition<contents_v1_tag_pb.TagAnalyticsRequest, contents_v1_tag_pb.TagAnalyticsResponse> {
+    path: "/contents.v1.ContentService/TagAnalytics";
+    requestStream: false;
+    responseStream: false;
+    requestSerialize: grpc.serialize<contents_v1_tag_pb.TagAnalyticsRequest>;
+    requestDeserialize: grpc.deserialize<contents_v1_tag_pb.TagAnalyticsRequest>;
+    responseSerialize: grpc.serialize<contents_v1_tag_pb.TagAnalyticsResponse>;
+    responseDeserialize: grpc.deserialize<contents_v1_tag_pb.TagAnalyticsResponse>;
 }
 interface IContentServiceService_ICategory1GetOne extends grpc.MethodDefinition<contents_v1_category_pb.Category1GetOneRequest, contents_v1_category_pb.Category1GetOneResponse> {
     path: "/contents.v1.ContentService/Category1GetOne";
@@ -527,6 +537,7 @@ export interface IContentServiceServer extends grpc.UntypedServiceImplementation
     tagCreate: grpc.handleUnaryCall<contents_v1_tag_pb.TagCreateRequest, contents_v1_tag_pb.TagCreateResponse>;
     tagUpdate: grpc.handleUnaryCall<contents_v1_tag_pb.TagUpdateRequest, contents_v1_tag_pb.TagUpdateResponse>;
     tagDelete: grpc.handleUnaryCall<contents_v1_tag_pb.TagDeleteRequest, contents_v1_tag_pb.TagDeleteResponse>;
+    tagAnalytics: grpc.handleUnaryCall<contents_v1_tag_pb.TagAnalyticsRequest, contents_v1_tag_pb.TagAnalyticsResponse>;
     category1GetOne: grpc.handleUnaryCall<contents_v1_category_pb.Category1GetOneRequest, contents_v1_category_pb.Category1GetOneResponse>;
     category2GetOne: grpc.handleUnaryCall<contents_v1_category_pb.Category2GetOneRequest, contents_v1_category_pb.Category2GetOneResponse>;
     category3GetOne: grpc.handleUnaryCall<contents_v1_category_pb.Category3GetOneRequest, contents_v1_category_pb.Category3GetOneResponse>;
@@ -590,6 +601,9 @@ export interface IContentServiceClient {
     tagDelete(request: contents_v1_tag_pb.TagDeleteRequest, callback: (error: grpc.ServiceError | null, response: contents_v1_tag_pb.TagDeleteResponse) => void): grpc.ClientUnaryCall;
     tagDelete(request: contents_v1_tag_pb.TagDeleteRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: contents_v1_tag_pb.TagDeleteResponse) => void): grpc.ClientUnaryCall;
     tagDelete(request: contents_v1_tag_pb.TagDeleteRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: contents_v1_tag_pb.TagDeleteResponse) => void): grpc.ClientUnaryCall;
+    tagAnalytics(request: contents_v1_tag_pb.TagAnalyticsRequest, callback: (error: grpc.ServiceError | null, response: contents_v1_tag_pb.TagAnalyticsResponse) => void): grpc.ClientUnaryCall;
+    tagAnalytics(request: contents_v1_tag_pb.TagAnalyticsRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: contents_v1_tag_pb.TagAnalyticsResponse) => void): grpc.ClientUnaryCall;
+    tagAnalytics(request: contents_v1_tag_pb.TagAnalyticsRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: contents_v1_tag_pb.TagAnalyticsResponse) => void): grpc.ClientUnaryCall;
     category1GetOne(request: contents_v1_category_pb.Category1GetOneRequest, callback: (error: grpc.ServiceError | null, response: contents_v1_category_pb.Category1GetOneResponse) => void): grpc.ClientUnaryCall;
     category1GetOne(request: contents_v1_category_pb.Category1GetOneRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: contents_v1_category_pb.Category1GetOneResponse) => void): grpc.ClientUnaryCall;
     category1GetOne(request: contents_v1_category_pb.Category1GetOneRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: contents_v1_category_pb.Category1GetOneResponse) => void): grpc.ClientUnaryCall;
@@ -740,6 +754,9 @@ export class ContentServiceClient extends grpc.Client implements IContentService
     public tagDelete(request: contents_v1_tag_pb.TagDeleteRequest, callback: (error: grpc.ServiceError | null, response: contents_v1_tag_pb.TagDeleteResponse) => void): grpc.ClientUnaryCall;
     public tagDelete(request: contents_v1_tag_pb.TagDeleteRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: contents_v1_tag_pb.TagDeleteResponse) => void): grpc.ClientUnaryCall;
     public tagDelete(request: contents_v1_tag_pb.TagDeleteRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: contents_v1_tag_pb.TagDeleteResponse) => void): grpc.ClientUnaryCall;
+    public tagAnalytics(request: contents_v1_tag_pb.TagAnalyticsRequest, callback: (error: grpc.ServiceError | null, response: contents_v1_tag_pb.TagAnalyticsResponse) => void): grpc.ClientUnaryCall;
+    public tagAnalytics(request: contents_v1_tag_pb.TagAnalyticsRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: contents_v1_tag_pb.TagAnalyticsResponse) => void): grpc.ClientUnaryCall;
+    public tagAnalytics(request: contents_v1_tag_pb.TagAnalyticsRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: contents_v1_tag_pb.TagAnalyticsResponse) => void): grpc.ClientUnaryCall;
     public category1GetOne(request: contents_v1_category_pb.Category1GetOneRequest, callback: (error: grpc.ServiceError | null, response: contents_v1_category_pb.Category1GetOneResponse) => void): grpc.ClientUnaryCall;
     public category1GetOne(request: contents_v1_category_pb.Category1GetOneRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: contents_v1_category_pb.Category1GetOneResponse) => void): grpc.ClientUnaryCall;
     public category1GetOne(request: contents_v1_category_pb.Category1GetOneRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: contents_v1_category_pb.Category1GetOneResponse) => void): grpc.ClientUnaryCall;

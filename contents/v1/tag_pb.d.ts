@@ -55,6 +55,41 @@ export namespace TagCreateUpdate {
     }
 }
 
+export class TagAnalytic extends jspb.Message { 
+    getId(): number;
+    setId(value: number): TagAnalytic;
+    getName(): string;
+    setName(value: string): TagAnalytic;
+    getEnergy(): number;
+    setEnergy(value: number): TagAnalytic;
+    getArticleActiveCount(): number;
+    setArticleActiveCount(value: number): TagAnalytic;
+    getArticleActiveTotalClick(): number;
+    setArticleActiveTotalClick(value: number): TagAnalytic;
+    getArticleActiveTotalClickDaily(): number;
+    setArticleActiveTotalClickDaily(value: number): TagAnalytic;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): TagAnalytic.AsObject;
+    static toObject(includeInstance: boolean, msg: TagAnalytic): TagAnalytic.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: TagAnalytic, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): TagAnalytic;
+    static deserializeBinaryFromReader(message: TagAnalytic, reader: jspb.BinaryReader): TagAnalytic;
+}
+
+export namespace TagAnalytic {
+    export type AsObject = {
+        id: number,
+        name: string,
+        energy: number,
+        articleActiveCount: number,
+        articleActiveTotalClick: number,
+        articleActiveTotalClickDaily: number,
+    }
+}
+
 export class TagGetOneRequest extends jspb.Message { 
     getId(): number;
     setId(value: number): TagGetOneRequest;
@@ -296,5 +331,69 @@ export class TagDeleteResponse extends jspb.Message {
 
 export namespace TagDeleteResponse {
     export type AsObject = {
+    }
+}
+
+export class TagAnalyticsRequest extends jspb.Message { 
+    getSearchByName(): string;
+    setSearchByName(value: string): TagAnalyticsRequest;
+    clearIdsList(): void;
+    getIdsList(): Array<number>;
+    setIdsList(value: Array<number>): TagAnalyticsRequest;
+    addIds(value: number, index?: number): number;
+    getSortBy(): TagAnalyticsRequest.SortDirection;
+    setSortBy(value: TagAnalyticsRequest.SortDirection): TagAnalyticsRequest;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): TagAnalyticsRequest.AsObject;
+    static toObject(includeInstance: boolean, msg: TagAnalyticsRequest): TagAnalyticsRequest.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: TagAnalyticsRequest, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): TagAnalyticsRequest;
+    static deserializeBinaryFromReader(message: TagAnalyticsRequest, reader: jspb.BinaryReader): TagAnalyticsRequest;
+}
+
+export namespace TagAnalyticsRequest {
+    export type AsObject = {
+        searchByName: string,
+        idsList: Array<number>,
+        sortBy: TagAnalyticsRequest.SortDirection,
+    }
+
+    export enum SortDirection {
+    A_TO_Z_UNSPECIFIED = 0,
+    Z_TO_A = 1,
+    ENERGY_ASC = 2,
+    ENERGY_DESC = 3,
+    ARTICLE_COUNT_ASC = 4,
+    ARTICLE_COUNT_DESC = 5,
+    ARTICLE_TOTAL_CLICK_ASC = 6,
+    ARTICLE_TOTAL_CLICK_DESC = 7,
+    ARTICLE_TOTAL_CLICK_DAILY_ASC = 8,
+    ARTICLE_TOTAL_CLICK_DAILY_DESC = 9,
+    }
+
+}
+
+export class TagAnalyticsResponse extends jspb.Message { 
+    clearDataList(): void;
+    getDataList(): Array<Tag>;
+    setDataList(value: Array<Tag>): TagAnalyticsResponse;
+    addData(value?: Tag, index?: number): Tag;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): TagAnalyticsResponse.AsObject;
+    static toObject(includeInstance: boolean, msg: TagAnalyticsResponse): TagAnalyticsResponse.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: TagAnalyticsResponse, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): TagAnalyticsResponse;
+    static deserializeBinaryFromReader(message: TagAnalyticsResponse, reader: jspb.BinaryReader): TagAnalyticsResponse;
+}
+
+export namespace TagAnalyticsResponse {
+    export type AsObject = {
+        dataList: Array<Tag.AsObject>,
     }
 }

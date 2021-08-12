@@ -50,6 +50,13 @@ export class ContentServiceClient {
                response: contents_v1_tag_pb.TagDeleteResponse) => void
   ): grpcWeb.ClientReadableStream<contents_v1_tag_pb.TagDeleteResponse>;
 
+  tagAnalytics(
+    request: contents_v1_tag_pb.TagAnalyticsRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.Error,
+               response: contents_v1_tag_pb.TagAnalyticsResponse) => void
+  ): grpcWeb.ClientReadableStream<contents_v1_tag_pb.TagAnalyticsResponse>;
+
   category1GetOne(
     request: contents_v1_category_pb.Category1GetOneRequest,
     metadata: grpcWeb.Metadata | undefined,
@@ -388,6 +395,11 @@ export class ContentServicePromiseClient {
     request: contents_v1_tag_pb.TagDeleteRequest,
     metadata?: grpcWeb.Metadata
   ): Promise<contents_v1_tag_pb.TagDeleteResponse>;
+
+  tagAnalytics(
+    request: contents_v1_tag_pb.TagAnalyticsRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<contents_v1_tag_pb.TagAnalyticsResponse>;
 
   category1GetOne(
     request: contents_v1_category_pb.Category1GetOneRequest,

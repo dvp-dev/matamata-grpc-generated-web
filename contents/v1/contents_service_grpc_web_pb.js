@@ -490,6 +490,86 @@ proto.contents.v1.ContentServicePromiseClient.prototype.tagDelete =
 /**
  * @const
  * @type {!grpc.web.MethodDescriptor<
+ *   !proto.contents.v1.TagAnalyticsRequest,
+ *   !proto.contents.v1.TagAnalyticsResponse>}
+ */
+const methodDescriptor_ContentService_TagAnalytics = new grpc.web.MethodDescriptor(
+  '/contents.v1.ContentService/TagAnalytics',
+  grpc.web.MethodType.UNARY,
+  contents_v1_tag_pb.TagAnalyticsRequest,
+  contents_v1_tag_pb.TagAnalyticsResponse,
+  /**
+   * @param {!proto.contents.v1.TagAnalyticsRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  contents_v1_tag_pb.TagAnalyticsResponse.deserializeBinary
+);
+
+
+/**
+ * @const
+ * @type {!grpc.web.AbstractClientBase.MethodInfo<
+ *   !proto.contents.v1.TagAnalyticsRequest,
+ *   !proto.contents.v1.TagAnalyticsResponse>}
+ */
+const methodInfo_ContentService_TagAnalytics = new grpc.web.AbstractClientBase.MethodInfo(
+  contents_v1_tag_pb.TagAnalyticsResponse,
+  /**
+   * @param {!proto.contents.v1.TagAnalyticsRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  contents_v1_tag_pb.TagAnalyticsResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.contents.v1.TagAnalyticsRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.Error, ?proto.contents.v1.TagAnalyticsResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.contents.v1.TagAnalyticsResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.contents.v1.ContentServiceClient.prototype.tagAnalytics =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/contents.v1.ContentService/TagAnalytics',
+      request,
+      metadata || {},
+      methodDescriptor_ContentService_TagAnalytics,
+      callback);
+};
+
+
+/**
+ * @param {!proto.contents.v1.TagAnalyticsRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.contents.v1.TagAnalyticsResponse>}
+ *     Promise that resolves to the response
+ */
+proto.contents.v1.ContentServicePromiseClient.prototype.tagAnalytics =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/contents.v1.ContentService/TagAnalytics',
+      request,
+      metadata || {},
+      methodDescriptor_ContentService_TagAnalytics);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
  *   !proto.contents.v1.Category1GetOneRequest,
  *   !proto.contents.v1.Category1GetOneResponse>}
  */
