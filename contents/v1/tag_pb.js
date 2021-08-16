@@ -1452,7 +1452,8 @@ proto.contents.v1.TagGetMultipleRequest.SortDirection = {
   A_TO_Z_UNSPECIFIED: 0,
   Z_TO_A: 1,
   ENERGY_ASC: 2,
-  ENERGY_DESC: 3
+  ENERGY_DESC: 3,
+  INPUT_IDS: 4
 };
 
 /**

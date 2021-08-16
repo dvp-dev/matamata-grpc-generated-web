@@ -171,6 +171,7 @@ export namespace TagGetMultipleRequest {
     Z_TO_A = 1,
     ENERGY_ASC = 2,
     ENERGY_DESC = 3,
+    INPUT_IDS = 4,
     }
 
 }
