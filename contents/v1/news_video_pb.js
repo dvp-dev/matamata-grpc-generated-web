@@ -541,6 +541,7 @@ proto.contents.v1.NewsVideo.toObject = function(includeInstance, msg) {
     lead: jspb.Message.getFieldWithDefault(msg, 6, ""),
     content: jspb.Message.getFieldWithDefault(msg, 7, ""),
     imageCoverUrl: jspb.Message.getFieldWithDefault(msg, 8, ""),
+    imageCoverUrlOriginal: jspb.Message.getFieldWithDefault(msg, 19, ""),
     imageCoverCaption: jspb.Message.getFieldWithDefault(msg, 9, ""),
     imageCoverAlt: jspb.Message.getFieldWithDefault(msg, 18, ""),
     slug: jspb.Message.getFieldWithDefault(msg, 14, ""),
@@ -628,6 +629,10 @@ proto.contents.v1.NewsVideo.deserializeBinaryFromReader = function(msg, reader) 
     case 8:
       var value = /** @type {string} */ (reader.readString());
       msg.setImageCoverUrl(value);
+      break;
+    case 19:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setImageCoverUrlOriginal(value);
       break;
     case 9:
       var value = /** @type {string} */ (reader.readString());
@@ -794,6 +799,13 @@ proto.contents.v1.NewsVideo.serializeBinaryToWriter = function(message, writer) 
   if (f.length > 0) {
     writer.writeString(
       8,
+      f
+    );
+  }
+  f = message.getImageCoverUrlOriginal();
+  if (f.length > 0) {
+    writer.writeString(
+      19,
       f
     );
   }
@@ -1078,6 +1090,24 @@ proto.contents.v1.NewsVideo.prototype.getImageCoverUrl = function() {
  */
 proto.contents.v1.NewsVideo.prototype.setImageCoverUrl = function(value) {
   return jspb.Message.setProto3StringField(this, 8, value);
+};
+
+
+/**
+ * optional string image_cover_url_original = 19;
+ * @return {string}
+ */
+proto.contents.v1.NewsVideo.prototype.getImageCoverUrlOriginal = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 19, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.contents.v1.NewsVideo} returns this
+ */
+proto.contents.v1.NewsVideo.prototype.setImageCoverUrlOriginal = function(value) {
+  return jspb.Message.setProto3StringField(this, 19, value);
 };
 
 
@@ -1662,6 +1692,7 @@ proto.contents.v1.NewsVideoCreateUpdate.toObject = function(includeInstance, msg
     lead: jspb.Message.getFieldWithDefault(msg, 6, ""),
     content: jspb.Message.getFieldWithDefault(msg, 7, ""),
     imageCoverUrl: jspb.Message.getFieldWithDefault(msg, 8, ""),
+    imageCoverUrlOriginal: jspb.Message.getFieldWithDefault(msg, 19, ""),
     imageCoverCaption: jspb.Message.getFieldWithDefault(msg, 9, ""),
     imageCoverAlt: jspb.Message.getFieldWithDefault(msg, 18, ""),
     energy: jspb.Message.getFieldWithDefault(msg, 11, 0),
@@ -1738,6 +1769,10 @@ proto.contents.v1.NewsVideoCreateUpdate.deserializeBinaryFromReader = function(m
     case 8:
       var value = /** @type {string} */ (reader.readString());
       msg.setImageCoverUrl(value);
+      break;
+    case 19:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setImageCoverUrlOriginal(value);
       break;
     case 9:
       var value = /** @type {string} */ (reader.readString());
@@ -1868,6 +1903,13 @@ proto.contents.v1.NewsVideoCreateUpdate.serializeBinaryToWriter = function(messa
   if (f.length > 0) {
     writer.writeString(
       8,
+      f
+    );
+  }
+  f = message.getImageCoverUrlOriginal();
+  if (f.length > 0) {
+    writer.writeString(
+      19,
       f
     );
   }
@@ -2085,6 +2127,24 @@ proto.contents.v1.NewsVideoCreateUpdate.prototype.getImageCoverUrl = function() 
  */
 proto.contents.v1.NewsVideoCreateUpdate.prototype.setImageCoverUrl = function(value) {
   return jspb.Message.setProto3StringField(this, 8, value);
+};
+
+
+/**
+ * optional string image_cover_url_original = 19;
+ * @return {string}
+ */
+proto.contents.v1.NewsVideoCreateUpdate.prototype.getImageCoverUrlOriginal = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 19, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.contents.v1.NewsVideoCreateUpdate} returns this
+ */
+proto.contents.v1.NewsVideoCreateUpdate.prototype.setImageCoverUrlOriginal = function(value) {
+  return jspb.Message.setProto3StringField(this, 19, value);
 };
 
 

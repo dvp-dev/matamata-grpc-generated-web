@@ -108,6 +108,8 @@ export class Article extends jspb.Message {
     setContent(value: string): Article;
     getImageCoverUrl(): string;
     setImageCoverUrl(value: string): Article;
+    getImageCoverUrlOriginal(): string;
+    setImageCoverUrlOriginal(value: string): Article;
     getImageCoverCaption(): string;
     setImageCoverCaption(value: string): Article;
     getImageCoverAlt(): string;
@@ -191,6 +193,7 @@ export namespace Article {
         lead: string,
         content: string,
         imageCoverUrl: string,
+        imageCoverUrlOriginal: string,
         imageCoverCaption: string,
         imageCoverAlt: string,
         slug: string,
@@ -226,6 +229,8 @@ export class ArticleCreateUpdate extends jspb.Message {
     setContent(value: string): ArticleCreateUpdate;
     getImageCoverUrl(): string;
     setImageCoverUrl(value: string): ArticleCreateUpdate;
+    getImageCoverUrlOriginal(): string;
+    setImageCoverUrlOriginal(value: string): ArticleCreateUpdate;
     getImageCoverCaption(): string;
     setImageCoverCaption(value: string): ArticleCreateUpdate;
     getImageCoverAlt(): string;
@@ -278,6 +283,7 @@ export namespace ArticleCreateUpdate {
         lead: string,
         content: string,
         imageCoverUrl: string,
+        imageCoverUrlOriginal: string,
         imageCoverCaption: string,
         imageCoverAlt: string,
         energy: number,

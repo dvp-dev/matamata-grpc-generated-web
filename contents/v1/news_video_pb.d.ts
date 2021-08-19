@@ -51,6 +51,8 @@ export class NewsVideo extends jspb.Message {
     setContent(value: string): NewsVideo;
     getImageCoverUrl(): string;
     setImageCoverUrl(value: string): NewsVideo;
+    getImageCoverUrlOriginal(): string;
+    setImageCoverUrlOriginal(value: string): NewsVideo;
     getImageCoverCaption(): string;
     setImageCoverCaption(value: string): NewsVideo;
     getImageCoverAlt(): string;
@@ -139,6 +141,7 @@ export namespace NewsVideo {
         lead: string,
         content: string,
         imageCoverUrl: string,
+        imageCoverUrlOriginal: string,
         imageCoverCaption: string,
         imageCoverAlt: string,
         slug: string,
@@ -175,6 +178,8 @@ export class NewsVideoCreateUpdate extends jspb.Message {
     setContent(value: string): NewsVideoCreateUpdate;
     getImageCoverUrl(): string;
     setImageCoverUrl(value: string): NewsVideoCreateUpdate;
+    getImageCoverUrlOriginal(): string;
+    setImageCoverUrlOriginal(value: string): NewsVideoCreateUpdate;
     getImageCoverCaption(): string;
     setImageCoverCaption(value: string): NewsVideoCreateUpdate;
     getImageCoverAlt(): string;
@@ -232,6 +237,7 @@ export namespace NewsVideoCreateUpdate {
         lead: string,
         content: string,
         imageCoverUrl: string,
+        imageCoverUrlOriginal: string,
         imageCoverCaption: string,
         imageCoverAlt: string,
         energy: number,

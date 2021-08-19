@@ -28,6 +28,8 @@ export class Infografik extends jspb.Message {
     setContent(value: string): Infografik;
     getImageCoverUrl(): string;
     setImageCoverUrl(value: string): Infografik;
+    getImageCoverUrlOriginal(): string;
+    setImageCoverUrlOriginal(value: string): Infografik;
     getImageCoverCaption(): string;
     setImageCoverCaption(value: string): Infografik;
     getImageCoverAlt(): string;
@@ -109,6 +111,7 @@ export namespace Infografik {
         lead: string,
         content: string,
         imageCoverUrl: string,
+        imageCoverUrlOriginal: string,
         imageCoverCaption: string,
         imageCoverAlt: string,
         slug: string,
@@ -143,6 +146,8 @@ export class InfografikCreateUpdate extends jspb.Message {
     setContent(value: string): InfografikCreateUpdate;
     getImageCoverUrl(): string;
     setImageCoverUrl(value: string): InfografikCreateUpdate;
+    getImageCoverUrlOriginal(): string;
+    setImageCoverUrlOriginal(value: string): InfografikCreateUpdate;
     getImageCoverCaption(): string;
     setImageCoverCaption(value: string): InfografikCreateUpdate;
     getImageCoverAlt(): string;
@@ -193,6 +198,7 @@ export namespace InfografikCreateUpdate {
         lead: string,
         content: string,
         imageCoverUrl: string,
+        imageCoverUrlOriginal: string,
         imageCoverCaption: string,
         imageCoverAlt: string,
         energy: number,

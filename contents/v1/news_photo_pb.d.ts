@@ -57,6 +57,8 @@ export class NewsPhoto extends jspb.Message {
     setContent(value: string): NewsPhoto;
     getImageCoverUrl(): string;
     setImageCoverUrl(value: string): NewsPhoto;
+    getImageCoverUrlOriginal(): string;
+    setImageCoverUrlOriginal(value: string): NewsPhoto;
     getImageCoverCaption(): string;
     setImageCoverCaption(value: string): NewsPhoto;
     getImageCoverAlt(): string;
@@ -144,6 +146,7 @@ export namespace NewsPhoto {
         lead: string,
         content: string,
         imageCoverUrl: string,
+        imageCoverUrlOriginal: string,
         imageCoverCaption: string,
         imageCoverAlt: string,
         slug: string,
@@ -180,6 +183,8 @@ export class NewsPhotoCreateUpdate extends jspb.Message {
     setContent(value: string): NewsPhotoCreateUpdate;
     getImageCoverUrl(): string;
     setImageCoverUrl(value: string): NewsPhotoCreateUpdate;
+    getImageCoverUrlOriginal(): string;
+    setImageCoverUrlOriginal(value: string): NewsPhotoCreateUpdate;
     getImageCoverCaption(): string;
     setImageCoverCaption(value: string): NewsPhotoCreateUpdate;
     getImageCoverAlt(): string;
@@ -236,6 +241,7 @@ export namespace NewsPhotoCreateUpdate {
         lead: string,
         content: string,
         imageCoverUrl: string,
+        imageCoverUrlOriginal: string,
         imageCoverCaption: string,
         imageCoverAlt: string,
         energy: number,

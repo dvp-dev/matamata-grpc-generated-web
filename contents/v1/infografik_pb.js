@@ -359,6 +359,7 @@ proto.contents.v1.Infografik.toObject = function(includeInstance, msg) {
     lead: jspb.Message.getFieldWithDefault(msg, 6, ""),
     content: jspb.Message.getFieldWithDefault(msg, 7, ""),
     imageCoverUrl: jspb.Message.getFieldWithDefault(msg, 8, ""),
+    imageCoverUrlOriginal: jspb.Message.getFieldWithDefault(msg, 18, ""),
     imageCoverCaption: jspb.Message.getFieldWithDefault(msg, 9, ""),
     imageCoverAlt: jspb.Message.getFieldWithDefault(msg, 17, ""),
     slug: jspb.Message.getFieldWithDefault(msg, 14, ""),
@@ -444,6 +445,10 @@ proto.contents.v1.Infografik.deserializeBinaryFromReader = function(msg, reader)
     case 8:
       var value = /** @type {string} */ (reader.readString());
       msg.setImageCoverUrl(value);
+      break;
+    case 18:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setImageCoverUrlOriginal(value);
       break;
     case 9:
       var value = /** @type {string} */ (reader.readString());
@@ -601,6 +606,13 @@ proto.contents.v1.Infografik.serializeBinaryToWriter = function(message, writer)
   if (f.length > 0) {
     writer.writeString(
       8,
+      f
+    );
+  }
+  f = message.getImageCoverUrlOriginal();
+  if (f.length > 0) {
+    writer.writeString(
+      18,
       f
     );
   }
@@ -870,6 +882,24 @@ proto.contents.v1.Infografik.prototype.getImageCoverUrl = function() {
  */
 proto.contents.v1.Infografik.prototype.setImageCoverUrl = function(value) {
   return jspb.Message.setProto3StringField(this, 8, value);
+};
+
+
+/**
+ * optional string image_cover_url_original = 18;
+ * @return {string}
+ */
+proto.contents.v1.Infografik.prototype.getImageCoverUrlOriginal = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 18, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.contents.v1.Infografik} returns this
+ */
+proto.contents.v1.Infografik.prototype.setImageCoverUrlOriginal = function(value) {
+  return jspb.Message.setProto3StringField(this, 18, value);
 };
 
 
@@ -1399,6 +1429,7 @@ proto.contents.v1.InfografikCreateUpdate.toObject = function(includeInstance, ms
     lead: jspb.Message.getFieldWithDefault(msg, 6, ""),
     content: jspb.Message.getFieldWithDefault(msg, 7, ""),
     imageCoverUrl: jspb.Message.getFieldWithDefault(msg, 8, ""),
+    imageCoverUrlOriginal: jspb.Message.getFieldWithDefault(msg, 18, ""),
     imageCoverCaption: jspb.Message.getFieldWithDefault(msg, 9, ""),
     imageCoverAlt: jspb.Message.getFieldWithDefault(msg, 17, ""),
     energy: jspb.Message.getFieldWithDefault(msg, 11, 0),
@@ -1473,6 +1504,10 @@ proto.contents.v1.InfografikCreateUpdate.deserializeBinaryFromReader = function(
     case 8:
       var value = /** @type {string} */ (reader.readString());
       msg.setImageCoverUrl(value);
+      break;
+    case 18:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setImageCoverUrlOriginal(value);
       break;
     case 9:
       var value = /** @type {string} */ (reader.readString());
@@ -1594,6 +1629,13 @@ proto.contents.v1.InfografikCreateUpdate.serializeBinaryToWriter = function(mess
   if (f.length > 0) {
     writer.writeString(
       8,
+      f
+    );
+  }
+  f = message.getImageCoverUrlOriginal();
+  if (f.length > 0) {
+    writer.writeString(
+      18,
       f
     );
   }
@@ -1796,6 +1838,24 @@ proto.contents.v1.InfografikCreateUpdate.prototype.getImageCoverUrl = function()
  */
 proto.contents.v1.InfografikCreateUpdate.prototype.setImageCoverUrl = function(value) {
   return jspb.Message.setProto3StringField(this, 8, value);
+};
+
+
+/**
+ * optional string image_cover_url_original = 18;
+ * @return {string}
+ */
+proto.contents.v1.InfografikCreateUpdate.prototype.getImageCoverUrlOriginal = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 18, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.contents.v1.InfografikCreateUpdate} returns this
+ */
+proto.contents.v1.InfografikCreateUpdate.prototype.setImageCoverUrlOriginal = function(value) {
+  return jspb.Message.setProto3StringField(this, 18, value);
 };
 
 
