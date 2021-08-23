@@ -34,8 +34,6 @@ export namespace Admin {
 }
 
 export class GetInformationRequest extends jspb.Message { 
-    getId(): number;
-    setId(value: number): GetInformationRequest;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): GetInformationRequest.AsObject;
@@ -49,7 +47,6 @@ export class GetInformationRequest extends jspb.Message {
 
 export namespace GetInformationRequest {
     export type AsObject = {
-        id: number,
     }
 }
 
@@ -60,6 +57,8 @@ export class GetInformationResponse extends jspb.Message {
     setEmail(value: string): GetInformationResponse;
     getName(): string;
     setName(value: string): GetInformationResponse;
+    getProfilePicture(): string;
+    setProfilePicture(value: string): GetInformationResponse;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): GetInformationResponse.AsObject;
@@ -76,6 +75,7 @@ export namespace GetInformationResponse {
         id: number,
         email: string,
         name: string,
+        profilePicture: string,
     }
 }
 

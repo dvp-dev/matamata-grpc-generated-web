@@ -349,7 +349,7 @@ proto.admin.v1.GetInformationRequest.prototype.toObject = function(opt_includeIn
  */
 proto.admin.v1.GetInformationRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    id: jspb.Message.getFieldWithDefault(msg, 1, 0)
+
   };
 
   if (includeInstance) {
@@ -386,10 +386,6 @@ proto.admin.v1.GetInformationRequest.deserializeBinaryFromReader = function(msg,
     }
     var field = reader.getFieldNumber();
     switch (field) {
-    case 1:
-      var value = /** @type {number} */ (reader.readInt32());
-      msg.setId(value);
-      break;
     default:
       reader.skipField();
       break;
@@ -419,31 +415,6 @@ proto.admin.v1.GetInformationRequest.prototype.serializeBinary = function() {
  */
 proto.admin.v1.GetInformationRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getId();
-  if (f !== 0) {
-    writer.writeInt32(
-      1,
-      f
-    );
-  }
-};
-
-
-/**
- * optional int32 id = 1;
- * @return {number}
- */
-proto.admin.v1.GetInformationRequest.prototype.getId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.admin.v1.GetInformationRequest} returns this
- */
-proto.admin.v1.GetInformationRequest.prototype.setId = function(value) {
-  return jspb.Message.setProto3IntField(this, 1, value);
 };
 
 
@@ -481,7 +452,8 @@ proto.admin.v1.GetInformationResponse.toObject = function(includeInstance, msg) 
   var f, obj = {
     id: jspb.Message.getFieldWithDefault(msg, 1, 0),
     email: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    name: jspb.Message.getFieldWithDefault(msg, 3, "")
+    name: jspb.Message.getFieldWithDefault(msg, 3, ""),
+    profilePicture: jspb.Message.getFieldWithDefault(msg, 4, "")
   };
 
   if (includeInstance) {
@@ -530,6 +502,10 @@ proto.admin.v1.GetInformationResponse.deserializeBinaryFromReader = function(msg
       var value = /** @type {string} */ (reader.readString());
       msg.setName(value);
       break;
+    case 4:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setProfilePicture(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -577,6 +553,13 @@ proto.admin.v1.GetInformationResponse.serializeBinaryToWriter = function(message
   if (f.length > 0) {
     writer.writeString(
       3,
+      f
+    );
+  }
+  f = message.getProfilePicture();
+  if (f.length > 0) {
+    writer.writeString(
+      4,
       f
     );
   }
@@ -634,6 +617,24 @@ proto.admin.v1.GetInformationResponse.prototype.getName = function() {
  */
 proto.admin.v1.GetInformationResponse.prototype.setName = function(value) {
   return jspb.Message.setProto3StringField(this, 3, value);
+};
+
+
+/**
+ * optional string profile_picture = 4;
+ * @return {string}
+ */
+proto.admin.v1.GetInformationResponse.prototype.getProfilePicture = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.admin.v1.GetInformationResponse} returns this
+ */
+proto.admin.v1.GetInformationResponse.prototype.setProfilePicture = function(value) {
+  return jspb.Message.setProto3StringField(this, 4, value);
 };
 
 
