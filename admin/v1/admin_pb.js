@@ -349,8 +349,7 @@ proto.admin.v1.GetInformationRequest.prototype.toObject = function(opt_includeIn
  */
 proto.admin.v1.GetInformationRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    id: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    token: jspb.Message.getFieldWithDefault(msg, 2, "")
+    id: jspb.Message.getFieldWithDefault(msg, 1, 0)
   };
 
   if (includeInstance) {
@@ -391,10 +390,6 @@ proto.admin.v1.GetInformationRequest.deserializeBinaryFromReader = function(msg,
       var value = /** @type {number} */ (reader.readInt32());
       msg.setId(value);
       break;
-    case 2:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setToken(value);
-      break;
     default:
       reader.skipField();
       break;
@@ -431,13 +426,6 @@ proto.admin.v1.GetInformationRequest.serializeBinaryToWriter = function(message,
       f
     );
   }
-  f = message.getToken();
-  if (f.length > 0) {
-    writer.writeString(
-      2,
-      f
-    );
-  }
 };
 
 
@@ -456,24 +444,6 @@ proto.admin.v1.GetInformationRequest.prototype.getId = function() {
  */
 proto.admin.v1.GetInformationRequest.prototype.setId = function(value) {
   return jspb.Message.setProto3IntField(this, 1, value);
-};
-
-
-/**
- * optional string token = 2;
- * @return {string}
- */
-proto.admin.v1.GetInformationRequest.prototype.getToken = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.admin.v1.GetInformationRequest} returns this
- */
-proto.admin.v1.GetInformationRequest.prototype.setToken = function(value) {
-  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 

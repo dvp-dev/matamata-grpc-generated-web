@@ -36,8 +36,6 @@ export namespace Admin {
 export class GetInformationRequest extends jspb.Message { 
     getId(): number;
     setId(value: number): GetInformationRequest;
-    getToken(): string;
-    setToken(value: string): GetInformationRequest;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): GetInformationRequest.AsObject;
@@ -52,7 +50,6 @@ export class GetInformationRequest extends jspb.Message {
 export namespace GetInformationRequest {
     export type AsObject = {
         id: number,
-        token: string,
     }
 }
 
