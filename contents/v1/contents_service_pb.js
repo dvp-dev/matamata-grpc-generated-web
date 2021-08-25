@@ -27,6 +27,8 @@ var contents_v1_news_photo_pb = require('../../contents/v1/news_photo_pb.js');
 goog.object.extend(proto, contents_v1_news_photo_pb);
 var contents_v1_news_video_pb = require('../../contents/v1/news_video_pb.js');
 goog.object.extend(proto, contents_v1_news_video_pb);
+var contents_v1_slug_pb = require('../../contents/v1/slug_pb.js');
+goog.object.extend(proto, contents_v1_slug_pb);
 var contents_v1_polling_pb = require('../../contents/v1/polling_pb.js');
 goog.object.extend(proto, contents_v1_polling_pb);
 var contents_v1_log_pb = require('../../contents/v1/log_pb.js');

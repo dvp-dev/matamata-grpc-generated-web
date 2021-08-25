@@ -28,6 +28,8 @@ var contents_v1_news_photo_pb = require('../../contents/v1/news_photo_pb.js')
 
 var contents_v1_news_video_pb = require('../../contents/v1/news_video_pb.js')
 
+var contents_v1_slug_pb = require('../../contents/v1/slug_pb.js')
+
 var contents_v1_polling_pb = require('../../contents/v1/polling_pb.js')
 
 var contents_v1_log_pb = require('../../contents/v1/log_pb.js')
@@ -3664,6 +3666,86 @@ proto.contents.v1.ContentServicePromiseClient.prototype.newsVideoDelete =
       request,
       metadata || {},
       methodDescriptor_ContentService_NewsVideoDelete);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.contents.v1.CheckSlugRequest,
+ *   !proto.contents.v1.CheckSlugResponse>}
+ */
+const methodDescriptor_ContentService_CheckSlug = new grpc.web.MethodDescriptor(
+  '/contents.v1.ContentService/CheckSlug',
+  grpc.web.MethodType.UNARY,
+  contents_v1_slug_pb.CheckSlugRequest,
+  contents_v1_slug_pb.CheckSlugResponse,
+  /**
+   * @param {!proto.contents.v1.CheckSlugRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  contents_v1_slug_pb.CheckSlugResponse.deserializeBinary
+);
+
+
+/**
+ * @const
+ * @type {!grpc.web.AbstractClientBase.MethodInfo<
+ *   !proto.contents.v1.CheckSlugRequest,
+ *   !proto.contents.v1.CheckSlugResponse>}
+ */
+const methodInfo_ContentService_CheckSlug = new grpc.web.AbstractClientBase.MethodInfo(
+  contents_v1_slug_pb.CheckSlugResponse,
+  /**
+   * @param {!proto.contents.v1.CheckSlugRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  contents_v1_slug_pb.CheckSlugResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.contents.v1.CheckSlugRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.Error, ?proto.contents.v1.CheckSlugResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.contents.v1.CheckSlugResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.contents.v1.ContentServiceClient.prototype.checkSlug =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/contents.v1.ContentService/CheckSlug',
+      request,
+      metadata || {},
+      methodDescriptor_ContentService_CheckSlug,
+      callback);
+};
+
+
+/**
+ * @param {!proto.contents.v1.CheckSlugRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.contents.v1.CheckSlugResponse>}
+ *     Promise that resolves to the response
+ */
+proto.contents.v1.ContentServicePromiseClient.prototype.checkSlug =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/contents.v1.ContentService/CheckSlug',
+      request,
+      metadata || {},
+      methodDescriptor_ContentService_CheckSlug);
 };
 
 

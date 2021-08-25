@@ -12,6 +12,7 @@ import * as contents_v1_article_pb from "../../contents/v1/article_pb";
 import * as contents_v1_infografik_pb from "../../contents/v1/infografik_pb";
 import * as contents_v1_news_photo_pb from "../../contents/v1/news_photo_pb";
 import * as contents_v1_news_video_pb from "../../contents/v1/news_video_pb";
+import * as contents_v1_slug_pb from "../../contents/v1/slug_pb";
 import * as contents_v1_polling_pb from "../../contents/v1/polling_pb";
 import * as contents_v1_log_pb from "../../contents/v1/log_pb";
 
@@ -61,6 +62,7 @@ interface IContentServiceService extends grpc.ServiceDefinition<grpc.UntypedServ
     newsVideoCreate: IContentServiceService_INewsVideoCreate;
     newsVideoUpdate: IContentServiceService_INewsVideoUpdate;
     newsVideoDelete: IContentServiceService_INewsVideoDelete;
+    checkSlug: IContentServiceService_ICheckSlug;
     pollingGetOne: IContentServiceService_IPollingGetOne;
     pollingGetList: IContentServiceService_IPollingGetList;
     pollingCreate: IContentServiceService_IPollingCreate;
@@ -474,6 +476,15 @@ interface IContentServiceService_INewsVideoDelete extends grpc.MethodDefinition<
     responseSerialize: grpc.serialize<contents_v1_news_video_pb.NewsVideoDeleteResponse>;
     responseDeserialize: grpc.deserialize<contents_v1_news_video_pb.NewsVideoDeleteResponse>;
 }
+interface IContentServiceService_ICheckSlug extends grpc.MethodDefinition<contents_v1_slug_pb.CheckSlugRequest, contents_v1_slug_pb.CheckSlugResponse> {
+    path: "/contents.v1.ContentService/CheckSlug";
+    requestStream: false;
+    responseStream: false;
+    requestSerialize: grpc.serialize<contents_v1_slug_pb.CheckSlugRequest>;
+    requestDeserialize: grpc.deserialize<contents_v1_slug_pb.CheckSlugRequest>;
+    responseSerialize: grpc.serialize<contents_v1_slug_pb.CheckSlugResponse>;
+    responseDeserialize: grpc.deserialize<contents_v1_slug_pb.CheckSlugResponse>;
+}
 interface IContentServiceService_IPollingGetOne extends grpc.MethodDefinition<contents_v1_polling_pb.PollingGetOneRequest, contents_v1_polling_pb.PollingGetOneResponse> {
     path: "/contents.v1.ContentService/PollingGetOne";
     requestStream: false;
@@ -577,6 +588,7 @@ export interface IContentServiceServer extends grpc.UntypedServiceImplementation
     newsVideoCreate: grpc.handleUnaryCall<contents_v1_news_video_pb.NewsVideoCreateRequest, contents_v1_news_video_pb.NewsVideoCreateResponse>;
     newsVideoUpdate: grpc.handleUnaryCall<contents_v1_news_video_pb.NewsVideoUpdateRequest, contents_v1_news_video_pb.NewsVideoUpdateResponse>;
     newsVideoDelete: grpc.handleUnaryCall<contents_v1_news_video_pb.NewsVideoDeleteRequest, contents_v1_news_video_pb.NewsVideoDeleteResponse>;
+    checkSlug: grpc.handleUnaryCall<contents_v1_slug_pb.CheckSlugRequest, contents_v1_slug_pb.CheckSlugResponse>;
     pollingGetOne: grpc.handleUnaryCall<contents_v1_polling_pb.PollingGetOneRequest, contents_v1_polling_pb.PollingGetOneResponse>;
     pollingGetList: grpc.handleUnaryCall<contents_v1_polling_pb.PollingGetListRequest, contents_v1_polling_pb.PollingGetListResponse>;
     pollingCreate: grpc.handleUnaryCall<contents_v1_polling_pb.PollingCreateRequest, contents_v1_polling_pb.PollingCreateResponse>;
@@ -717,6 +729,9 @@ export interface IContentServiceClient {
     newsVideoDelete(request: contents_v1_news_video_pb.NewsVideoDeleteRequest, callback: (error: grpc.ServiceError | null, response: contents_v1_news_video_pb.NewsVideoDeleteResponse) => void): grpc.ClientUnaryCall;
     newsVideoDelete(request: contents_v1_news_video_pb.NewsVideoDeleteRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: contents_v1_news_video_pb.NewsVideoDeleteResponse) => void): grpc.ClientUnaryCall;
     newsVideoDelete(request: contents_v1_news_video_pb.NewsVideoDeleteRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: contents_v1_news_video_pb.NewsVideoDeleteResponse) => void): grpc.ClientUnaryCall;
+    checkSlug(request: contents_v1_slug_pb.CheckSlugRequest, callback: (error: grpc.ServiceError | null, response: contents_v1_slug_pb.CheckSlugResponse) => void): grpc.ClientUnaryCall;
+    checkSlug(request: contents_v1_slug_pb.CheckSlugRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: contents_v1_slug_pb.CheckSlugResponse) => void): grpc.ClientUnaryCall;
+    checkSlug(request: contents_v1_slug_pb.CheckSlugRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: contents_v1_slug_pb.CheckSlugResponse) => void): grpc.ClientUnaryCall;
     pollingGetOne(request: contents_v1_polling_pb.PollingGetOneRequest, callback: (error: grpc.ServiceError | null, response: contents_v1_polling_pb.PollingGetOneResponse) => void): grpc.ClientUnaryCall;
     pollingGetOne(request: contents_v1_polling_pb.PollingGetOneRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: contents_v1_polling_pb.PollingGetOneResponse) => void): grpc.ClientUnaryCall;
     pollingGetOne(request: contents_v1_polling_pb.PollingGetOneRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: contents_v1_polling_pb.PollingGetOneResponse) => void): grpc.ClientUnaryCall;
@@ -870,6 +885,9 @@ export class ContentServiceClient extends grpc.Client implements IContentService
     public newsVideoDelete(request: contents_v1_news_video_pb.NewsVideoDeleteRequest, callback: (error: grpc.ServiceError | null, response: contents_v1_news_video_pb.NewsVideoDeleteResponse) => void): grpc.ClientUnaryCall;
     public newsVideoDelete(request: contents_v1_news_video_pb.NewsVideoDeleteRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: contents_v1_news_video_pb.NewsVideoDeleteResponse) => void): grpc.ClientUnaryCall;
     public newsVideoDelete(request: contents_v1_news_video_pb.NewsVideoDeleteRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: contents_v1_news_video_pb.NewsVideoDeleteResponse) => void): grpc.ClientUnaryCall;
+    public checkSlug(request: contents_v1_slug_pb.CheckSlugRequest, callback: (error: grpc.ServiceError | null, response: contents_v1_slug_pb.CheckSlugResponse) => void): grpc.ClientUnaryCall;
+    public checkSlug(request: contents_v1_slug_pb.CheckSlugRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: contents_v1_slug_pb.CheckSlugResponse) => void): grpc.ClientUnaryCall;
+    public checkSlug(request: contents_v1_slug_pb.CheckSlugRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: contents_v1_slug_pb.CheckSlugResponse) => void): grpc.ClientUnaryCall;
     public pollingGetOne(request: contents_v1_polling_pb.PollingGetOneRequest, callback: (error: grpc.ServiceError | null, response: contents_v1_polling_pb.PollingGetOneResponse) => void): grpc.ClientUnaryCall;
     public pollingGetOne(request: contents_v1_polling_pb.PollingGetOneRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: contents_v1_polling_pb.PollingGetOneResponse) => void): grpc.ClientUnaryCall;
     public pollingGetOne(request: contents_v1_polling_pb.PollingGetOneRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: contents_v1_polling_pb.PollingGetOneResponse) => void): grpc.ClientUnaryCall;
