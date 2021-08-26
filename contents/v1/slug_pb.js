@@ -91,7 +91,8 @@ proto.contents.v1.CheckSlugRequest.prototype.toObject = function(opt_includeInst
  */
 proto.contents.v1.CheckSlugRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    slug: jspb.Message.getFieldWithDefault(msg, 1, "")
+    slug: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    articleId: jspb.Message.getFieldWithDefault(msg, 2, 0)
   };
 
   if (includeInstance) {
@@ -132,6 +133,10 @@ proto.contents.v1.CheckSlugRequest.deserializeBinaryFromReader = function(msg, r
       var value = /** @type {string} */ (reader.readString());
       msg.setSlug(value);
       break;
+    case 2:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setArticleId(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -168,6 +173,13 @@ proto.contents.v1.CheckSlugRequest.serializeBinaryToWriter = function(message, w
       f
     );
   }
+  f = message.getArticleId();
+  if (f !== 0) {
+    writer.writeInt32(
+      2,
+      f
+    );
+  }
 };
 
 
@@ -186,6 +198,24 @@ proto.contents.v1.CheckSlugRequest.prototype.getSlug = function() {
  */
 proto.contents.v1.CheckSlugRequest.prototype.setSlug = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
+};
+
+
+/**
+ * optional int32 article_id = 2;
+ * @return {number}
+ */
+proto.contents.v1.CheckSlugRequest.prototype.getArticleId = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.contents.v1.CheckSlugRequest} returns this
+ */
+proto.contents.v1.CheckSlugRequest.prototype.setArticleId = function(value) {
+  return jspb.Message.setProto3IntField(this, 2, value);
 };
 
 

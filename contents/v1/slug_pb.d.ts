@@ -9,6 +9,8 @@ import * as jspb from "google-protobuf";
 export class CheckSlugRequest extends jspb.Message { 
     getSlug(): string;
     setSlug(value: string): CheckSlugRequest;
+    getArticleId(): number;
+    setArticleId(value: number): CheckSlugRequest;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): CheckSlugRequest.AsObject;
@@ -23,6 +25,7 @@ export class CheckSlugRequest extends jspb.Message {
 export namespace CheckSlugRequest {
     export type AsObject = {
         slug: string,
+        articleId: number,
     }
 }
 
