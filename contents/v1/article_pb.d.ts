@@ -124,6 +124,8 @@ export class Article extends jspb.Message {
     setStatus(value: ArticleStatus): Article;
     getSectionHomepage(): ArticleSectionHomepage;
     setSectionHomepage(value: ArticleSectionHomepage): Article;
+    getSpecial(): number;
+    setSpecial(value: number): Article;
 
     hasCreatedAt(): boolean;
     clearCreatedAt(): void;
@@ -201,6 +203,7 @@ export namespace Article {
         type: ArticleType,
         status: ArticleStatus,
         sectionHomepage: ArticleSectionHomepage,
+        special: number,
         createdAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
         updatedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
         publishedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
@@ -243,6 +246,8 @@ export class ArticleCreateUpdate extends jspb.Message {
     setStatus(value: ArticleStatus): ArticleCreateUpdate;
     getSectionHomepage(): ArticleSectionHomepage;
     setSectionHomepage(value: ArticleSectionHomepage): ArticleCreateUpdate;
+    getSpecial(): number;
+    setSpecial(value: number): ArticleCreateUpdate;
     getIsCustomPublishedAt(): boolean;
     setIsCustomPublishedAt(value: boolean): ArticleCreateUpdate;
 
@@ -290,6 +295,7 @@ export namespace ArticleCreateUpdate {
         type: ArticleType,
         status: ArticleStatus,
         sectionHomepage: ArticleSectionHomepage,
+        special: number,
         isCustomPublishedAt: boolean,
         publishedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
         seo?: ArticleSEO.AsObject,

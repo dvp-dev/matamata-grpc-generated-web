@@ -1026,6 +1026,7 @@ proto.contents.v1.Article.toObject = function(includeInstance, msg) {
     type: jspb.Message.getFieldWithDefault(msg, 17, 0),
     status: jspb.Message.getFieldWithDefault(msg, 10, 0),
     sectionHomepage: jspb.Message.getFieldWithDefault(msg, 13, 0),
+    special: jspb.Message.getFieldWithDefault(msg, 20, 0),
     createdAt: (f = msg.getCreatedAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
     updatedAt: (f = msg.getUpdatedAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
     publishedAt: (f = msg.getPublishedAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
@@ -1137,6 +1138,10 @@ proto.contents.v1.Article.deserializeBinaryFromReader = function(msg, reader) {
     case 13:
       var value = /** @type {!proto.contents.v1.ArticleSectionHomepage} */ (reader.readEnum());
       msg.setSectionHomepage(value);
+      break;
+    case 20:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setSpecial(value);
       break;
     case 11:
       var value = new google_protobuf_timestamp_pb.Timestamp;
@@ -1326,6 +1331,13 @@ proto.contents.v1.Article.serializeBinaryToWriter = function(message, writer) {
   if (f !== 0.0) {
     writer.writeEnum(
       13,
+      f
+    );
+  }
+  f = message.getSpecial();
+  if (f !== 0) {
+    writer.writeInt32(
+      20,
       f
     );
   }
@@ -1697,6 +1709,24 @@ proto.contents.v1.Article.prototype.getSectionHomepage = function() {
  */
 proto.contents.v1.Article.prototype.setSectionHomepage = function(value) {
   return jspb.Message.setProto3EnumField(this, 13, value);
+};
+
+
+/**
+ * optional int32 special = 20;
+ * @return {number}
+ */
+proto.contents.v1.Article.prototype.getSpecial = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 20, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.contents.v1.Article} returns this
+ */
+proto.contents.v1.Article.prototype.setSpecial = function(value) {
+  return jspb.Message.setProto3IntField(this, 20, value);
 };
 
 
@@ -2125,6 +2155,7 @@ proto.contents.v1.ArticleCreateUpdate.toObject = function(includeInstance, msg) 
     type: jspb.Message.getFieldWithDefault(msg, 12, 0),
     status: jspb.Message.getFieldWithDefault(msg, 10, 0),
     sectionHomepage: jspb.Message.getFieldWithDefault(msg, 13, 0),
+    special: jspb.Message.getFieldWithDefault(msg, 20, 0),
     isCustomPublishedAt: jspb.Message.getBooleanFieldWithDefault(msg, 14, false),
     publishedAt: (f = msg.getPublishedAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
     seo: (f = msg.getSeo()) && proto.contents.v1.ArticleSEO.toObject(includeInstance, f),
@@ -2222,6 +2253,10 @@ proto.contents.v1.ArticleCreateUpdate.deserializeBinaryFromReader = function(msg
     case 13:
       var value = /** @type {!proto.contents.v1.ArticleSectionHomepage} */ (reader.readEnum());
       msg.setSectionHomepage(value);
+      break;
+    case 20:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setSpecial(value);
       break;
     case 14:
       var value = /** @type {boolean} */ (reader.readBool());
@@ -2372,6 +2407,13 @@ proto.contents.v1.ArticleCreateUpdate.serializeBinaryToWriter = function(message
   if (f !== 0.0) {
     writer.writeEnum(
       13,
+      f
+    );
+  }
+  f = message.getSpecial();
+  if (f !== 0) {
+    writer.writeInt32(
+      20,
       f
     );
   }
@@ -2665,6 +2707,24 @@ proto.contents.v1.ArticleCreateUpdate.prototype.getSectionHomepage = function() 
  */
 proto.contents.v1.ArticleCreateUpdate.prototype.setSectionHomepage = function(value) {
   return jspb.Message.setProto3EnumField(this, 13, value);
+};
+
+
+/**
+ * optional int32 special = 20;
+ * @return {number}
+ */
+proto.contents.v1.ArticleCreateUpdate.prototype.getSpecial = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 20, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.contents.v1.ArticleCreateUpdate} returns this
+ */
+proto.contents.v1.ArticleCreateUpdate.prototype.setSpecial = function(value) {
+  return jspb.Message.setProto3IntField(this, 20, value);
 };
 
 
