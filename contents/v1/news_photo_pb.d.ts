@@ -73,6 +73,8 @@ export class NewsPhoto extends jspb.Message {
     setStatus(value: contents_v1_article_pb.ArticleStatus): NewsPhoto;
     getSectionHomepage(): contents_v1_article_pb.ArticleSectionHomepage;
     setSectionHomepage(value: contents_v1_article_pb.ArticleSectionHomepage): NewsPhoto;
+    getSpecial(): number;
+    setSpecial(value: number): NewsPhoto;
 
     hasCreatedAt(): boolean;
     clearCreatedAt(): void;
@@ -154,6 +156,7 @@ export namespace NewsPhoto {
         type: contents_v1_article_pb.ArticleType,
         status: contents_v1_article_pb.ArticleStatus,
         sectionHomepage: contents_v1_article_pb.ArticleSectionHomepage,
+        special: number,
         createdAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
         updatedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
         publishedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
@@ -197,6 +200,8 @@ export class NewsPhotoCreateUpdate extends jspb.Message {
     setStatus(value: contents_v1_article_pb.ArticleStatus): NewsPhotoCreateUpdate;
     getSectionHomepage(): contents_v1_article_pb.ArticleSectionHomepage;
     setSectionHomepage(value: contents_v1_article_pb.ArticleSectionHomepage): NewsPhotoCreateUpdate;
+    getSpecial(): number;
+    setSpecial(value: number): NewsPhotoCreateUpdate;
     getIsCustomPublishedAt(): boolean;
     setIsCustomPublishedAt(value: boolean): NewsPhotoCreateUpdate;
 
@@ -248,6 +253,7 @@ export namespace NewsPhotoCreateUpdate {
         type: contents_v1_article_pb.ArticleType,
         status: contents_v1_article_pb.ArticleStatus,
         sectionHomepage: contents_v1_article_pb.ArticleSectionHomepage,
+        special: number,
         isCustomPublishedAt: boolean,
         publishedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
         photosList: Array<ArticlePhoto.AsObject>,

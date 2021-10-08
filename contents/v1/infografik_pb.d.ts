@@ -42,6 +42,8 @@ export class Infografik extends jspb.Message {
     setStatus(value: contents_v1_article_pb.ArticleStatus): Infografik;
     getSectionHomepage(): contents_v1_article_pb.ArticleSectionHomepage;
     setSectionHomepage(value: contents_v1_article_pb.ArticleSectionHomepage): Infografik;
+    getSpecial(): number;
+    setSpecial(value: number): Infografik;
 
     hasCreatedAt(): boolean;
     clearCreatedAt(): void;
@@ -118,6 +120,7 @@ export namespace Infografik {
         energy: number,
         status: contents_v1_article_pb.ArticleStatus,
         sectionHomepage: contents_v1_article_pb.ArticleSectionHomepage,
+        special: number,
         createdAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
         updatedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
         publishedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
@@ -158,6 +161,8 @@ export class InfografikCreateUpdate extends jspb.Message {
     setStatus(value: contents_v1_article_pb.ArticleStatus): InfografikCreateUpdate;
     getSectionHomepage(): contents_v1_article_pb.ArticleSectionHomepage;
     setSectionHomepage(value: contents_v1_article_pb.ArticleSectionHomepage): InfografikCreateUpdate;
+    getSpecial(): number;
+    setSpecial(value: number): InfografikCreateUpdate;
     getIsCustomPublishedAt(): boolean;
     setIsCustomPublishedAt(value: boolean): InfografikCreateUpdate;
 
@@ -204,6 +209,7 @@ export namespace InfografikCreateUpdate {
         energy: number,
         status: contents_v1_article_pb.ArticleStatus,
         sectionHomepage: contents_v1_article_pb.ArticleSectionHomepage,
+        special: number,
         isCustomPublishedAt: boolean,
         publishedAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
         seo?: contents_v1_article_pb.ArticleSEO.AsObject,
