@@ -380,6 +380,8 @@ export class ArticleGetListRequest extends jspb.Message {
     setAdminId(value: number): ArticleGetListRequest;
     getAdminCreatedId(): number;
     setAdminCreatedId(value: number): ArticleGetListRequest;
+    getSpecial(): number;
+    setSpecial(value: number): ArticleGetListRequest;
     getPage(): number;
     setPage(value: number): ArticleGetListRequest;
     getContentPerPage(): number;
@@ -412,6 +414,7 @@ export namespace ArticleGetListRequest {
         search: string,
         adminId: number,
         adminCreatedId: number,
+        special: number,
         page: number,
         contentPerPage: number,
         withAdminCreated: boolean,

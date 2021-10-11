@@ -2565,6 +2565,7 @@ proto.contents.v1.InfografikGetListRequest.toObject = function(includeInstance, 
     search: jspb.Message.getFieldWithDefault(msg, 6, ""),
     adminId: jspb.Message.getFieldWithDefault(msg, 12, 0),
     adminCreatedId: jspb.Message.getFieldWithDefault(msg, 13, 0),
+    special: jspb.Message.getFieldWithDefault(msg, 14, 0),
     page: jspb.Message.getFieldWithDefault(msg, 7, 0),
     contentPerPage: jspb.Message.getFieldWithDefault(msg, 8, 0),
     withAdminCreated: jspb.Message.getBooleanFieldWithDefault(msg, 11, false),
@@ -2642,6 +2643,10 @@ proto.contents.v1.InfografikGetListRequest.deserializeBinaryFromReader = functio
     case 13:
       var value = /** @type {number} */ (reader.readInt32());
       msg.setAdminCreatedId(value);
+      break;
+    case 14:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setSpecial(value);
       break;
     case 7:
       var value = /** @type {number} */ (reader.readInt32());
@@ -2748,6 +2753,13 @@ proto.contents.v1.InfografikGetListRequest.serializeBinaryToWriter = function(me
   if (f !== 0) {
     writer.writeInt32(
       13,
+      f
+    );
+  }
+  f = message.getSpecial();
+  if (f !== 0) {
+    writer.writeInt32(
+      14,
       f
     );
   }
@@ -2976,6 +2988,24 @@ proto.contents.v1.InfografikGetListRequest.prototype.getAdminCreatedId = functio
  */
 proto.contents.v1.InfografikGetListRequest.prototype.setAdminCreatedId = function(value) {
   return jspb.Message.setProto3IntField(this, 13, value);
+};
+
+
+/**
+ * optional int32 special = 14;
+ * @return {number}
+ */
+proto.contents.v1.InfografikGetListRequest.prototype.getSpecial = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 14, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.contents.v1.InfografikGetListRequest} returns this
+ */
+proto.contents.v1.InfografikGetListRequest.prototype.setSpecial = function(value) {
+  return jspb.Message.setProto3IntField(this, 14, value);
 };
 
 

@@ -2911,6 +2911,7 @@ proto.contents.v1.NewsVideoGetListRequest.toObject = function(includeInstance, m
     search: jspb.Message.getFieldWithDefault(msg, 6, ""),
     adminId: jspb.Message.getFieldWithDefault(msg, 14, 0),
     adminCreatedId: jspb.Message.getFieldWithDefault(msg, 15, 0),
+    special: jspb.Message.getFieldWithDefault(msg, 16, 0),
     page: jspb.Message.getFieldWithDefault(msg, 7, 0),
     contentPerPage: jspb.Message.getFieldWithDefault(msg, 8, 0),
     withAdminCreated: jspb.Message.getBooleanFieldWithDefault(msg, 13, false),
@@ -2998,6 +2999,10 @@ proto.contents.v1.NewsVideoGetListRequest.deserializeBinaryFromReader = function
     case 15:
       var value = /** @type {number} */ (reader.readInt32());
       msg.setAdminCreatedId(value);
+      break;
+    case 16:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setSpecial(value);
       break;
     case 7:
       var value = /** @type {number} */ (reader.readInt32());
@@ -3118,6 +3123,13 @@ proto.contents.v1.NewsVideoGetListRequest.serializeBinaryToWriter = function(mes
   if (f !== 0) {
     writer.writeInt32(
       15,
+      f
+    );
+  }
+  f = message.getSpecial();
+  if (f !== 0) {
+    writer.writeInt32(
+      16,
       f
     );
   }
@@ -3401,6 +3413,24 @@ proto.contents.v1.NewsVideoGetListRequest.prototype.getAdminCreatedId = function
  */
 proto.contents.v1.NewsVideoGetListRequest.prototype.setAdminCreatedId = function(value) {
   return jspb.Message.setProto3IntField(this, 15, value);
+};
+
+
+/**
+ * optional int32 special = 16;
+ * @return {number}
+ */
+proto.contents.v1.NewsVideoGetListRequest.prototype.getSpecial = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 16, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.contents.v1.NewsVideoGetListRequest} returns this
+ */
+proto.contents.v1.NewsVideoGetListRequest.prototype.setSpecial = function(value) {
+  return jspb.Message.setProto3IntField(this, 16, value);
 };
 
 
